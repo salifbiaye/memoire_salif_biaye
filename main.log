@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.5.11)  24 MAY 2026 17:59
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.5.11)  24 MAY 2026 18:03
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1316,10 +1316,10 @@ File: images/contenu/chapitre-3/architecture_fonctionnelle.png Graphic file (ty
 pe png)
 <use images/contenu/chapitre-3/architecture_fonctionnelle.png>
 Package pdftex.def Info: images/contenu/chapitre-3/architecture_fonctionnelle.p
-ng  used on input line 62.
+ng  used on input line 63.
 (pdftex.def)             Requested size: 469.47049pt x 312.98103pt.
 
-Overfull \hbox (13.6pt too wide) in paragraph at lines 62--63
+Overfull \hbox (13.6pt too wide) in paragraph at lines 63--64
  [][][][] 
  []
 
@@ -1345,10 +1345,10 @@ File: images/contenu/chapitre-3/architecture_technique.png Graphic file (type p
 ng)
 <use images/contenu/chapitre-3/architecture_technique.png>
 Package pdftex.def Info: images/contenu/chapitre-3/architecture_technique.png  
-used on input line 174.
+used on input line 175.
 (pdftex.def)             Requested size: 469.47049pt x 321.13156pt.
 
-Overfull \hbox (13.6pt too wide) in paragraph at lines 174--175
+Overfull \hbox (13.6pt too wide) in paragraph at lines 175--176
  [][][][] 
  []
 
@@ -1374,10 +1374,10 @@ File: images/contenu/chapitre-3/workflow_creation_prospect.png Graphic file (ty
 pe png)
 <use images/contenu/chapitre-3/workflow_creation_prospect.png>
 Package pdftex.def Info: images/contenu/chapitre-3/workflow_creation_prospect.p
-ng  used on input line 219.
+ng  used on input line 220.
 (pdftex.def)             Requested size: 469.47049pt x 267.0094pt.
 
-Overfull \hbox (13.6pt too wide) in paragraph at lines 219--220
+Overfull \hbox (13.6pt too wide) in paragraph at lines 220--221
  [][][][] 
  []
 
@@ -1387,17 +1387,17 @@ File: images/contenu/chapitre-3/workflow_conversion_prospect.png Graphic file (
 type png)
 <use images/contenu/chapitre-3/workflow_conversion_prospect.png>
 Package pdftex.def Info: images/contenu/chapitre-3/workflow_conversion_prospect
-.png  used on input line 232.
+.png  used on input line 233.
 (pdftex.def)             Requested size: 469.47049pt x 261.34175pt.
 
-Overfull \hbox (13.6pt too wide) in paragraph at lines 232--233
+Overfull \hbox (13.6pt too wide) in paragraph at lines 233--234
  [][][][] 
  []
 
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10.95> on input line 249.
+(Font)              <10.95> on input line 250.
 LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 2
-52.
+53.
 (C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex/latex/lm\t1lmtt.fd
 File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
@@ -1421,10 +1421,10 @@ File: images/contenu/chapitre-3/conception_gestion_prospects.png Graphic file (
 type png)
 <use images/contenu/chapitre-3/conception_gestion_prospects.png>
 Package pdftex.def Info: images/contenu/chapitre-3/conception_gestion_prospects
-.png  used on input line 275.
+.png  used on input line 276.
 (pdftex.def)             Requested size: 469.47049pt x 337.06764pt.
 
-Overfull \hbox (13.6pt too wide) in paragraph at lines 275--276
+Overfull \hbox (13.6pt too wide) in paragraph at lines 276--277
  [][][][] 
  []
 
@@ -1442,10 +1442,10 @@ File: images/contenu/chapitre-3/architecture_deploiement.png Graphic file (type
  png)
 <use images/contenu/chapitre-3/architecture_deploiement.png>
 Package pdftex.def Info: images/contenu/chapitre-3/architecture_deploiement.png
-  used on input line 314.
+  used on input line 315.
 (pdftex.def)             Requested size: 469.47049pt x 312.98103pt.
 
-Overfull \hbox (13.6pt too wide) in paragraph at lines 314--315
+Overfull \hbox (13.6pt too wide) in paragraph at lines 315--316
  [][][][] 
  []
 
@@ -1522,7 +1522,7 @@ sers/DELL/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri12.pfb><C:/Us
 ers/DELL/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy10.pfb><C:/Use
 rs/DELL/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt10.pfb><C:/User
 s/DELL/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt12.pfb>
-Output written on main.pdf (35 pages, 7465247 bytes).
+Output written on main.pdf (35 pages, 7465414 bytes).
 PDF statistics:
  689 PDF objects out of 1000 (max. 8388607)
  141 named destinations out of 1000 (max. 500000)
