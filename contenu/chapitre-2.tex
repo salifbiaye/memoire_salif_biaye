@@ -5,6 +5,7 @@
 \markboth{Analyse fonctionnelle et non fonctionnelle des besoins}{Analyse fonctionnelle et non fonctionnelle des besoins}
 
 \section*{Introduction}
+\phantomsection
 \addcontentsline{toc}{section}{Introduction}
 
 Après la présentation du cadre général du projet, ce deuxième chapitre a pour objectif
@@ -77,7 +78,7 @@ le passage d'ordres.
 Le module Relation Client regroupe l'ensemble des fonctionnalités permettant de centraliser
 la connaissance client, de structurer le suivi commercial, d'assurer la conformité
 réglementaire et de tracer les échanges. Dans le cadre de ce chapitre, la fonctionnalité
-retenue pour ce module est la \textbf{gestion des prospects}, car elle représente le coeur
+retenue pour ce module est la \textbf{gestion des prospects}, car elle représente le cœur
 du processus commercial et permet de suivre la transformation d'un contact en client.
 
 % ─────────────────────────────────────────────────
@@ -147,7 +148,7 @@ travers un diagramme de séquence.
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=\textwidth]{images/contenu/chapitre-2/rc_seq_prospects.png}
+    \includegraphics[width=\dimexpr\textwidth-2\fboxsep-2\fboxrule\relax]{images/contenu/chapitre-2/rc_seq_prospects.png}
     \caption{Mise à jour du pipeline et recalcul du score de conversion d'un prospect}
     \label{fig:rc_prospects}
 \end{figure}
@@ -223,7 +224,7 @@ travers un diagramme de séquence.
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=\textwidth]{images/contenu/chapitre-2/sgi_seq_passage_ordres.png}
+    \includegraphics[width=\dimexpr\textwidth-2\fboxsep-2\fboxrule\relax]{images/contenu/chapitre-2/sgi_seq_passage_ordres.png}
     \caption{Circuit de soumission et de traitement d'un ordre de bourse du client à l'exécution}
     \label{fig:sgi_ordres}
 \end{figure}
@@ -269,6 +270,7 @@ adopté.
 
 % ─────────────────────────────────────────────────
 \section*{Conclusion}
+\phantomsection
 \addcontentsline{toc}{section}{Conclusion}
 
 Ce chapitre a permis d'identifier les besoins fonctionnels et non fonctionnels du système

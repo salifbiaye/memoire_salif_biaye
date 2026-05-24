@@ -1,0 +1,277 @@
+% ─────────────────────────────────────────────────
+%  CHAPITRE 4 – PRESENTATION DES RESULTATS ET ANALYSE CRITIQUE
+% ─────────────────────────────────────────────────
+\chapter{Présentation des résultats et analyse critique}
+\markboth{Présentation des résultats et analyse critique}{Présentation des résultats et analyse critique}
+
+\section*{Introduction}
+\phantomsection
+\addcontentsline{toc}{section}{Introduction}
+
+Ce chapitre présente les résultats concrets obtenus à l'issue de la phase de
+réalisation. Son objectif n'est pas de reprendre la conception technique déjà
+présentée au chapitre précédent, mais de montrer comment les besoins exprimés
+ont été concrétisés dans l'application \textbf{I-SIB}. La lecture proposée est
+donc principalement fonctionnelle : elle met en relation les objectifs du projet,
+les interfaces livrées et les usages qu'elles permettent.
+
+Le chapitre est organisé en quatre parties. La première présente les résultats
+obtenus pour le module \textbf{Relation Client} ; les interfaces y sont utilisées
+comme supports d'illustration afin de montrer comment les fonctionnalités se
+traduisent dans l'application. La deuxième adopte la même logique pour le module
+\textbf{SGI}, à travers le pilotage des portefeuilles, la consultation des
+cotations, l'analyse des palmarès de titres et le suivi des investissements. La
+troisième propose une synthèse de la couverture des objectifs spécifiques sous
+forme de tableau. Enfin, la dernière partie porte un regard critique sur la
+réalisation, en distinguant les points forts, les limites actuelles et les
+perspectives d'amélioration.
+
+% ─────────────────────────────────────────────────
+\section{Résultats côté Relation Client}
+
+Le module \textbf{Relation Client} regroupe l'ensemble des fonctionnalités
+permettant de connaître, suivre et fidéliser les clients de la banque. La
+présentation ne consiste donc pas à commenter uniquement des captures d'écran ;
+elle décrit d'abord les fonctionnalités réalisées, puis utilise les interfaces
+comme preuves visuelles de leur mise en œuvre. Quatre fonctionnalités sont
+retenues pour structurer cette partie : le portefeuille clients, la gestion des
+comptes, l'agent IA de relation client et la gestion des prospects.
+
+\subsection{Portefeuille clients}
+
+La fonctionnalité de portefeuille clients centralise la connaissance client et
+offre au chargé de clientèle une vue de travail unique. Elle regroupe des
+indicateurs synthétiques, la liste détaillée des clients, leur statut, leur
+niveau de risque, leurs comptes, leurs produits et le risque de départ estimé
+par le modèle d'IA. Les filtres et la recherche facilitent l'accès rapide à un
+client précis.
+
+Cet écran matérialise deux objectifs : le \textbf{tableau de bord Relation
+Client} adapté au chargé de clientèle et la \textbf{vue 360° client} sous sa
+forme synthétique. La figure~\ref{fig:portefeuille_clients} présente cette vue
+de portefeuille, qui sert de point d'entrée au suivi commercial.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.88\textwidth]{images/contenu/chapitre-4/portefeuille_clients.png}
+    \caption{Interface Portefeuille Clients du chargé de clientèle}
+    \label{fig:portefeuille_clients}
+\end{figure}
+
+\subsection{Gestion des comptes}
+
+La gestion des comptes complète la connaissance client en donnant accès aux
+comptes bancaires associés à un client sélectionné. Pour chaque compte, le
+système présente les informations principales : type de compte, numéro, IBAN,
+solde et statut. La possibilité de télécharger les RIB illustre également la
+\textbf{dématérialisation des documents} dans le parcours Relation Client.
+La figure~\ref{fig:gestion_comptes} illustre cette consultation centralisée des
+comptes bancaires.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.88\textwidth]{images/contenu/chapitre-4/gestion_comptes.png}
+    \caption{Consultation des comptes bancaires d'un client}
+    \label{fig:gestion_comptes}
+\end{figure}
+
+\subsection{Agent IA relation client}
+
+L'agent IA relation client facilite l'accès aux informations client à travers
+une interrogation en langage naturel. Après sélection du client, le chargé de
+clientèle peut poser des questions sur les comptes, les transactions, les
+produits bancaires ou le statut KYC/AML. Cette fonctionnalité soutient surtout
+la \textbf{détection des risques par l'IA}, notamment le risque de churn, en
+rendant les informations utiles plus accessibles.
+La figure~\ref{fig:agent_ia_relations} montre l'intégration de cet assistant
+dans l'environnement de travail du chargé de clientèle.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.88\textwidth]{images/contenu/chapitre-4/agent_ia_relations.png}
+    \caption{Agent IA d'interrogation des données client (ai-SIB)}
+    \label{fig:agent_ia_relations}
+\end{figure}
+
+\subsection{Gestion des prospects}
+
+La gestion des prospects couvre le suivi du cycle commercial avant la conversion
+en client. Elle présente les prospects dans un pipeline, avec leur étape
+d'avancement, leur priorité, leur score IA et leur date de création. Cette
+fonctionnalité permet au chargé de clientèle de prioriser ses actions et
+matérialise directement l'objectif de \textbf{gestion des prospects avec
+pipeline de conversion et scoring automatique}. La
+figure~\ref{fig:gestion_prospects} présente le résultat obtenu pour cette
+fonctionnalité centrale du module Relation Client.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.88\textwidth]{images/contenu/chapitre-4/gestion_prospects.png}
+    \caption{Pipeline de gestion des prospects avec score IA}
+    \label{fig:gestion_prospects}
+\end{figure}
+
+% ─────────────────────────────────────────────────
+\section{Résultats côté SGI}
+
+Le module \textbf{SGI} couvre les opérations d'investissement : portefeuilles,
+cotations BRVM et passage d'ordres. Comme pour la Relation Client, les captures
+ne sont pas présentées comme de simples écrans isolés ; elles servent à illustrer
+les fonctionnalités livrées et leur rôle dans le parcours d'investissement. Les
+résultats sont organisés autour de quatre éléments : une vue de pilotage, une
+consultation des cotations, une analyse des palmarès de titres et une gestion
+détaillée des portefeuilles. Même si l'analyse détaillée du chapitre précédent
+s'est concentrée sur le passage d'ordres afin de limiter le périmètre de
+conception, ces interfaces sont présentées ici comme des résultats
+complémentaires du module SGI, car elles soutiennent la prise de décision avant
+la soumission d'un ordre.
+
+\subsection{Tableau de bord SGI}
+
+Le tableau de bord SGI fournit une vue synthétique de l'activité
+d'investissement. Il permet de suivre les encours, les portefeuilles, les ordres
+en attente et les principaux indicateurs de pilotage. Il donne ainsi une vision
+agrégée du module avant d'accéder au détail des portefeuilles. La
+figure~\ref{fig:dashboard_sgi} illustre ce tableau de bord de synthèse.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.88\textwidth]{images/contenu/chapitre-4/dashboard_sgi.png}
+    \caption{Tableau de bord global de la Société de Gestion}
+    \label{fig:dashboard_sgi}
+\end{figure}
+
+\subsection{Cotations BRVM}
+
+La fonctionnalité de cotations permet de consulter les instruments cotés sur la
+BRVM, notamment les actions et les obligations \cite{brvm_actions}. Elle fournit les informations
+nécessaires à la prise de décision : ticker, dénomination, prix courant,
+variation et volume. Cette base de cotation sert de support au passage d'ordres.
+La figure~\ref{fig:cotations_brvm} présente l'écran de suivi des instruments de
+marché.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.88\textwidth]{images/contenu/chapitre-4/cotations_brvm.png}
+    \caption{Liste des cotations BRVM et fiche d'un instrument}
+    \label{fig:cotations_brvm}
+\end{figure}
+
+\subsection{Analyse et palmarès des titres}
+
+En complément de la consultation des cotations, le module SGI propose une page
+d'analyse permettant de comparer les performances des titres sur une période
+sélectionnée. L'utilisateur peut filtrer les résultats par horizon temporel
+(jour, semaine, mois, trimestre, année) et visualiser les meilleures et les plus
+faibles performances \cite{brvm_actions}. Cette fonctionnalité aide le gestionnaire à repérer les
+tendances du marché et à disposer d'une lecture synthétique avant la prise de
+décision. La figure~\ref{fig:palmares_titres} illustre cette vue de palmarès.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.88\textwidth]{images/contenu/chapitre-4/palmares.png}
+    \caption{Analyse des palmarès des titres BRVM}
+    \label{fig:palmares_titres}
+\end{figure}
+
+\subsection{Liste des portefeuilles}
+
+La liste des portefeuilles permet au gestionnaire SGI de suivre les
+portefeuilles dont il a la charge. Le système présente les informations utiles :
+client titulaire, valorisation, profil de risque, composition par actif et
+historique des ordres. Cette fonctionnalité complète le tableau de bord SGI par
+une lecture plus détaillée et illustre le \textbf{suivi des achats et ventes
+d'actions et d'obligations}. La figure~\ref{fig:liste_portefeuilles} montre la
+liste des portefeuilles suivis par la SGI.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.88\textwidth]{images/contenu/chapitre-4/liste_portefeuilles.png}
+    \caption{Liste des portefeuilles gérés par la SGI}
+    \label{fig:liste_portefeuilles}
+\end{figure}
+
+% ─────────────────────────────────────────────────
+\section{Synthèse de la couverture des objectifs}
+
+Le tableau~\ref{tab:couverture_objectifs} met en correspondance les objectifs du
+chapitre~1 avec les principaux résultats livrés.
+
+\begin{table}[H]
+\centering
+\caption{Synthèse des objectifs couverts par la réalisation}
+\label{tab:couverture_objectifs}
+\footnotesize
+\renewcommand{\arraystretch}{1.12}
+\begin{tabular}{|p{0.55cm}|p{5.0cm}|p{7.05cm}|}
+\hline
+\textbf{N°} & \textbf{Objectif spécifique} & \textbf{Résultat obtenu} \\ \hline
+1 & Tableau de bord Relation Client & Indicateurs de pilotage adaptés aux utilisateurs. \\ \hline
+2 & Gestion des prospects & Pipeline commercial et scoring IA. \\ \hline
+3 & Vue 360° client & Informations, comptes et produits regroupés. \\ \hline
+4 & Dématérialisation des documents & Consultation et téléchargement de documents, dont le RIB. \\ \hline
+5 & Suivi KYC du client & Consultation des données KYC/AML. \\ \hline
+6 & Détection du churn par l'IA & Estimation du risque de départ client. \\ \hline
+7 & Consultation des portefeuilles & Valorisation et composition des portefeuilles SGI. \\ \hline
+8 & Cotations et passage d'ordres & Cotations, palmarès et suivi des opérations. \\ \hline
+\end{tabular}
+\end{table}
+
+% ─────────────────────────────────────────────────
+\section{Analyse critique de la réalisation}
+
+Cette section résume les acquis, les limites et les évolutions prioritaires de
+la réalisation, en lien avec la qualité logicielle \cite{iso25010} et la
+sécurité applicative \cite{owasp_asvs}.
+
+\subsection{Points forts}
+
+\begin{description}[itemsep=1pt,parsep=0pt]
+    \item[Centralisation métier.] I-SIB regroupe Relation Client et SGI dans une
+          même plateforme, ce qui améliore l'accès aux informations utiles et la
+          continuité des parcours.
+    \item[Architecture modulaire.] Le découpage en microservices
+          \cite{fowler_microservices} facilite l'évolution progressive de la
+          solution et l'isolation des responsabilités.
+    \item[Sécurité et traçabilité.] Keycloak \cite{keycloak_docs} centralise
+          l'authentification, tandis que RabbitMQ \cite{rabbitmq_docs} soutient
+          la traçabilité des actions sensibles.
+    \item[Apport de l'IA.] Le scoring des prospects, la détection du churn et la
+          segmentation apportent une aide à la priorisation et à la décision.
+\end{description}
+
+\subsection{Points faibles et limites}
+
+\begin{description}[itemsep=1pt,parsep=0pt]
+    \item[Périmètre encore incomplet.] La plateforme couvre un ensemble large de
+          besoins, mais toutes les fonctionnalités et toutes les connexions avec
+          les autres modules bancaires ne sont pas encore finalisées.
+    \item[Données réelles à intégrer.] Les cotations BRVM restent simulées et
+          doivent être remplacées par un flux officiel pour une exploitation
+          opérationnelle.
+    \item[IA à consolider.] Les modèles devront être évalués et améliorés avec
+          des données réelles afin de confirmer leur pertinence métier.
+    \item[Mise en production à préparer.] Les tests, l'audit de sécurité et
+          l'observabilité avec Zipkin \cite{zipkin_docs} doivent être renforcés
+          avant un déploiement réel.
+\end{description}
+
+\subsection{Perspectives d'amélioration}
+
+Les perspectives prioritaires concernent l'achèvement des intégrations avec les
+autres modules, le raccordement à un flux BRVM officiel, l'amélioration de l'IA,
+l'industrialisation du déploiement et l'ouverture mobile.
+
+% ─────────────────────────────────────────────────
+\section*{Conclusion}
+\phantomsection
+\addcontentsline{toc}{section}{Conclusion}
+
+Ce chapitre a présenté les principaux résultats de la réalisation à travers les
+interfaces des modules Relation Client et SGI. Les écrans illustrés montrent la
+prise en charge du suivi client, de la gestion des prospects, des portefeuilles,
+des cotations et de l'analyse des titres. La synthèse des objectifs confirme
+ainsi la couverture du périmètre retenu. L'analyse critique souligne néanmoins
+que l'intégration complète avec les autres modules, l'accès à des données
+réelles et la préparation de la mise en production constituent les prochaines
+étapes nécessaires à la consolidation d'I-SIB.

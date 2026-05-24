@@ -5,6 +5,7 @@
 \markboth{Présentations générales}{Présentations générales}
 
 \section*{Introduction}
+\phantomsection
 \addcontentsline{toc}{section}{Introduction}
 
 Ce chapitre présente l'entreprise dans laquelle nous avons effectué notre stage ainsi que le
@@ -40,11 +41,11 @@ INNOV4AFRICA se distingue par sa capacité à concevoir et à déployer des inno
 L'entreprise intervient dans plusieurs secteurs stratégiques du numérique. Ses principaux domaines d'activités se présentent comme suit.
 
 \begin{itemize}
-    \item \textbf{Services publics numériques} : e-Government, e-Santé et e-Éducation .
-    \item \textbf{soutien à l'innovation} : incubation de start-ups et gestion de fonds d'investissement .
-    \item \textbf{solutions technologiques avancées} : cybersécurité, paiements électroniques, biométrie et transfert de technologies .
-    \item \textbf{développement numérique} : conception de logiciels, applications mobiles, télécommunications et e-commerce .
-    \item \textbf{communication et accompagnement} : solutions médias, systèmes d'identification, développement d'affaires et partenariats stratégiques.
+    \item \textbf{Services publics numériques} : e-Government, e-Santé et e-Éducation.
+    \item \textbf{Soutien à l'innovation} : incubation de start-ups et gestion de fonds d'investissement.
+    \item \textbf{Solutions technologiques avancées} : cybersécurité, paiements électroniques, biométrie et transfert de technologies.
+    \item \textbf{Développement numérique} : conception de logiciels, applications mobiles, télécommunications et e-commerce.
+    \item \textbf{Communication et accompagnement} : solutions médias, systèmes d'identification, développement d'affaires et partenariats stratégiques.
 \end{itemize}
 \vspace{0.5cm}
 % ─────────────────────────────────────────────────
@@ -135,8 +136,8 @@ produits d'investissement depuis une plateforme unique.
 Les objectifs spécifiques du projet se déclinent en plusieurs axes. Ils sont présentés ci-dessous.
 
 \begin{itemize}
-  \item Mettre en place un tableau de bord Relation Client adapté au client.
-        au chargé de clientèle et à la direction.
+  \item Mettre en place un tableau de bord Relation Client adapté aux profils
+        utilisateurs : client, chargé de clientèle et direction.
   \item Gérer les prospects avec un pipeline de conversion et un score
         automatique.
   \item Construire une vue 360° client incluant identité, KYC, comptes,
@@ -144,12 +145,12 @@ Les objectifs spécifiques du projet se déclinent en plusieurs axes. Ils sont p
   \item Dématérialiser les documents et courriers administratifs liés au cycle
         de vie client.
   \item Intégrer les exigences KYC dans les processus de suivi client.
-  \item Proposer des recommandations de produits et détecter les risques de
-        perte de clients grâce à l'IA.
-  \item Permettre la consultation des portefeuilles, de la performance, des
-        gains/pertes et de la répartition des actifs.
-  \item Gérer les cotations, le passage d'ordres et le suivi des achats ou
-        ventes d'actions et d'obligations.
+  \item Détecter les risques de perte de clients grâce à l'intelligence
+        artificielle.
+  \item Permettre la consultation des portefeuilles, de leur valorisation et de
+        leur composition.
+  \item Gérer les cotations, l'analyse des titres, le passage d'ordres et le
+        suivi des achats ou ventes d'actions et d'obligations.
 \end{itemize}
 \newpage
 
@@ -159,7 +160,7 @@ Les objectifs spécifiques du projet se déclinent en plusieurs axes. Ils sont p
 
 La démarche retenue est itérative et incrémentale. Ce choix est cohérent avec
 la nature du projet. Dans cette section, nous allons présenter les différentes
-caractéristiques du projet .
+caractéristiques du projet.
 
 % ─────────────────────────────────────────────────
 
@@ -177,7 +178,7 @@ Par ailleurs, plusieurs risques ont été identifiés, tels que la mauvaise comp
 
 Les résultats attendus incluent la mise en place d'un parcours client unifié, une amélioration significative de la connaissance client, un accès intégré aux services d'investissement, ainsi qu'un meilleur pilotage des activités métier. Le projet vise également à réduire les ruptures applicatives entre les différents systèmes.
 
-Compte tenu de ces éléments, une approche entièrement figée dès le départ apparaît inadaptée. En effet, le client n'est pas toujours en mesure de définir précisément l'ensemble des fonctionnalités attendues dès le début du projet. Ainsi, les modules \textbf{RELATION CLIENT} et \textbf{SGI} seront développés de manière itérative, à travers des versions successives, avec une validation régulière des priorités, des parcours utilisateurs et des règles métiers.
+Compte tenu de ces éléments, une approche entièrement figée dès le départ apparaît inadaptée. En effet, le client n'est pas toujours en mesure de définir précisément l'ensemble des fonctionnalités attendues dès le début du projet. Ainsi, les modules \textbf{RELATION CLIENT} et \textbf{SGI} ont été développés de manière itérative, à travers des versions successives, avec une validation régulière des priorités, des parcours utilisateurs et des règles métiers.
 
 
 % ─────────────────────────────────────────────────
@@ -216,15 +217,14 @@ présentées ci-dessous.
 Les éléments suivants illustrent comment les caractéristiques du projet ont orienté directement la démarche méthodologique retenue.
 
 \begin{enumerate}
-  \item \textbf{Produit bancaire sensible  :} I-SIB manipule des données clients sensibles (conformité, transactions, investissements) qui exigent rigueur et traçabilité. La démarche prévoit des validations fréquentes, des tests rigoureux, une documentation continue et un contrôle strict des accès;
-  \item \textbf{architecture microservices : } Chaque module doit rester autonome tout en communiquant via API, ce qui impose une intégration maîtrisée. Le travail est découpé par responsabilités métiers et les composants sont intégrés progressivement pour limiter les dépendances;
-  \item \textbf{usage de l'IA : } Les modèles d'IA intégrés doivent être utiles, explicables et alignés sur les besoins métiers réels. Un prototypage itératif permet d'évaluer les résultats, d'ajuster les modèles et d'assurer une amélioration continue ;
-  \item \textbf{client aux besoins évolutifs : } Les attentes du client peuvent évoluer après visualisation des écrans ou des scénarios fonctionnels. Une démarche itérative avec des retours réguliers permet d'ajuster le backlog et de prioriser les fonctionnalités pertinentes;
-  \item \textbf{validation itérative :} recueillir les retours, ajuster le
-        backlog et prioriser les fonctionnalités;
-  \item \textbf{cadre d'alternance : } La contribution progresse avec l'apprentissage, les validations encadrantes et les contraintes de l'équipe projet. Des livrables intermédiaires structurent la progression, permettent l'encadrement et favorisent la montée en responsabilité.
+  \item \textbf{Produit bancaire sensible :} I-SIB manipule des données clients sensibles (conformité, transactions, investissements) qui exigent rigueur et traçabilité. La démarche prévoit des validations fréquentes, des tests rigoureux, une documentation continue et un contrôle strict des accès ;
+  \item \textbf{Architecture microservices :} chaque module doit rester autonome tout en communiquant via API, ce qui impose une intégration maîtrisée. Le travail est découpé par responsabilités métiers et les composants sont intégrés progressivement pour limiter les dépendances ;
+  \item \textbf{Usage de l'IA :} les modèles d'IA intégrés doivent être utiles, explicables et alignés sur les besoins métiers réels. Un prototypage itératif permet d'évaluer les résultats, d'ajuster les modèles et d'assurer une amélioration continue ;
+  \item \textbf{Besoins évolutifs :} les attentes peuvent évoluer après visualisation des écrans ou des scénarios fonctionnels. Des retours réguliers permettent d'ajuster le backlog et de prioriser les fonctionnalités pertinentes ;
+  \item \textbf{Cadre d'alternance :} la contribution progresse avec l'apprentissage, les validations encadrantes et les contraintes de l'équipe projet. Des livrables intermédiaires structurent la progression et favorisent la montée en responsabilité.
 \end{enumerate}
 \section*{Conclusion}
+\phantomsection
 \addcontentsline{toc}{section}{Conclusion}
 
 Ce chapitre a permis de poser les bases du projet en présentant le contexte global dans lequel il s'inscrit, ainsi que les enjeux liés à la transformation des systèmes d'information bancaires. La description de la structure d'accueil a offert une meilleure compréhension de l'environnement professionnel, tandis que l'analyse du sujet a mis en évidence les limites des solutions existantes et la nécessité d'une approche intégrée.
