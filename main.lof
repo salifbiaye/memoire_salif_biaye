@@ -9,7 +9,7 @@
 \contentsline {figure}{\numberline {3.3}{\ignorespaces Workflow de création d'un prospect avec scoring IA}}{19}{figure.caption.29}%
 \contentsline {figure}{\numberline {3.4}{\ignorespaces Workflow de conversion d'un prospect en client}}{19}{figure.caption.30}%
 \contentsline {figure}{\numberline {3.5}{\ignorespaces Vue de conception de la fonctionnalité Gestion des prospects}}{21}{figure.caption.32}%
-\contentsline {figure}{\numberline {3.6}{\ignorespaces Architecture cible de déploiement -- quatre ensembles Docker Compose}}{22}{figure.caption.33}%
+\contentsline {figure}{\numberline {3.6}{\ignorespaces Déploiement de validation d'I-SIB sur un VPS AlmaLinux}}{22}{figure.caption.33}%
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {4.1}{\ignorespaces Interface Portefeuille Clients du chargé de clientèle}}{24}{figure.caption.36}%
 \contentsline {figure}{\numberline {4.2}{\ignorespaces Consultation des comptes bancaires d'un client}}{24}{figure.caption.37}%
@@ -19,3 +19,14 @@
 \contentsline {figure}{\numberline {4.6}{\ignorespaces Liste des cotations BRVM et fiche d'un instrument}}{27}{figure.caption.41}%
 \contentsline {figure}{\numberline {4.7}{\ignorespaces Analyse des palmarès des titres BRVM}}{27}{figure.caption.42}%
 \contentsline {figure}{\numberline {4.8}{\ignorespaces Liste des portefeuilles gérés par la SGI}}{28}{figure.caption.43}%
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {A.1}{\ignorespaces Consultation du portefeuille côté client}}{32}{figure.caption.50}%
+\contentsline {figure}{\numberline {A.2}{\ignorespaces Fiche détaillée d'un titre coté sur la BRVM}}{33}{figure.caption.51}%
+\contentsline {figure}{\numberline {A.3}{\ignorespaces Formulaire de saisie d'un ordre d'investissement}}{33}{figure.caption.52}%
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {B.1}{\ignorespaces Résultat de la création d'un prospect avec score IA}}{34}{figure.B.1}%
+\contentsline {figure}{\numberline {B.2}{\ignorespaces Résultat de la conversion d'un prospect en client}}{35}{figure.B.2}%
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {C.1}{\ignorespaces Conteneurs Docker actifs sur le VPS AlmaLinux}}{36}{figure.C.1}%
+\contentsline {figure}{\numberline {C.2}{\ignorespaces Services enregistrés dans le registre Eureka}}{37}{figure.C.2}%
+\contentsline {figure}{\numberline {C.3}{\ignorespaces Historique de redéploiement sur le serveur de validation}}{37}{figure.C.3}%

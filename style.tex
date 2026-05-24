@@ -6,6 +6,7 @@
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage[french]{babel}
+\frenchsetup{SmallCapsFigTabCaptions=false}
 \usepackage{tabularx}
 \usepackage{enumitem}
 
@@ -116,6 +117,27 @@
   right=5pt,
   top=5pt,
   bottom=5pt
+}
+
+\newtcolorbox{emplacementcapture}[1]{
+  enhanced,
+  colback=gray!3,
+  colframe=grisCadre,
+  boxrule=0.8pt,
+  arc=2pt,
+  height=5.2cm,
+  valign=center,
+  halign=center,
+  fonttitle=\bfseries\small,
+  title={#1},
+  coltitle=bleuESP,
+  colbacktitle=gray!8,
+  boxed title style={boxrule=0pt,arc=0pt},
+  attach boxed title to top center={yshift=-2mm},
+  left=8pt,
+  right=8pt,
+  top=12pt,
+  bottom=8pt
 }
 
 %=====================================================

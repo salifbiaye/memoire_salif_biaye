@@ -286,12 +286,13 @@ passerelle, service métier, données, intelligence artificielle et audit.
 % ─────────────────────────────────────────────────
 \section{Architecture de déploiement}
 
-La vue logique de l'architecture est complétée par une architecture cible de
-déploiement. Cette seconde lecture présente l'organisation envisagée des
-composants, la séparation des réseaux Docker et l'ordre de démarrage des
-services lors d'une future exploitation.
+La vue logique de l'architecture est complétée par l'architecture mise en place
+dans l'environnement de validation. La plateforme actuellement réalisée est
+déployée sur un VPS AlmaLinux afin de tester progressivement les services
+disponibles à mesure que le périmètre fonctionnel évolue. Cette seconde lecture
+présente l'organisation des composants et la séparation des réseaux Docker.
 
-Dans cette cible de déploiement, la plateforme I-SIB est décomposée en quatre
+Dans cet environnement de test, la plateforme I-SIB est décomposée en quatre
 ensembles Docker Compose indépendants. Cette organisation suit une logique de
 séparation des responsabilités au niveau infrastructurel : chaque ensemble peut
 être redémarré, mis à jour ou répliqué sans impacter les autres. Les ensembles
@@ -315,7 +316,7 @@ réseaux.
 \begin{figure}[H]
     \centering
     \includegraphics[width=\dimexpr\textwidth-2\fboxsep-2\fboxrule\relax]{images/contenu/chapitre-3/architecture_deploiement.png}
-    \caption{Architecture cible de déploiement -- quatre ensembles Docker Compose}
+    \caption{Déploiement de validation d'I-SIB sur un VPS AlmaLinux}
     \label{fig:architecture_deploiement}
 \end{figure}
 
@@ -324,17 +325,22 @@ doit être lancé en premier afin de rendre disponibles la passerelle, Eureka,
 Keycloak, Redis et RabbitMQ. L'ensemble \texttt{core} peut ensuite démarrer les
 services de base. L'ensemble \texttt{module} vient après, car il dépend des
 référentiels et de l'infrastructure. Enfin, l'ensemble \texttt{office} est lancé
-en dernier pour exposer les interfaces utilisateur.
+en dernier pour exposer les interfaces utilisateur. À chaque évolution validée,
+la chaîne de livraison permet de reconstruire et de redéployer les composants
+concernés sur le VPS. Ce déploiement sert à la validation progressive de la
+solution ; il ne constitue pas encore un environnement de production. Les
+captures techniques permettant de documenter cette validation sont prévues en
+annexe~\ref{ann:validation-deploiement}.
 % ─────────────────────────────────────────────────
 \section*{Conclusion}
 \phantomsection
 \addcontentsline{toc}{section}{Conclusion}
 
 Ce chapitre a présenté la conception de la solution I-SIB pour les modules
-Relation Client et SGI. L'architecture microservices retenue répond directement
-aux exigences non fonctionnelles identifiées au chapitre précédent, en garantissant
-la sécurité par une passerelle centralisée et Keycloak, la performance par Redis
-et l'indexation, la traçabilité par le bus d'événements RabbitMQ et la portabilité
-par Docker. Les technologies choisies sont matures, adaptées aux contraintes
-bancaires et cohérentes entre elles. Le chapitre suivant présentera la réalisation
-fonctionnelle obtenue et les limites restant à traiter avant une exploitation complète.
+Relation Client et SGI. L'architecture microservices retenue vise à répondre aux
+exigences non fonctionnelles identifiées au chapitre précédent : la passerelle
+et Keycloak soutiennent le contrôle des accès, Redis et l'indexation facilitent
+la réactivité, RabbitMQ contribue à la traçabilité et Docker rend le déploiement
+reproductible. Le déploiement de validation sur VPS AlmaLinux fournit un cadre
+concret de vérification progressive. Le chapitre suivant présente les résultats
+fonctionnels obtenus et les limites restant à traiter avant une mise en production.

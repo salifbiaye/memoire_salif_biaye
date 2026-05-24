@@ -1,0 +1,197 @@
+% ─────────────────────────────────────────────────
+%  ANNEXES
+% ─────────────────────────────────────────────────
+\appendix
+\renewcommand{\chaptername}{Annexe}
+
+% ═════════════════════════════════════════════════
+%  ANNEXE A – Interfaces complémentaires du parcours client SGI
+% ═════════════════════════════════════════════════
+\chapter{Interfaces complémentaires du parcours client SGI}
+\markboth{Interfaces complémentaires SGI}{Interfaces complémentaires SGI}
+\label{ann:interfaces-client-sgi}
+
+Le chapitre~4 a présenté les résultats du module SGI du point de vue du
+gestionnaire (tableau de bord, cotations, portefeuilles). La présente annexe
+complète cette vue en illustrant le parcours tel qu'il est vécu par le
+\textbf{client} : depuis la consultation de son portefeuille jusqu'à la
+soumission d'un ordre d'investissement.
+
+Trois interfaces sont présentées :
+\begin{itemize}
+  \item la consultation du portefeuille client
+        (figure~\ref{fig:ann_portefeuille_client}) ;
+  \item la fiche détaillée d'un titre coté sur la BRVM
+        (figure~\ref{fig:ann_detail_titre}) ;
+  \item le formulaire de saisie d'un ordre d'achat ou de vente
+        (figure~\ref{fig:ann_passage_ordre}).
+\end{itemize}
+
+\section{Consultation du portefeuille}
+
+L'interface de consultation du portefeuille permet au client de visualiser la
+composition et la valorisation de ses actifs avant toute décision
+d'investissement. Elle affiche les positions détenues, leur cours actuel et
+la performance associée.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.88\textwidth]{images/annexes/annexe_a/annexe_a_portefeuille_client.png}
+    \caption{Consultation du portefeuille côté client}
+    \label{fig:ann_portefeuille_client}
+\end{figure}
+
+\section{Consultation d'un titre}
+
+La fiche d'un titre présente les informations nécessaires à la prise de
+décision : cours actuel, variation, volume échangé, historique de cotation
+et caractéristiques de l'instrument. Cette vue précède la saisie d'un ordre.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.88\textwidth]{images/annexes/annexe_a/annexe_a_detail_titre_client.png}
+    \caption{Fiche détaillée d'un titre coté sur la BRVM}
+    \label{fig:ann_detail_titre}
+\end{figure}
+
+\section{Saisie d'un ordre}
+
+Le formulaire de passage d'ordre permet au client de soumettre une intention
+d'achat ou de vente sur un instrument coté. Une fois soumis, l'ordre suit le
+workflow de traitement décrit au chapitre~2 : saisie, prise en charge par
+l'équipe SGI, validation puis exécution.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.88\textwidth]{images/annexes/annexe_a/annexe_a_passage_ordre_client.png}
+    \caption{Formulaire de saisie d'un ordre d'investissement}
+    \label{fig:ann_passage_ordre}
+\end{figure}
+
+% ═════════════════════════════════════════════════
+%  ANNEXE B – Pièces de recette fonctionnelle
+% ═════════════════════════════════════════════════
+\chapter{Pièces de recette fonctionnelle}
+\markboth{Pièces de recette fonctionnelle}{Pièces de recette fonctionnelle}
+\label{ann:recette-fonctionnelle}
+
+Cette annexe regroupe les preuves de tests fonctionnels réalisés sur le
+parcours de gestion des prospects, fonctionnalité détaillée aux chapitres~2
+et~3. L'objectif est de montrer que les deux scénarios critiques du cycle
+commercial fonctionnent de bout en bout dans l'application déployée.
+
+Deux scénarios sont documentés :
+\begin{itemize}
+  \item la création d'un prospect avec calcul automatique du score IA
+        (figure~\ref{fig:recette_creation}) ;
+  \item la conversion d'un prospect en client avec segmentation ML, création
+        du compte et envoi de l'email de bienvenue
+        (figure~\ref{fig:recette_conversion}).
+\end{itemize}
+
+Le tableau~\ref{tab:pieces_recette_annexe} récapitule les résultats attendus
+pour chaque scénario.
+
+\begin{table}[H]
+\centering
+\caption{Scénarios de recette documentés}
+\label{tab:pieces_recette_annexe}
+\small
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{|p{4.5cm}|p{5.5cm}|p{4.0cm}|}
+\hline
+\textbf{Scénario} & \textbf{Résultat attendu} & \textbf{Référence} \\ \hline
+Création d'un prospect &
+Prospect enregistré avec score initial calculé par le modèle IA &
+Figure~\ref{fig:recette_creation} \\ \hline
+Conversion d'un prospect en client &
+Client créé, prospect marqué converti et email de bienvenue envoyé &
+Figure~\ref{fig:recette_conversion} \\ \hline
+\end{tabular}
+\end{table}
+
+\section{Création d'un prospect}
+
+La création d'un prospect déclenche automatiquement le calcul du score IA via
+le service de scoring. Le chargé de clientèle peut alors visualiser le score
+et la probabilité de conversion attribués au nouveau prospect directement
+depuis l'interface du pipeline commercial.
+
+\begin{emplacementcapture}{Capture à insérer : \texttt{annexe\_b\_creation\_prospect.png}}
+Résultat observé après création d'un prospect et calcul du score.
+\end{emplacementcapture}
+\captionof{figure}{Résultat de la création d'un prospect avec score IA}
+\label{fig:recette_creation}
+
+\section{Conversion d'un prospect en client}
+
+La conversion déclenche le workflow complet décrit au chapitre~3 : appel au
+service de segmentation ML pour déterminer le type de client, création du
+compte via le Customer Service, initialisation du scoring churn par le
+Dashboard Service et envoi d'un email de bienvenue contenant les identifiants
+de connexion. La figure~\ref{fig:recette_conversion} montre le résultat
+observé à l'issue de ce processus.
+
+\begin{emplacementcapture}{Capture à insérer : \texttt{annexe\_b\_conversion\_prospect.png}}
+Résultat observé après conversion d'un prospect qualifié en client.
+\end{emplacementcapture}
+\captionof{figure}{Résultat de la conversion d'un prospect en client}
+\label{fig:recette_conversion}
+
+% ═════════════════════════════════════════════════
+%  ANNEXE C – Validation du déploiement sur VPS AlmaLinux
+% ═════════════════════════════════════════════════
+\chapter{Validation du déploiement sur VPS AlmaLinux}
+\markboth{Validation du déploiement}{Validation du déploiement}
+\label{ann:validation-deploiement}
+
+Cette annexe rassemble les preuves visuelles de l'environnement de validation
+mentionné au chapitre~3. Elle permet de vérifier que l'ensemble des
+composants de la plateforme I-SIB sont correctement déployés et opérationnels
+sur le serveur AlmaLinux utilisé pour la recette.
+
+Trois éléments sont documentés :
+\begin{itemize}
+  \item l'état des conteneurs Docker via l'interface Portainer
+        (figure~\ref{fig:ann_portainer}) ;
+  \item l'enregistrement des microservices dans le registre Eureka
+        (figure~\ref{fig:ann_eureka}) ;
+  \item l'historique de redéploiement attestant du processus itératif
+        de mise à jour (figure~\ref{fig:ann_redeploiement}).
+\end{itemize}
+
+\section{Services conteneurisés}
+
+La vue Portainer permet de vérifier que l'ensemble des conteneurs Docker des
+quatre stacks (infra, core, module, office) sont actifs et opérationnels sur
+le serveur de validation.
+
+\begin{emplacementcapture}{Capture à insérer : \texttt{annexe\_c\_portainer\_conteneurs.png}}
+Vue Portainer des conteneurs I-SIB actifs sur le VPS AlmaLinux.
+\end{emplacementcapture}
+\captionof{figure}{Conteneurs Docker actifs sur le VPS AlmaLinux}
+\label{fig:ann_portainer}
+
+\section{Enregistrement des services}
+
+Le tableau Eureka confirme que chaque microservice est correctement enregistré
+auprès du registre de services et prêt à recevoir des requêtes acheminées par
+la passerelle API.
+
+\begin{emplacementcapture}{Capture à insérer : \texttt{annexe\_c\_eureka\_services.png}}
+Tableau Eureka montrant les services applicatifs enregistrés et disponibles.
+\end{emplacementcapture}
+\captionof{figure}{Services enregistrés dans le registre Eureka}
+\label{fig:ann_eureka}
+
+\section{Redéploiement progressif}
+
+L'historique de redéploiement atteste du processus itératif de mise à jour des
+services sur le serveur de validation, en cohérence avec la démarche
+incrémentale adoptée pour le projet.
+
+\begin{emplacementcapture}{Capture à insérer : \texttt{annexe\_c\_pipeline\_redeploiement.png}}
+Historique attestant d'un redéploiement de validation sur le VPS.
+\end{emplacementcapture}
+\captionof{figure}{Historique de redéploiement sur le serveur de validation}
+\label{fig:ann_redeploiement}

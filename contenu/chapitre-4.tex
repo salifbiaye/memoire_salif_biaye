@@ -191,11 +191,19 @@ liste des portefeuilles suivis par la SGI.
     \label{fig:liste_portefeuilles}
 \end{figure}
 
+Les interfaces complémentaires du parcours client SGI, notamment la
+consultation d'un portefeuille et la saisie d'un ordre, sont prévues en
+annexe~\ref{ann:interfaces-client-sgi} afin de compléter les résultats
+présentés dans ce chapitre.
+
 % ─────────────────────────────────────────────────
 \section{Synthèse de la couverture des objectifs}
 
-Le tableau~\ref{tab:couverture_objectifs} met en correspondance les objectifs du
-chapitre~1 avec les principaux résultats livrés.
+Les sections précédentes ont présenté les fonctionnalités réalisées à travers
+les interfaces des modules Relation Client et SGI. Il convient à présent de
+rapprocher ces résultats des objectifs spécifiques définis au chapitre~1, afin
+de vérifier la couverture du périmètre retenu pour le projet. Le
+tableau~\ref{tab:couverture_objectifs} synthétise cette correspondance.
 
 \begin{table}[H]
 \centering
@@ -216,7 +224,7 @@ chapitre~1 avec les principaux résultats livrés.
 8 & Cotations et passage d'ordres & Cotations, palmarès et suivi des opérations. \\ \hline
 \end{tabular}
 \end{table}
-
+\newpage{}
 % ─────────────────────────────────────────────────
 \section{Analyse critique de la réalisation}
 
@@ -251,16 +259,17 @@ sécurité applicative \cite{owasp_asvs}.
           opérationnelle.
     \item[IA à consolider.] Les modèles devront être évalués et améliorés avec
           des données réelles afin de confirmer leur pertinence métier.
-    \item[Mise en production à préparer.] Les tests, l'audit de sécurité et
-          l'observabilité avec Zipkin \cite{zipkin_docs} doivent être renforcés
-          avant un déploiement réel.
+    \item[Passage en production à préparer.] L'environnement de validation
+          présenté au chapitre précédent permet les tests actuels, mais l'audit
+          de sécurité et l'observabilité avec Zipkin \cite{zipkin_docs} doivent
+          être renforcés avant une mise en production.
 \end{description}
 
 \subsection{Perspectives d'amélioration}
 
 Les perspectives prioritaires concernent l'achèvement des intégrations avec les
 autres modules, le raccordement à un flux BRVM officiel, l'amélioration de l'IA,
-l'industrialisation du déploiement et l'ouverture mobile.
+l'industrialisation du passage en production et l'ouverture mobile.
 
 % ─────────────────────────────────────────────────
 \section*{Conclusion}
@@ -273,5 +282,5 @@ prise en charge du suivi client, de la gestion des prospects, des portefeuilles,
 des cotations et de l'analyse des titres. La synthèse des objectifs confirme
 ainsi la couverture du périmètre retenu. L'analyse critique souligne néanmoins
 que l'intégration complète avec les autres modules, l'accès à des données
-réelles et la préparation de la mise en production constituent les prochaines
-étapes nécessaires à la consolidation d'I-SIB.
+réelles et la préparation de la production constituent les prochaines étapes de
+consolidation d'I-SIB.

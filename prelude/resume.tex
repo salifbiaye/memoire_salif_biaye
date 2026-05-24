@@ -25,16 +25,17 @@ microservices et une logique \textit{full API}. Les technologies utilisées incl
 Spring Boot, Next.js, PostgreSQL, Redis, RabbitMQ et Keycloak pour la sécurité.
 L'architecture conçue intègre des modules clés~: vue 360 client, gestion KYC,
 pipeline de conversion des prospects, suivi des portefeuilles-titres, cotations
-BRVM, passage d'ordres et prédictions de marché par intelligence artificielle.
+BRVM, passage d'ordres, scoring des prospects et détection du churn par
+intelligence artificielle.
 
 \hspace{0.5cm}
-La plateforme réalisée permet non seulement une gestion unifiée et traçable des
-interactions clients, mais facilite également la prise de décision grâce à des
-tableaux de bord adaptés aux profils chargé de clientèle, client et direction.
-Les résultats obtenus démontrent une amélioration significative de la cohérence
-des données clients, une intégration fluide des services d'investissement et une
-réduction des ruptures applicatives, avec un impact positif sur l'expérience
-client et le pilotage métier.
+La plateforme réalisée met à disposition des interfaces de suivi client, de
+gestion des prospects et d'opérations SGI, complétées par des fonctions d'aide
+à la décision. Une instance de validation a été déployée sur un VPS AlmaLinux
+au moyen de conteneurs Docker ; elle permet de vérifier progressivement les
+services réalisés au fil des redéploiements. La solution reste évolutive :
+l'intégration complète des modules, l'exploitation de données de marché réelles
+et la préparation de la production constituent les prolongements du travail.
 
 \vspace{0.8cm}
 \noindent
@@ -70,15 +71,16 @@ architecture and a full API design philosophy. Technologies used include Spring
 Boot, Next.js, PostgreSQL, Redis, RabbitMQ, and Keycloak for security. The
 designed architecture integrates key modules~: 360-degree customer view, KYC
 management, prospect conversion pipeline, securities portfolio tracking, BRVM
-market quotes, order management, and AI-driven market predictions.
+market quotes, order management, prospect scoring, and AI-assisted churn
+detection.
 
 \hspace{0.5cm}
-The implemented platform enables not only unified and traceable customer
-interaction management, but also facilitates decision-making through dashboards
-tailored to relationship manager, client, and management profiles. The results
-obtained demonstrate a significant improvement in customer data consistency,
-seamless integration of investment services, and a reduction in application
-gaps, with a positive impact on customer experience and business management.
+The implemented platform provides interfaces for customer monitoring, prospect
+management, and SGI operations, complemented by decision-support functions. A
+validation instance has been deployed on an AlmaLinux VPS using Docker
+containers, allowing the implemented services to be verified progressively
+through successive redeployments. The solution remains evolving: complete module
+integration, real market data usage, and production preparation are future work.
 
 \vspace{0.8cm}
 \noindent

@@ -62,10 +62,21 @@
 \contentsline {subsection}{\numberline {II.3}Analyse et palmarès des titres}{27}{subsection.4.2.3}%
 \contentsline {subsection}{\numberline {II.4}Liste des portefeuilles}{27}{subsection.4.2.4}%
 \contentsline {section}{\numberline {III}Synthèse de la couverture des objectifs}{28}{section.4.3}%
-\contentsline {section}{\numberline {IV}Analyse critique de la réalisation}{28}{section.4.4}%
-\contentsline {subsection}{\numberline {IV.1}Points forts}{28}{subsection.4.4.1}%
+\contentsline {section}{\numberline {IV}Analyse critique de la réalisation}{29}{section.4.4}%
+\contentsline {subsection}{\numberline {IV.1}Points forts}{29}{subsection.4.4.1}%
 \contentsline {subsection}{\numberline {IV.2}Points faibles et limites}{29}{subsection.4.4.2}%
 \contentsline {subsection}{\numberline {IV.3}Perspectives d'amélioration}{29}{subsection.4.4.3}%
 \contentsline {section}{Conclusion}{29}{section*.45}%
 \contentsline {chapter}{Conclusion générale}{30}{section*.47}%
 \contentsline {chapter}{Références bibliographiques}{31}{section*.49}%
+\contentsline {chapter}{\numberline {A}Interfaces complémentaires du parcours client SGI}{32}{appendix.A}%
+\contentsline {section}{\numberline {I}Consultation du portefeuille}{32}{section.A.1}%
+\contentsline {section}{\numberline {II}Consultation d'un titre}{32}{section.A.2}%
+\contentsline {section}{\numberline {III}Saisie d'un ordre}{33}{section.A.3}%
+\contentsline {chapter}{\numberline {B}Pièces de recette fonctionnelle}{34}{appendix.B}%
+\contentsline {section}{\numberline {I}Création d'un prospect}{34}{section.B.1}%
+\contentsline {section}{\numberline {II}Conversion d'un prospect en client}{34}{section.B.2}%
+\contentsline {chapter}{\numberline {C}Validation du déploiement sur VPS AlmaLinux}{36}{appendix.C}%
+\contentsline {section}{\numberline {I}Services conteneurisés}{36}{section.C.1}%
+\contentsline {section}{\numberline {II}Enregistrement des services}{36}{section.C.2}%
+\contentsline {section}{\numberline {III}Redéploiement progressif}{37}{section.C.3}%
