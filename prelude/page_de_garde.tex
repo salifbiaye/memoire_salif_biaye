@@ -1,0 +1,121 @@
+
+%=====================================================
+%  ██  PAGE DE GARDE  ██
+%=====================================================
+\thispagestyle{empty}
+
+\AddToShipoutPictureBG{%
+  \begin{tikzpicture}[remember picture, overlay]
+    % Ligne verticale gauche (bleue)
+    \draw[bleuESP, line width=3pt]
+      ($(current page.north west)+(1.35cm,-1cm)$)
+      -- ($(current page.south west)+(1.35cm,1.6cm)$);
+    % Ligne verticale droite (orange)
+    \draw[orangeESP, line width=2pt]
+      ($(current page.north east)+(-1.1cm,-1cm)$)
+      -- ($(current page.south east)+(-1.1cm,1.6cm)$);
+    % Petit carré bas gauche
+    \draw[bleuESP, line width=2pt]
+      ($(current page.south west)+(1.1cm,1.6cm)$)
+      rectangle ++(0.5cm,0.5cm);
+    % Petit carré bas droite
+    \draw[orangeESP, line width=2pt]
+      ($(current page.south east)+(-1.35cm,1.6cm)$)
+      rectangle ++(0.5cm,0.5cm);
+  \end{tikzpicture}%
+}
+
+\begin{center}
+  \oldincludegraphics[height=1.4cm]{images/page-de-garde/drapeau_senegal.png}\\[0.15cm]
+  % Titre université avec soulignement rouge (style image 2)
+  {\Large\bfseries UNIVERSITE CHEIKH ANTA DIOP DE DAKAR}\\[-0.05cm]
+  {\color{red}\rule{\linewidth}{1.5pt}}\\[0.2cm]
+  \oldincludegraphics[height=2cm]{images/page-de-garde/logo_ucad.png}\\[0.05cm]
+  {\small\bfseries ECOLE SUPERIEURE POLYTECHNIQUE}\\[0.15cm]
+  {\color{bleuESP}\rule{\linewidth}{1pt}}\\[0.1cm]
+  {\color{bleuESP}\bfseries\itshape\uline{DEPARTEMENT GENIE INFORMATIQUE}}\\[0.05cm]
+  {\color{bleuESP}\rule{\linewidth}{1pt}}\\[0.2cm]
+
+  % Boîte MEMOIRE — contour bleu, fond blanc (style image 2)
+  \begin{tcolorbox}[
+    enhanced,
+    arc=4pt, boxrule=1.5pt,
+    left=6pt, right=6pt, top=5pt, bottom=5pt,
+    colback=white, colframe=bleuESP,
+    halign=center,
+  ]
+    \textbf{\large MEMOIRE DE FIN DE CYCLE}\\[0.15cm]
+    \textbf{Pour l'obtention du :}\\[0.1cm]
+    \textbf{DIPLOME D'INGENIEUR DE CONCEPTION EN GENIE INFORMATIQUE}\\[0.1cm]
+    \textbf{OPTION : INFORMATIQUE}
+  \end{tcolorbox}
+  \vspace{0.2cm}
+
+  % Boîte SUJET — contour bleu, fond blanc, texte noir (style image 2)
+  \begin{tcolorbox}[
+    enhanced,
+    arc=4pt,
+    boxrule=1.5pt,
+    colback=white,
+    colframe=bleuESP,
+    left=6pt,
+    right=6pt,
+    top=6pt,
+    bottom=6pt,
+    halign=center,
+  ]
+    {\large\bfseries\uline{SUJET :}}\\[0.2cm]
+    {\itshape
+    Conception d'un système d'information : cas du module de gestion de la relation client
+    et des sociétés de gestion et d'intermédiation (SGI).}
+  \end{tcolorbox}
+
+
+\begin{boitestage}
+    \noindent
+    \textbf{Lieu de stage :} \textcolor{orangeESP}{\textbf{INNOV4AFRICA}}
+    \hfill
+    \textbf{Période de stage :} \textcolor{orangeESP}{\textbf{15/08/2025 -- 30/06/2026}}
+    \vspace{0.05cm}
+    \begin{center}
+        \oldincludegraphics[height=3.2cm]{images/page-de-garde/innov4africa_logo.jpg}
+    \end{center}
+    \vspace{-0.35cm}
+\end{boitestage}
+\end{center}
+
+
+
+\noindent\textbf{Présenté et soutenu par:}\quad Salif Biaye\\[0.15cm]
+\textbf{\quad PROMOTION: 2026 \;--\; DATE DE SOUTENANCE: xx/07/2026}
+
+ 
+
+\textcolor{bleuESP}{\textbf{MEMBRES DU JURY:}}
+
+\vspace{0.15cm}
+\noindent
+\begin{tabular}{@{}p{4.5cm} p{5cm} p{4.5cm}@{}}
+  \textcolor{bleuESP}{PRESIDENT}            & & \\[2pt]
+  \textcolor{bleuESP}{RAPPORTEUR}           & & \\[2pt]
+  \textcolor{bleuESP}{EXAMINATEUR}          & & \\[2pt]
+  \textcolor{bleuESP}{ENCADRANT}            & Pr Ibrahima Fall  & Maître de conférences \\[2pt]
+  \textcolor{bleuESP}{MAITRE DE STAGE}      & Khassoum WONE     & Ingénieur Informatique \\[2pt]
+  \textcolor{bleuESP}{DIRECTEUR DE MEMOIRE} & Pr Ibrahima Fall  & Maître de conférences \\
+\end{tabular}
+
+\vfill
+
+\begin{tcolorbox}[
+  enhanced,
+  arc=4pt, boxrule=1.5pt,
+  left=6pt, right=6pt, top=5pt, bottom=5pt,
+  colback=white, colframe=bleuESP,
+  halign=center,
+]
+  
+  \small Année universitaire : 2025 - 2026\\[0.1cm]
+  
+\end{tcolorbox}
+
+\cleardoublepage

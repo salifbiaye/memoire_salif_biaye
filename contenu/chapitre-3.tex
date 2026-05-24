@@ -1,0 +1,333 @@
+% ─────────────────────────────────────────────────
+%  CHAPITRE 3 – CONCEPTION DE LA SOLUTION
+% ─────────────────────────────────────────────────
+\chapter{Conception de la solution}
+\markboth{Conception de la solution}{Conception de la solution}
+
+\section*{Introduction}
+\addcontentsline{toc}{section}{Introduction}
+
+Ce chapitre traduit les besoins identifiés au chapitre précédent en une solution
+structurée et implémentable. Il présente d'abord les principes retenus pour organiser
+la plateforme, puis l'architecture fonctionnelle de I-SIB, les choix technologiques,
+l'architecture technique, la conception détaillée de la fonctionnalité Gestion des
+prospects et enfin l'architecture de déploiement.
+
+% ─────────────────────────────────────────────────
+\section{Principes de conception de l'architecture}
+
+En prenant en compte les besoins fonctionnels et non fonctionnels identifiés au chapitre
+précédent, la conception de la solution doit s'appuyer sur des principes d'organisation
+clairs. Ces principes permettent d'orienter les choix d'architecture afin de répondre aux
+contraintes du contexte bancaire, notamment la sécurité des accès, la protection des
+données, la traçabilité des opérations et l'évolution progressive des modules métier.
+Cette section présente donc les principes retenus, qui serviront de base à l'architecture
+globale de la plateforme.
+
+Les principaux principes retenus sont les suivants :
+
+\begin{itemize}
+    \item \textbf{Séparer les responsabilités} afin que chaque module conserve un périmètre
+          clair, notamment pour la Relation Client, la SGI, l'authentification, l'audit et
+          les services transversaux.
+    \item \textbf{Centraliser les accès} pour éviter que les applications clientes ne
+          communiquent directement avec les services internes.
+    \item \textbf{Protéger les données sensibles} en limitant les accès selon les rôles et
+          en isolant les informations manipulées par les différents services.
+    \item \textbf{Assurer la traçabilité} des opérations importantes, en particulier les
+          actions liées au KYC, aux prospects, aux portefeuilles et aux ordres de bourse.
+    \item \textbf{Faciliter l'évolution du système} afin de pouvoir ajouter de nouveaux
+          modules ou de nouvelles fonctionnalités sans remettre en cause toute la
+          plateforme.
+    \item \textbf{Maintenir une expérience utilisateur cohérente} entre les interfaces
+          destinées aux clients et celles utilisées par les équipes internes.
+\end{itemize}
+
+Ces principes conduisent à retenir une architecture modulaire, organisée autour de blocs
+spécialisés qui communiquent entre eux de manière contrôlée.
+\newpage{}
+% ─────────────────────────────────────────────────
+\section{Architecture fonctionnelle de la solution}
+
+\subsection{Vue d'ensemble}
+
+La solution I-SIB repose sur une architecture microservices organisée en plusieurs couches. Les utilisateurs accèdent à la plateforme via deux interfaces web : un back-office pour les employés et un front-office pour les clients. Les requêtes passent par une passerelle API chargée de l’authentification et du routage vers les microservices concernés.
+
+L’architecture regroupe les interfaces utilisateur, les services métier ainsi que les composants techniques assurant la sécurité, le routage, le stockage des données, le cache, la messagerie et la traçabilité. La figure~\ref{fig:architecture_fonctionnelle} présente l’organisation fonctionnelle de ces composants et leurs interactions.
+
+
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{images/contenu/chapitre-3/architecture_fonctionnelle.png}
+    \caption{Architecture fonctionnelle de la plateforme I-SIB}
+    \label{fig:architecture_fonctionnelle}
+\end{figure}
+
+Comme le montre la figure~\ref{fig:architecture_fonctionnelle}, la passerelle API joue
+un rôle central : elle constitue la frontière entre les applications web et les
+microservices internes. Les services métier restent ainsi isolés de tout accès
+direct depuis l'extérieur.
+\newpage{}
+\subsection{Description des blocs}
+
+La figure~\ref{fig:architecture_fonctionnelle} est organisée autour de plusieurs blocs
+complémentaires, chacun correspondant à une responsabilité précise dans la plateforme.
+
+\begin{description}
+    \item[Front-office] Espace destiné aux clients de la banque. Il permet de consulter
+          les comptes, les transactions, les portefeuilles et les ordres de bourse depuis
+          une interface en libre-service.
+
+    \item[Back-office] Espace réservé aux employés. Il regroupe les modules utilisés par
+          les chargés de clientèle, les gestionnaires SGI, les équipes d'agence, la
+          trésorerie, la comptabilité et l'administration.
+
+    \item[Authentification et accès] Bloc chargé de contrôler l'identité des utilisateurs,
+          les rôles, les sessions et les règles de sécurité avant l'accès aux services.
+
+    \item[Passerelle de communication] Point d'entrée central entre les interfaces et les
+          microservices. Elle sécurise les échanges, valide les requêtes, applique les
+          contrôles d'accès et route les demandes vers les services concernés.
+
+    \item[Registre des services] Annuaire permettant de localiser les services actifs et
+          de suivre leur état. Il facilite la communication entre la passerelle et les
+          microservices internes.
+
+    \item[Services métier] Ensemble des microservices qui portent les fonctionnalités de
+          la plateforme : Relation Client, SGI, utilisateurs, comptes et transactions,
+          agence, comptabilité, trésorerie et crédit.
+
+    \item[Audit service] Bloc dédié à la journalisation des événements, à l'historique des
+          actions sensibles et au suivi de la conformité réglementaire.
+
+    \item[Données et services de support] Ensemble des composants de support aux
+          traitements métier : base de données, cache système, messagerie asynchrone et
+          stockage objet des fichiers et documents.
+
+    \item[Services IA et analytique] Bloc qui regroupe l'assistant intelligent, l'analyse
+          prédictive et la segmentation client afin d'apporter une aide à la décision.
+
+    \item[Observabilité et déploiement] Ensemble des éléments qui facilitent l'exploitation
+          de la plateforme : logs, traçabilité des requêtes, intégration continue,
+          déploiement automatisé et orchestration des conteneurs.
+\end{description}
+\newpage{}
+\section{Choix des outils et technologies}
+
+Les choix technologiques traduisent l'architecture fonctionnelle en composants
+réalisables. Ils ont été retenus en fonction des responsabilités à couvrir :
+interfaces web, services backend, sécurité, routage, persistance des données,
+messagerie, cache, stockage documentaire, traçabilité et déploiement. Cette section
+présente les principaux outils utilisés et précise le rôle de chacun dans la plateforme
+I-SIB. La section suivante montrera comment ces technologies s'assemblent concrètement
+dans l'architecture technique de la solution.
+
+Les interfaces web de la plateforme sont développées avec \textbf{Next.js 16} et
+\textbf{TypeScript}, afin de construire des applications front-office et back-office
+modernes, maintenables et adaptées aux différents profils utilisateurs. Le backend repose
+sur \textbf{Spring Boot 3.5}, utilisé comme socle de développement des microservices
+métier. L'accès aux services est centralisé par \textbf{Spring Cloud Gateway}, qui assure
+le routage, les filtres de sécurité et la résilience. La gestion des identités et des
+rôles est confiée à \textbf{Keycloak}, tandis que \textbf{Netflix Eureka} permet la
+découverte dynamique des services.
+
+Pour la persistance, \textbf{PostgreSQL} est retenu comme système de gestion de bases de
+données relationnel, avec une base isolée par microservice afin de préserver l'autonomie
+des données. \textbf{Redis} est utilisé pour le cache et le contrôle de débit, tandis que
+\textbf{RabbitMQ} prend en charge la communication asynchrone entre les services,
+notamment pour les événements d'audit. Les documents clients et les pièces KYC sont
+stockés dans \textbf{MinIO}, qui permet de gérer un stockage objet sécurisé.
+
+Les fonctionnalités d'intelligence artificielle s'appuient notamment sur \textbf{Rasa}
+pour le chatbot conversationnel et sur des services spécialisés de scoring ou de
+segmentation. La traçabilité technique est assurée par \textbf{Zipkin}, qui permet de
+suivre les appels entre microservices. Enfin, \textbf{Docker} et \textbf{Docker Compose}
+facilitent la conteneurisation, l'organisation des composants et leur déploiement dans des
+stacks séparées.
+
+\section{Architecture technique de la solution}
+
+Après le choix des outils, l'architecture technique précise la manière dont ces
+technologies sont assemblées pour faire fonctionner la plateforme. Elle met en relation
+les applications web, la passerelle API, les microservices, les bases de données et les
+composants transversaux nécessaires à la sécurité, à la communication et à
+l'observabilité.
+
+Dans cette architecture, les applications front-office et back-office consomment les API
+exposées par la passerelle. Celle-ci constitue le point d'entrée technique vers les
+services internes et applique les règles de sécurité et de routage. Les microservices
+métier, dont le service Relation Client et le service SGI, disposent chacun de leur propre
+persistance et communiquent avec les services transversaux selon les besoins de leurs
+traitements.
+
+Cette organisation permet de matérialiser les principes définis précédemment tout en
+préparant le passage vers la conception détaillée des fonctionnalités. La
+figure~\ref{fig:architecture_technique} montre les liens entre les technologies retenues
+et les composants applicatifs.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{images/contenu/chapitre-3/architecture_technique.png}
+    \caption{Architecture technique de la plateforme I-SIB}
+    \label{fig:architecture_technique}
+\end{figure}
+
+% ─────────────────────────────────────────────────
+\section{Conception détaillée}
+
+Après la présentation des architectures fonctionnelle et technique, cette section détaille
+le fonctionnement interne d'une fonctionnalité représentative du module Relation Client :
+la \textbf{Gestion des prospects}. Ce choix permet d'illustrer, de manière ciblée, le
+cheminement d'une demande depuis l'interface back-office jusqu'aux services backend, en
+passant par la passerelle API, le service CRM, la base de données, le scoring par
+intelligence artificielle et la traçabilité.
+
+La section présente successivement le périmètre de la fonctionnalité retenue, le workflow
+de traitement illustré par deux figures portant sur la création d'un prospect et sa
+conversion en client, une synthèse des principales API exposées sous forme de tableau,
+puis une vue de conception montrant les artefacts mobilisés et leurs relations.
+
+\subsection{Périmètre de la fonctionnalité}
+
+La gestion des prospects couvre le suivi d'un contact commercial depuis son
+enregistrement jusqu'à sa qualification, sa conversion en client ou son abandon. L'acteur
+principal est le chargé de clientèle, qui consulte les prospects qui lui sont affectés,
+met à jour leur étape dans le pipeline, ajoute des interactions et planifie les relances.
+Le service CRM assure le traitement métier, tandis que les services transversaux
+interviennent pour le scoring, la persistance et l'audit.
+
+\subsection{Workflow de traitement}
+
+Le workflow de la gestion des prospects est présenté à travers deux opérations
+représentatives : la création d'un prospect et sa conversion en client. Ces deux cas
+permettent de montrer le cheminement d'une demande depuis le back-office jusqu'aux
+services backend, ainsi que l'intervention des services de scoring, de persistance et
+d'audit.
+
+La création d'un prospect commence par la saisie des informations dans la vue Prospects.
+La demande est transmise à la passerelle API, puis routée vers le service CRM. Celui-ci
+contrôle les informations reçues, persiste le prospect, sollicite le service de scoring IA
+et publie une trace d'audit. La figure~\ref{fig:workflow_creation_prospect} illustre ce
+premier scénario.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{images/contenu/chapitre-3/workflow_creation_prospect.png}
+    \caption{Workflow de création d'un prospect avec scoring IA}
+    \label{fig:workflow_creation_prospect}
+\end{figure}
+
+La conversion d'un prospect intervient lorsqu'un prospect qualifié doit devenir client.
+Le service CRM vérifie l'éligibilité du prospect, sollicite le service de segmentation,
+crée le compte client, initialise le scoring associé, déclenche l'envoi du courriel de
+bienvenue et historise l'opération. La figure~\ref{fig:workflow_conversion_prospect}
+présente ce second scénario.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{images/contenu/chapitre-3/workflow_conversion_prospect.png}
+    \caption{Workflow de conversion d'un prospect en client}
+    \label{fig:workflow_conversion_prospect}
+\end{figure}
+
+\subsection{Synthèse des API}
+
+Les opérations de la fonctionnalité sont exposées sous forme d'API REST sécurisées. Le
+tableau~\ref{tab:endpoints_prospect} présente une synthèse volontairement limitée aux
+endpoints les plus représentatifs.
+
+\begin{table}[H]
+\centering
+\caption{Synthèse des principales API de gestion des prospects}
+\label{tab:endpoints_prospect}
+\small
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{|p{1.7cm}|p{6.0cm}|p{5.5cm}|}
+\hline
+\textbf{Méthode} & \textbf{Chemin} & \textbf{Utilisation principale} \\ \hline
+POST   & \texttt{/api/crm/prospects}                  & Enregistrer un nouveau prospect \\ \hline
+GET    & \texttt{/api/crm/prospects/}\newline\texttt{my-prospects}     & Afficher les prospects du chargé connecté \\ \hline
+GET    & \texttt{/api/crm/prospects/\{id\}}           & Consulter la fiche détaillée d'un prospect \\ \hline
+PATCH  & \texttt{/api/crm/prospects/\{id\}}           & Mettre à jour les informations ou l'étape \\ \hline
+POST   & \texttt{/api/crm/prospects/\{id\}/}\newline\texttt{activities} & Ajouter une interaction ou une relance \\ \hline
+POST   & \texttt{/api/crm/prospects/\{id\}/}\newline\texttt{convert}   & Transformer un prospect qualifié en client \\ \hline
+\end{tabular}
+\end{table}
+
+\subsection{Vue de conception de la fonctionnalité}
+
+La vue de conception complète le workflow en montrant les artefacts applicatifs impliqués
+dans la fonctionnalité. Elle reprend les stéréotypes de Jacobson : les éléments
+\textit{boundary} représentent les interfaces, les éléments \textit{control} portent la
+coordination applicative, et les éléments \textit{entity} correspondent aux données métier
+manipulées par le système.
+
+La figure~\ref{fig:conception_gestion_prospects} présente cette vue de conception en
+mettant en relation les interfaces, les composants de contrôle et les entités métier de
+la fonctionnalité Gestion des prospects.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{images/contenu/chapitre-3/conception_gestion_prospects.png}
+    \caption{Vue de conception de la fonctionnalité Gestion des prospects}
+    \label{fig:conception_gestion_prospects}
+\end{figure}
+
+Ainsi, la conception détaillée de la gestion des prospects montre comment une
+fonctionnalité métier s'appuie sur les couches définies précédemment : interface,
+passerelle, service métier, données, intelligence artificielle et audit.
+
+% ─────────────────────────────────────────────────
+\section{Architecture de déploiement}
+
+La vue logique de l'architecture doit être complétée par une vue de déploiement.
+Cette seconde lecture montre comment les composants sont réellement organisés en
+production, comment les réseaux Docker sont séparés et dans quel ordre les services
+doivent être démarrés.
+
+En production, la plateforme I-SIB est décomposée en quatre stacks Docker Compose
+indépendants. Cette organisation suit une logique de séparation des responsabilités
+au niveau infrastructurel : chaque stack peut être redémarré, mis à jour ou
+répliqué sans impacter les autres. Les stacks \texttt{infra}, \texttt{core},
+\texttt{module} et \texttt{office} distinguent respectivement les services
+communs, les référentiels de base, les modules métier avancés et les interfaces
+utilisateur.
+
+Deux réseaux Docker structurent la communication entre les conteneurs. Le réseau
+\texttt{sib\_public} est réservé aux services accessibles depuis l'extérieur :
+la passerelle API et les trois applications web. Le réseau \texttt{sib\_internal}
+regroupe l'ensemble des microservices et des bases de données, totalement isolés
+de tout accès direct depuis l'extérieur. Seule la passerelle appartient aux deux
+réseaux simultanément, faisant office de frontière de sécurité.
+
+La figure~\ref{fig:architecture_deploiement} reprend cette organisation sous forme
+de schéma. Elle met en évidence la séparation entre les services exposés, les
+services internes et le rôle particulier de la passerelle API entre les deux
+réseaux.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{images/contenu/chapitre-3/architecture_deploiement.png}
+    \caption{Architecture de déploiement -- 4 stacks Docker Compose en production}
+    \label{fig:architecture_deploiement}
+\end{figure}
+
+Cette organisation impose un ordre de démarrage précis. La stack \texttt{infra}
+doit être lancée en premier afin de rendre disponibles la passerelle, Eureka,
+Keycloak, Redis et RabbitMQ. La stack \texttt{core} peut ensuite démarrer les
+services de base. La stack \texttt{module} vient après, car elle dépend des
+référentiels et de l'infrastructure. Enfin, la stack \texttt{office} est lancée
+en dernier pour exposer les interfaces utilisateur.
+% ─────────────────────────────────────────────────
+\section*{Conclusion}
+\addcontentsline{toc}{section}{Conclusion}
+
+Ce chapitre a présenté la conception de la solution I-SIB pour les modules
+Relation Client et SGI. L'architecture microservices retenue répond directement
+aux exigences non fonctionnelles identifiées au chapitre précédent, en garantissant
+la sécurité par une passerelle centralisée et Keycloak, la performance par Redis
+et l'indexation, la traçabilité par le bus d'événements RabbitMQ et la portabilité
+par Docker. Les technologies choisies sont matures, adaptées aux contraintes
+bancaires et cohérentes entre elles. Le chapitre suivant présentera la réalisation
+effective de cette architecture à travers les résultats d'implémentation obtenus.

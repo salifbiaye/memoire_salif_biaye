@@ -1,0 +1,35 @@
+\documentclass[a4paper,12pt]{report}
+\input{style}
+%=====================================================
+\begin{document}
+\input{prelude/page_de_garde}
+\input{prelude/page_de_garde}
+%=====================================================
+%  ██  PRÉLUDE  ██
+%  Numérotation romaine repart à i
+%=====================================================
+\pagenumbering{roman}
+\setcounter{page}{1}
+
+\input{prelude/dedicaces}
+\input{prelude/remerciements}
+\input{prelude/sigles_abreviations}
+\input{prelude/avant_propos}
+\input{prelude/resume}
+\input{prelude/liminaires}
+
+%=====================================================
+%  ██  CORPS DU MÉMOIRE  ██
+%  Numérotation arabe repart à 1
+%=====================================================
+\pagenumbering{arabic}
+\setcounter{page}{1}
+\input{contenu/introduction-generale}
+\input{contenu/chapitre-1}
+\input{contenu/chapitre-2}
+\input{contenu/chapitre-3}
+\input{contenu/chapitre-4}
+\input{contenu/conclusion-generale}
+
+
+\end{document}

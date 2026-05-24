@@ -1,0 +1,138 @@
+%=====================================================
+%  MÉMOIRE ESP / UCAD – STYLE COMPLET PROPRE
+%=====================================================
+
+%---------------- Encodage & langue ----------------
+\usepackage[utf8]{inputenc}
+\usepackage[french]{babel}
+\usepackage{tabularx}
+\usepackage{enumitem}
+
+%---------------- Mise en page ----------------
+\usepackage[a4paper,
+  top=1.5cm, bottom=1.5cm,
+  left=2.5cm, right=2cm]{geometry}
+
+%---------------- Couleurs ----------------
+\usepackage[dvipsnames,svgnames,x11names]{xcolor}
+
+\definecolor{bleuESP}{RGB}{0,32,96}
+\definecolor{orangeESP}{RGB}{192,80,77}
+\definecolor{grisCadre}{RGB}{210,210,210}
+
+%---------------- Graphiques ----------------
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{tikz}
+\usetikzlibrary{calc}
+
+%---------------- Typographie ----------------
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{ulem}
+\normalem
+
+%---------------- Table des matières ----------------
+\usepackage[titles]{tocloft}
+
+%=====================================================
+%  NOMS NATIFS → style chapter* automatique
+%=====================================================
+\renewcommand{\contentsname}{Table des matières}
+\renewcommand{\listfigurename}{Liste des figures}
+\renewcommand{\listtablename}{Liste des tableaux}
+
+%=====================================================
+%  TITRES CHAPITRES
+%=====================================================
+\usepackage{titlesec}
+\renewcommand{\thesection}{\Roman{section}}
+\renewcommand{\thesubsection}{\thesection.\arabic{subsection}}
+\setcounter{secnumdepth}{3}
+
+\titleformat{\chapter}[display]
+  {\bfseries\Huge\color{bleuESP}}
+  {\filleft\Large\chaptername\ \thechapter}
+  {1ex}
+  {\titlerule[1pt]\vspace{1ex}\filright}
+  [\vspace{1ex}\titlerule]
+
+\titlespacing*{\chapter}{0pt}{-10pt}{25pt}
+
+\titleformat{\section}
+  {\bfseries\Large\color{bleuESP}}
+  {\thesection}{1em}{}
+
+\titleformat{\subsection}
+  {\bfseries\normalsize\color{bleuESP}}
+  {\thesubsection}{1em}{}
+
+\titlespacing*{\section}{0pt}{10pt}{5pt}
+\titlespacing*{\subsection}{0pt}{8pt}{4pt}
+
+%=====================================================
+%  EN-TÊTES / PIEDS DE PAGE
+%=====================================================
+\usepackage{fancyhdr}
+
+\pagestyle{fancy}
+\fancyhf{}
+
+\renewcommand{\headrulewidth}{0.4pt}
+
+\fancyhead[L]{\small\textit{\leftmark}}
+\fancyhead[R]{\small\textit{ESP – UCAD}}
+\fancyfoot[C]{\thepage}
+
+%=====================================================
+%  BOÎTES (optionnel)
+%=====================================================
+\usepackage{tcolorbox}
+\tcbuselibrary{skins,breakable}
+
+\newtcolorbox{boitesujet}{
+  enhanced,
+  colback=white,
+  colframe=bleuESP,
+  boxrule=1pt,
+  arc=3pt,
+  left=5pt,
+  right=5pt,
+  top=5pt,
+  bottom=5pt
+}
+
+\newtcolorbox{boitestage}{
+  enhanced,
+  colback=white,
+  colframe=bleuESP,
+  boxrule=0.8pt,
+  arc=3pt,
+  left=5pt,
+  right=5pt,
+  top=5pt,
+  bottom=5pt
+}
+
+%=====================================================
+%  CADRE AUTOMATIQUE AUTOUR DES FIGURES
+%=====================================================
+\usepackage{caption}
+
+% Cadre gris clair autour des images
+\setlength{\fboxsep}{6pt}      % espace entre image et cadre
+\setlength{\fboxrule}{0.8pt}   % épaisseur du cadre
+
+% Encadrement automatique de toutes les figures
+\let\oldincludegraphics\includegraphics
+\renewcommand{\includegraphics}[2][]{%
+  \fcolorbox{grisCadre}{white}{\oldincludegraphics[#1]{#2}}%
+}
+
+% Style des légendes
+\captionsetup{
+  font=small,
+  labelfont=bf,
+  labelsep=period
+}
+

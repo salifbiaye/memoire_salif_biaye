@@ -1,0 +1,280 @@
+% ─────────────────────────────────────────────────
+%  CHAPITRE 2 – ANALYSE FONCTIONNELLE ET NON FONCTIONNELLE DES BESOINS
+% ─────────────────────────────────────────────────
+\chapter{Analyse fonctionnelle et non fonctionnelle des besoins}
+\markboth{Analyse fonctionnelle et non fonctionnelle des besoins}{Analyse fonctionnelle et non fonctionnelle des besoins}
+
+\section*{Introduction}
+\addcontentsline{toc}{section}{Introduction}
+
+Après la présentation du cadre général du projet, ce deuxième chapitre a pour objectif
+d'analyser les besoins auxquels doit répondre le futur système I-SIB dans le périmètre des
+modules Relation Client et SGI. Il s'agit de préciser les utilisateurs concernés, le rôle
+attendu du système, les fonctionnalités nécessaires et les exigences de qualité qui doivent
+guider la conception. Cette étape est essentielle, car elle permet de transformer la
+problématique générale en besoins concrets et exploitables pour la suite du projet.
+
+Le système futur doit résoudre une difficulté centrale : la séparation entre la gestion de
+la relation client et les services d'investissement. Dans de nombreux environnements, les
+informations clients, les interactions commerciales, les données KYC, les comptes bancaires,
+les portefeuilles-titres et les ordres de bourse sont traités dans des outils différents.
+Cette fragmentation entraîne une perte de visibilité pour les équipes internes, notamment
+les chargés de clientèle et les équipes SGI, ainsi qu'une dégradation de l'expérience
+client. L'analyse suivante vise donc à définir une solution capable de centraliser et
+d'unifier ces informations.
+
+% ─────────────────────────────────────────────────
+\section{Rôle du système et acteurs}
+
+Le rôle principal du système futur est d'offrir une plateforme bancaire intelligente qui
+centralise la connaissance client et intègre les services SGI dans un même environnement.
+Il doit organiser l'information de façon à assurer une continuité entre les parcours
+bancaires et les parcours d'investissement, en répondant aux attentes spécifiques de chaque
+type d'utilisateur.
+
+Trois acteurs principaux ont été identifiés dans le périmètre de ce chapitre. Leurs
+objectifs sont distincts mais complémentaires, et leur coexistence dans un même système
+justifie la nécessité d'une architecture unifiée.
+
+Le \textbf{client} est l'utilisateur final des services bancaires et d'investissement. Il
+est au centre du dispositif : le système doit lui permettre d'accéder à ses informations
+personnelles, à ses comptes, à ses produits bancaires et à son portefeuille
+d'investissement. Il doit également pouvoir suivre la performance de ses actifs, consulter
+les cotations et soumettre des demandes d'achat ou de vente de titres sans sortir de
+l'écosystème bancaire.
+
+Le \textbf{chargé de clientèle} est un utilisateur interne chargé du suivi commercial et
+de l'accompagnement des clients. Il attend du système une vue complète sur chaque client,
+la possibilité de suivre les prospects dans un pipeline structuré, de recevoir des alertes
+pertinentes, de prioriser ses actions commerciales et de proposer des produits adaptés à
+chaque profil.
+
+L'\textbf{équipe SGI} est un utilisateur interne spécialisé dans les opérations sur titres
+et la gestion de portefeuille. Elle attend du système la capacité de superviser les
+portefeuilles clients, de traiter les ordres de bourse, d'analyser les performances et
+d'exploiter les cotations pour accompagner les décisions d'investissement.
+
+Ainsi, le système futur constitue un point de convergence entre deux dimensions : la
+relation client et l'investissement. Il doit garantir que chaque acteur accède uniquement
+aux informations et aux actions correspondant à son rôle, tout en assurant la cohérence
+globale des données manipulées.
+
+% ─────────────────────────────────────────────────
+\section{Fonctionnalités du système}
+
+Le système I-SIB est structuré autour de deux modules fonctionnels complémentaires. Le
+module \textbf{Relation Client} est dédié à la centralisation de la connaissance client et
+au pilotage commercial. Le module \textbf{SGI} (Société de Gestion et d'Intermédiation)
+couvre les services d'investissement, du suivi de portefeuille au traitement des ordres de
+bourse. Afin de concentrer l'analyse sur le périmètre prioritaire du projet, la présente
+section retient une fonctionnalité principale par module. Le module Relation Client est
+analysé à travers la gestion des prospects, tandis que le module SGI est analysé à travers
+le passage d'ordres.
+
+% ─────────────────────────────────────────────────
+\subsection{Module Relation Client}
+
+Le module Relation Client regroupe l'ensemble des fonctionnalités permettant de centraliser
+la connaissance client, de structurer le suivi commercial, d'assurer la conformité
+réglementaire et de tracer les échanges. Dans le cadre de ce chapitre, la fonctionnalité
+retenue pour ce module est la \textbf{gestion des prospects}, car elle représente le coeur
+du processus commercial et permet de suivre la transformation d'un contact en client.
+
+% ─────────────────────────────────────────────────
+\subsubsection{Gestion des prospects}
+
+La gestion des prospects structure le processus commercial en organisant le suivi des
+contacts dans un pipeline de conversion à cinq étapes, de la prise de contact initiale
+jusqu'à la transformation en client. La fiche~\ref{tab:rc_prospects} en présente la
+description détaillée.
+
+\begin{table}[H]
+\centering
+\caption{Fiche descriptive -- Gestion des prospects}
+\label{tab:rc_prospects}
+\renewcommand{\arraystretch}{1.5}
+\begin{tabular}{|>{\bfseries}p{3.8cm}|p{10.5cm}|}
+\hline
+Identifiant        & FRC-01 \\ \hline
+Acteurs            & Chargé de clientèle \\ \hline
+Préconditions      &
+\begin{minipage}[t]{\linewidth}\vspace{2pt}
+\begin{itemize}[leftmargin=*,topsep=0pt,itemsep=1pt,parsep=0pt]
+    \item L'utilisateur est authentifié avec le rôle \textit{chargé de clientèle}
+    \item Le module de gestion des prospects est actif et accessible
+\end{itemize}
+\vspace{2pt}\end{minipage} \\ \hline
+Scénario nominal   &
+\begin{minipage}[t]{\linewidth}\vspace{2pt}
+\begin{enumerate}[leftmargin=*,topsep=0pt,itemsep=2pt,parsep=0pt]
+    \item Le chargé de clientèle accède à la liste des prospects qui lui sont assignés
+    \item Le système affiche les prospects avec leur étape courante dans le pipeline
+          et leur score de conversion
+    \item Le chargé sélectionne un prospect et consulte sa fiche
+    \item Il met à jour l'étape du pipeline selon l'avancement commercial
+          (\textit{Nouveau} $\rightarrow$ \textit{Contacté} $\rightarrow$
+          \textit{Qualifié} $\rightarrow$ \textit{En négociation} $\rightarrow$
+          \textit{Converti})
+    \item Le système soumet la demande de recalcul du score à l'API
+          d'intelligence artificielle
+    \item Le nouveau score est calculé et affiché sur la fiche du prospect
+    \item Le chargé enregistre une note ou planifie une action de relance
+\end{enumerate}
+\vspace{2pt}\end{minipage} \\ \hline
+Scénario alternatif &
+\begin{minipage}[t]{\linewidth}\vspace{2pt}
+\textbf{A1 -- Création d'un nouveau prospect :} le chargé saisit les informations
+d'un nouveau contact ; le système l'enregistre avec le statut \textit{Nouveau} et
+calcule un score initial via l'API de scoring
+
+\medskip
+\textbf{A2 -- Score de conversion faible :} le système signale visuellement les
+prospects à faible probabilité de conversion ; le chargé peut les archiver ou
+planifier une relance différée
+\vspace{2pt}\end{minipage} \\ \hline
+Scénario d'exception &
+\textbf{E1 -- API de scoring indisponible :} le score ne peut être recalculé ;
+le système affiche un avertissement et conserve le dernier score connu avec
+la mention \textit{``non actualisé''} \\ \hline
+Postconditions     & Le pipeline est mis à jour ; le chargé de clientèle dispose
+                     d'une liste de relances priorisée selon les scores de
+                     conversion calculés \\ \hline
+\end{tabular}
+\end{table}
+
+La figure~\ref{fig:rc_prospects} représente le déroulement de cette fonctionnalité à
+travers un diagramme de séquence.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{images/contenu/chapitre-2/rc_seq_prospects.png}
+    \caption{Mise à jour du pipeline et recalcul du score de conversion d'un prospect}
+    \label{fig:rc_prospects}
+\end{figure}
+
+% ─────────────────────────────────────────────────
+\subsection{Module SGI}
+
+Le module SGI intègre les services d'investissement au sein de la plateforme I-SIB. Il
+permet au client d'initier des opérations sur titres et offre aux équipes SGI les outils
+nécessaires pour contrôler, valider et exécuter ces opérations. Dans le cadre de ce
+chapitre, la fonctionnalité retenue pour ce module est le \textbf{passage d'ordres}, car
+elle matérialise le lien opérationnel entre le client et la société de gestion et
+d'intermédiation.
+
+% ─────────────────────────────────────────────────
+\subsubsection{Passage d'ordres}
+
+Le passage d'ordres constitue le lien opérationnel entre le client et l'équipe SGI. Il
+permet au client d'exprimer une intention d'achat ou de vente, et à l'équipe SGI de
+contrôler, valider ou rejeter la demande selon les règles métier en vigueur. La
+fiche~\ref{tab:sgi_ordres} en présente la description détaillée.
+
+\begin{table}[H]
+\centering
+\caption{Fiche descriptive -- Passage d'ordres}
+\label{tab:sgi_ordres}
+\renewcommand{\arraystretch}{1.5}
+\begin{tabular}{|>{\bfseries}p{3.8cm}|p{10.5cm}|}
+\hline
+Identifiant        & FSGI-01 \\ \hline
+Acteurs            & Client, Équipe SGI \\ \hline
+Préconditions      &
+\begin{minipage}[t]{\linewidth}\vspace{2pt}
+\begin{itemize}[leftmargin=*,topsep=0pt,itemsep=1pt,parsep=0pt]
+    \item Le client est authentifié et son dossier KYC est complet
+    \item Le titre visé est référencé et disponible sur la plateforme
+    \item Le service de notification est opérationnel
+\end{itemize}
+\vspace{2pt}\end{minipage} \\ \hline
+Scénario nominal   &
+\begin{minipage}[t]{\linewidth}\vspace{2pt}
+\begin{enumerate}[leftmargin=*,topsep=0pt,itemsep=2pt,parsep=0pt]
+    \item Le client saisit un ordre en précisant le titre, le sens
+          (achat ou vente) et la quantité souhaitée
+    \item Le système enregistre l'ordre avec le statut \textit{Saisi}
+          et notifie l'équipe SGI
+    \item L'équipe SGI prend en charge l'ordre ; le statut passe à
+          \textit{En cours de traitement} ; le client est notifié
+    \item L'équipe SGI examine la demande et valide l'ordre ; le statut
+          passe à \textit{Validé} ; le client est notifié de la validation
+    \item L'ordre est exécuté sur le marché ; le statut passe à
+          \textit{Exécuté} ; le portefeuille du client est mis à jour
+    \item Le client reçoit une notification de confirmation d'exécution
+\end{enumerate}
+\vspace{2pt}\end{minipage} \\ \hline
+Scénario alternatif &
+\textbf{A1 -- Rejet de l'ordre :} si l'ordre ne respecte pas les règles métier
+(quantité insuffisante, titre non autorisé, dossier KYC incomplet), l'équipe SGI
+le rejette avec un motif explicite ; le statut passe à \textit{Rejeté} et le
+client est notifié avec le motif communiqué \\ \hline
+Scénario d'exception &
+\textbf{E1 -- Échec technique lors de l'exécution :} le système ne peut finaliser
+l'opération ; l'ordre est conservé au statut \textit{Validé} et une alerte est
+envoyée à l'équipe SGI pour un retraitement manuel \\ \hline
+Postconditions     & L'ordre est traité et archivé avec son statut final ;
+                     le portefeuille du client est mis à jour en cas
+                     d'exécution réussie \\ \hline
+\end{tabular}
+\end{table}
+
+La figure~\ref{fig:sgi_ordres} représente le déroulement de cette fonctionnalité à
+travers un diagramme de séquence.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{images/contenu/chapitre-2/sgi_seq_passage_ordres.png}
+    \caption{Circuit de soumission et de traitement d'un ordre de bourse du client à l'exécution}
+    \label{fig:sgi_ordres}
+\end{figure}
+\newpage{}
+% ─────────────────────────────────────────────────
+\section{Exigences non fonctionnelles}
+
+En plus des fonctionnalités, le système doit respecter plusieurs exigences non
+fonctionnelles. Ces exigences déterminent la qualité globale de la solution et sont
+particulièrement importantes dans un environnement bancaire. Elles encadrent la manière
+dont le système doit être conçu, sécurisé, maintenu et utilisé.
+
+\begin{description}
+    \item[Sécurité] Les accès doivent être contrôlés par rôle. Un client ne doit accéder
+          qu'à ses propres données, tandis que les utilisateurs internes doivent disposer
+          d'autorisations adaptées à leurs responsabilités.
+
+    \item[Confidentialité] Les données personnelles, KYC, bancaires et d'investissement
+          doivent être protégées contre tout accès non autorisé.
+
+    \item[Traçabilité] Les actions importantes doivent être historisées : consultation
+          sensible, modification de données, validation ou rejet d'ordre, et mise à jour
+          de statut.
+
+    \item[Disponibilité] Le système doit être accessible de manière continue afin de
+          permettre la consultation des informations et le suivi des opérations.
+
+    \item[Évolutivité] La solution doit pouvoir intégrer de nouvelles fonctionnalités et
+          de nouveaux modules sans remettre en cause l'ensemble de l'architecture existante.
+
+    \item[Ergonomie] Les interfaces doivent être simples, lisibles et adaptées aux profils
+          utilisateurs afin de réduire les erreurs et de faciliter l'adoption du système.
+\end{description}
+
+La sécurité et la confidentialité sont prioritaires, car le système manipule des
+informations sensibles. La traçabilité est indispensable pour reconstituer les opérations
+et répondre aux exigences de contrôle. L'ergonomie doit être prise en compte dès la
+conception, car un système complet mais difficile à utiliser risque d'être insuffisamment
+adopté.
+
+% ─────────────────────────────────────────────────
+\section*{Conclusion}
+\addcontentsline{toc}{section}{Conclusion}
+
+Ce chapitre a permis d'identifier les besoins fonctionnels et non fonctionnels du système
+I-SIB pour les modules Relation Client et SGI. Les fonctionnalités retenues couvrent la
+gestion des prospects pour le module Relation Client et le passage d'ordres pour le module
+SGI. Chaque fonctionnalité a été détaillée à travers une fiche textuelle structurée et
+illustrée par un diagramme de séquence. Ces besoins s'accompagnent
+d'exigences essentielles en matière de sécurité, de confidentialité, de performance et de
+traçabilité.
+
+Cette analyse constitue la base de la conception fonctionnelle et technique du système,
+présentée dans le chapitre suivant.
