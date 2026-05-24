@@ -22,7 +22,7 @@ clairs. Ces principes permettent d'orienter les choix d'architecture afin de ré
 contraintes du contexte bancaire, notamment la sécurité des accès, la protection des
 données, la traçabilité des opérations et l'évolution progressive des modules métier.
 Cette section présente donc les principes retenus, qui serviront de base à l'architecture
-globale de la plateforme.
+globale de la plateforme \cite{iso25010,owasp_asvs}.
 
 Les principaux principes retenus sont les suivants :
 
@@ -44,7 +44,7 @@ Les principaux principes retenus sont les suivants :
 \end{itemize}
 
 Ces principes conduisent à retenir une architecture modulaire, organisée autour de blocs
-spécialisés qui communiquent entre eux de manière contrôlée.
+spécialisés qui communiquent entre eux de manière contrôlée \cite{fowler_microservices}.
 \newpage{}
 % ─────────────────────────────────────────────────
 \section{Architecture fonctionnelle de la solution}
@@ -123,26 +123,29 @@ présente les principaux outils utilisés et précise le rôle de chacun dans la
 I-SIB. La section suivante montrera comment ces technologies s'assemblent concrètement
 dans l'architecture technique de la solution.
 
-Les interfaces web de la plateforme sont développées avec \textbf{Next.js 16} et
-\textbf{TypeScript}, afin de construire des applications front-office et back-office
+Les interfaces web de la plateforme sont développées avec \textbf{Next.js 16}
+\cite{nextjs_docs} et \textbf{TypeScript} \cite{typescript_docs}, afin de construire des applications front-office et back-office
 modernes, maintenables et adaptées aux différents profils utilisateurs. Le backend repose
-sur \textbf{Spring Boot 3.5}, utilisé comme socle de développement des microservices
-métier. L'accès aux services est centralisé par \textbf{Spring Cloud Gateway}, qui assure
+sur \textbf{Spring Boot 3.5} \cite{spring_boot_docs}, utilisé comme socle de développement des microservices
+métier. L'accès aux services est centralisé par \textbf{Spring Cloud Gateway}
+\cite{spring_gateway_docs}, qui assure
 le routage, les filtres de sécurité et la résilience. La gestion des identités et des
-rôles est confiée à \textbf{Keycloak}, tandis que \textbf{Netflix Eureka} permet la
-découverte dynamique des services.
+rôles est confiée à \textbf{Keycloak} \cite{keycloak_docs}, tandis que
+\textbf{Netflix Eureka} \cite{spring_eureka_docs} permet la découverte dynamique des services.
 
 Pour la persistance, \textbf{PostgreSQL} est retenu comme système de gestion de bases de
-données relationnel, avec une base isolée par microservice afin de préserver l'autonomie
-des données. \textbf{Redis} est utilisé pour le cache et le contrôle de débit, tandis que
-\textbf{RabbitMQ} prend en charge la communication asynchrone entre les services,
+données relationnel \cite{postgresql_docs}, avec une base isolée par microservice afin de préserver l'autonomie
+des données. \textbf{Redis} \cite{redis_docs} est utilisé pour le cache et le contrôle de débit, tandis que
+\textbf{RabbitMQ} \cite{rabbitmq_docs} prend en charge la communication asynchrone entre les services,
 notamment pour les événements d'audit. Les documents clients et les pièces KYC sont
-stockés dans \textbf{MinIO}, qui permet de gérer un stockage objet sécurisé.
+stockés dans \textbf{MinIO} \cite{minio_docs}, qui permet de gérer un stockage objet sécurisé.
 
 Les fonctionnalités d'intelligence artificielle s'appuient notamment sur \textbf{Rasa}
+\cite{rasa_docs}
 pour le chatbot conversationnel et sur des services spécialisés de scoring ou de
-segmentation. La traçabilité technique est assurée par \textbf{Zipkin}, qui permet de
-suivre les appels entre microservices. Enfin, \textbf{Docker} et \textbf{Docker Compose}
+segmentation. La traçabilité technique est assurée par \textbf{Zipkin} \cite{zipkin_docs}, qui permet de
+suivre les appels entre microservices. Enfin, \textbf{Docker} \cite{docker_docs} et
+\textbf{Docker Compose} \cite{docker_compose_docs}
 facilitent la conteneurisation, l'organisation des composants et leur déploiement dans des
 stacks séparées.
 
@@ -261,7 +264,7 @@ La vue de conception complète le workflow en montrant les artefacts applicatifs
 dans la fonctionnalité. Elle reprend les stéréotypes de Jacobson : les éléments
 \textit{boundary} représentent les interfaces, les éléments \textit{control} portent la
 coordination applicative, et les éléments \textit{entity} correspondent aux données métier
-manipulées par le système.
+manipulées par le système \cite{jacobson_oose}.
 
 La figure~\ref{fig:conception_gestion_prospects} présente cette vue de conception en
 mettant en relation les interfaces, les composants de contrôle et les entités métier de
@@ -292,7 +295,7 @@ au niveau infrastructurel : chaque stack peut être redémarré, mis à jour ou
 répliqué sans impacter les autres. Les stacks \texttt{infra}, \texttt{core},
 \texttt{module} et \texttt{office} distinguent respectivement les services
 communs, les référentiels de base, les modules métier avancés et les interfaces
-utilisateur.
+utilisateur \cite{docker_compose_docs}.
 
 Deux réseaux Docker structurent la communication entre les conteneurs. Le réseau
 \texttt{sib\_public} est réservé aux services accessibles depuis l'extérieur :

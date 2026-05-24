@@ -1,0 +1,12 @@
+\babel@toc {french}{}\relax 
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Mise à jour du pipeline et recalcul du score de conversion d'un prospect}}{10}{figure.caption.14}%
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Circuit de soumission et de traitement d'un ordre de bourse du client à l'exécution}}{12}{figure.caption.16}%
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Architecture fonctionnelle de la plateforme I-SIB}}{15}{figure.caption.18}%
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Architecture technique de la plateforme I-SIB}}{18}{figure.caption.19}%
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Workflow de création d'un prospect avec scoring IA}}{19}{figure.caption.20}%
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Workflow de conversion d'un prospect en client}}{19}{figure.caption.21}%
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Vue de conception de la fonctionnalité Gestion des prospects}}{21}{figure.caption.23}%
+\contentsline {figure}{\numberline {3.6}{\ignorespaces Architecture de déploiement -- 4 stacks Docker Compose en production}}{22}{figure.caption.24}%
