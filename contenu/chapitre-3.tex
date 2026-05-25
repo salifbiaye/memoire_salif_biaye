@@ -53,7 +53,7 @@ spécialisés qui communiquent entre eux de manière contrôlée \cite{fowler_mi
 
 \subsection{Vue d'ensemble}
 
-La solution I-SIB repose sur une architecture microservices organisée en plusieurs couches. Les utilisateurs accèdent à la plateforme via deux interfaces web : un back-office pour les employés et un front-office pour les clients. Les requêtes passent par une passerelle API chargée de l’authentification et du routage vers les microservices concernés.
+La solution I-SIB repose sur une architecture microservices organisée en plusieurs couches. Les utilisateurs accèdent à la plateforme via deux interfaces web : un back-office pour les employés et un front-office pour les clients. Les requêtes passent par une passerelle API chargée du routage et du contrôle des accès, en lien avec le service d'authentification.
 
 L’architecture regroupe les interfaces utilisateur, les services métier ainsi que les composants techniques assurant la sécurité, le routage, le stockage des données, le cache, la messagerie et la traçabilité. La figure~\ref{fig:architecture_fonctionnelle} présente l’organisation fonctionnelle de ces composants et leurs interactions.
 
@@ -149,7 +149,7 @@ segmentation. La traçabilité technique est assurée par \textbf{Zipkin} \cite{
 suivre les appels entre microservices. Enfin, \textbf{Docker} \cite{docker_docs} et
 \textbf{Docker Compose} \cite{docker_compose_docs}
 facilitent la conteneurisation, l'organisation des composants et leur déploiement dans des
-stacks séparées.
+ensembles Compose séparés.
 
 \section{Architecture technique de la solution}
 
@@ -199,8 +199,8 @@ La gestion des prospects couvre le suivi d'un contact commercial depuis son
 enregistrement jusqu'à sa qualification, sa conversion en client ou son abandon. L'acteur
 principal est le chargé de clientèle, qui consulte les prospects qui lui sont affectés,
 met à jour leur étape dans le pipeline, ajoute des interactions et planifie les relances.
-Le service CRM assure le traitement métier, tandis que les services transversaux
-interviennent pour le scoring, la persistance et l'audit.
+Le service CRM assure le traitement métier et la persistance associée, tandis
+que les services transversaux interviennent pour le scoring et l'audit.
 
 \subsection{Workflow de traitement}
 
@@ -223,7 +223,8 @@ premier scénario.
     \label{fig:workflow_creation_prospect}
 \end{figure}
 
-La conversion d'un prospect intervient lorsqu'un prospect qualifié doit devenir client.
+La conversion d'un prospect intervient lorsque le chargé de clientèle décide de
+transformer un prospect en client.
 Le service Relation Client, qui porte les traitements CRM, vérifie l'éligibilité du
 prospect, sollicite le service de segmentation,
 crée le compte client, initialise le scoring associé, déclenche l'envoi du courriel de
@@ -237,9 +238,7 @@ présente ce second scénario.
     \label{fig:workflow_conversion_prospect}
 \end{figure}
 
-La figure distingue le \textbf{Service CRM}, responsable des traitements
-métier, de la \textbf{Base de données CRM}, utilisée pour la persistance du
-prospect et de son état de conversion.
+La figure distingue le \textbf{Service CRM} de sa \textbf{Base de données CRM}.
 
 \subsection{Synthèse des API}
 
@@ -260,7 +259,7 @@ GET    & {\scriptsize\texttt{/api/crm/prospects/my-prospects}}     & Afficher le
 GET    & {\scriptsize\texttt{/api/crm/prospects/\{id\}}}           & Consulter la fiche détaillée d'un prospect \\ \hline
 PATCH  & {\scriptsize\texttt{/api/crm/prospects/\{id\}}}           & Mettre à jour le prospect ou son étape \\ \hline
 POST   & {\tiny\texttt{/api/crm/prospects/\{id\}/activities}} & Ajouter une interaction ou relance \\ \hline
-POST   & {\tiny\texttt{/api/crm/prospects/\{id\}/convert}}   & Convertir un prospect qualifié en client \\ \hline
+POST   & {\tiny\texttt{/api/crm/prospects/\{id\}/convert}}   & Convertir un prospect en client \\ \hline
 \end{tabularx}
 \end{table}
 
@@ -294,7 +293,7 @@ présente l'organisation des composants et la séparation des réseaux Docker.
 Dans cet environnement de test, la plateforme I-SIB est décomposée en quatre
 ensembles Docker Compose indépendants. Cette organisation suit une logique de
 séparation des responsabilités au niveau infrastructurel : chaque ensemble peut
-être redémarré, mis à jour ou répliqué sans impacter les autres. Les ensembles
+faire l'objet d'une mise à jour ciblée, en tenant compte de ses dépendances. Les ensembles
 \texttt{infra}, \texttt{core},
 \texttt{module} et \texttt{office} distinguent respectivement les services
 communs, les référentiels de base, les modules métier avancés et les interfaces
@@ -324,7 +323,7 @@ puis \texttt{core}, \texttt{module} et \texttt{office}. Après une évolution
 validée, la chaîne de livraison permet de reconstruire et de redéployer les
 composants concernés sur le VPS. Cet environnement sert à la validation
 progressive de la solution et reste distinct de la production ; ses preuves
-techniques sont prévues en annexe~\ref{ann:validation-deploiement}.
+techniques sont présentées en annexe~\ref{ann:validation-deploiement}.
 % ─────────────────────────────────────────────────
 \section*{Conclusion}
 \phantomsection
