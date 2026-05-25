@@ -37,6 +37,10 @@ comme preuves visuelles de leur mise en œuvre. Quatre fonctionnalités sont
 retenues pour structurer cette partie : le portefeuille clients, la gestion des
 comptes, l'agent IA de relation client et la gestion des prospects.
 
+Les données personnelles visibles dans les interfaces de cette section sont des
+données fictives de démonstration utilisées dans l'environnement de validation ;
+elles ne correspondent pas à des clients réels.
+
 \subsection{Portefeuille clients}
 
 La fonctionnalité de portefeuille clients centralise la connaissance client et
@@ -83,6 +87,9 @@ clientèle peut poser des questions sur les comptes, les transactions, les
 produits bancaires ou le statut KYC/AML. Cette fonctionnalité soutient surtout
 la \textbf{détection des risques par l'IA}, notamment le risque de churn, en
 rendant les informations utiles plus accessibles.
+Les extensions d'assistance commerciale éventuellement visibles dans l'interface
+restent en cours d'enrichissement ; le résultat retenu ici porte sur l'accès aux
+informations utiles et le suivi du risque de churn.
 La figure~\ref{fig:agent_ia_relations} montre l'intégration de cet assistant
 dans l'environnement de travail du chargé de clientèle.
 
@@ -126,6 +133,11 @@ conception, ces interfaces sont présentées ici comme des résultats
 complémentaires du module SGI, car elles soutiennent la prise de décision avant
 la soumission d'un ordre.
 
+Les interfaces de cotation et d'analyse sont fonctionnelles dans l'environnement
+de validation. Toutefois, faute d'accès actuel à un flux officiel de la BRVM,
+les valeurs de marché affichées sont des données fictives ou simulées destinées
+à valider le parcours applicatif, et non des cotations en temps réel.
+
 \subsection{Tableau de bord SGI}
 
 Le tableau de bord SGI fournit une vue synthétique de l'activité
@@ -143,36 +155,42 @@ figure~\ref{fig:dashboard_sgi} illustre ce tableau de bord de synthèse.
 
 \subsection{Cotations BRVM}
 
-La fonctionnalité de cotations permet de consulter les instruments cotés sur la
-BRVM, notamment les actions et les obligations \cite{brvm_actions}. Elle fournit les informations
-nécessaires à la prise de décision : ticker, dénomination, prix courant,
-variation et volume. Cette base de cotation sert de support au passage d'ordres.
+La fonctionnalité de cotations permet de consulter les instruments référencés
+sur la BRVM, notamment les actions et les obligations \cite{brvm_actions}. Elle
+fournit les informations nécessaires à la prise de décision : ticker,
+dénomination, prix courant, variation et volume. Dans la réalisation présentée,
+ces données sont simulées pour tester le parcours précédant le passage d'ordres.
 La figure~\ref{fig:cotations_brvm} présente l'écran de suivi des instruments de
 marché.
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.88\textwidth]{images/contenu/chapitre-4/cotations_brvm.png}
-    \caption{Liste des cotations BRVM et fiche d'un instrument}
+    \caption{Consultation d'instruments BRVM sur données simulées}
     \label{fig:cotations_brvm}
 \end{figure}
 
 \subsection{Analyse et palmarès des titres}
 
 En complément de la consultation des cotations, le module SGI propose une page
-d'analyse permettant de comparer les performances des titres sur une période
-sélectionnée. L'utilisateur peut filtrer les résultats par horizon temporel
-(jour, semaine, mois, trimestre, année) et visualiser les meilleures et les plus
-faibles performances \cite{brvm_actions}. Cette fonctionnalité aide le gestionnaire à repérer les
-tendances du marché et à disposer d'une lecture synthétique avant la prise de
-décision. La figure~\ref{fig:palmares_titres} illustre cette vue de palmarès.
+d'analyse permettant de comparer, sur le jeu de données de démonstration, les
+performances des titres sur une période sélectionnée. L'utilisateur peut filtrer
+les résultats par horizon temporel (jour, semaine, mois, trimestre, année) et
+visualiser les meilleures et les plus faibles performances
+\cite{brvm_actions}. Cette fonctionnalité illustre l'aide à la lecture du
+marché avant la prise de décision. La figure~\ref{fig:palmares_titres}
+présente cette vue de palmarès.
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.88\textwidth]{images/contenu/chapitre-4/palmares.png}
-    \caption{Analyse des palmarès des titres BRVM}
+    \caption{Palmarès de titres BRVM sur données simulées}
     \label{fig:palmares_titres}
 \end{figure}
+
+La présence d'un volet de prédiction dans l'interface représente une extension
+en cours d'évaluation. Elle n'est pas revendiquée ici comme un résultat validé,
+en l'absence de données réelles permettant d'en mesurer la pertinence.
 
 \subsection{Liste des portefeuilles}
 
@@ -186,7 +204,7 @@ liste des portefeuilles suivis par la SGI.
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.88\textwidth]{images/contenu/chapitre-4/liste_portefeuilles.png}
+    \includegraphics[width=0.88\textwidth]{images/contenu/chapitre-3/liste_portefeuilles}
     \caption{Liste des portefeuilles gérés par la SGI}
     \label{fig:liste_portefeuilles}
 \end{figure}
@@ -242,8 +260,11 @@ sécurité applicative \cite{owasp_asvs}.
           \cite{fowler_microservices} facilite l'évolution progressive de la
           solution et l'isolation des responsabilités.
     \item[Sécurité et traçabilité.] Keycloak \cite{keycloak_docs} centralise
-          l'authentification, tandis que RabbitMQ \cite{rabbitmq_docs} soutient
-          la traçabilité des actions sensibles.
+          l'authentification. Le module Manager permet d'administrer les
+          habilitations selon les rôles et les fonctionnalités, tandis que la
+          section Audit du back-office d'administration rend consultables les
+          requêtes et opérations enregistrées.
+          Ces dispositifs sont illustrés en annexe~\ref{ann:administration-acces}.
     \item[Apport de l'IA.] Le scoring des prospects, la détection du churn et la
           segmentation apportent une aide à la priorisation et à la décision.
 \end{description}
@@ -257,12 +278,16 @@ sécurité applicative \cite{owasp_asvs}.
     \item[Données réelles à intégrer.] Les cotations BRVM restent simulées et
           doivent être remplacées par un flux officiel pour une exploitation
           opérationnelle.
-    \item[IA à consolider.] Les modèles devront être évalués et améliorés avec
-          des données réelles afin de confirmer leur pertinence métier.
+    \item[IA à consolider.] Les modèles de scoring, de détection du churn et les
+          fonctions d'analyse prédictive visibles dans l'application devront
+          être évalués et améliorés avec des données réelles afin de confirmer
+          leur pertinence métier.
     \item[Passage en production à préparer.] L'environnement de validation
-          présenté au chapitre précédent permet les tests actuels, mais l'audit
-          de sécurité et l'observabilité avec Zipkin \cite{zipkin_docs} doivent
-          être renforcés avant une mise en production.
+          présenté au chapitre précédent permet les tests actuels. Bien que
+          l'administration des accès et la consultation des traces d'audit
+          soient intégrées, des tests systématiques d'habilitation, un audit
+          de sécurité approfondi et une observabilité renforcée avec Zipkin
+          \cite{zipkin_docs} restent nécessaires avant une mise en production.
 \end{description}
 
 \subsection{Perspectives d'amélioration}
@@ -279,8 +304,10 @@ l'industrialisation du passage en production et l'ouverture mobile.
 Ce chapitre a présenté les principaux résultats de la réalisation à travers les
 interfaces des modules Relation Client et SGI. Les écrans illustrés montrent la
 prise en charge du suivi client, de la gestion des prospects, des portefeuilles,
-des cotations et de l'analyse des titres. La synthèse des objectifs confirme
-ainsi la couverture du périmètre retenu. L'analyse critique souligne néanmoins
-que l'intégration complète avec les autres modules, l'accès à des données
-réelles et la préparation de la production constituent les prochaines étapes de
-consolidation d'I-SIB.
+des cotations simulées et de l'analyse descriptive des titres. La synthèse des
+objectifs confirme ainsi la couverture du périmètre retenu dans l'environnement
+de validation. L'analyse critique souligne néanmoins que l'intégration complète
+avec les autres modules, l'accès à des données réelles et la préparation de la
+production constituent les prochaines étapes de consolidation d'I-SIB. Les
+preuves complémentaires sont regroupées dans les
+annexes~\ref{ann:recette-fonctionnelle} à~\ref{ann:administration-acces}.

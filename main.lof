@@ -1,32 +1,40 @@
 \babel@toc {french}{}\relax 
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {2.1}{\ignorespaces Mise à jour du pipeline et recalcul du score de conversion d'un prospect}}{10}{figure.caption.22}%
-\contentsline {figure}{\numberline {2.2}{\ignorespaces Circuit de soumission et de traitement d'un ordre de bourse du client à l'exécution}}{12}{figure.caption.24}%
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Liste des fonctionnalités du module Relation Client}}{8}{figure.caption.21}%
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Mise à jour du pipeline et recalcul du score de conversion d'un prospect}}{10}{figure.caption.23}%
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Liste des fonctionnalités du module SGI}}{11}{figure.caption.24}%
+\contentsline {figure}{\numberline {2.4}{\ignorespaces Circuit de soumission et de traitement d'un ordre de bourse du client à l'exécution}}{13}{figure.caption.26}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Architecture fonctionnelle de la plateforme I-SIB}}{15}{figure.caption.27}%
-\contentsline {figure}{\numberline {3.2}{\ignorespaces Architecture technique de la plateforme I-SIB}}{18}{figure.caption.28}%
-\contentsline {figure}{\numberline {3.3}{\ignorespaces Workflow de création d'un prospect avec scoring IA}}{19}{figure.caption.29}%
-\contentsline {figure}{\numberline {3.4}{\ignorespaces Workflow de conversion d'un prospect en client}}{19}{figure.caption.30}%
-\contentsline {figure}{\numberline {3.5}{\ignorespaces Vue de conception de la fonctionnalité Gestion des prospects}}{21}{figure.caption.32}%
-\contentsline {figure}{\numberline {3.6}{\ignorespaces Déploiement de validation d'I-SIB sur un VPS AlmaLinux}}{22}{figure.caption.33}%
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Architecture fonctionnelle de la plateforme I-SIB}}{16}{figure.caption.29}%
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Architecture technique de la plateforme I-SIB}}{19}{figure.caption.30}%
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Workflow de création d'un prospect avec scoring IA}}{20}{figure.caption.31}%
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Workflow de conversion d'un prospect en client}}{20}{figure.caption.32}%
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Vue de conception de la fonctionnalité Gestion des prospects}}{21}{figure.caption.34}%
+\contentsline {figure}{\numberline {3.6}{\ignorespaces Déploiement de validation d'I-SIB sur un VPS AlmaLinux}}{22}{figure.caption.35}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Interface Portefeuille Clients du chargé de clientèle}}{24}{figure.caption.36}%
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Consultation des comptes bancaires d'un client}}{24}{figure.caption.37}%
-\contentsline {figure}{\numberline {4.3}{\ignorespaces Agent IA d'interrogation des données client (ai-SIB)}}{25}{figure.caption.38}%
-\contentsline {figure}{\numberline {4.4}{\ignorespaces Pipeline de gestion des prospects avec score IA}}{25}{figure.caption.39}%
-\contentsline {figure}{\numberline {4.5}{\ignorespaces Tableau de bord global de la Société de Gestion}}{26}{figure.caption.40}%
-\contentsline {figure}{\numberline {4.6}{\ignorespaces Liste des cotations BRVM et fiche d'un instrument}}{27}{figure.caption.41}%
-\contentsline {figure}{\numberline {4.7}{\ignorespaces Analyse des palmarès des titres BRVM}}{27}{figure.caption.42}%
-\contentsline {figure}{\numberline {4.8}{\ignorespaces Liste des portefeuilles gérés par la SGI}}{28}{figure.caption.43}%
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Interface Portefeuille Clients du chargé de clientèle}}{24}{figure.caption.38}%
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Consultation des comptes bancaires d'un client}}{24}{figure.caption.39}%
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Agent IA d'interrogation des données client (ai-SIB)}}{25}{figure.caption.40}%
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Pipeline de gestion des prospects avec score IA}}{25}{figure.caption.41}%
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Tableau de bord global de la Société de Gestion}}{26}{figure.caption.42}%
+\contentsline {figure}{\numberline {4.6}{\ignorespaces Consultation d'instruments BRVM sur données simulées}}{27}{figure.caption.43}%
+\contentsline {figure}{\numberline {4.7}{\ignorespaces Palmarès de titres BRVM sur données simulées}}{27}{figure.caption.44}%
+\contentsline {figure}{\numberline {4.8}{\ignorespaces Liste des portefeuilles gérés par la SGI}}{28}{figure.caption.45}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {A.1}{\ignorespaces Consultation du portefeuille côté client}}{32}{figure.caption.50}%
-\contentsline {figure}{\numberline {A.2}{\ignorespaces Fiche détaillée d'un titre coté sur la BRVM}}{33}{figure.caption.51}%
-\contentsline {figure}{\numberline {A.3}{\ignorespaces Formulaire de saisie d'un ordre d'investissement}}{33}{figure.caption.52}%
+\contentsline {figure}{\numberline {A.1}{\ignorespaces Consultation du portefeuille côté client}}{33}{figure.caption.52}%
+\contentsline {figure}{\numberline {A.2}{\ignorespaces Fiche d'un titre BRVM affichée avec des données simulées}}{34}{figure.caption.53}%
+\contentsline {figure}{\numberline {A.3}{\ignorespaces Formulaire de saisie d'un ordre d'investissement}}{34}{figure.caption.54}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {B.1}{\ignorespaces Résultat de la création d'un prospect avec score IA}}{34}{figure.B.1}%
-\contentsline {figure}{\numberline {B.2}{\ignorespaces Résultat de la conversion d'un prospect en client}}{35}{figure.B.2}%
+\contentsline {figure}{\numberline {B.1}{\ignorespaces Saisie d'un nouveau prospect par le chargé de clientèle}}{36}{figure.caption.56}%
+\contentsline {figure}{\numberline {B.2}{\ignorespaces Prospect enregistré avec score initial calculé}}{36}{figure.caption.57}%
+\contentsline {figure}{\numberline {B.3}{\ignorespaces Prospect converti en client à l'issue du workflow}}{36}{figure.caption.58}%
+\contentsline {figure}{\numberline {B.4}{\ignorespaces Preuve complémentaire générée par la conversion du prospect}}{37}{figure.caption.59}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {C.1}{\ignorespaces Conteneurs Docker actifs sur le VPS AlmaLinux}}{36}{figure.C.1}%
-\contentsline {figure}{\numberline {C.2}{\ignorespaces Services enregistrés dans le registre Eureka}}{37}{figure.C.2}%
-\contentsline {figure}{\numberline {C.3}{\ignorespaces Historique de redéploiement sur le serveur de validation}}{37}{figure.C.3}%
+\contentsline {figure}{\numberline {C.1}{\ignorespaces Conteneurs Docker actifs sur le VPS AlmaLinux}}{38}{figure.caption.61}%
+\contentsline {figure}{\numberline {C.2}{\ignorespaces Services enregistrés dans le registre Eureka}}{39}{figure.caption.62}%
+\contentsline {figure}{\numberline {C.3}{\ignorespaces Historique de redéploiement sur le serveur de validation}}{39}{figure.caption.63}%
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {D.1}{\ignorespaces Gestion des modules et fonctionnalités depuis le module Manager}}{40}{figure.caption.65}%
+\contentsline {figure}{\numberline {D.2}{\ignorespaces Paramétrage des rôles autorisés pour une fonctionnalité}}{41}{figure.caption.66}%
+\contentsline {figure}{\numberline {D.3}{\ignorespaces Consultation des requêtes tracées dans la section Audit}}{41}{figure.caption.67}%

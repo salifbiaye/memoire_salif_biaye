@@ -15,7 +15,7 @@
 \contentsline {subsection}{\numberline {I.2}Domaines d'activités}{2}{subsection.1.1.2}%
 \contentsline {section}{\numberline {II}Présentation du sujet}{3}{section.1.2}%
 \contentsline {subsection}{\numberline {II.1}Contexte}{3}{subsection.1.2.1}%
-\contentsline {subsection}{\numberline {II.2}Problématique}{4}{subsection.1.2.2}%
+\contentsline {subsection}{\numberline {II.2}Problématique}{3}{subsection.1.2.2}%
 \contentsline {subsection}{\numberline {II.3}Objectifs}{4}{subsection.1.2.3}%
 \contentsline {subsubsection}{\numberline {II.3.1}Objectif général}{4}{subsubsection.1.2.3.1}%
 \contentsline {subsubsection}{\numberline {II.3.2}Objectifs spécifiques}{4}{subsubsection.1.2.3.2}%
@@ -32,25 +32,25 @@
 \contentsline {subsubsection}{\numberline {II.1.1}Gestion des prospects}{8}{subsubsection.2.2.1.1}%
 \contentsline {subsection}{\numberline {II.2}Module SGI}{10}{subsection.2.2.2}%
 \contentsline {subsubsection}{\numberline {II.2.1}Passage d'ordres}{11}{subsubsection.2.2.2.1}%
-\contentsline {section}{\numberline {III}Exigences non fonctionnelles}{13}{section.2.3}%
-\contentsline {section}{Conclusion}{13}{section*.25}%
-\contentsline {chapter}{\numberline {3}Conception de la solution}{14}{chapter.3}%
-\contentsline {section}{Introduction}{14}{section*.26}%
-\contentsline {section}{\numberline {I}Principes de conception de l'architecture}{14}{section.3.1}%
-\contentsline {section}{\numberline {II}Architecture fonctionnelle de la solution}{15}{section.3.2}%
-\contentsline {subsection}{\numberline {II.1}Vue d'ensemble}{15}{subsection.3.2.1}%
-\contentsline {subsection}{\numberline {II.2}Description des blocs}{16}{subsection.3.2.2}%
-\contentsline {section}{\numberline {III}Choix des outils et technologies}{17}{section.3.3}%
-\contentsline {section}{\numberline {IV}Architecture technique de la solution}{17}{section.3.4}%
-\contentsline {section}{\numberline {V}Conception détaillée}{18}{section.3.5}%
-\contentsline {subsection}{\numberline {V.1}Périmètre de la fonctionnalité}{18}{subsection.3.5.1}%
-\contentsline {subsection}{\numberline {V.2}Workflow de traitement}{18}{subsection.3.5.2}%
-\contentsline {subsection}{\numberline {V.3}Synthèse des API}{20}{subsection.3.5.3}%
-\contentsline {subsection}{\numberline {V.4}Vue de conception de la fonctionnalité}{20}{subsection.3.5.4}%
+\contentsline {section}{\numberline {III}Exigences non fonctionnelles}{14}{section.2.3}%
+\contentsline {section}{Conclusion}{14}{section*.27}%
+\contentsline {chapter}{\numberline {3}Conception de la solution}{15}{chapter.3}%
+\contentsline {section}{Introduction}{15}{section*.28}%
+\contentsline {section}{\numberline {I}Principes de conception de l'architecture}{15}{section.3.1}%
+\contentsline {section}{\numberline {II}Architecture fonctionnelle de la solution}{16}{section.3.2}%
+\contentsline {subsection}{\numberline {II.1}Vue d'ensemble}{16}{subsection.3.2.1}%
+\contentsline {subsection}{\numberline {II.2}Description des blocs}{17}{subsection.3.2.2}%
+\contentsline {section}{\numberline {III}Choix des outils et technologies}{18}{section.3.3}%
+\contentsline {section}{\numberline {IV}Architecture technique de la solution}{18}{section.3.4}%
+\contentsline {section}{\numberline {V}Conception détaillée}{19}{section.3.5}%
+\contentsline {subsection}{\numberline {V.1}Périmètre de la fonctionnalité}{19}{subsection.3.5.1}%
+\contentsline {subsection}{\numberline {V.2}Workflow de traitement}{19}{subsection.3.5.2}%
+\contentsline {subsection}{\numberline {V.3}Synthèse des API}{21}{subsection.3.5.3}%
+\contentsline {subsection}{\numberline {V.4}Vue de conception de la fonctionnalité}{21}{subsection.3.5.4}%
 \contentsline {section}{\numberline {VI}Architecture de déploiement}{21}{section.3.6}%
-\contentsline {section}{Conclusion}{22}{section*.34}%
+\contentsline {section}{Conclusion}{22}{section*.36}%
 \contentsline {chapter}{\numberline {4}Présentation des résultats et analyse critique}{23}{chapter.4}%
-\contentsline {section}{Introduction}{23}{section*.35}%
+\contentsline {section}{Introduction}{23}{section*.37}%
 \contentsline {section}{\numberline {I}Résultats côté Relation Client}{23}{section.4.1}%
 \contentsline {subsection}{\numberline {I.1}Portefeuille clients}{23}{subsection.4.1.1}%
 \contentsline {subsection}{\numberline {I.2}Gestion des comptes}{24}{subsection.4.1.2}%
@@ -60,23 +60,26 @@
 \contentsline {subsection}{\numberline {II.1}Tableau de bord SGI}{26}{subsection.4.2.1}%
 \contentsline {subsection}{\numberline {II.2}Cotations BRVM}{26}{subsection.4.2.2}%
 \contentsline {subsection}{\numberline {II.3}Analyse et palmarès des titres}{27}{subsection.4.2.3}%
-\contentsline {subsection}{\numberline {II.4}Liste des portefeuilles}{27}{subsection.4.2.4}%
+\contentsline {subsection}{\numberline {II.4}Liste des portefeuilles}{28}{subsection.4.2.4}%
 \contentsline {section}{\numberline {III}Synthèse de la couverture des objectifs}{28}{section.4.3}%
 \contentsline {section}{\numberline {IV}Analyse critique de la réalisation}{29}{section.4.4}%
 \contentsline {subsection}{\numberline {IV.1}Points forts}{29}{subsection.4.4.1}%
 \contentsline {subsection}{\numberline {IV.2}Points faibles et limites}{29}{subsection.4.4.2}%
 \contentsline {subsection}{\numberline {IV.3}Perspectives d'amélioration}{29}{subsection.4.4.3}%
-\contentsline {section}{Conclusion}{29}{section*.45}%
-\contentsline {chapter}{Conclusion générale}{30}{section*.47}%
-\contentsline {chapter}{Références bibliographiques}{31}{section*.49}%
-\contentsline {chapter}{\numberline {A}Interfaces complémentaires du parcours client SGI}{32}{appendix.A}%
-\contentsline {section}{\numberline {I}Consultation du portefeuille}{32}{section.A.1}%
-\contentsline {section}{\numberline {II}Consultation d'un titre}{32}{section.A.2}%
-\contentsline {section}{\numberline {III}Saisie d'un ordre}{33}{section.A.3}%
-\contentsline {chapter}{\numberline {B}Pièces de recette fonctionnelle}{34}{appendix.B}%
-\contentsline {section}{\numberline {I}Création d'un prospect}{34}{section.B.1}%
-\contentsline {section}{\numberline {II}Conversion d'un prospect en client}{34}{section.B.2}%
-\contentsline {chapter}{\numberline {C}Validation du déploiement sur VPS AlmaLinux}{36}{appendix.C}%
-\contentsline {section}{\numberline {I}Services conteneurisés}{36}{section.C.1}%
-\contentsline {section}{\numberline {II}Enregistrement des services}{36}{section.C.2}%
-\contentsline {section}{\numberline {III}Redéploiement progressif}{37}{section.C.3}%
+\contentsline {section}{Conclusion}{29}{section*.47}%
+\contentsline {chapter}{Conclusion générale}{30}{section*.49}%
+\contentsline {chapter}{Références bibliographiques}{31}{section*.51}%
+\contentsline {chapter}{\numberline {A}Interfaces complémentaires du parcours client SGI}{33}{appendix.A}%
+\contentsline {section}{\numberline {I}Consultation du portefeuille}{33}{section.A.1}%
+\contentsline {section}{\numberline {II}Consultation d'un titre}{33}{section.A.2}%
+\contentsline {section}{\numberline {III}Saisie d'un ordre}{34}{section.A.3}%
+\contentsline {chapter}{\numberline {B}Recette fonctionnelle de la gestion des prospects}{35}{appendix.B}%
+\contentsline {section}{\numberline {I}Création d'un prospect}{35}{section.B.1}%
+\contentsline {section}{\numberline {II}Conversion d'un prospect en client}{36}{section.B.2}%
+\contentsline {chapter}{\numberline {C}Validation du déploiement sur VPS AlmaLinux}{38}{appendix.C}%
+\contentsline {section}{\numberline {I}Services conteneurisés}{38}{section.C.1}%
+\contentsline {section}{\numberline {II}Enregistrement des services}{38}{section.C.2}%
+\contentsline {section}{\numberline {III}Redéploiement progressif}{39}{section.C.3}%
+\contentsline {chapter}{\numberline {D}Module Manager et audit des opérations}{40}{appendix.D}%
+\contentsline {section}{\numberline {I}Module Manager : gestion des accès}{40}{section.D.1}%
+\contentsline {section}{\numberline {II}Back-office d'administration : audit des requêtes}{41}{section.D.2}%

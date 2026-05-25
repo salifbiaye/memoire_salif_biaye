@@ -185,7 +185,7 @@ Après la présentation des architectures fonctionnelle et technique, cette sect
 le fonctionnement interne d'une fonctionnalité représentative du module Relation Client :
 la \textbf{Gestion des prospects}. Ce choix permet d'illustrer, de manière ciblée, le
 cheminement d'une demande depuis l'interface back-office jusqu'aux services backend, en
-passant par la passerelle API, le service CRM, la base de données, le scoring par
+passant par la passerelle API, le service CRM et sa persistance, le scoring par
 intelligence artificielle et la traçabilité.
 
 La section présente successivement le périmètre de la fonctionnalité retenue, le workflow
@@ -224,7 +224,8 @@ premier scénario.
 \end{figure}
 
 La conversion d'un prospect intervient lorsqu'un prospect qualifié doit devenir client.
-Le service CRM vérifie l'éligibilité du prospect, sollicite le service de segmentation,
+Le service Relation Client, qui porte les traitements CRM, vérifie l'éligibilité du
+prospect, sollicite le service de segmentation,
 crée le compte client, initialise le scoring associé, déclenche l'envoi du courriel de
 bienvenue et historise l'opération. La figure~\ref{fig:workflow_conversion_prospect}
 présente ce second scénario.
@@ -236,45 +237,43 @@ présente ce second scénario.
     \label{fig:workflow_conversion_prospect}
 \end{figure}
 
+La figure distingue le \textbf{Service CRM}, responsable des traitements
+métier, de la \textbf{Base de données CRM}, utilisée pour la persistance du
+prospect et de son état de conversion.
+
 \subsection{Synthèse des API}
 
-Les opérations de la fonctionnalité sont exposées sous forme d'API REST sécurisées. Le
-tableau~\ref{tab:endpoints_prospect} présente une synthèse volontairement limitée aux
-endpoints les plus représentatifs.
+Les opérations principales sont exposées sous forme d'API REST sécurisées et
+résumées dans le tableau~\ref{tab:endpoints_prospect}.
 
 \begin{table}[H]
 \centering
 \caption{Synthèse des principales API de gestion des prospects}
 \label{tab:endpoints_prospect}
-\small
-\renewcommand{\arraystretch}{1.3}
-\begin{tabular}{|p{1.7cm}|p{6.0cm}|p{5.5cm}|}
+\footnotesize
+\renewcommand{\arraystretch}{1.08}
+\begin{tabularx}{\textwidth}{|p{1.45cm}|p{5.65cm}|X|}
 \hline
 \textbf{Méthode} & \textbf{Chemin} & \textbf{Utilisation principale} \\ \hline
-POST   & \texttt{/api/crm/prospects}                  & Enregistrer un nouveau prospect \\ \hline
-GET    & \texttt{/api/crm/prospects/}\newline\texttt{my-prospects}     & Afficher les prospects du chargé connecté \\ \hline
-GET    & \texttt{/api/crm/prospects/\{id\}}           & Consulter la fiche détaillée d'un prospect \\ \hline
-PATCH  & \texttt{/api/crm/prospects/\{id\}}           & Mettre à jour les informations ou l'étape \\ \hline
-POST   & \texttt{/api/crm/prospects/\{id\}/}\newline\texttt{activities} & Ajouter une interaction ou une relance \\ \hline
-POST   & \texttt{/api/crm/prospects/\{id\}/}\newline\texttt{convert}   & Transformer un prospect qualifié en client \\ \hline
-\end{tabular}
+POST   & {\scriptsize\texttt{/api/crm/prospects}}                  & Enregistrer un nouveau prospect \\ \hline
+GET    & {\scriptsize\texttt{/api/crm/prospects/my-prospects}}     & Afficher les prospects affectés \\ \hline
+GET    & {\scriptsize\texttt{/api/crm/prospects/\{id\}}}           & Consulter la fiche détaillée d'un prospect \\ \hline
+PATCH  & {\scriptsize\texttt{/api/crm/prospects/\{id\}}}           & Mettre à jour le prospect ou son étape \\ \hline
+POST   & {\scriptsize\texttt{/api/crm/prospects/\{id\}/activities}} & Ajouter une interaction ou relance \\ \hline
+POST   & {\scriptsize\texttt{/api/crm/prospects/\{id\}/convert}}   & Convertir un prospect qualifié en client \\ \hline
+\end{tabularx}
 \end{table}
 
 \subsection{Vue de conception de la fonctionnalité}
 
-La vue de conception complète le workflow en montrant les artefacts applicatifs impliqués
-dans la fonctionnalité. Elle reprend les stéréotypes de Jacobson : les éléments
-\textit{boundary} représentent les interfaces, les éléments \textit{control} portent la
-coordination applicative, et les éléments \textit{entity} correspondent aux données métier
-manipulées par le système \cite{jacobson_oose}.
-
-La figure~\ref{fig:conception_gestion_prospects} présente cette vue de conception en
-mettant en relation les interfaces, les composants de contrôle et les entités métier de
-la fonctionnalité Gestion des prospects.
+La figure~\ref{fig:conception_gestion_prospects} complète le workflow en
+reliant les interfaces \textit{boundary}, les composants de coordination
+\textit{control} et les données métier \textit{entity}, selon les
+stéréotypes de Jacobson \cite{jacobson_oose}.
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=\dimexpr\textwidth-2\fboxsep-2\fboxrule\relax]{images/contenu/chapitre-3/conception_gestion_prospects.png}
+    \includegraphics[width=0.78\textwidth]{images/contenu/chapitre-3/conception_gestion_prospects.png}
     \caption{Vue de conception de la fonctionnalité Gestion des prospects}
     \label{fig:conception_gestion_prospects}
 \end{figure}
@@ -320,27 +319,20 @@ réseaux.
     \label{fig:architecture_deploiement}
 \end{figure}
 
-Cette organisation prévoit un ordre de démarrage précis. L'ensemble \texttt{infra}
-doit être lancé en premier afin de rendre disponibles la passerelle, Eureka,
-Keycloak, Redis et RabbitMQ. L'ensemble \texttt{core} peut ensuite démarrer les
-services de base. L'ensemble \texttt{module} vient après, car il dépend des
-référentiels et de l'infrastructure. Enfin, l'ensemble \texttt{office} est lancé
-en dernier pour exposer les interfaces utilisateur. À chaque évolution validée,
-la chaîne de livraison permet de reconstruire et de redéployer les composants
-concernés sur le VPS. Ce déploiement sert à la validation progressive de la
-solution ; il ne constitue pas encore un environnement de production. Les
-captures techniques permettant de documenter cette validation sont prévues en
-annexe~\ref{ann:validation-deploiement}.
+L'ordre de démarrage suit les dépendances entre ensembles : \texttt{infra},
+puis \texttt{core}, \texttt{module} et \texttt{office}. Après une évolution
+validée, la chaîne de livraison permet de reconstruire et de redéployer les
+composants concernés sur le VPS. Cet environnement sert à la validation
+progressive de la solution et reste distinct de la production ; ses preuves
+techniques sont prévues en annexe~\ref{ann:validation-deploiement}.
 % ─────────────────────────────────────────────────
 \section*{Conclusion}
 \phantomsection
 \addcontentsline{toc}{section}{Conclusion}
 
-Ce chapitre a présenté la conception de la solution I-SIB pour les modules
-Relation Client et SGI. L'architecture microservices retenue vise à répondre aux
-exigences non fonctionnelles identifiées au chapitre précédent : la passerelle
-et Keycloak soutiennent le contrôle des accès, Redis et l'indexation facilitent
-la réactivité, RabbitMQ contribue à la traçabilité et Docker rend le déploiement
-reproductible. Le déploiement de validation sur VPS AlmaLinux fournit un cadre
-concret de vérification progressive. Le chapitre suivant présente les résultats
-fonctionnels obtenus et les limites restant à traiter avant une mise en production.
+Ce chapitre a défini les architectures fonctionnelle et technique d'I-SIB,
+puis détaillé la gestion des prospects comme fonctionnalité représentative du
+module Relation Client. Le déploiement sur VPS AlmaLinux concrétise un
+environnement de validation reproductible, sans être assimilé à la production.
+Le chapitre suivant présente les résultats obtenus et les limites restant à
+traiter avant cette évolution.
