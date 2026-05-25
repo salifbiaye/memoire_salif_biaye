@@ -252,15 +252,15 @@ résumées dans le tableau~\ref{tab:endpoints_prospect}.
 \label{tab:endpoints_prospect}
 \footnotesize
 \renewcommand{\arraystretch}{1.08}
-\begin{tabularx}{\textwidth}{|p{1.45cm}|p{5.65cm}|X|}
+\begin{tabularx}{\textwidth}{|p{1.7cm}|p{5.4cm}|X|}
 \hline
 \textbf{Méthode} & \textbf{Chemin} & \textbf{Utilisation principale} \\ \hline
 POST   & {\scriptsize\texttt{/api/crm/prospects}}                  & Enregistrer un nouveau prospect \\ \hline
 GET    & {\scriptsize\texttt{/api/crm/prospects/my-prospects}}     & Afficher les prospects affectés \\ \hline
 GET    & {\scriptsize\texttt{/api/crm/prospects/\{id\}}}           & Consulter la fiche détaillée d'un prospect \\ \hline
 PATCH  & {\scriptsize\texttt{/api/crm/prospects/\{id\}}}           & Mettre à jour le prospect ou son étape \\ \hline
-POST   & {\scriptsize\texttt{/api/crm/prospects/\{id\}/activities}} & Ajouter une interaction ou relance \\ \hline
-POST   & {\scriptsize\texttt{/api/crm/prospects/\{id\}/convert}}   & Convertir un prospect qualifié en client \\ \hline
+POST   & {\tiny\texttt{/api/crm/prospects/\{id\}/activities}} & Ajouter une interaction ou relance \\ \hline
+POST   & {\tiny\texttt{/api/crm/prospects/\{id\}/convert}}   & Convertir un prospect qualifié en client \\ \hline
 \end{tabularx}
 \end{table}
 

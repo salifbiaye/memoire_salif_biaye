@@ -76,10 +76,10 @@
 \contentsline {chapter}{\numberline {B}Recette fonctionnelle de la gestion des prospects}{35}{appendix.B}%
 \contentsline {section}{\numberline {I}Création d'un prospect}{35}{section.B.1}%
 \contentsline {section}{\numberline {II}Conversion d'un prospect en client}{36}{section.B.2}%
-\contentsline {chapter}{\numberline {C}Validation du déploiement sur VPS AlmaLinux}{38}{appendix.C}%
-\contentsline {section}{\numberline {I}Services conteneurisés}{38}{section.C.1}%
-\contentsline {section}{\numberline {II}Enregistrement des services}{38}{section.C.2}%
-\contentsline {section}{\numberline {III}Redéploiement progressif}{39}{section.C.3}%
-\contentsline {chapter}{\numberline {D}Module Manager et audit des opérations}{40}{appendix.D}%
-\contentsline {section}{\numberline {I}Module Manager : gestion des accès}{40}{section.D.1}%
-\contentsline {section}{\numberline {II}Back-office d'administration : audit des requêtes}{41}{section.D.2}%
+\contentsline {chapter}{\numberline {C}Module Manager et audit des opérations}{38}{appendix.C}%
+\contentsline {section}{\numberline {I}Module Manager : gestion des accès}{38}{section.C.1}%
+\contentsline {section}{\numberline {II}Back-office d'administration : audit des requêtes}{39}{section.C.2}%
+\contentsline {chapter}{\numberline {D}Validation du déploiement sur VPS AlmaLinux}{40}{appendix.D}%
+\contentsline {section}{\numberline {I}Services conteneurisés}{40}{section.D.1}%
+\contentsline {section}{\numberline {II}Enregistrement des services}{40}{section.D.2}%
+\contentsline {section}{\numberline {III}Redéploiement progressif}{41}{section.D.3}%
