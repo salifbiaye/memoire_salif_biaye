@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.5.11)  1 JUN 2026 22:05
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.5.11)  1 JUN 2026 22:08
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1835,7 +1835,7 @@ File: images/annexes/annexe_c/annexe_c_modules_permissions.png Graphic file (ty
 pe png)
 <use images/annexes/annexe_c/annexe_c_modules_permissions.png>
 Package pdftex.def Info: images/annexes/annexe_c/annexe_c_modules_permissions.p
-ng  used on input line 383.
+ng  used on input line 384.
 (pdftex.def)             Requested size: 425.6556pt x 239.41805pt.
 <images/annexes/annexe_c/annexe_c_roles_fonctionnalite.png, id=1081, 1927.2pt x
  1084.05pt>
@@ -1843,7 +1843,7 @@ File: images/annexes/annexe_c/annexe_c_roles_fonctionnalite.png Graphic file (t
 ype png)
 <use images/annexes/annexe_c/annexe_c_roles_fonctionnalite.png>
 Package pdftex.def Info: images/annexes/annexe_c/annexe_c_roles_fonctionnalite.
-png  used on input line 394.
+png  used on input line 395.
 (pdftex.def)             Requested size: 425.6556pt x 239.41805pt.
  [43 <./images/annexes/annexe_c/annexe_c_modules_permissions.png (PNG copy)>] [
 44 <./images/annexes/annexe_c/annexe_c_roles_fonctionnalite.png (PNG copy)>]
@@ -1853,24 +1853,24 @@ File: images/annexes/annexe_c/annexe_c_journal_audit.png Graphic file (type png
 )
 <use images/annexes/annexe_c/annexe_c_journal_audit.png>
 Package pdftex.def Info: images/annexes/annexe_c/annexe_c_journal_audit.png  us
-ed on input line 413.
+ed on input line 414.
 (pdftex.def)             Requested size: 425.6556pt x 215.03282pt.
  [45 <./images/annexes/annexe_c/annexe_c_journal_audit.png (PNG copy)>]
 Annexe D.
 
-Underfull \hbox (badness 10000) in paragraph at lines 467--467
+Underfull \hbox (badness 10000) in paragraph at lines 468--468
 []|\T1/ntxtlf/m/n/10 (+20) Stacks \T1/ntxtt/m/n/10 i-sib-infra\T1/ntxtlf/m/n/10
  (+20) , \T1/ntxtt/m/n/10 i-sib-core\T1/ntxtlf/m/n/10 (+20) ,
  []
 
 
-Underfull \hbox (badness 2253) in paragraph at lines 467--467
+Underfull \hbox (badness 2253) in paragraph at lines 468--468
 \T1/ntxtt/m/n/10 i-sib-module \T1/ntxtlf/m/n/10 (+20) et \T1/ntxtt/m/n/10 i-sib
 -office \T1/ntxtlf/m/n/10 (+20) vi-sibles
  []
 
 
-Underfull \hbox (badness 2951) in paragraph at lines 467--467
+Underfull \hbox (badness 2951) in paragraph at lines 468--468
 []|\T1/ntxtlf/m/n/10 (+20) Découverte des ser-
  []
 
@@ -1883,7 +1883,7 @@ File: images/annexes/annexe_d/annexe_d_portainer_conteneurs.png Graphic file (t
 ype png)
 <use images/annexes/annexe_d/annexe_d_portainer_conteneurs.png>
 Package pdftex.def Info: images/annexes/annexe_d/annexe_d_portainer_conteneurs.
-png  used on input line 479.
+png  used on input line 480.
 (pdftex.def)             Requested size: 425.6556pt x 239.41805pt.
 <images/annexes/annexe_d/annexe_d_eureka_services.png, id=1115, 1927.2pt x 1084
 .05pt>
@@ -1891,7 +1891,7 @@ File: images/annexes/annexe_d/annexe_d_eureka_services.png Graphic file (type p
 ng)
 <use images/annexes/annexe_d/annexe_d_eureka_services.png>
 Package pdftex.def Info: images/annexes/annexe_d/annexe_d_eureka_services.png  
-used on input line 495.
+used on input line 496.
 (pdftex.def)             Requested size: 425.6556pt x 239.41805pt.
  [47 <./images/annexes/annexe_d/annexe_d_portainer_conteneurs.png (PNG copy)>]
 <images/annexes/annexe_d/annexe_d_pipeline_redeploiement.png, id=1120, 1902.106
@@ -1900,7 +1900,7 @@ File: images/annexes/annexe_d/annexe_d_pipeline_redeploiement.png Graphic file
 (type png)
 <use images/annexes/annexe_d/annexe_d_pipeline_redeploiement.png>
 Package pdftex.def Info: images/annexes/annexe_d/annexe_d_pipeline_redeploiemen
-t.png  used on input line 511.
+t.png  used on input line 512.
 (pdftex.def)             Requested size: 425.6556pt x 163.73962pt.
 ) (annexes/resume-abstract-final.tex [48 <./images/annexes/annexe_d/annexe_d_eu
 reka_services.png> <./images/annexes/annexe_d/annexe_d_pipeline_redeploiement.p
@@ -1930,7 +1930,7 @@ x/ztmb.pfb><C:/Users/DELL/AppData/Local/Programs/MiKTeX/fonts/type1/public/newt
 x/ztmbi.pfb><C:/Users/DELL/AppData/Local/Programs/MiKTeX/fonts/type1/public/new
 tx/ztmr.pfb><C:/Users/DELL/AppData/Local/Programs/MiKTeX/fonts/type1/public/new
 tx/ztmri.pfb>
-Output written on main.pdf (62 pages, 10722799 bytes).
+Output written on main.pdf (62 pages, 10722861 bytes).
 PDF statistics:
  1219 PDF objects out of 1440 (max. 8388607)
  239 named destinations out of 1000 (max. 500000)
