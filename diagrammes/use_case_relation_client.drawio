@@ -1,0 +1,132 @@
+<mxfile host="app.diagrams.net" modified="2026-05-25T12:00:00.000Z" agent="Claude" version="24.0.0" type="device">
+  <diagram id="uc_rc" name="Use Case - Relation Client">
+    <mxGraphModel dx="1400" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1000" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+
+        <!-- System boundary -->
+        <mxCell id="sys" value="&lt;b&gt;Module Relation Client&lt;/b&gt;" style="shape=rect;rounded=1;whiteSpace=wrap;html=1;verticalAlign=top;align=center;fontSize=16;fontColor=#1A237E;fillColor=none;strokeColor=#1A237E;strokeWidth=2;dashed=1;dashPattern=8 4;spacingTop=8;" vertex="1" parent="1">
+          <mxGeometry x="240" y="20" width="920" height="820" as="geometry"/>
+        </mxCell>
+
+        <!-- Actor: Charge de clientele (left) -->
+        <mxCell id="actor_cc" value="Chargé de&#xa;clientèle" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;fillColor=#1A237E;fontStyle=1;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="80" y="350" width="40" height="60" as="geometry"/>
+        </mxCell>
+
+        <!-- Actor: Client (right) -->
+        <mxCell id="actor_cl" value="Client" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;fillColor=#C62828;fontStyle=1;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="1310" y="350" width="40" height="60" as="geometry"/>
+        </mxCell>
+
+        <!-- ====== USE CASES - Charge de clientele (left side) ====== -->
+
+        <mxCell id="uc1" value="Gérer le pipeline&#xa;commercial (prospects)" style="ellipse;whiteSpace=wrap;html=1;fillColor=#E3F2FD;strokeColor=#1565C0;fontSize=11;fontStyle=0;align=center;" vertex="1" parent="1">
+          <mxGeometry x="290" y="60" width="200" height="70" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="uc2" value="Convertir un prospect&#xa;en client" style="ellipse;whiteSpace=wrap;html=1;fillColor=#E3F2FD;strokeColor=#1565C0;fontSize=11;fontStyle=0;align=center;" vertex="1" parent="1">
+          <mxGeometry x="290" y="180" width="200" height="70" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="uc3" value="Consulter le&#xa;tableau de bord RC" style="ellipse;whiteSpace=wrap;html=1;fillColor=#E3F2FD;strokeColor=#1565C0;fontSize=11;fontStyle=0;align=center;" vertex="1" parent="1">
+          <mxGeometry x="290" y="300" width="200" height="70" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="uc4" value="Gérer les interactions&#xa;clients (tickets)" style="ellipse;whiteSpace=wrap;html=1;fillColor=#E3F2FD;strokeColor=#1565C0;fontSize=11;fontStyle=0;align=center;" vertex="1" parent="1">
+          <mxGeometry x="290" y="420" width="200" height="70" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="uc5" value="Gérer les&#xa;correspondances" style="ellipse;whiteSpace=wrap;html=1;fillColor=#E3F2FD;strokeColor=#1565C0;fontSize=11;fontStyle=0;align=center;" vertex="1" parent="1">
+          <mxGeometry x="290" y="540" width="200" height="70" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="uc6" value="Suivre la&#xa;conformité KYC" style="ellipse;whiteSpace=wrap;html=1;fillColor=#E3F2FD;strokeColor=#1565C0;fontSize=11;fontStyle=0;align=center;" vertex="1" parent="1">
+          <mxGeometry x="290" y="660" width="200" height="70" as="geometry"/>
+        </mxCell>
+
+        <!-- ====== USE CASES - Client (right side) ====== -->
+
+        <mxCell id="uc7" value="Consulter ses&#xa;comptes bancaires" style="ellipse;whiteSpace=wrap;html=1;fillColor=#FFEBEE;strokeColor=#C62828;fontSize=11;fontStyle=0;align=center;" vertex="1" parent="1">
+          <mxGeometry x="910" y="60" width="200" height="70" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="uc8" value="Consulter ses&#xa;transactions" style="ellipse;whiteSpace=wrap;html=1;fillColor=#FFEBEE;strokeColor=#C62828;fontSize=11;fontStyle=0;align=center;" vertex="1" parent="1">
+          <mxGeometry x="910" y="180" width="200" height="70" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="uc9" value="Interagir avec&#xa;l'assistant IA" style="ellipse;whiteSpace=wrap;html=1;fillColor=#FFEBEE;strokeColor=#C62828;fontSize=11;fontStyle=0;align=center;" vertex="1" parent="1">
+          <mxGeometry x="910" y="300" width="200" height="70" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="uc10" value="Consulter ses&#xa;correspondances" style="ellipse;whiteSpace=wrap;html=1;fillColor=#FFEBEE;strokeColor=#C62828;fontSize=11;fontStyle=0;align=center;" vertex="1" parent="1">
+          <mxGeometry x="910" y="420" width="200" height="70" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="uc11" value="Consulter son&#xa;statut KYC" style="ellipse;whiteSpace=wrap;html=1;fillColor=#FFEBEE;strokeColor=#C62828;fontSize=11;fontStyle=0;align=center;" vertex="1" parent="1">
+          <mxGeometry x="910" y="540" width="200" height="70" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="uc12" value="Demander la clôture&#xa;d'un compte" style="ellipse;whiteSpace=wrap;html=1;fillColor=#FFEBEE;strokeColor=#C62828;fontSize=11;fontStyle=0;align=center;" vertex="1" parent="1">
+          <mxGeometry x="910" y="660" width="200" height="70" as="geometry"/>
+        </mxCell>
+
+        <!-- ====== INCLUDED USE CASES (center) ====== -->
+
+        <mxCell id="uc13" value="Calculer le&#xa;score IA" style="ellipse;whiteSpace=wrap;html=1;fillColor=#F3E5F5;strokeColor=#7B1FA2;fontSize=11;fontStyle=0;align=center;" vertex="1" parent="1">
+          <mxGeometry x="600" y="120" width="180" height="65" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="uc14" value="Segmenter le&#xa;client (ML)" style="ellipse;whiteSpace=wrap;html=1;fillColor=#F3E5F5;strokeColor=#7B1FA2;fontSize=11;fontStyle=0;align=center;" vertex="1" parent="1">
+          <mxGeometry x="600" y="230" width="180" height="65" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="uc15" value="Consulter les&#xa;fiches clients" style="ellipse;whiteSpace=wrap;html=1;fillColor=#E8F5E9;strokeColor=#2E7D32;fontSize=11;fontStyle=0;align=center;" vertex="1" parent="1">
+          <mxGeometry x="600" y="480" width="180" height="65" as="geometry"/>
+        </mxCell>
+
+        <!-- ====== ASSOCIATIONS: Charge de clientele ====== -->
+        <mxCell id="e1" style="endArrow=none;html=1;strokeWidth=1.5;strokeColor=#1565C0;" edge="1" source="actor_cc" target="uc1" parent="1"/>
+        <mxCell id="e2" style="endArrow=none;html=1;strokeWidth=1.5;strokeColor=#1565C0;" edge="1" source="actor_cc" target="uc2" parent="1"/>
+        <mxCell id="e3" style="endArrow=none;html=1;strokeWidth=1.5;strokeColor=#1565C0;" edge="1" source="actor_cc" target="uc3" parent="1"/>
+        <mxCell id="e4" style="endArrow=none;html=1;strokeWidth=1.5;strokeColor=#1565C0;" edge="1" source="actor_cc" target="uc4" parent="1"/>
+        <mxCell id="e5" style="endArrow=none;html=1;strokeWidth=1.5;strokeColor=#1565C0;" edge="1" source="actor_cc" target="uc5" parent="1"/>
+        <mxCell id="e6" style="endArrow=none;html=1;strokeWidth=1.5;strokeColor=#1565C0;" edge="1" source="actor_cc" target="uc6" parent="1"/>
+        <mxCell id="e_cc_fiche" style="endArrow=none;html=1;strokeWidth=1.5;strokeColor=#2E7D32;" edge="1" source="actor_cc" target="uc15" parent="1"/>
+
+        <!-- ====== ASSOCIATIONS: Client ====== -->
+        <mxCell id="e7" style="endArrow=none;html=1;strokeWidth=1.5;strokeColor=#C62828;" edge="1" source="actor_cl" target="uc7" parent="1"/>
+        <mxCell id="e8" style="endArrow=none;html=1;strokeWidth=1.5;strokeColor=#C62828;" edge="1" source="actor_cl" target="uc8" parent="1"/>
+        <mxCell id="e9" style="endArrow=none;html=1;strokeWidth=1.5;strokeColor=#C62828;" edge="1" source="actor_cl" target="uc9" parent="1"/>
+        <mxCell id="e10" style="endArrow=none;html=1;strokeWidth=1.5;strokeColor=#C62828;" edge="1" source="actor_cl" target="uc10" parent="1"/>
+        <mxCell id="e11" style="endArrow=none;html=1;strokeWidth=1.5;strokeColor=#C62828;" edge="1" source="actor_cl" target="uc11" parent="1"/>
+        <mxCell id="e12" style="endArrow=none;html=1;strokeWidth=1.5;strokeColor=#C62828;" edge="1" source="actor_cl" target="uc12" parent="1"/>
+
+        <!-- ====== INCLUDE relationships ====== -->
+
+        <mxCell id="inc1" style="endArrow=open;html=1;dashed=1;strokeWidth=1.2;strokeColor=#7B1FA2;" edge="1" source="uc1" target="uc13" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="inc1_label" value="«include»" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=10;fontStyle=2;fontColor=#7B1FA2;" vertex="1" connectable="0" parent="inc1">
+          <mxGeometry x="-0.1" relative="1" as="geometry"><mxPoint as="offset"/></mxGeometry>
+        </mxCell>
+
+        <mxCell id="inc2" style="endArrow=open;html=1;dashed=1;strokeWidth=1.2;strokeColor=#7B1FA2;" edge="1" source="uc2" target="uc14" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="inc2_label" value="«include»" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=10;fontStyle=2;fontColor=#7B1FA2;" vertex="1" connectable="0" parent="inc2">
+          <mxGeometry x="-0.1" relative="1" as="geometry"><mxPoint as="offset"/></mxGeometry>
+        </mxCell>
+
+        <mxCell id="inc3" style="endArrow=open;html=1;dashed=1;strokeWidth=1.2;strokeColor=#7B1FA2;" edge="1" source="uc2" target="uc13" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="inc3_label" value="«include»" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=10;fontStyle=2;fontColor=#7B1FA2;" vertex="1" connectable="0" parent="inc3">
+          <mxGeometry x="0.2" relative="1" as="geometry"><mxPoint as="offset"/></mxGeometry>
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

@@ -5,7 +5,6 @@
 \markboth{Analyse fonctionnelle et non fonctionnelle des besoins}{Analyse fonctionnelle et non fonctionnelle des besoins}
 
 \section*{Introduction}
-\phantomsection
 \addcontentsline{toc}{section}{Introduction}
 
 Après la présentation du cadre général du projet, ce deuxième chapitre a pour objectif
@@ -47,8 +46,8 @@ l'écosystème bancaire.
 Le \textbf{chargé de clientèle} est un utilisateur interne chargé du suivi commercial et
 de l'accompagnement des clients. Il attend du système une vue complète sur chaque client,
 la possibilité de suivre les prospects dans un pipeline structuré, de recevoir des alertes
-pertinentes et de prioriser ses actions commerciales à partir des informations
-disponibles.
+pertinentes, de prioriser ses actions commerciales et de proposer des produits adaptés à
+chaque profil.
 
 L'\textbf{équipe SGI} est un utilisateur interne spécialisé dans les opérations sur titres
 et la gestion de portefeuille. Elle attend du système la capacité de superviser les
@@ -67,10 +66,10 @@ Le système I-SIB est structuré autour de deux modules fonctionnels complément
 module \textbf{Relation Client} est dédié à la centralisation de la connaissance client et
 au pilotage commercial. Le module \textbf{SGI} (Société de Gestion et d'Intermédiation)
 couvre les services d'investissement, du suivi de portefeuille au traitement des ordres de
-bourse. Afin de concentrer l'analyse sur le périmètre prioritaire du projet, la présente
-section retient une fonctionnalité principale par module. Le module Relation Client est
-analysé à travers la gestion des prospects, tandis que le module SGI est analysé à travers
-le passage d'ordres.
+bourse. La présente section décrit les fonctionnalités offertes par chacun de ces modules,
+illustrées par un diagramme représentant la liste des fonctionnalités, puis détaillées
+individuellement sous forme de fiches textuelles accompagnées de leurs représentations
+graphiques.
 
 % ─────────────────────────────────────────────────
 \subsection{Module Relation Client}
@@ -78,74 +77,73 @@ le passage d'ordres.
 Le module Relation Client regroupe l'ensemble des fonctionnalités permettant de centraliser
 la connaissance client, de structurer le suivi commercial, d'assurer la conformité
 réglementaire et de tracer les échanges. La figure~\ref{fig:fonctionnalites_rc} présente la liste de ces fonctionnalités à travers une représentation mettant en évidence les interactions entre les acteurs et le système.
+
+
 \begin{figure}[H]
     \centering
-    \includegraphics[width=\dimexpr\textwidth-2\fboxsep-2\fboxrule\relax]{images/contenu/chapitre-2/use_case_relation_client.png}
+    \includegraphics[width=0.9\textwidth]{images/contenu/chapitre-2/use_case_relation_client.png}
     \caption{Liste des fonctionnalités du module Relation Client}
     \label{fig:fonctionnalites_rc}
 \end{figure}
 
-Dans la suite, nous allons détailler la fonctionnalité gestion des prospects.
-% ─────────────────────────────────────────────────
-\subsubsection{Gestion des prospects}
+Dans la suite, nous allons détailler la fonctionnalité création d'un prospect.
 
-La gestion des prospects structure le processus commercial en organisant le suivi des
-contacts dans un pipeline de conversion à cinq étapes, de la prise de contact initiale
-jusqu'à la transformation en client. La fiche~\ref{tab:rc_prospects} en présente la
-description détaillée.
+
+% ─────────────────────────────────────────────────
+\subsubsection{Création d'un prospect}
+
+La création d'un prospect constitue le point d'entrée du pipeline commercial : le chargé
+de clientèle enregistre un nouveau contact, que le système positionne au stade initial et
+enrichit automatiquement d'un score de conversion calculé par intelligence artificielle.
+La fiche~\ref{tab:rc_creation_prospect} en présente la description détaillée.
 
 \begin{table}[H]
-\centering
-\caption{Fiche descriptive -- Gestion des prospects}
-\label{tab:rc_prospects}
-\renewcommand{\arraystretch}{1.5}
-\begin{tabular}{|>{\bfseries}p{3.8cm}|p{10.5cm}|}
-\hline
-Identifiant        & FRC-01 \\ \hline
-Acteurs            & Chargé de clientèle \\ \hline
-Préconditions      &
-\begin{minipage}[t]{\linewidth}\vspace{2pt}
-\begin{itemize}[leftmargin=*,topsep=0pt,itemsep=1pt,parsep=0pt]
-    \item L'utilisateur est authentifié avec le rôle \textit{chargé de clientèle}
-    \item Le module de gestion des prospects est actif et accessible
-\end{itemize}
-\vspace{2pt}\end{minipage} \\ \hline
-Scénario nominal   &
-\begin{minipage}[t]{\linewidth}\vspace{2pt}
-\begin{enumerate}[leftmargin=*,topsep=0pt,itemsep=2pt,parsep=0pt]
-    \item Le chargé de clientèle accède à la liste des prospects qui lui sont assignés
-    \item Le système affiche les prospects avec leur étape courante dans le pipeline
-          et leur score de conversion
-    \item Le chargé sélectionne un prospect et consulte sa fiche
-    \item Il met à jour l'étape du pipeline selon l'avancement commercial
-          (\textit{Nouveau} $\rightarrow$ \textit{Contacté} $\rightarrow$
-          \textit{Qualifié} $\rightarrow$ \textit{En négociation} $\rightarrow$
-          \textit{Converti})
-    \item Le système soumet la demande de recalcul du score à l'API
-          d'intelligence artificielle
-    \item Le nouveau score est calculé et affiché sur la fiche du prospect
-    \item Le chargé enregistre une note ou planifie une action de relance
-\end{enumerate}
-\vspace{2pt}\end{minipage} \\ \hline
-Scénario alternatif &
-\begin{minipage}[t]{\linewidth}\vspace{2pt}
-\textbf{A1 -- Création d'un nouveau prospect :} le chargé saisit les informations
-d'un nouveau contact ; le système l'enregistre avec le statut \textit{Nouveau} et
-calcule un score initial via l'API de scoring
-
-\medskip
-\textbf{A2 -- Score de conversion faible :} le système signale visuellement les
-prospects à faible probabilité de conversion ; le chargé peut les archiver ou
-planifier une relance différée
-\vspace{2pt}\end{minipage} \\ \hline
-Scénario d'exception &
-\textbf{E1 -- API de scoring indisponible :} le score ne peut être recalculé ;
-le système affiche un avertissement et conserve le dernier score connu avec
-la mention \textit{``non actualisé''} \\ \hline
-Postconditions     & Le pipeline est mis à jour ; le chargé de clientèle dispose
-                     d'une liste de relances priorisée selon les scores de
-                     conversion calculés \\ \hline
-\end{tabular}
+    \centering
+    \caption{Fiche descriptive -- Création d'un prospect}
+    \label{tab:rc_creation_prospect}
+    \renewcommand{\arraystretch}{1.5}
+    \begin{tabular}{|>{\bfseries}p{3.8cm}|p{10.5cm}|}
+        \hline
+        Acteurs            & Chargé de clientèle \\ \hline
+        Préconditions      &
+        \begin{minipage}[t]{\linewidth}\vspace{2pt}
+        \begin{itemize}[leftmargin=*,topsep=0pt,itemsep=1pt,parsep=0pt]
+            \item L'utilisateur est authentifié avec le rôle \textit{chargé de clientèle}
+            \item Le module de gestion des prospects est accessible
+        \end{itemize}
+        \vspace{2pt}\end{minipage} \\ \hline
+        Scénario nominal   &
+        \begin{minipage}[t]{\linewidth}\vspace{2pt}
+        \begin{enumerate}[leftmargin=*,topsep=0pt,itemsep=2pt,parsep=0pt]
+            \item Le chargé de clientèle saisit les informations du prospect
+            (nom, prénom, email, téléphone, source ; éventuellement société,
+            valeur estimée, produits d'intérêt)
+            \item Le système vérifie que l'email n'est pas déjà associé à un
+            prospect existant
+            \item Le système enregistre le prospect au stade initial
+            \textit{LEAD}, l'assigne automatiquement au conseiller créateur et
+            lui attribue un score par défaut
+            \item Le système sollicite l'API d'intelligence artificielle pour
+            calculer le score de conversion du prospect
+            \item Le score, la probabilité de conversion et la priorité
+            recommandée sont appliqués au prospect
+            \item Le système confirme la création et affiche la fiche du prospect
+        \end{enumerate}
+        \vspace{2pt}\end{minipage} \\ \hline
+        Scénario alternatif &
+        \begin{minipage}[t]{\linewidth}\vspace{2pt}
+        \textbf{A1 -- Email déjà existant :} le système rejette la création et
+        signale que l'adresse email est déjà associée à un prospect ; aucune
+        donnée n'est enregistrée
+        \vspace{2pt}\end{minipage} \\ \hline
+        Scénario d'exception &
+        \textbf{E1 -- API de scoring indisponible :} le calcul du score échoue ;
+        le système conserve le prospect avec son score par défaut et journalise
+        l'incident. La création du prospect reste valide \\ \hline
+        Postconditions     & Le prospect est créé, rattaché au conseiller et
+        positionné au stade \textit{LEAD} dans le pipeline ; un évènement
+        d'audit \textit{CREATED / PROSPECT} est enregistré \\ \hline
+    \end{tabular}
 \end{table}
 
 La figure~\ref{fig:rc_prospects} représente le déroulement de cette fonctionnalité à
@@ -153,8 +151,8 @@ travers un diagramme de séquence.
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=\dimexpr\textwidth-2\fboxsep-2\fboxrule\relax]{images/contenu/chapitre-2/rc_seq_prospects.png}
-    \caption{Mise à jour du pipeline et recalcul du score de conversion d'un prospect}
+    \includegraphics[width=\textwidth]{images/contenu/chapitre-2/rc_seq_prospects.png}
+    \caption{Création d'un prospect et calcul automatique de son score de conversion}
     \label{fig:rc_prospects}
 \end{figure}
 
@@ -168,13 +166,12 @@ figure~\ref{fig:fonctionnalites_sgi} présente la liste des fonctionnalités de 
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=\dimexpr\textwidth-2\fboxsep-2\fboxrule\relax]{images/contenu/chapitre-2/use_case_sgi.png}
+    \includegraphics[width=0.9\textwidth]{images/contenu/chapitre-2/use_case_sgi.png}
     \caption{Liste des fonctionnalités du module SGI}
     \label{fig:fonctionnalites_sgi}
 \end{figure}
 
 Dans la suite, nous allons détailler la fonctionnalité passage d'ordres.
-
 
 % ─────────────────────────────────────────────────
 \subsubsection{Passage d'ordres}
@@ -185,94 +182,102 @@ contrôler, valider ou rejeter la demande selon les règles métier en vigueur. 
 fiche~\ref{tab:sgi_ordres} en présente la description détaillée.
 
 \begin{table}[H]
-\centering
-\caption{Fiche descriptive -- Passage d'ordres}
-\label{tab:sgi_ordres}
-\renewcommand{\arraystretch}{1.5}
-\begin{tabular}{|>{\bfseries}p{3.8cm}|p{10.5cm}|}
-\hline
-Identifiant        & FSGI-01 \\ \hline
-Acteurs            & Client, Équipe SGI \\ \hline
-Préconditions      &
-\begin{minipage}[t]{\linewidth}\vspace{2pt}
-\begin{itemize}[leftmargin=*,topsep=0pt,itemsep=1pt,parsep=0pt]
-    \item Le client est authentifié et son dossier KYC est complet
-    \item Le titre visé est référencé et disponible sur la plateforme
-    \item Le service de notification est opérationnel
-\end{itemize}
-\vspace{2pt}\end{minipage} \\ \hline
-Scénario nominal   &
-\begin{minipage}[t]{\linewidth}\vspace{2pt}
-\begin{enumerate}[leftmargin=*,topsep=0pt,itemsep=2pt,parsep=0pt]
-    \item Le client saisit un ordre en précisant le titre, le sens
-          (achat ou vente) et la quantité souhaitée
-    \item Le système enregistre l'ordre avec le statut \textit{Saisi}
-          et notifie l'équipe SGI
-    \item L'équipe SGI prend en charge l'ordre ; le statut passe à
-          \textit{En cours de traitement} ; le client est notifié
-    \item L'équipe SGI examine la demande et valide l'ordre ; le statut
-          passe à \textit{Validé} ; le client est notifié de la validation
-    \item L'ordre est exécuté sur le marché ; le statut passe à
-          \textit{Exécuté} ; le portefeuille du client est mis à jour
-    \item Le client reçoit une notification de confirmation d'exécution
-\end{enumerate}
-\vspace{2pt}\end{minipage} \\ \hline
-Scénario alternatif &
-\textbf{A1 -- Rejet de l'ordre :} si l'ordre ne respecte pas les règles métier
-(quantité insuffisante, titre non autorisé, dossier KYC incomplet), l'équipe SGI
-le rejette avec un motif explicite ; le statut passe à \textit{Rejeté} et le
-client est notifié avec le motif communiqué \\ \hline
-Scénario d'exception &
-\textbf{E1 -- Échec technique lors de l'exécution :} le système ne peut finaliser
-l'opération ; l'ordre est conservé au statut \textit{Validé} et une alerte est
-envoyée à l'équipe SGI pour un retraitement manuel \\ \hline
-Postconditions     & L'ordre est traité et archivé avec son statut final ;
-                     le portefeuille du client est mis à jour en cas
-                     d'exécution réussie \\ \hline
-\end{tabular}
+    \centering
+    \caption{Fiche descriptive -- Passage d'ordres}
+    \label{tab:sgi_ordres}
+    \renewcommand{\arraystretch}{1.5}
+    \begin{tabular}{|>{\bfseries}p{3.8cm}|p{10.5cm}|}
+        \hline
+        Acteurs            & Client, Équipe SGI \\ \hline
+        Préconditions      &
+        \begin{minipage}[t]{\linewidth}\vspace{2pt}
+        \begin{itemize}[leftmargin=*,topsep=0pt,itemsep=1pt,parsep=0pt]
+            \item Le client est authentifié et propriétaire d'un portefeuille
+            \item Le titre visé est référencé et sa cotation est disponible
+            \item Le compte espèces du portefeuille est approvisionné
+        \end{itemize}
+        \vspace{2pt}\end{minipage} \\ \hline
+        Scénario nominal   &
+        \begin{minipage}[t]{\linewidth}\vspace{2pt}
+        \begin{enumerate}[leftmargin=*,topsep=0pt,itemsep=2pt,parsep=0pt]
+            \item Le client saisit un ordre en précisant le titre, le sens
+            (achat ou vente) et la quantité
+            \item Le système vérifie que le portefeuille appartient au client
+            et récupère la cotation du titre
+            \item Le système enregistre l'ordre au statut \textit{En attente}
+            \item L'équipe SGI consulte la liste des ordres en attente
+            \item L'équipe SGI approuve l'ordre ; le système contrôle la
+            liquidité (solde espèces suffisant) et passe le statut à
+            \textit{Approuvé}
+            \item L'équipe SGI exécute l'ordre ; le système simule l'exécution
+            (prix, quantité, frais), débite le compte espèces, crédite le compte
+            titres, met à jour le portefeuille et passe le statut à
+            \textit{Exécuté}
+            \item Le client consulte l'état actualisé de son ordre et de son
+            portefeuille
+        \end{enumerate}
+        \vspace{2pt}\end{minipage} \\ \hline
+        Scénario alternatif &
+        \begin{minipage}[t]{\linewidth}\vspace{2pt}
+        \textbf{A1 -- Rejet de l'ordre :} l'équipe SGI rejette l'ordre en
+        saisissant un motif ; le statut passe à \textit{Rejeté} et le motif est
+        enregistré, puis communiqué au client
+        \vspace{2pt}\end{minipage} \\ \hline
+        Scénario d'exception &
+        \begin{minipage}[t]{\linewidth}\vspace{2pt}
+        \textbf{E1 -- Liquidité insuffisante :} au moment de l'approbation, le
+        contrôle du solde espèces échoue ; le système refuse l'approbation et
+        l'ordre reste au statut \textit{En attente}
+
+        \medskip
+        \textbf{E2 -- Titre non coté :} la cotation du titre n'est pas
+        disponible ; la création de l'ordre est refusée
+        \vspace{2pt}\end{minipage} \\ \hline
+        Postconditions     & L'ordre est enregistré avec son statut final ;
+        en cas d'exécution, le portefeuille et les comptes espèces et titres
+        sont mis à jour, et un journal d'exécution est créé ; un évènement
+        d'audit est journalisé à chaque étape \\ \hline
+    \end{tabular}
 \end{table}
 
 La figure~\ref{fig:sgi_ordres} représente le déroulement de cette fonctionnalité à
 travers un diagramme de séquence.
 
+\clearpage
 \begin{figure}[H]
     \centering
-    \includegraphics[width=\dimexpr\textwidth-2\fboxsep-2\fboxrule\relax]{images/contenu/chapitre-2/sgi_seq_passage_ordres.png}
+    \includegraphics[height=0.9\textheight,keepaspectratio]{images/contenu/chapitre-2/sgi_seq_passage_ordres.png}
     \caption{Circuit de soumission et de traitement d'un ordre de bourse du client à l'exécution}
     \label{fig:sgi_ordres}
 \end{figure}
-\newpage{}
 % ─────────────────────────────────────────────────
 \section{Exigences non fonctionnelles}
 
 En plus des fonctionnalités, le système doit respecter plusieurs exigences non
 fonctionnelles. Ces exigences déterminent la qualité globale de la solution et sont
 particulièrement importantes dans un environnement bancaire. Elles encadrent la manière
-dont le système doit être conçu, sécurisé, maintenu et utilisé. Elles s'inscrivent dans
-les principes généraux de qualité logicielle \cite{iso25010}, de sécurité applicative
-\cite{owasp_asvs} et de conformité des parcours d'identification client
-\cite{fatf_digital_id}.
+dont le système doit être conçu, sécurisé, maintenu et utilisé.
 
 \begin{description}
     \item[Sécurité] Les accès doivent être contrôlés par rôle. Un client ne doit accéder
-          qu'à ses propres données, tandis que les utilisateurs internes doivent disposer
-          d'autorisations adaptées à leurs responsabilités.
+    qu'à ses propres données, tandis que les utilisateurs internes doivent disposer
+    d'autorisations adaptées à leurs responsabilités.
 
     \item[Confidentialité] Les données personnelles, KYC, bancaires et d'investissement
-          doivent être protégées contre tout accès non autorisé.
+    doivent être protégées contre tout accès non autorisé.
 
     \item[Traçabilité] Les actions importantes doivent être historisées : consultation
-          sensible, modification de données, validation ou rejet d'ordre, et mise à jour
-          de statut.
+    sensible, modification de données, validation ou rejet d'ordre, et mise à jour
+    de statut.
 
     \item[Disponibilité] Le système doit être accessible de manière continue afin de
-          permettre la consultation des informations et le suivi des opérations.
+    permettre la consultation des informations et le suivi des opérations.
 
     \item[Évolutivité] La solution doit pouvoir intégrer de nouvelles fonctionnalités et
-          de nouveaux modules sans remettre en cause l'ensemble de l'architecture existante.
+    de nouveaux modules sans remettre en cause l'ensemble de l'architecture existante.
 
     \item[Ergonomie] Les interfaces doivent être simples, lisibles et adaptées aux profils
-          utilisateurs afin de réduire les erreurs et de faciliter l'adoption du système.
+    utilisateurs afin de réduire les erreurs et de faciliter l'adoption du système.
 \end{description}
 
 La sécurité et la confidentialité sont prioritaires, car le système manipule des
@@ -283,14 +288,13 @@ adopté.
 
 % ─────────────────────────────────────────────────
 \section*{Conclusion}
-\phantomsection
 \addcontentsline{toc}{section}{Conclusion}
 
 Ce chapitre a permis d'identifier les besoins fonctionnels et non fonctionnels du système
-I-SIB pour les modules Relation Client et SGI. Les fonctionnalités retenues couvrent la
-gestion des prospects pour le module Relation Client et le passage d'ordres pour le module
-SGI. Chaque fonctionnalité a été détaillée à travers une fiche textuelle structurée et
-illustrée par un diagramme de séquence. Ces besoins s'accompagnent
+I-SIB pour les modules Relation Client et SGI. Les fonctionnalités décrites couvrent la
+gestion de la relation client, la conformité KYC, le suivi des portefeuilles et le
+traitement des ordres de bourse. Chaque fonctionnalité a été détaillée à travers une fiche
+textuelle structurée et illustrée par un diagramme de séquence. Ces besoins s'accompagnent
 d'exigences essentielles en matière de sécurité, de confidentialité, de performance et de
 traçabilité.
 

@@ -5,11 +5,10 @@
 \markboth{Présentations générales}{Présentations générales}
 
 \section*{Introduction}
-\phantomsection
 \addcontentsline{toc}{section}{Introduction}
 
 Ce chapitre présente l'entreprise dans laquelle nous avons effectué notre stage ainsi que le
-sujet de notre projet. Nous commencerons par présenter INNOV4AFRICA, l'entreprise qui nous a
+sujet de notre projet. Nous commencerons par présenter Innov4africa, l'entreprise qui nous a
 accueillis. Nous expliquerons ensuite le contexte du projet, en identifiant la problématique et les
 objectifs à atteindre. Enfin, nous détaillerons les caractéristiques du projet ainsi que la méthode de
 travail adoptée pour le mener à bien.
@@ -17,30 +16,36 @@ travail adoptée pour le mener à bien.
 % ─────────────────────────────────────────────────
 \section{Présentation de la structure d'accueil}
 
-\subsection{Présentation d'INNOV4AFRICA}
-INNOV4AFRICA est la structure d'accueil dans laquelle le projet I-SIB a été
-réalisé. L'entreprise intervient dans la conception de solutions numériques et
-présente son activité autour de l'innovation technologique appliquée aux besoins
-des organisations africaines \cite{innov4africa_officiel}. Dans ce cadre, le
-projet étudié concerne la conception d'une plateforme bancaire modulaire
-rapprochant la relation client et les services d'investissement.
+\subsection{Présentation de Innov4Africa}
+INNOV4AFRICA, une société anonyme au capital de dix (10) millions de FCFA, est située à la villa
+numéro 9405, Sacré-Cœur 3, Ancienne Piste X VDN à Dakar.
+L'objectif principal de INNOV4AFRICA est de contribuer au développement économique et social
+de l'Afrique en stimulant l'innovation à travers les nouvelles technologies, couvrant divers secteurs
+économiques. En tant qu'acteur de l'innovation, l'entreprise œuvre pour l'intégration des technologies
+modernes afin de transformer et dynamiser l'ensemble du continent africain.
+L'organisation d'INNOV4AFRICA repose sur une structure de holdings regroupant des filiales
+spécialisées et des représentants commerciaux présents dans de nombreux pays africains, tant
+francophones qu'anglophones, afin de couvrir l'ensemble du marché africain.
+Le Président Directeur Général (DG) de INNOV4AFRICA se prénomme M. Khassoum WONE. Ce
+dernier est entouré par un conseil d'administration d'une expertise reconnue regroupant des
+personnalités indépendantes. M. Khassoum WONE est un ingénieur de conception en Informatique.
+Il a été DG de l'Agence de l'Informatique De l'Etat (ADIE) du 27 avril 2012 au 23 juillet 2014. Il a
+managé une équipe d'une centaine d'ingénieurs informaticiens/télécoms et a pris le pilotage de projets
+d'envergure à gros budget au Sénégal.
 
-\subsection{Domaines d'activité}
+\subsection{Domaines d'activités}
 
-Le site institutionnel de l'entreprise présente plusieurs domaines d'intervention
-liés au numérique et à l'accompagnement des organisations
-\cite{innov4africa_officiel}. Les domaines pertinents pour le contexte du
-projet sont synthétisés ci-dessous.
+INNOV4AFRICA se distingue par sa capacité à concevoir et à déployer des innovations majeures dans le domaine des technologies de l'information et de la communication (TIC), au service des gouvernements, des entreprises et des citoyens à travers l'Afrique.
+
+L'entreprise intervient dans plusieurs secteurs stratégiques du numérique. Ses principaux domaines d'activités se présentent comme suit.
 
 \begin{itemize}
-    \item \textbf{Services publics numériques} : e-Government, e-Santé et e-Éducation.
-    \item \textbf{Soutien à l'innovation} : incubation de start-ups et gestion de fonds d'investissement.
-    \item \textbf{Solutions technologiques avancées} : cybersécurité, paiements électroniques, biométrie et transfert de technologies.
-    \item \textbf{Développement numérique} : conception de logiciels, applications mobiles, télécommunications et e-commerce.
-    \item \textbf{Communication et accompagnement} : solutions médias, systèmes d'identification, développement d'affaires et partenariats stratégiques.
+    \item \textbf{Services publics numériques} : e-Government, e-Santé et e-Éducation .
+    \item \textbf{soutien à l'innovation} : incubation de start-ups et gestion de fonds d'investissement .
+    \item \textbf{solutions technologiques avancées} : cybersécurité, paiements électroniques, biométrie et transfert de technologies .
+    \item \textbf{développement numérique} : conception de logiciels, applications mobiles, télécommunications et e-commerce .
+    \item \textbf{communication et accompagnement} : solutions médias, systèmes d'identification, développement d'affaires et partenariats stratégiques.
 \end{itemize}
-\vspace{0.5cm}
-\newpage{}
 % ─────────────────────────────────────────────────
 \section{Présentation du sujet}
 
@@ -63,29 +68,28 @@ de solutions plus modulaires, ouvertes et intelligentes.
 
 \textbf{I-SIB}, porté par INNOV4AFRICA, s'inscrit dans cette évolution. Il
 vise à proposer un système d'information bancaire complet, construit autour
-d'une architecture microservices \cite{fowler_microservices}, d'une logique full API, d'un objectif de disponibilité
-continue et d'un usage de l'intelligence artificielle dans les modules métiers.
+d'une architecture microservices, d'une logique full API, d'une disponibilité
+24/7 et d'un usage de l'intelligence artificielle dans les modules métiers.
 
 Le périmètre traité concerne deux modules complémentaires : le module
 \textbf{RELATION CLIENT}, qui centralise la connaissance client et les
-interactions commerciales, et le module \textbf{SGI},
-qui permet d'intégrer la gestion d'investissement directement dans
-l'application bancaire.
+interactions commerciales, et le module \textbf{SGI}, qui permet d'intégrer la
+gestion d'investissement directement dans l'application bancaire.
 
 Pour faciliter la compréhension de ce livrable, les principaux termes et
 concepts utilisés sont définis ci-dessous.
 
 \begin{description}
-  \item[I-SIB] Solution de SIB intelligente proposée par INNOV4AFRICA,
+    \item[I-SIB] Solution de SIB intelligente proposée par INNOV4AFRICA,
     intégrant les processus bancaires, l'IA, les API et une architecture
     microservices.
-  \item[Microservice] Application autonome dédiée à une responsabilité métier
+    \item[Microservice] Application autonome dédiée à une responsabilité métier
     précise, pouvant évoluer et être déployée indépendamment.
-  \item[Portefeuille] Ensemble des actifs financiers détenus par un client :
+    \item[Portefeuille] Ensemble des actifs financiers détenus par un client :
     actions, obligations.
-  \item[Cotation] Valorisation ou prix de marché d'un instrument financier
+    \item[Cotation] Valorisation ou prix de marché d'un instrument financier
     à un moment donné.
-  \item[Passage d'ordres] Processus par lequel un client demande l'achat
+    \item[Passage d'ordres] Processus par lequel un client demande l'achat
     ou la vente d'un instrument financier.
 \end{description}
 
@@ -129,23 +133,22 @@ produits d'investissement depuis une plateforme unique.
 Les objectifs spécifiques du projet se déclinent en plusieurs axes. Ils sont présentés ci-dessous.
 
 \begin{itemize}
-  \item Mettre en place un tableau de bord Relation Client adapté aux profils
-        utilisateurs : client, chargé de clientèle et direction.
-  \item Gérer les prospects avec un pipeline de conversion et un score
-        automatique.
-  \item Construire une vue 360° client incluant identité, KYC, comptes,
-        produits, transactions et interactions.
-  \item Dématérialiser les documents et courriers administratifs liés au cycle
-        de vie client.
-  \item Intégrer les exigences KYC dans les processus de suivi client.
-  \item Détecter les risques de perte de clients grâce à l'intelligence
-        artificielle.
-  \item Permettre la consultation des portefeuilles, de leur valorisation et de
-        leur composition.
-  \item Gérer les cotations, l'analyse des titres, le passage d'ordres et le
-        suivi des achats ou ventes d'actions et d'obligations.
+    \item Mettre en place un tableau de bord Relation Client adapté au client.
+    au chargé de clientèle et à la direction.
+    \item Gérer les prospects avec un pipeline de conversion et un score
+    automatique.
+    \item Construire une vue 360° client incluant identité, KYC, comptes,
+    produits, transactions et interactions.
+    \item Dématérialiser les documents et courriers administratifs liés au cycle
+    de vie client.
+    \item Intégrer les exigences KYC dans les processus de suivi client.
+    \item Proposer des recommandations de produits et détecter les risques de
+    perte de clients grâce à l'IA.
+    \item Permettre la consultation des portefeuilles, de la performance, des
+    gains/pertes et de la répartition des actifs.
+    \item Gérer les cotations, le passage d'ordres et le suivi des achats ou
+    ventes d'actions et d'obligations.
 \end{itemize}
-\newpage
 
 % ─────────────────────────────────────────────────
 % ─────────────────────────────────────────────────
@@ -153,7 +156,7 @@ Les objectifs spécifiques du projet se déclinent en plusieurs axes. Ils sont p
 
 La démarche retenue est itérative et incrémentale. Ce choix est cohérent avec
 la nature du projet. Dans cette section, nous allons présenter les différentes
-caractéristiques du projet.
+caractéristiques du projet .
 
 % ─────────────────────────────────────────────────
 
@@ -161,21 +164,17 @@ caractéristiques du projet.
 
 Le projet intitulé \textbf{I-SIB – Système d'Information Bancaire intelligent} est porté par l'entreprise \textbf{INNOV4AFRICA}, avec la contribution de \textbf{Salif Biaye}. Il s'inscrit dans un contexte de transformation numérique des systèmes bancaires, en mettant l'accent sur les modules \textbf{RELATION CLIENT} et \textbf{SGI (Société de Gestion et d'Intermédiation)}.
 
-Les principaux bénéficiaires de cette solution sont les banques, les institutions de microfinance, les établissements de paiement, les SGI, ainsi que les clients finaux et les chargés de clientèle. Le produit développé est une application bancaire modulaire, intelligente, exposée via des API (\textit{full API}) et reposant sur une architecture orientée microservices \cite{fowler_microservices}.
+Les principaux bénéficiaires de cette solution sont les banques, les institutions de microfinance, les établissements de paiement, les SGI, ainsi que les clients finaux et les chargés de clientèle. Le produit développé est une application bancaire modulaire, intelligente, exposée via des API (\textit{full API}) et reposant sur une architecture orientée microservices.
 
 Le client du projet est disponible pour des échanges réguliers, bien que ses besoins puissent évoluer progressivement au cours du développement. En conséquence, l'équipe projet adopte une organisation basée sur le développement par modules, avec des validations successives permettant d'ajuster les fonctionnalités en fonction des retours.
 
-Le projet est soumis à plusieurs contraintes majeures, notamment en matière de sécurité applicative \cite{owasp_asvs}, de conformité réglementaire liée au KYC \cite{fatf_digital_id}, de traçabilité des opérations, d'ergonomie des interfaces et d'intégration avec le cœur du système bancaire existant.
+Le projet est soumis à plusieurs contraintes majeures, notamment en matière de sécurité, de conformité réglementaire (KYC), de traçabilité des opérations, d'ergonomie des interfaces et d'intégration avec le cœur du système bancaire existant.
 
 Par ailleurs, plusieurs risques ont été identifiés, tels que la mauvaise compréhension des besoins métiers, la complexité liée à l'intégration avec les systèmes existants, la gestion de données incomplètes, une interprétation incorrecte des règles de conformité, ainsi qu'un risque d'adoption insuffisante par les utilisateurs finaux.
 
-Les résultats attendus incluent la mise en place d'un parcours client unifié,
-une centralisation des informations utiles au suivi client, un accès intégré aux
-services d'investissement et des outils de pilotage des activités métier. Le
-projet vise également à limiter les ruptures applicatives entre les différents
-systèmes.
+Les résultats attendus incluent la mise en place d'un parcours client unifié, une amélioration significative de la connaissance client, un accès intégré aux services d'investissement, ainsi qu'un meilleur pilotage des activités métier. Le projet vise également à réduire les ruptures applicatives entre les différents systèmes.
 
-Compte tenu de ces éléments, une approche entièrement figée dès le départ apparaît inadaptée. En effet, le client n'est pas toujours en mesure de définir précisément l'ensemble des fonctionnalités attendues dès le début du projet. Ainsi, les modules \textbf{RELATION CLIENT} et \textbf{SGI} ont été développés de manière itérative, à travers des versions successives, avec une validation régulière des priorités, des parcours utilisateurs et des règles métiers.
+Compte tenu de ces éléments, une approche entièrement figée dès le départ apparaît inadaptée. En effet, le client n'est pas toujours en mesure de définir précisément l'ensemble des fonctionnalités attendues dès le début du projet. Ainsi, les modules \textbf{RELATION CLIENT} et \textbf{SGI} seront développés de manière itérative, à travers des versions successives, avec une validation régulière des priorités, des parcours utilisateurs et des règles métiers.
 
 
 % ─────────────────────────────────────────────────
@@ -185,49 +184,38 @@ La mise en œuvre de cette démarche s'organise en plusieurs étapes successives
 présentées ci-dessous.
 
 \begin{enumerate}
-  \item \textbf{Cadrage du besoin :} identifier le périmètre, les acteurs,
-        les objectifs et les contraintes.
-  \item \textbf{Analyse métier :} étudier les processus de relation client,
-        de KYC, de gestion de portefeuille et de passage d'ordres.
+    \item \textbf{Cadrage du besoin :} identifier le périmètre, les acteurs,
+    les objectifs et les contraintes.
+    \item \textbf{Analyse métier :} étudier les processus de relation client,
+    de KYC, de gestion de portefeuille et de passage d'ordres.
 
-\item \textbf{Modélisation fonctionnelle :} représenter les fonctionnalités,
-      les interactions entre acteurs et les flux de données du système.
-      Le langage \textbf{UML} est mobilisé comme support de modélisation
-      pour illustrer ces différents aspects.
+    \item \textbf{Modélisation fonctionnelle :} représenter les fonctionnalités,
+    les interactions entre acteurs et les flux de données du système.
+    Le langage \textbf{UML} est mobilisé comme support de modélisation
+    pour illustrer ces différents aspects.
 
-  \item \textbf{Conception applicative :} définir les modules, les
-        microservices, les API, les rôles et les principales règles de gestion.
-  \item \textbf{Prototypage :} réaliser des maquettes ou écrans clés pour
-        valider l'expérience utilisateur.
-  \item \textbf{Validation itérative :} recueillir les retours, ajuster le
-        backlog et prioriser les fonctionnalités.
-  \item \textbf{Développement et intégration :} construire les fonctionnalités
-        par lots cohérents et les connecter au reste d'I-SIB.
-  \item \textbf{Tests et recette :} vérifier la conformité fonctionnelle, la
-        sécurité, la performance et l'expérience utilisateur.
-  \item \textbf{Déploiement progressif :} livrer par étapes afin de limiter
-        les risques et faciliter l'appropriation.
+    \item \textbf{Conception applicative :} définir les modules, les
+    microservices, les API, les rôles et les principales règles de gestion.
+    \item \textbf{Prototypage :} réaliser des maquettes ou écrans clés pour
+    valider l'expérience utilisateur.
+    \item \textbf{Validation itérative :} recueillir les retours, ajuster le
+    backlog et prioriser les fonctionnalités.
+    \item \textbf{Développement et intégration :} construire les fonctionnalités
+    par lots cohérents et les connecter au reste de I-SIB.
+    \item \textbf{Tests et recette :} vérifier la conformité fonctionnelle, la
+    sécurité, la performance et l'expérience utilisateur.
+    \item \textbf{Déploiement progressif :} livrer par étapes afin de limiter
+    les risques et faciliter l'appropriation.
 \end{enumerate}
 
-\subsection{Justification de la démarche}
 
-Les éléments suivants illustrent comment les caractéristiques du projet ont orienté directement la démarche méthodologique retenue.
-
-\begin{enumerate}
-  \item \textbf{Produit bancaire sensible :} I-SIB manipule des données clients sensibles (conformité, transactions, investissements) qui exigent rigueur et traçabilité. La démarche prévoit des validations fréquentes, des tests rigoureux, une documentation continue et un contrôle strict des accès ;
-  \item \textbf{Architecture microservices :} chaque module doit rester autonome tout en communiquant via API, ce qui impose une intégration maîtrisée. Le travail est découpé par responsabilités métiers et les composants sont intégrés progressivement pour limiter les dépendances ;
-  \item \textbf{Usage de l'IA :} les modèles d'IA intégrés doivent être utiles, explicables et alignés sur les besoins métiers réels. Un prototypage itératif permet d'évaluer les résultats, d'ajuster les modèles et d'assurer une amélioration continue ;
-  \item \textbf{Besoins évolutifs :} les attentes peuvent évoluer après visualisation des écrans ou des scénarios fonctionnels. Des retours réguliers permettent d'ajuster le backlog et de prioriser les fonctionnalités pertinentes ;
-  \item \textbf{Cadre d'alternance :} la contribution progresse avec l'apprentissage, les validations encadrantes et les contraintes de l'équipe projet. Des livrables intermédiaires structurent la progression et favorisent la montée en responsabilité.
-\end{enumerate}
 \section*{Conclusion}
-\phantomsection
 \addcontentsline{toc}{section}{Conclusion}
 
 Ce chapitre a permis de poser les bases du projet en présentant le contexte global dans lequel il s'inscrit, ainsi que les enjeux liés à la transformation des systèmes d'information bancaires. La description de la structure d'accueil a offert une meilleure compréhension de l'environnement professionnel, tandis que l'analyse du sujet a mis en évidence les limites des solutions existantes et la nécessité d'une approche intégrée.
 
 La problématique identifiée souligne l'importance de rapprocher les modules de relation client et de gestion d'investissement afin d'améliorer l'expérience utilisateur et le pilotage des activités. Les objectifs définis traduisent cette volonté à travers la mise en place d'une plateforme unifiée, intelligente et orientée données.
 
-Enfin, la démarche méthodologique retenue, basée sur une approche itérative et incrémentale, apparaît adaptée aux contraintes du projet et aux besoins évolutifs du client. Elle contribue à une meilleure maîtrise des risques, à une validation continue des fonctionnalités et à une adéquation progressive entre la solution développée et les attentes métiers.
+Enfin, la démarche méthodologique retenue, basée sur une approche itérative et incrémentale, apparaît adaptée aux contraintes du projet et aux besoins évolutifs du client. Elle permet de garantir une meilleure maîtrise des risques, une validation continue des fonctionnalités et une adéquation progressive entre la solution développée et les attentes métiers.
 
 Le chapitre suivant sera consacré à l'analyse détaillée des besoins et à la modélisation fonctionnelle du système proposé.

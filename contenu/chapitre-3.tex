@@ -30,24 +30,24 @@ Les principaux principes retenus sont les suivants :
 
 \begin{itemize}
     \item \textbf{Séparer les responsabilités} afin que chaque module conserve un périmètre
-          clair, notamment pour la Relation Client, la SGI, l'authentification, l'audit et
-          les services transversaux.
-    \item \textbf{Centraliser les accès} pour éviter que les applications clientes ne
-          communiquent directement avec les services internes.
+    clair, notamment pour la Relation Client, la SGI, l'authentification, l'audit et
+    les services transversaux.
+    \item \textbf{Filtrer et contrôler les accès entrants}
+ via un composant dédié, afin de garantir que seules les requêtes autorisées atteignent les services métier.
+
     \item \textbf{Protéger les données sensibles} en limitant les accès selon les rôles et
-          en isolant les informations manipulées par les différents services.
+    en isolant les informations manipulées par les différents services.
     \item \textbf{Assurer la traçabilité} des opérations importantes, en particulier les
-          actions liées au KYC, aux prospects, aux portefeuilles et aux ordres de bourse.
+    actions liées au KYC, aux prospects, aux portefeuilles et aux ordres de bourse.
     \item \textbf{Faciliter l'évolution du système} afin de pouvoir ajouter de nouveaux
-          modules ou de nouvelles fonctionnalités sans remettre en cause toute la
-          plateforme.
+    modules ou de nouvelles fonctionnalités sans remettre en cause toute la
+    plateforme.
     \item \textbf{Maintenir une expérience utilisateur cohérente} entre les interfaces
-          destinées aux clients et celles utilisées par les équipes internes.
+    destinées aux clients et celles utilisées par les équipes internes.
 \end{itemize}
 
 Ces principes conduisent à retenir une architecture modulaire, organisée autour de blocs
 spécialisés qui communiquent entre eux de manière contrôlée \cite{fowler_microservices}.
-\newpage{}
 % ─────────────────────────────────────────────────
 \section{Architecture fonctionnelle de la solution}
 
@@ -70,7 +70,6 @@ Comme le montre la figure~\ref{fig:architecture_fonctionnelle}, la passerelle AP
 un rôle central : elle constitue la frontière entre les applications web et les
 microservices internes. Les services métier restent ainsi isolés de tout accès
 direct depuis l'extérieur.
-\newpage{}
 \subsection{Description des blocs}
 
 La figure~\ref{fig:architecture_fonctionnelle} est organisée autour de plusieurs blocs
@@ -78,43 +77,49 @@ complémentaires, chacun correspondant à une responsabilité précise dans la p
 
 \begin{description}
     \item[Front-office] Espace destiné aux clients de la banque. Il permet de consulter
-          les comptes, les transactions, les portefeuilles et les ordres de bourse depuis
-          une interface en libre-service.
+    les comptes, les transactions, les portefeuilles et les ordres de bourse depuis
+    une interface en libre-service.
 
     \item[Back-office] Espace réservé aux employés. Il regroupe les modules utilisés par
-          les chargés de clientèle, les gestionnaires SGI, les équipes d'agence, la
-          trésorerie, la comptabilité et l'administration.
+    les chargés de clientèle, les gestionnaires SGI, les équipes d'agence, la
+    trésorerie, la comptabilité et l'administration.
+
+    \item[Module Manager] Composant d'administration qui permet de gérer les
+    modules disponibles, les fonctionnalités associées et les rôles autorisés
+    à y accéder. Il fournit ainsi un point de paramétrage des accès fonctionnels
+    de la plateforme, dont les interfaces sont illustrées en
+    annexe~\ref{ann:administration-acces}.
 
     \item[Authentification et accès] Bloc chargé de contrôler l'identité des utilisateurs,
-          les rôles, les sessions et les règles de sécurité avant l'accès aux services.
+    les rôles, les sessions et les règles de sécurité avant l'accès aux services.
 
     \item[Passerelle de communication] Point d'entrée central entre les interfaces et les
-          microservices. Elle sécurise les échanges, valide les requêtes, applique les
-          contrôles d'accès et route les demandes vers les services concernés.
+    microservices. Elle sécurise les échanges, valide les requêtes, applique les
+    contrôles d'accès et route les demandes vers les services concernés.
 
     \item[Registre des services] Annuaire permettant de localiser les services actifs et
-          de suivre leur état. Il facilite la communication entre la passerelle et les
-          microservices internes.
+    de suivre leur état. Il facilite la communication entre la passerelle et les
+    microservices internes.
 
     \item[Services métier] Ensemble des microservices qui portent les fonctionnalités de
-          la plateforme : Relation Client, SGI, utilisateurs, comptes et transactions,
-          agence, comptabilité, trésorerie et crédit.
+    la plateforme : Relation Client, SGI, utilisateurs, comptes et transactions,
+    agence, comptabilité, trésorerie et crédit.
 
     \item[Audit service] Bloc dédié à la journalisation des événements, à l'historique des
-          actions sensibles et au suivi de la conformité réglementaire.
+    actions sensibles et au suivi de la conformité réglementaire.
 
     \item[Données et services de support] Ensemble des composants de support aux
-          traitements métier : base de données, cache système, messagerie asynchrone et
-          stockage objet des fichiers et documents.
+    traitements métier : base de données, cache système, messagerie asynchrone et
+    stockage objet des fichiers et documents.
 
     \item[Services IA et analytique] Bloc qui regroupe l'assistant intelligent, l'analyse
-          prédictive et la segmentation client afin d'apporter une aide à la décision.
+    prédictive et la segmentation client afin d'apporter une aide à la décision.
 
     \item[Observabilité et déploiement] Ensemble des éléments qui facilitent l'exploitation
-          de la plateforme : logs, traçabilité des requêtes, intégration continue,
-          déploiement automatisé et orchestration des conteneurs.
+    de la plateforme : logs, traçabilité des requêtes, intégration continue,
+    déploiement automatisé et orchestration des conteneurs.
 \end{description}
-\newpage{}
+
 \section{Choix des outils et technologies}
 
 Les choix technologiques traduisent l'architecture fonctionnelle en composants
@@ -132,11 +137,11 @@ sur \textbf{Spring Boot 3.5} \cite{spring_boot_docs}, utilisé comme socle de d�
 métier. L'accès aux services est centralisé par \textbf{Spring Cloud Gateway}
 \cite{spring_gateway_docs}, qui assure
 le routage, les filtres de sécurité et la résilience. La gestion des identités et des
-rôles est confiée à \textbf{Keycloak} \cite{keycloak_docs}, tandis que
+rôles est confiée à \textbf{Keycloalak} \cite{keycloak_docs}, tandis que
 \textbf{Netflix Eureka} \cite{spring_eureka_docs} permet la découverte dynamique des services.
 
-Pour la persistance, \textbf{PostgreSQL} est retenu comme système de gestion de bases de
-données relationnel \cite{postgresql_docs}, avec une base isolée par microservice afin de préserver l'autonomie
+Pour la persistance, \textbf{PostgreSQL} \cite{postgresql_docs} est retenu comme système de gestion de bases de
+données relationnel, avec une base isolée par microservice afin de préserver l'autonomie
 des données. \textbf{Redis} \cite{redis_docs} est utilisé pour le cache et le contrôle de débit, tandis que
 \textbf{RabbitMQ} \cite{rabbitmq_docs} prend en charge la communication asynchrone entre les services,
 notamment pour les événements d'audit. Les documents clients et les pièces KYC sont
@@ -182,39 +187,32 @@ et les composants applicatifs.
 \section{Conception détaillée}
 
 Après la présentation des architectures fonctionnelle et technique, cette section détaille
-le fonctionnement interne d'une fonctionnalité représentative du module Relation Client :
-la \textbf{Gestion des prospects}. Ce choix permet d'illustrer, de manière ciblée, le
-cheminement d'une demande depuis l'interface back-office jusqu'aux services backend, en
-passant par la passerelle API, le service CRM et sa persistance, le scoring par
+le fonctionnement interne d'un scénario représentatif du module Relation Client :
+\textbf{la création d'un prospect}. Ce choix permet d'illustrer, de manière ciblée,
+le cheminement d'une demande depuis l'interface back-office jusqu'aux services backend,
+en passant par la passerelle API, le service CRM et sa persistance, le scoring par
 intelligence artificielle et la traçabilité.
 
-La section présente successivement le périmètre de la fonctionnalité retenue, le workflow
-de traitement illustré par deux figures portant sur la création d'un prospect et sa
-conversion en client, une synthèse des principales API exposées sous forme de tableau,
-puis une vue de conception montrant les artefacts mobilisés et leurs relations.
+La section présente successivement le périmètre du scénario retenu, le workflow
+de création illustré par une figure, une synthèse des principales API mobilisées,
+puis une vue de conception montrant les artefacts concernés et leurs relations.
 
-\subsection{Périmètre de la fonctionnalité}
+\subsection{Périmètre du scénario}
 
-La gestion des prospects couvre le suivi d'un contact commercial depuis son
-enregistrement jusqu'à sa qualification, sa conversion en client ou son abandon. L'acteur
-principal est le chargé de clientèle, qui consulte les prospects qui lui sont affectés,
-met à jour leur étape dans le pipeline, ajoute des interactions et planifie les relances.
-Le service CRM assure le traitement métier et la persistance associée, tandis
-que les services transversaux interviennent pour le scoring et l'audit.
+Le scénario étudié correspond à l'enregistrement initial d'un prospect par le
+chargé de clientèle. Il couvre la saisie des informations commerciales, la
+transmission de la demande au backend, la création de l'enregistrement dans le
+service CRM, le calcul d'un score initial et la publication d'une trace d'audit.
+Les évolutions ultérieures du dossier prospect ne sont pas détaillées dans cette
+conception afin de garder un périmètre maîtrisé.
 
-\subsection{Workflow de traitement}
-
-Le workflow de la gestion des prospects est présenté à travers deux opérations
-représentatives : la création d'un prospect et sa conversion en client. Ces deux cas
-permettent de montrer le cheminement d'une demande depuis le back-office jusqu'aux
-services backend, ainsi que l'intervention des services de scoring, de persistance et
-d'audit.
+\subsection{Workflow de création}
 
 La création d'un prospect commence par la saisie des informations dans la vue Prospects.
 La demande est transmise à la passerelle API, puis routée vers le service CRM. Celui-ci
 contrôle les informations reçues, persiste le prospect, sollicite le service de scoring IA
 et publie une trace d'audit. La figure~\ref{fig:workflow_creation_prospect} illustre ce
-premier scénario.
+scénario.
 
 \begin{figure}[H]
     \centering
@@ -223,62 +221,44 @@ premier scénario.
     \label{fig:workflow_creation_prospect}
 \end{figure}
 
-La conversion d'un prospect intervient lorsque le chargé de clientèle décide de
-transformer un prospect en client.
-Le service Relation Client, qui porte les traitements CRM, vérifie l'éligibilité du
-prospect, sollicite le service de segmentation,
-crée le compte client, initialise le scoring associé, déclenche l'envoi du courriel de
-bienvenue et historise l'opération. La figure~\ref{fig:workflow_conversion_prospect}
-présente ce second scénario.
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=\dimexpr\textwidth-2\fboxsep-2\fboxrule\relax]{images/contenu/chapitre-3/workflow_conversion_prospect.png}
-    \caption{Workflow de conversion d'un prospect en client}
-    \label{fig:workflow_conversion_prospect}
-\end{figure}
-
 La figure distingue le \textbf{Service CRM} de sa \textbf{Base de données CRM}.
 
 \subsection{Synthèse des API}
 
-Les opérations principales sont exposées sous forme d'API REST sécurisées et
+Les opérations utiles au scénario sont exposées sous forme d'API REST sécurisées et
 résumées dans le tableau~\ref{tab:endpoints_prospect}.
 
 \begin{table}[H]
-\centering
-\caption{Synthèse des principales API de gestion des prospects}
-\label{tab:endpoints_prospect}
-\footnotesize
-\renewcommand{\arraystretch}{1.08}
-\begin{tabularx}{\textwidth}{|p{1.7cm}|p{5.4cm}|X|}
-\hline
-\textbf{Méthode} & \textbf{Chemin} & \textbf{Utilisation principale} \\ \hline
-POST   & {\scriptsize\texttt{/api/crm/prospects}}                  & Enregistrer un nouveau prospect \\ \hline
-GET    & {\scriptsize\texttt{/api/crm/prospects/my-prospects}}     & Afficher les prospects affectés \\ \hline
-GET    & {\scriptsize\texttt{/api/crm/prospects/\{id\}}}           & Consulter la fiche détaillée d'un prospect \\ \hline
-PATCH  & {\scriptsize\texttt{/api/crm/prospects/\{id\}}}           & Mettre à jour le prospect ou son étape \\ \hline
-POST   & {\tiny\texttt{/api/crm/prospects/\{id\}/activities}} & Ajouter une interaction ou relance \\ \hline
-POST   & {\tiny\texttt{/api/crm/prospects/\{id\}/convert}}   & Convertir un prospect en client \\ \hline
-\end{tabularx}
+    \centering
+    \caption{API mobilisées pour la création d'un prospect}
+    \label{tab:endpoints_prospect}
+    \footnotesize
+    \renewcommand{\arraystretch}{1.08}
+    \begin{tabularx}{\textwidth}{|p{1.7cm}|p{5.4cm}|X|}
+        \hline
+        \textbf{Méthode} & \textbf{Chemin} & \textbf{Utilisation principale} \\ \hline
+        POST   & {\scriptsize\texttt{/api/crm/prospects}}                  & Enregistrer un nouveau prospect \\ \hline
+        GET    & {\scriptsize\texttt{/api/crm/prospects/my-prospects}}     & Afficher le prospect créé dans la liste du chargé \\ \hline
+        GET    & {\scriptsize\texttt{/api/crm/prospects/\{id\}}}           & Consulter la fiche créée et son score initial \\ \hline
+    \end{tabularx}
 \end{table}
 
-\subsection{Vue de conception de la fonctionnalité}
+\subsection{Vue de conception du scénario}
 
-La figure~\ref{fig:conception_gestion_prospects} complète le workflow en
+La figure~\ref{fig:conception_creation_prospect} complète le workflow en
 reliant les interfaces \textit{boundary}, les composants de coordination
 \textit{control} et les données métier \textit{entity}, selon les
 stéréotypes de Jacobson \cite{jacobson_oose}.
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.78\textwidth]{images/contenu/chapitre-3/conception_gestion_prospects.png}
-    \caption{Vue de conception de la fonctionnalité Gestion des prospects}
-    \label{fig:conception_gestion_prospects}
+    \includegraphics[width=0.78\textwidth]{images/contenu/chapitre-3/conception_creation_prospect.png}
+    \caption{Vue de conception du scénario Création d'un prospect}
+    \label{fig:conception_creation_prospect}
 \end{figure}
 
-Ainsi, la conception détaillée de la gestion des prospects montre comment une
-fonctionnalité métier s'appuie sur les couches définies précédemment : interface,
+Ainsi, la conception détaillée de la création d'un prospect montre comment un
+scénario métier s'appuie sur les couches définies précédemment : interface,
 passerelle, service métier, données, intelligence artificielle et audit.
 
 % ─────────────────────────────────────────────────

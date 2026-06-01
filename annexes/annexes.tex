@@ -23,12 +23,14 @@ clients réels. De même, les données de marché utilisées dans les vues SGI
 sont simulées, l'accès à un flux officiel BRVM n'étant pas encore disponible
 dans l'environnement de validation.
 
-Trois interfaces sont présentées :
+Quatre interfaces sont présentées :
 \begin{itemize}
   \item la consultation du portefeuille client
         (figure~\ref{fig:ann_portefeuille_client}) ;
   \item la fiche détaillée d'un titre coté sur la BRVM
         (figure~\ref{fig:ann_detail_titre}) ;
+  \item l'analyse et le palmarès des titres
+        (figure~\ref{fig:palmares_titres}) ;
   \item le formulaire de saisie d'un ordre d'achat ou de vente
         (figure~\ref{fig:ann_passage_ordre}).
 \end{itemize}
@@ -70,7 +72,27 @@ L'interface démontre la disponibilité d'informations de consultation utiles
 à la décision. Les valeurs affichées servent à la démonstration fonctionnelle
 et ne constituent pas une cotation officielle.
 
-\newpage
+\section{Analyse et palmarès des titres}
+
+En complément de la consultation d'un titre, le module SGI propose une vue
+d'analyse comparant les performances des instruments sur une période choisie et
+mettant en évidence les meilleures et les plus faibles variations. L'utilisateur
+filtre les résultats par horizon temporel (jour, semaine, mois, trimestre,
+année). Cette vue soutient la lecture du marché avant la soumission d'un ordre.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.86\textwidth]{images/contenu/chapitre-4/palmares.png}
+    \caption{Palmarès de titres BRVM sur données simulées}
+    \label{fig:palmares_titres}
+\end{figure}
+
+\paragraph*{Résultat illustré.}
+La vue de palmarès présente le classement des titres par variation sur la
+période choisie. Les valeurs sont simulées et destinées à valider le parcours
+d'analyse, en l'absence d'un flux officiel BRVM.
+
+
 \section{Saisie d'un ordre}
 
 Le formulaire de passage d'ordre permet au client de soumettre une intention
@@ -91,21 +113,25 @@ traduction d'une décision de consultation en demande d'ordre, dont le
 traitement métier a été présenté au chapitre~2.
 
 % ═════════════════════════════════════════════════
-%  ANNEXE B – Recette fonctionnelle de la gestion des prospects
+%  ANNEXE B – Preuves fonctionnelles du module Relation Client
 % ═════════════════════════════════════════════════
-\chapter{Recette fonctionnelle de la gestion des prospects}
-\markboth{Recette fonctionnelle des prospects}{Recette fonctionnelle des prospects}
+\chapter{Preuves fonctionnelles du module Relation Client}
+\markboth{Preuves fonctionnelles Relation Client}{Preuves fonctionnelles Relation Client}
 \label{ann:recette-fonctionnelle}
+\label{ann:preuves-relation-client}
 
-Cette annexe prolonge la conception détaillée volontairement centrée sur la
-gestion des prospects aux chapitres~2 et~3. Elle documente, par des captures
-de recette, le cheminement de deux scénarios représentatifs : l'enregistrement
-d'un prospect avec calcul de son score, puis sa conversion en client. Les
-captures présentent l'action déclenchée par l'utilisateur et le résultat
-produit par le système dans l'environnement de validation.
+Cette annexe rassemble les preuves complémentaires du module Relation Client.
+Sa première partie prolonge la conception détaillée volontairement centrée sur
+la gestion des prospects aux chapitres~2 et~3 : elle documente l'enregistrement
+d'un prospect avec score, puis sa conversion en client. La seconde partie est
+destinée aux captures démontrant la consultation documentaire et le suivi KYC,
+objectifs mentionnés au chapitre~1 mais non développés dans la conception
+détaillée.
 Les identités, coordonnées et informations affichées dans ces captures
 proviennent de comptes de test créés exclusivement pour la recette
 fonctionnelle ; elles ne correspondent pas à des clients réels.
+
+\section{Recette de la gestion des prospects}
 
 Deux scénarios sont documentés :
 \begin{itemize}
@@ -145,8 +171,21 @@ Conforme. \\ \hline
 \end{tabularx}
 \end{table}
 
-\newpage
-\section{Création d'un prospect}
+\subsection{Vue d'ensemble du pipeline}
+
+Avant de détailler les scénarios de recette, la
+figure~\ref{fig:gestion_prospects} présente la vue d'ensemble du pipeline de
+prospects : chaque prospect y apparaît avec son étape d'avancement, sa priorité
+et son score de conversion calculé par le modèle d'intelligence artificielle.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.88\textwidth]{images/contenu/chapitre-4/gestion_prospects.png}
+\caption{Pipeline de gestion des prospects avec score IA}
+\label{fig:gestion_prospects}
+\end{figure}
+
+\subsection{Création d'un prospect}
 
 La création d'un prospect commence par la saisie des informations commerciales
 depuis l'interface du chargé de clientèle. Les deux figures suivantes mettent
@@ -173,8 +212,8 @@ La figure~\ref{fig:recette_creation} montre que le prospect saisi est présent
 dans la liste avec un score initial de 50/100. Ce résultat constitue la preuve
 fonctionnelle retenue pour le scénario de création.
 
-\newpage
-\section{Conversion d'un prospect en client}
+
+\subsection{Conversion d'un prospect en client}
 
 La conversion est déclenchée par le chargé de clientèle lorsqu'il décide de
 transformer un prospect en client. Les preuves retenues ci-dessous vérifient
@@ -207,6 +246,84 @@ La séquence présente d'abord l'action validée par le chargé de clientèle, p
 le prospect avec l'état \textit{Converti}, et enfin le client nouvellement
 visible dans le portefeuille. Elle établit ainsi la continuité entre
 l'opération métier et son résultat dans l'interface.
+
+\newpage
+\section{Suivi client et fonctions complémentaires}
+
+Cette partie réunit les preuves visuelles des autres objectifs du module
+Relation Client. L'interface du chargé de clientèle est déjà présentée au
+chapitre~4 ; les captures suivantes complètent cette preuve par le tableau de
+bord du chargé, la fiche 360° client (qui intègre le statut KYC et l'analyse de
+risque de départ par l'IA) et la consultation documentaire. Les captures
+utilisent exclusivement des données de test et établissent les résultats
+visibles dans l'application.
+
+\subsection{Tableau de bord du chargé de clientèle}
+
+En complément du portefeuille clients présenté au chapitre~4
+(figure~\ref{fig:portefeuille_clients}), le chargé de clientèle dispose d'un
+tableau de bord synthétique regroupant ses indicateurs clés : nombre de
+clients, valeur du portefeuille, prospects et tâches en attente.
+
+\IfFileExists{images/annexes/annexe_b/annexe_b_tableau_bord_charge.png}{
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.88\textwidth]{images/annexes/annexe_b/annexe_b_documents_client}
+\caption{Tableau de bord du chargé de clientèle}
+\label{fig:ann_dashboard_charge}
+\end{figure}
+}{
+\begin{emplacementcapture}{Capture à insérer : tableau de bord du chargé de clientèle}
+Déposer l'image sous le nom
+\texttt{annexe\_b\_tableau\_bord\_charge.png}.
+\end{emplacementcapture}
+}
+
+\subsection{Vue 360° client}
+
+La vue 360° consolide en une seule page le profil du client, ses comptes et
+produits, son \textbf{statut KYC} (conformité) ainsi que l'\textbf{analyse de
+risque de départ} estimée par le modèle d'intelligence artificielle. Elle
+couvre ainsi à la fois la connaissance client, le suivi de conformité et
+l'indicateur de churn.
+
+\IfFileExists{images/annexes/annexe_b/annexe_b_vue_360_client.png}{
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.88\textwidth]{images/annexes/annexe_b/annexe_b_vue_360_client.png}
+\caption{Vue 360° client : profil, statut KYC et analyse de risque de départ (IA)}
+\label{fig:ann_vue_360_client}
+\end{figure}
+}{
+\begin{emplacementcapture}{Capture à insérer : vue 360° client}
+Déposer l'image sous le nom
+\texttt{annexe\_b\_vue\_360\_client.png}.\\[0.15cm]
+La capture doit rendre visibles le profil consolidé, le statut KYC et l'analyse
+de risque de départ, avec une identité de test.
+\end{emplacementcapture}
+}
+
+\subsection{Consultation des documents client}
+
+\IfFileExists{images/annexes/annexe_b/annexe_b_documents_client.png}{
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.88\textwidth]{images/annexes/annexe_b/annexe_b_documents_client.png}
+\caption{Consultation des documents disponibles dans le dossier client}
+\label{fig:ann_documents_client}
+\end{figure}
+}{
+\begin{emplacementcapture}{Capture à insérer : consultation documentaire}
+Déposer l'image sous le nom
+\texttt{annexe\_b\_documents\_client.png}.\\[0.15cm]
+La capture doit montrer la liste des documents et l'action de consultation ou
+de téléchargement, avec des données de test.
+\end{emplacementcapture}
+}
+
+\paragraph*{Résultat à documenter.}
+La capture permettra d'établir que la fonctionnalité de consultation ou de
+téléchargement documentaire est accessible dans le parcours Relation Client.
 
 % ═════════════════════════════════════════════════
 %  ANNEXE C – Module Manager et audit des opérations
