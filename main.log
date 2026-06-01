@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.5.11)  1 JUN 2026 22:08
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.5.11)  1 JUN 2026 22:29
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1894,17 +1894,17 @@ Package pdftex.def Info: images/annexes/annexe_d/annexe_d_eureka_services.png
 used on input line 496.
 (pdftex.def)             Requested size: 425.6556pt x 239.41805pt.
  [47 <./images/annexes/annexe_d/annexe_d_portainer_conteneurs.png (PNG copy)>]
-<images/annexes/annexe_d/annexe_d_pipeline_redeploiement.png, id=1120, 1902.106
-25pt x 977.6525pt>
-File: images/annexes/annexe_d/annexe_d_pipeline_redeploiement.png Graphic file 
-(type png)
-<use images/annexes/annexe_d/annexe_d_pipeline_redeploiement.png>
+<images/annexes/annexe_d/annexe_d_pipeline_redeploiement_clean.png, id=1120, 19
+02.10625pt x 371.3875pt>
+File: images/annexes/annexe_d/annexe_d_pipeline_redeploiement_clean.png Graphic
+ file (type png)
+<use images/annexes/annexe_d/annexe_d_pipeline_redeploiement_clean.png>
 Package pdftex.def Info: images/annexes/annexe_d/annexe_d_pipeline_redeploiemen
-t.png  used on input line 512.
-(pdftex.def)             Requested size: 425.6556pt x 163.73962pt.
+t_clean.png  used on input line 512.
+(pdftex.def)             Requested size: 425.6556pt x 83.10522pt.
 ) (annexes/resume-abstract-final.tex [48 <./images/annexes/annexe_d/annexe_d_eu
-reka_services.png> <./images/annexes/annexe_d/annexe_d_pipeline_redeploiement.p
-ng (PNG copy)>]) [49
+reka_services.png> <./images/annexes/annexe_d/annexe_d_pipeline_redeploiement_c
+lean.png (PNG copy)>]) [49
 
 ] (main.aux)
  ***********
@@ -1916,7 +1916,7 @@ Package rerunfilecheck Info: File `main.out' has not changed.
  ) 
 Here is how much of TeX's memory you used:
  36181 strings out of 467871
- 696728 string characters out of 5418860
+ 696770 string characters out of 5418860
  1153096 words of memory out of 5000000
  63965 multiletter control sequences out of 15000+600000
  715756 words of font info for 240 fonts, out of 8000000 for 9000
@@ -1930,9 +1930,9 @@ x/ztmb.pfb><C:/Users/DELL/AppData/Local/Programs/MiKTeX/fonts/type1/public/newt
 x/ztmbi.pfb><C:/Users/DELL/AppData/Local/Programs/MiKTeX/fonts/type1/public/new
 tx/ztmr.pfb><C:/Users/DELL/AppData/Local/Programs/MiKTeX/fonts/type1/public/new
 tx/ztmri.pfb>
-Output written on main.pdf (62 pages, 10722861 bytes).
+Output written on main.pdf (62 pages, 10683784 bytes).
 PDF statistics:
- 1219 PDF objects out of 1440 (max. 8388607)
+ 1217 PDF objects out of 1440 (max. 8388607)
  239 named destinations out of 1000 (max. 500000)
- 46409 words of extra memory for PDF output out of 51595 (max. 10000000)
+ 46403 words of extra memory for PDF output out of 51595 (max. 10000000)
 
