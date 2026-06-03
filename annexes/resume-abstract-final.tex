@@ -1,41 +1,70 @@
 \clearpage
-\thispagestyle{empty}
+\chapter*{Résumé et Abstract}
+\phantomsection
+\addcontentsline{toc}{chapter}{Résumé et Abstract}
+\markboth{Résumé et Abstract}{Résumé et Abstract}
 
 \begin{center}
-{\bfseries\large Conception d'un système d'information bancaire intelligent :}\\[0.1cm]
-{\bfseries\large cas des modules Relation Client et SGI}\\[0.45cm]
+\textbf{Conception d'un système d'information bancaire intelligent :}\\
+\textbf{cas des modules Relation Client et SGI}
 \end{center}
 
-\noindent\textbf{Résumé}\\[0.1cm]
-Ce mémoire présente la conception et la réalisation de deux modules de la
-plateforme I-SIB : Relation Client et SGI (Société de Gestion et
-d'Intermédiation). Le travail répond au besoin de rapprocher le suivi client
-et les services d'investissement dans un environnement bancaire modulaire. La
-démarche suivie combine analyse fonctionnelle, conception par microservices,
-développement d'interfaces et validation sur un VPS AlmaLinux. L'étude
-détaillée porte sur la gestion des prospects et le passage d'ordres. Les
-résultats montrent des parcours opérationnels dans l'environnement de
-validation, avec des limites identifiées concernant les données BRVM simulées,
-l'évaluation des fonctions d'intelligence artificielle et la préparation de la
-production.
+\begingroup
+\small
+\setstretch{1.12}
 
-\medskip
-\noindent\textbf{Mots-clés :} système d'information bancaire ; Relation Client ;
-SGI ; microservices ; intelligence artificielle ; BRVM ; I-SIB.
+\section*{Résumé}
 
-\vspace{0.45cm}
-\noindent\textbf{Abstract}\\[0.1cm]
-This dissertation presents the design and implementation of two I-SIB platform
-modules: Customer Relationship and SGI (Securities Management and
-Intermediation). The work addresses the need to bring customer monitoring and
-investment services together within a modular banking environment. The approach
-combines functional analysis, microservices-based design, interface
-implementation and validation on an AlmaLinux VPS. The detailed study focuses
-on prospect management and order placement. The implemented workflows operate
-in the validation environment, while the use of simulated BRVM data, the
-evaluation of artificial intelligence features and production readiness remain
-areas for further consolidation.
+\hspace{0.5cm}
+Ce mémoire présente la conception et la réalisation des modules \textbf{Relation Client}
+et \textbf{SGI} (Société de Gestion et d'Intermédiation) de la plateforme \textbf{I-SIB}.
+Le travail s'inscrit dans le besoin de centraliser la connaissance client et
+d'accompagner les opérations d'investissement dans un système d'information
+bancaire modulaire.
 
-\medskip
-\noindent\textbf{Keywords:} banking information system; customer relationship;
-SGI; microservices; artificial intelligence; BRVM; I-SIB.
+\hspace{0.5cm}
+La démarche suivie combine analyse fonctionnelle, modélisation, architecture
+microservices, développement d'interfaces et validation sur un VPS AlmaLinux.
+L'étude détaillée est volontairement limitée à la création d'un prospect pour
+le module Relation Client et au passage d'ordres pour le module SGI.
+
+\hspace{0.5cm}
+Les résultats obtenus portent sur le suivi client, la prospection, la consultation
+des informations d'investissement et la préparation des ordres. Les données BRVM
+visibles dans les captures sont des données de démonstration. Les limites
+identifiées concernent notamment l'accès à un flux de marché officiel, la
+consolidation des modèles d'intelligence artificielle, l'audit de sécurité et
+la préparation de la production.
+
+\vspace{0.25cm}
+\noindent
+\textbf{Mots-clés :} système d'information bancaire, relation client, SGI,
+microservices, intelligence artificielle, BRVM, I-SIB.
+
+\section*{Abstract}
+
+\hspace{0.5cm}
+This dissertation presents the design and implementation of the \textbf{Customer
+Relationship} and \textbf{SGI} (Securities Management and Intermediation)
+modules of the \textbf{I-SIB} platform. The work addresses the need to centralize
+customer knowledge and support investment operations within a modular banking
+information system.
+
+\hspace{0.5cm}
+The approach combines functional analysis, modelling, microservices architecture,
+interface development and validation on an AlmaLinux VPS. The detailed study is
+intentionally limited to prospect creation for the Customer Relationship module
+and order placement for the SGI module.
+
+\hspace{0.5cm}
+The results cover customer monitoring, prospect tracking, investment information
+consultation and order preparation. The BRVM data shown in the screenshots are
+demonstration data. The main limitations concern access to an official market
+data feed, consolidation of artificial intelligence models, security auditing
+and production readiness.
+
+\vspace{0.25cm}
+\noindent
+\textbf{Keywords:} banking information system, customer relationship, SGI,
+microservices, artificial intelligence, BRVM, I-SIB.
+\endgroup

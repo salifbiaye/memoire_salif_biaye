@@ -8,207 +8,168 @@
 \phantomsection
 \addcontentsline{toc}{section}{Introduction}
 
-Ce chapitre est organisé en quatre parties. La première présente les résultats
-obtenus pour le module \textbf{Relation Client} . La deuxième adopte la même logique pour le module
-\textbf{SGI}, à travers la consultation des cotations et l'analyse des
-palmarès de titres. La
-troisième propose une synthèse de la couverture des objectifs spécifiques sous
-forme de tableau. Enfin, la dernière partie porte un regard critique sur la
-réalisation, en distinguant les points forts, les limites actuelles et les
-perspectives d'amélioration.
+Après l'analyse des besoins et la conception de la solution, ce chapitre
+présente les résultats de la réalisation de la plateforme I-SIB. Il met en
+avant les fonctionnalités mises en place autour de la relation client, de la
+prospection, des services SGI et de l'aide à la décision.
+
+Les résultats sont présentés à partir des principaux parcours réalisés dans
+l'environnement de validation. Les données affichées sont fictives et servent
+uniquement à présenter le fonctionnement de l'application.
+
+Le chapitre présente d'abord les résultats fonctionnels obtenus, puis propose
+une analyse critique portant sur les apports, les limites et les perspectives
+d'évolution de la solution.
 
 % ─────────────────────────────────────────────────
-\section{Résultats côté Relation Client}
+\section{Résultats fonctionnels obtenus}
 
-Le module \textbf{Relation Client} regroupe l'ensemble des fonctionnalités
-permettant de connaître, suivre et fidéliser les clients de la banque. 
+\subsection{Centralisation de la connaissance client}
 
-Les données personnelles visibles dans les interfaces de cette section sont des
-données fictives de démonstration utilisées dans l'environnement de validation ;
-elles ne correspondent pas à des clients réels.
+La réalisation a permis de centraliser les informations utiles au suivi
+commercial. Le chargé de clientèle dispose d'un espace unique pour consulter son
+portefeuille, suivre les statuts des clients, repérer les niveaux de risque et
+accéder rapidement aux informations nécessaires à la relation client.
 
-\subsection{Portefeuille clients}
-
-La fonctionnalité de portefeuille clients centralise la connaissance client et
-offre au chargé de clientèle une vue de travail unique. Elle regroupe des
-indicateurs synthétiques, la liste détaillée des clients, leur statut, leur
-niveau de risque, leurs comptes, leurs produits et le risque de départ estimé
-par le modèle d'IA. Les filtres et la recherche facilitent l'accès rapide à un
-client précis.
-
-Cet écran matérialise l'atteinte de deux objectifs : le \textbf{tableau de bord Relation
-Client} adapté au chargé de clientèle et la \textbf{vue 360° client} sous sa
-forme synthétique. La figure~\ref{fig:portefeuille_clients} présente cette vue
-de portefeuille, qui sert de point d'entrée au suivi commercial.
+La vue de portefeuille retenue pour illustrer ce résultat est présentée à la
+figure~\ref{fig:portefeuille_clients}. Elle montre l'organisation générale de
+l'écran autour des indicateurs de synthèse, des outils de recherche et de la
+liste des clients suivis.
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=\dimexpr\textwidth-2\fboxsep-2\fboxrule\relax]{images/contenu/chapitre-4/portefeuille_clients_zoom.png}
-    \caption{Interface Portefeuille Clients du chargé de clientèle}
+    \includegraphics[width=\dimexpr\textwidth-2\fboxsep-2\fboxrule\relax]{images/contenu/chapitre-4/portefeuille_clients_annote.png}
+    \caption{Vue de portefeuille client utilisée pour le suivi commercial}
     \label{fig:portefeuille_clients}
 \end{figure}
 
-\subsection{Gestion des prospects}
+\noindent\textbf{Lecture de la figure.}
+\begin{enumerate}[label=\textbf{\arabic*.},itemsep=1pt,parsep=0pt]
+    \item Les indicateurs de synthèse donnent une lecture rapide du portefeuille :
+    nombre de clients, clients actifs, nouvelles acquisitions et taux de
+    rétention.
+    \item La zone de recherche et les filtres permettent au chargé de clientèle
+    d'accéder rapidement à un client ou à un segment précis.
+    \item La liste détaillée rassemble les informations nécessaires au suivi :
+    statut, niveau de risque, comptes, produits, solde et indicateur de risque
+    de départ.
+\end{enumerate}
 
-La gestion des prospects assure le suivi du cycle commercial avant la conversion en client,
-en présentant chaque prospect dans un pipeline avec son étape d'avancement, sa priorité et
-son score IA. Le pipeline, ainsi que la recette de création et de conversion d'un prospect,
-sont présentés en annexe~\ref{ann:preuves-relation-client}
-(figure~\ref{fig:gestion_prospects}).
+Cette vue regroupe les éléments nécessaires au suivi quotidien du portefeuille
+et à l'identification des dossiers nécessitant une attention particulière.
 
-% ─────────────────────────────────────────────────
-\section{Résultats côté SGI}
+\subsection{Suivi commercial et gestion des prospects}
 
-Le module \textbf{SGI} couvre les opérations d'investissement : portefeuilles,
-cotations BRVM et passage d'ordres. Les
-résultats sont organisés autour de deux éléments : une consultation des
-cotations et une analyse des palmarès de titres. Même si
-l'analyse détaillée du chapitre précédent
-s'est concentrée sur le passage d'ordres afin de limiter le périmètre de
-conception, ces interfaces sont présentées ici comme des résultats
-complémentaires du module SGI, car elles soutiennent la prise de décision avant
-la soumission d'un ordre.
+La plateforme prend également en charge la phase amont de la relation client à
+travers la gestion des prospects. Le prospect peut être enregistré, suivi dans
+un pipeline commercial et associé à un score initial permettant de prioriser les
+actions du chargé de clientèle. Ce résultat s'inscrit dans le prolongement du
+scénario de création d'un prospect présenté dans la conception détaillée.
 
-Les interfaces de cotation et d'analyse sont fonctionnelles dans l'environnement
-de validation. Toutefois, faute d'accès actuel à un flux officiel de la BRVM,
-les valeurs de marché affichées sont des données fictives ou simulées destinées
-à valider le parcours applicatif, et non des cotations en temps réel.
+La gestion des prospects s'inscrit dans la continuité du suivi client. Les
+informations saisies peuvent alimenter le dossier commercial et préparer la
+conversion éventuelle du prospect en client. Dans cette version, le score
+constitue un indicateur d'aide au suivi ; son évaluation devra être consolidée
+avec des données réelles.
 
-\subsection{Cotations BRVM}
+\subsection{Consultation des instruments et aide à la décision SGI}
 
-La fonctionnalité de cotations permet de consulter les instruments référencés
-sur la BRVM, notamment les actions et les obligations \cite{brvm_actions}. Elle
-fournit les informations nécessaires à la prise de décision : ticker,
-dénomination, prix courant, variation et volume. Dans la réalisation présentée,
-ces données sont simulées pour tester le parcours précédant le passage d'ordres.
-La figure~\ref{fig:cotations_brvm} présente l'écran de suivi des instruments de
-marché.
+Le second ensemble de résultats concerne le module SGI, c'est-à-dire les
+fonctionnalités liées aux opérations d'investissement. La plateforme permet de
+consulter des instruments référencés sur la BRVM, notamment les actions et les
+obligations \cite{brvm_actions}. L'utilisateur peut accéder aux principaux
+éléments nécessaires à la prise de décision : symbole, dénomination, prix,
+variation, volume et classement des hausses ou baisses.
+
+Dans l'environnement de validation, les valeurs affichées sont simulées faute
+d'accès actuel à un flux officiel de la BRVM. Cette phase permet de vérifier le
+parcours de consultation, le filtrage et la lecture des instruments avant le
+raccordement à des données de marché réelles.
+
+L'écran de cotation présenté à la figure~\ref{fig:cotations_brvm} montre
+l'organisation de cette consultation autour des classements de titres, des
+filtres de navigation et du tableau des instruments disponibles.
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=\dimexpr\textwidth-2\fboxsep-2\fboxrule\relax]{images/contenu/chapitre-4/cotations_brvm_zoom.png}
+    \includegraphics[width=\dimexpr\textwidth-2\fboxsep-2\fboxrule\relax]{images/contenu/chapitre-4/cotations_brvm_annote.png}
     \caption{Consultation d'instruments BRVM sur données simulées}
     \label{fig:cotations_brvm}
 \end{figure}
 
-\subsection{Analyse et palmarès des titres}
+\noindent\textbf{Lecture de la figure.}
+\begin{enumerate}[label=\textbf{\arabic*.},itemsep=1pt,parsep=0pt]
+    \item Les classements des plus fortes hausses et baisses donnent une première
+    lecture comparative des titres.
+    \item Les filtres et onglets permettent de naviguer entre indices, actions
+    et obligations.
+    \item Le tableau des instruments présente les informations de marché utiles
+    avant une décision d'achat ou de vente.
+\end{enumerate}
 
-En complément de la consultation des cotations, le module SGI propose une page
-d'analyse permettant de comparer, sur le jeu de données de démonstration, les
-performances des titres sur une période sélectionnée. L'utilisateur peut filtrer
-les résultats par horizon temporel (jour, semaine, mois, trimestre, année) et
-visualiser les meilleures et les plus faibles performances
-\cite{brvm_actions}. Cette vue d'analyse, qui soutient la lecture du marché
-avant la prise de décision, est présentée en
-annexe~\ref{ann:interfaces-client-sgi} (figure~\ref{fig:palmares_titres}).
+Le palmarès des titres complète cette consultation en comparant les meilleures
+et les plus faibles variations sur une période donnée. Il repose, dans cette
+version, sur le même jeu de données simulées que la consultation des
+instruments.
 
-La présence d'un volet de prédiction dans l'interface représente une extension
-en cours d'évaluation. Elle n'est pas revendiquée ici comme un résultat validé,
-en l'absence de données réelles permettant d'en mesurer la pertinence.
-
-Les interfaces complémentaires du parcours client SGI, notamment la
-consultation d'un portefeuille et la saisie d'un ordre, sont présentées en
-annexe~\ref{ann:interfaces-client-sgi} afin de compléter les résultats
-présentés dans ce chapitre.
-
-% ─────────────────────────────────────────────────
-\section{Synthèse de la couverture des objectifs}
-
-Les sections précédentes ont présenté les fonctionnalités réalisées à travers
-les interfaces des modules Relation Client et SGI. Il convient à présent de
-rapprocher ces résultats des objectifs spécifiques définis au chapitre~1, afin
-de distinguer les résultats effectivement démontrés des fonctions qui restent à
-documenter ou à évaluer.
-
-\textbf{Preuves du module Relation Client.} Le tableau de bord du chargé de
-clientèle est présenté à la figure~\ref{fig:portefeuille_clients}, tandis que
-la gestion des prospects est illustrée en annexe par la
-figure~\ref{fig:gestion_prospects} et vérifiée par la recette de création et de
-conversion en annexe~\ref{ann:recette-fonctionnelle}.
-L'annexe~\ref{ann:preuves-relation-client}
-regroupe également les preuves complémentaires relatives aux autres profils du
-tableau de bord, à la vue 360°, aux documents, au suivi KYC et à l'indicateur
-de churn.
-
-\textbf{Preuves du module SGI.} La consultation d'un portefeuille, la saisie
-d'un ordre et le palmarès des titres sont documentés en
-annexe~\ref{ann:interfaces-client-sgi}. Les cotations sont illustrées par la
-figure~\ref{fig:cotations_brvm} et le palmarès par la
-figure~\ref{fig:palmares_titres}, sur des données simulées en l'absence d'un
-flux officiel BRVM.
-
-\textbf{Portée des preuves.} Les captures démontrent la présence et le
-fonctionnement observable des parcours réalisés dans l'environnement de
-validation. Les fonctions d'intelligence artificielle demeurent à évaluer sur
-des données réelles avant toute revendication de performance.
 % ─────────────────────────────────────────────────
 \section{Analyse critique de la réalisation}
 
-Cette section résume les acquis, les limites et les évolutions prioritaires de
-la réalisation, en lien avec la qualité logicielle \cite{iso25010} et la
+Cette section met en perspective les résultats obtenus au regard des attentes
+fonctionnelles, de la qualité logicielle \cite{iso25010} et des exigences de
 sécurité applicative \cite{owasp_asvs}.
 
 \subsection{Points forts}
 
 \begin{description}[itemsep=1pt,parsep=0pt]
-    \item[Centralisation métier.] I-SIB regroupe Relation Client et SGI dans une
-          même plateforme, ce qui améliore l'accès aux informations utiles et la
-          continuité des parcours.
-    \item[Architecture modulaire.] Le découpage en microservices
-          \cite{fowler_microservices} facilite l'évolution progressive de la
-          solution et l'isolation des responsabilités.
-    \item[Sécurité et traçabilité.] Keycloak \cite{keycloak_docs} centralise
-          l'authentification. Le module Manager présente le référentiel de
-          modules et de rôles associés à des actions autorisées, tandis que
-          la section Audit du back-office d'administration rend consultables
-          les opérations enregistrées.
-          Ces dispositifs sont illustrés en annexe~\ref{ann:administration-acces}.
-    \item[Apport de l'IA.] Le scoring visible dans le parcours prospect
-          constitue une aide au suivi commercial. La détection du churn et
-          l'évaluation des fonctions d'IA sur données réelles restent à
-          consolider.
+    \item[Parcours métier intégrés.] I-SIB regroupe dans une même plateforme le
+          portefeuille client, le suivi des prospects et la préparation des
+          opérations d'investissement.
+    \item[Architecture évolutive.] Le découpage en microservices
+          \cite{fowler_microservices} facilite l'enrichissement progressif de la
+          solution et l'isolation des responsabilités métier.
+    \item[Sécurité et traçabilité intégrées.] La gestion des identités, des rôles
+          et des traces d'opérations contribue à encadrer les accès et à suivre
+          les actions réalisées.
+    \item[Déploiement de validation.] La plateforme a été installée sur un VPS
+          AlmaLinux pour tester les services réalisés et le redéploiement
+          progressif des composants.
 \end{description}
 
 \subsection{Points faibles et limites}
 
 \begin{description}[itemsep=1pt,parsep=0pt]
-    \item[Périmètre encore incomplet.] La plateforme couvre un ensemble large de
-          besoins, mais toutes les fonctionnalités et toutes les connexions avec
-          les autres modules bancaires ne sont pas encore finalisées.
-    \item[Données réelles à intégrer.] Les cotations BRVM restent simulées et
-          doivent être remplacées par un flux officiel pour une exploitation
-          opérationnelle.
-    \item[IA à consolider.] Les modèles de scoring, de détection du churn et les
-          fonctions d'analyse prédictive visibles dans l'application devront
-          être évalués et améliorés avec des données réelles afin de confirmer
-          leur pertinence métier.
-    \item[Passage en production à préparer.] L'environnement de validation
-          présenté au chapitre précédent permet les tests actuels. Bien que
-          l'administration des accès et la consultation des traces d'audit
-          soient intégrées, des tests systématiques de contrôle d'accès, un audit
-          de sécurité approfondi et une observabilité renforcée avec Zipkin
-          \cite{zipkin_docs} restent nécessaires avant une mise en production.
+    \item[Périmètre encore incomplet.] La plateforme couvre un périmètre large,
+          mais toutes les fonctionnalités et toutes les connexions avec les
+          autres modules bancaires ne sont pas encore finalisées.
+    \item[Données de marché simulées.] Les cotations BRVM utilisées dans
+          l'environnement de validation sont fictives. Un flux officiel devra
+          être intégré pour permettre une exploitation opérationnelle.
+    \item[IA à consolider.] Les scores associés aux prospects et les indicateurs
+          de risque de départ devront être évalués sur des données réelles afin
+          de confirmer leur pertinence métier.
+    \item[Contraintes de déploiement.] Docker \cite{docker_docs} et Docker Compose \cite{docker_compose_docs} restent les
+          références utilisées en local et dans l'organisation cible des
+          services. Sur le VPS AlmaLinux,
+          Podman \cite{podman_docs} et Podman Compose \cite{podman_compose_docs} ont été utilisés pendant les tests pour
+          répondre à des difficultés réseau propres à cet environnement.
 \end{description}
 
 \subsection{Perspectives d'amélioration}
 
 Les perspectives prioritaires concernent l'achèvement des intégrations avec les
-autres modules, le raccordement à un flux BRVM officiel, l'amélioration de l'IA,
-l'industrialisation du passage en production et l'ouverture mobile.
+autres modules, le raccordement à un flux BRVM officiel, l'amélioration des
+modèles de scoring et de churn, la stabilisation de la stratégie de déploiement
+et l'ouverture de la plateforme vers des usages mobiles.
 
 % ─────────────────────────────────────────────────
 \section*{Conclusion}
 \phantomsection
 \addcontentsline{toc}{section}{Conclusion}
 
-Ce chapitre a présenté les principaux résultats de la réalisation à travers les
-interfaces des modules Relation Client et SGI. Les écrans illustrés montrent la
-prise en charge du suivi client, de la gestion des prospects, des cotations
-simulées et de l'analyse descriptive des titres. Les figures du chapitre et les
-annexes organisent les preuves associées aux objectifs retenus, tandis que les
-fonctions d'intelligence artificielle restent à évaluer sur données réelles.
-L'intégration complète avec les autres
-modules, l'accès à des données réelles et la préparation de la production
-constituent ainsi les prochaines étapes de consolidation d'I-SIB. Les
-preuves complémentaires sont regroupées dans les
-annexes~\ref{ann:interfaces-client-sgi} à~\ref{ann:validation-deploiement}.
+Ce chapitre a présenté les résultats obtenus avec I-SIB. La plateforme offre une
+base fonctionnelle pour centraliser la connaissance client, suivre les
+prospects, consulter les instruments SGI et préparer la prise de décision.
+L'analyse critique montre que la solution reste à consolider sur plusieurs
+points : intégration de données réelles, évaluation des modèles IA et
+stabilisation du déploiement.

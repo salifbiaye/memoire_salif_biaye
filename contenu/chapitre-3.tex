@@ -87,8 +87,7 @@ complémentaires, chacun correspondant à une responsabilité précise dans la p
     \item[Module Manager] Composant d'administration qui permet de gérer les
     modules disponibles, les fonctionnalités associées et les rôles autorisés
     à y accéder. Il fournit ainsi un point de paramétrage des accès fonctionnels
-    de la plateforme, dont les interfaces sont illustrées en
-    annexe~\ref{ann:administration-acces}.
+    de la plateforme.
 
     \item[Authentification et accès] Bloc chargé de contrôler l'identité des utilisateurs,
     les rôles, les sessions et les règles de sécurité avant l'accès aux services.
@@ -153,8 +152,11 @@ pour le chatbot conversationnel et sur des services spécialisés de scoring ou 
 segmentation. La traçabilité technique est assurée par \textbf{Zipkin} \cite{zipkin_docs}, qui permet de
 suivre les appels entre microservices. Enfin, \textbf{Docker} \cite{docker_docs} et
 \textbf{Docker Compose} \cite{docker_compose_docs}
-facilitent la conteneurisation, l'organisation des composants et leur déploiement dans des
-ensembles Compose séparés.
+constituent l'environnement de référence pour le développement local et
+l'organisation des composants en ensembles Compose. Lors de la validation sur
+VPS AlmaLinux, l'exécution a toutefois été réalisée avec \textbf{Podman}
+\cite{podman_docs} et \textbf{Podman Compose} \cite{podman_compose_docs}, en
+raison de difficultés réseau rencontrées avec Docker dans cet environnement.
 
 \section{Architecture technique de la solution}
 
@@ -268,18 +270,21 @@ La vue logique de l'architecture est complétée par l'architecture mise en plac
 dans l'environnement de validation. La plateforme actuellement réalisée est
 déployée sur un VPS AlmaLinux afin de tester progressivement les services
 disponibles à mesure que le périmètre fonctionnel évolue. Cette seconde lecture
-présente l'organisation des composants et la séparation des réseaux Docker.
+présente l'organisation des composants et la séparation des réseaux de
+conteneurs.
 
 Dans cet environnement de test, la plateforme I-SIB est décomposée en quatre
-ensembles Docker Compose indépendants. Cette organisation suit une logique de
+ensembles Compose indépendants. Cette organisation suit une logique de
 séparation des responsabilités au niveau infrastructurel : chaque ensemble peut
 faire l'objet d'une mise à jour ciblée, en tenant compte de ses dépendances. Les ensembles
 \texttt{infra}, \texttt{core},
 \texttt{module} et \texttt{office} distinguent respectivement les services
 communs, les référentiels de base, les modules métier avancés et les interfaces
-utilisateur \cite{docker_compose_docs}.
+utilisateur \cite{docker_compose_docs}. En local, cette organisation reste
+alignée avec Docker Compose ; sur le VPS AlmaLinux utilisé pour la validation,
+elle a été exécutée avec Podman Compose.
 
-Deux réseaux Docker structurent la communication entre les conteneurs. Le réseau
+Deux réseaux de conteneurs structurent la communication entre les services. Le réseau
 \texttt{sib\_public} est réservé aux services accessibles depuis l'extérieur :
 la passerelle API et les trois applications web. Le réseau \texttt{sib\_internal}
 regroupe l'ensemble des microservices et des bases de données, totalement isolés
@@ -302,8 +307,7 @@ L'ordre de démarrage suit les dépendances entre ensembles : \texttt{infra},
 puis \texttt{core}, \texttt{module} et \texttt{office}. Après une évolution
 validée, la chaîne de livraison permet de reconstruire et de redéployer les
 composants concernés sur le VPS. Cet environnement sert à la validation
-progressive de la solution et reste distinct de la production ; ses preuves
-techniques sont présentées en annexe~\ref{ann:validation-deploiement}.
+progressive de la solution et reste distinct de la production.
 % ─────────────────────────────────────────────────
 \section*{Conclusion}
 \phantomsection
