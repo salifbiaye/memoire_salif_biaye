@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.5.11)  3 JUN 2026 12:09
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.5.11)  3 JUN 2026 14:01
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1495,14 +1495,14 @@ Package hyperref Warning: The anchor of a bookmark and its parent's must not
 [7
 
 ]
-<images/contenu/chapitre-2/use_case_relation_client.png, id=519, 955.57pt x 845
-.1575pt>
+<images/contenu/chapitre-2/use_case_relation_client.png, id=519, 951.555pt x 14
+23.3175pt>
 File: images/contenu/chapitre-2/use_case_relation_client.png Graphic file (type
  png)
 <use images/contenu/chapitre-2/use_case_relation_client.png>
 Package pdftex.def Info: images/contenu/chapitre-2/use_case_relation_client.png
   used on input line 84.
-(pdftex.def)             Requested size: 435.32422pt x 385.02441pt.
+(pdftex.def)             Requested size: 347.68494pt x 520.0604pt.
  [8] [9 <./images/contenu/chapitre-2/use_case_relation_client.png (PNG copy)>]
 <images/contenu/chapitre-2/rc_seq_prospects.png, id=531, 661.47125pt x 638.385p
 t>
@@ -1510,19 +1510,14 @@ File: images/contenu/chapitre-2/rc_seq_prospects.png Graphic file (type png)
 <use images/contenu/chapitre-2/rc_seq_prospects.png>
 Package pdftex.def Info: images/contenu/chapitre-2/rc_seq_prospects.png  used o
 n input line 154.
-(pdftex.def)             Requested size: 483.69687pt x 466.80618pt.
-
-Overfull \hbox (13.6pt too wide) in paragraph at lines 154--155
- [][][][] 
- []
-
-[10]
+(pdftex.def)             Requested size: 415.9796pt x 401.4541pt.
+ [10]
 <images/contenu/chapitre-2/use_case_sgi.png, id=543, 891.33pt x 696.6025pt>
 File: images/contenu/chapitre-2/use_case_sgi.png Graphic file (type png)
 <use images/contenu/chapitre-2/use_case_sgi.png>
 Package pdftex.def Info: images/contenu/chapitre-2/use_case_sgi.png  used on in
 put line 169.
-(pdftex.def)             Requested size: 435.32422pt x 340.22214pt.
+(pdftex.def)             Requested size: 415.9796pt x 325.09666pt.
  [11 <./images/contenu/chapitre-2/rc_seq_prospects.png (PNG copy)>]
 [12 <./images/contenu/chapitre-2/use_case_sgi.png>] [13]
 <images/contenu/chapitre-2/sgi_seq_passage_ordres.png, id=568, 597.23125pt x 93
@@ -1532,7 +1527,7 @@ ng)
 <use images/contenu/chapitre-2/sgi_seq_passage_ordres.png>
 Package pdftex.def Info: images/contenu/chapitre-2/sgi_seq_passage_ordres.png  
 used on input line 249.
-(pdftex.def)             Requested size: 403.8154pt x 632.50047pt.
+(pdftex.def)             Requested size: 332.03227pt x 520.09088pt.
  [14
 
  <./images/contenu/chapitre-2/sgi_seq_passage_ordres.png>]) (contenu/chapitre-3
@@ -1548,16 +1543,16 @@ pe png)
 <use images/contenu/chapitre-3/architecture_fonctionnelle.png>
 Package pdftex.def Info: images/contenu/chapitre-3/architecture_fonctionnelle.p
 ng  used on input line 64.
-(pdftex.def)             Requested size: 470.09686pt x 352.57278pt.
+(pdftex.def)             Requested size: 445.00023pt x 333.74406pt.
  [17 <./images/contenu/chapitre-3/architecture_fonctionnelle.png>] [18]
-<images/contenu/chapitre-3/architecture_technique.png, id=617, 1541.76pt x 1027
+<images/contenu/chapitre-3/architecture_technique.png, id=620, 1541.76pt x 1027
 .84pt>
 File: images/contenu/chapitre-3/architecture_technique.png Graphic file (type p
 ng)
 <use images/contenu/chapitre-3/architecture_technique.png>
 Package pdftex.def Info: images/contenu/chapitre-3/architecture_technique.png  
 used on input line 183.
-(pdftex.def)             Requested size: 470.09686pt x 313.3888pt.
+(pdftex.def)             Requested size: 445.00023pt x 296.65445pt.
 
 [19] [20 <./images/contenu/chapitre-3/architecture_technique.png>]
 <images/contenu/chapitre-3/workflow_creation_prospect.png, id=644, 1499.6025pt 
@@ -1567,7 +1562,7 @@ pe png)
 <use images/contenu/chapitre-3/workflow_creation_prospect.png>
 Package pdftex.def Info: images/contenu/chapitre-3/workflow_creation_prospect.p
 ng  used on input line 221.
-(pdftex.def)             Requested size: 470.09686pt x 331.0132pt.
+(pdftex.def)             Requested size: 445.00023pt x 313.33789pt.
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
 (Font)              scaled to size 10.0pt on input line 237.
 
@@ -1579,43 +1574,43 @@ type png)
 <use images/contenu/chapitre-3/conception_creation_prospect.png>
 Package pdftex.def Info: images/contenu/chapitre-3/conception_creation_prospect
 .png  used on input line 257.
-(pdftex.def)             Requested size: 377.28296pt x 282.96307pt.
+(pdftex.def)             Requested size: 415.9796pt x 311.9879pt.
 
 [21 <./images/contenu/chapitre-3/workflow_creation_prospect.png (PNG copy)>]
 LaTeX Font Info:    Font shape `T1/ntxtt/m/n' will be
-(Font)              scaled to size 12.0pt on input line 280.
-
-[22 <./images/contenu/chapitre-3/conception_creation_prospect.png (PNG copy)>]
-<images/contenu/chapitre-3/architecture_deploiement.png, id=661, 1541.76pt x 10
+(Font)              scaled to size 12.0pt on input line 273.
+<images/contenu/chapitre-3/architecture_deploiement.png, id=658, 1541.76pt x 10
 27.84pt>
 File: images/contenu/chapitre-3/architecture_deploiement.png Graphic file (type
  png)
 <use images/contenu/chapitre-3/architecture_deploiement.png>
 Package pdftex.def Info: images/contenu/chapitre-3/architecture_deploiement.png
-  used on input line 301.
-(pdftex.def)             Requested size: 470.09686pt x 313.3888pt.
-) (contenu/chapitre-4.tex [23 <./images/contenu/chapitre-3/architecture_deploie
-ment.png (PNG copy)>]
+  used on input line 292.
+(pdftex.def)             Requested size: 445.00023pt x 296.65445pt.
+
+[22 <./images/contenu/chapitre-3/conception_creation_prospect.png (PNG copy)>])
+(contenu/chapitre-4.tex [23 <./images/contenu/chapitre-3/architecture_deploieme
+nt.png (PNG copy)>]
 Chapitre 4.
-<images/contenu/chapitre-4/portefeuille_clients_annote.png, id=667, 1650.165pt 
-x 992.70876pt>
+<images/contenu/chapitre-4/portefeuille_clients_annote.png, id=669, 1597.97pt x
+ 991.705pt>
 File: images/contenu/chapitre-4/portefeuille_clients_annote.png Graphic file (t
 ype png)
 <use images/contenu/chapitre-4/portefeuille_clients_annote.png>
 Package pdftex.def Info: images/contenu/chapitre-4/portefeuille_clients_annote.
 png  used on input line 41.
-(pdftex.def)             Requested size: 470.09686pt x 282.7886pt.
+(pdftex.def)             Requested size: 445.00023pt x 276.1623pt.
 [24
 
 ] [25 <./images/contenu/chapitre-4/portefeuille_clients_annote.png (PNG copy)>]
-<images/contenu/chapitre-4/cotations_brvm_annote.png, id=682, 1444.39626pt x 89
-7.3525pt>
+<images/contenu/chapitre-4/cotations_brvm_annote.png, id=684, 1596.96625pt x 99
+2.70876pt>
 File: images/contenu/chapitre-4/cotations_brvm_annote.png Graphic file (type pn
 g)
 <use images/contenu/chapitre-4/cotations_brvm_annote.png>
 Package pdftex.def Info: images/contenu/chapitre-4/cotations_brvm_annote.png  u
 sed on input line 95.
-(pdftex.def)             Requested size: 470.09686pt x 292.04688pt.
+(pdftex.def)             Requested size: 445.00023pt x 276.62358pt.
  [26 <./images/contenu/chapitre-4/cotations_brvm_annote.png (PNG copy)>])
 (contenu/conclusion-generale.tex [27]) (annexes/references.tex [28
 
@@ -1715,10 +1710,10 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: 1A34A08E2C3A850C56B7B95469D55674;11146.
  ) 
 Here is how much of TeX's memory you used:
- 35911 strings out of 467871
- 686288 string characters out of 5418860
- 1150918 words of memory out of 5000000
- 63772 multiletter control sequences out of 15000+600000
+ 35915 strings out of 467871
+ 686358 string characters out of 5418860
+ 1151107 words of memory out of 5000000
+ 63776 multiletter control sequences out of 15000+600000
  711078 words of font info for 227 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  89i,13n,120p,1003b,964s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -1729,9 +1724,9 @@ tmb.pfb><C:/Users/DELL/AppData/Local/Programs/MiKTeX/fonts/type1/public/newtx/z
 tmbi.pfb><C:/Users/DELL/AppData/Local/Programs/MiKTeX/fonts/type1/public/newtx/
 ztmr.pfb><C:/Users/DELL/AppData/Local/Programs/MiKTeX/fonts/type1/public/newtx/
 ztmri.pfb>
-Output written on main.pdf (43 pages, 8115761 bytes).
+Output written on main.pdf (43 pages, 9536161 bytes).
 PDF statistics:
- 843 PDF objects out of 1000 (max. 8388607)
+ 845 PDF objects out of 1000 (max. 8388607)
  184 named destinations out of 1000 (max. 500000)
  39467 words of extra memory for PDF output out of 42996 (max. 10000000)
 

@@ -158,6 +158,28 @@
   \fcolorbox{grisCadre}{white}{\oldincludegraphics[#1]{#2}}%
 }
 
+% Formats fixes pour harmoniser la largeur des cadres de figures.
+\newcommand{\MemoireFigureBox}[3]{%
+  \fcolorbox{grisCadre}{white}{%
+    \begin{minipage}{#2}%
+      \centering
+      \oldincludegraphics[#1]{#3}%
+    \end{minipage}%
+  }%
+}
+
+\newcommand{\MemoireFigureLarge}[1]{%
+  \MemoireFigureBox{width=\linewidth,keepaspectratio}{0.92\textwidth}{#1}%
+}
+
+\newcommand{\MemoireFigureMedium}[1]{%
+  \MemoireFigureBox{width=\linewidth,keepaspectratio}{0.86\textwidth}{#1}%
+}
+
+\newcommand{\MemoireFigureTall}[1]{%
+  \MemoireFigureBox{width=\linewidth,height=0.74\textheight,keepaspectratio}{0.88\textwidth}{#1}%
+}
+
 % Style des légendes
 \captionsetup{
   font=small,

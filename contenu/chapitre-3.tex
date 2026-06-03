@@ -61,7 +61,7 @@ L’architecture regroupe les interfaces utilisateur, les services métier ainsi
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=\dimexpr\textwidth-2\fboxsep-2\fboxrule\relax]{images/contenu/chapitre-3/architecture_fonctionnelle.png}
+    \MemoireFigureLarge{images/contenu/chapitre-3/architecture_fonctionnelle.png}
     \caption{Architecture fonctionnelle de la plateforme I-SIB}
     \label{fig:architecture_fonctionnelle}
 \end{figure}
@@ -180,7 +180,7 @@ et les composants applicatifs.
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=\dimexpr\textwidth-2\fboxsep-2\fboxrule\relax]{images/contenu/chapitre-3/architecture_technique.png}
+    \MemoireFigureLarge{images/contenu/chapitre-3/architecture_technique.png}
     \caption{Architecture technique de la plateforme I-SIB}
     \label{fig:architecture_technique}
 \end{figure}
@@ -218,7 +218,7 @@ scénario.
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=\dimexpr\textwidth-2\fboxsep-2\fboxrule\relax]{images/contenu/chapitre-3/workflow_creation_prospect.png}
+    \MemoireFigureLarge{images/contenu/chapitre-3/workflow_creation_prospect.png}
     \caption{Workflow de création d'un prospect avec scoring IA}
     \label{fig:workflow_creation_prospect}
 \end{figure}
@@ -254,7 +254,7 @@ stéréotypes de Jacobson \cite{jacobson_oose}.
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.78\textwidth]{images/contenu/chapitre-3/conception_creation_prospect.png}
+    \MemoireFigureMedium{images/contenu/chapitre-3/conception_creation_prospect.png}
     \caption{Vue de conception du scénario Création d'un prospect}
     \label{fig:conception_creation_prospect}
 \end{figure}
@@ -266,48 +266,39 @@ passerelle, service métier, données, intelligence artificielle et audit.
 % ─────────────────────────────────────────────────
 \section{Architecture de déploiement}
 
-La vue logique de l'architecture est complétée par l'architecture mise en place
-dans l'environnement de validation. La plateforme actuellement réalisée est
-déployée sur un VPS AlmaLinux afin de tester progressivement les services
-disponibles à mesure que le périmètre fonctionnel évolue. Cette seconde lecture
-présente l'organisation des composants et la séparation des réseaux de
-conteneurs.
+La plateforme réalisée est déployée en validation sur un VPS AlmaLinux. Cette
+vue complète l'architecture logique en présentant l'organisation des ensembles
+Compose, les réseaux de conteneurs et le principe de redéploiement progressif.
 
-Dans cet environnement de test, la plateforme I-SIB est décomposée en quatre
-ensembles Compose indépendants. Cette organisation suit une logique de
-séparation des responsabilités au niveau infrastructurel : chaque ensemble peut
-faire l'objet d'une mise à jour ciblée, en tenant compte de ses dépendances. Les ensembles
-\texttt{infra}, \texttt{core},
-\texttt{module} et \texttt{office} distinguent respectivement les services
-communs, les référentiels de base, les modules métier avancés et les interfaces
-utilisateur \cite{docker_compose_docs}. En local, cette organisation reste
-alignée avec Docker Compose ; sur le VPS AlmaLinux utilisé pour la validation,
-elle a été exécutée avec Podman Compose.
+Le déploiement est structuré en quatre ensembles : \texttt{infra},
+\texttt{core}, \texttt{module} et \texttt{office}. Ce découpage reste aligné
+avec Docker Compose en local \cite{docker_compose_docs}, tandis que l'exécution
+sur le VPS s'appuie sur Podman \cite{podman_docs} et Podman Compose
+\cite{podman_compose_docs}. Les quatre ensembles isolent respectivement les
+services communs, les référentiels, les modules métier et les interfaces
+utilisateur.
 
-Deux réseaux de conteneurs structurent la communication entre les services. Le réseau
-\texttt{sib\_public} est réservé aux services accessibles depuis l'extérieur :
-la passerelle API et les trois applications web. Le réseau \texttt{sib\_internal}
-regroupe l'ensemble des microservices et des bases de données, totalement isolés
-de tout accès direct depuis l'extérieur. Seule la passerelle appartient aux deux
-réseaux simultanément, faisant office de frontière de sécurité.
+Deux réseaux organisent les échanges. Le réseau \texttt{sib\_public} expose la
+passerelle API et les applications web, tandis que le réseau
+\texttt{sib\_internal} isole les microservices et les bases de données. La
+passerelle appartient aux deux réseaux et assure la frontière entre accès
+extérieur et services internes.
 
-La figure~\ref{fig:architecture_deploiement} reprend cette organisation sous forme
-de schéma. Elle met en évidence la séparation entre les services exposés, les
-services internes et le rôle particulier de la passerelle API entre les deux
-réseaux.
+La figure~\ref{fig:architecture_deploiement} synthétise cette organisation de
+validation.
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=\dimexpr\textwidth-2\fboxsep-2\fboxrule\relax]{images/contenu/chapitre-3/architecture_deploiement.png}
+    \MemoireFigureLarge{images/contenu/chapitre-3/architecture_deploiement.png}
     \caption{Déploiement de validation d'I-SIB sur un VPS AlmaLinux}
     \label{fig:architecture_deploiement}
 \end{figure}
 
-L'ordre de démarrage suit les dépendances entre ensembles : \texttt{infra},
-puis \texttt{core}, \texttt{module} et \texttt{office}. Après une évolution
-validée, la chaîne de livraison permet de reconstruire et de redéployer les
-composants concernés sur le VPS. Cet environnement sert à la validation
-progressive de la solution et reste distinct de la production.
+L'ordre de démarrage suit les dépendances : \texttt{infra}, puis \texttt{core},
+\texttt{module} et \texttt{office}. Après une évolution validée, la chaîne de
+livraison reconstruit et redéploie les composants concernés sur le VPS. Cet
+environnement sert à la validation progressive de la solution et reste distinct
+de la production.
 % ─────────────────────────────────────────────────
 \section*{Conclusion}
 \phantomsection
