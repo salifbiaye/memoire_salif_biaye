@@ -136,7 +136,7 @@ sur \textbf{Spring Boot 3.5} \cite{spring_boot_docs}, utilisé comme socle de d�
 métier. L'accès aux services est centralisé par \textbf{Spring Cloud Gateway}
 \cite{spring_gateway_docs}, qui assure
 le routage, les filtres de sécurité et la résilience. La gestion des identités et des
-rôles est confiée à \textbf{Keycloalak} \cite{keycloak_docs}, tandis que
+rôles est confiée à \textbf{Keycloak} \cite{keycloak_docs}, tandis que
 \textbf{Netflix Eureka} \cite{spring_eureka_docs} permet la découverte dynamique des services.
 
 Pour la persistance, \textbf{PostgreSQL} \cite{postgresql_docs} est retenu comme système de gestion de bases de
@@ -153,10 +153,7 @@ segmentation. La traçabilité technique est assurée par \textbf{Zipkin} \cite{
 suivre les appels entre microservices. Enfin, \textbf{Docker} \cite{docker_docs} et
 \textbf{Docker Compose} \cite{docker_compose_docs}
 constituent l'environnement de référence pour le développement local et
-l'organisation des composants en ensembles Compose. Lors de la validation sur
-VPS AlmaLinux, l'exécution a toutefois été réalisée avec \textbf{Podman}
-\cite{podman_docs} et \textbf{Podman Compose} \cite{podman_compose_docs}, en
-raison de difficultés réseau rencontrées avec Docker dans cet environnement.
+l'organisation des composants en ensembles Compose.
 
 \section{Architecture technique de la solution}
 
