@@ -23,6 +23,12 @@ les chargés de clientèle et les équipes SGI, ainsi qu'une dégradation de l'e
 client. L'analyse suivante vise donc à définir une solution capable de centraliser et
 d'unifier ces informations.
 
+Le chapitre présente d'abord le rôle du système et les acteurs concernés. Il
+décrit ensuite les fonctionnalités retenues, avec un accent particulier sur la
+création d'un prospect pour le module Relation Client et le passage d'ordre pour
+le module SGI. Enfin, il précise les exigences non fonctionnelles qui orientent
+les choix de conception.
+
 % ─────────────────────────────────────────────────
 \section{Rôle du système et acteurs}
 
@@ -291,12 +297,13 @@ adopté.
 \addcontentsline{toc}{section}{Conclusion}
 
 Ce chapitre a permis d'identifier les besoins fonctionnels et non fonctionnels du système
-I-SIB pour les modules Relation Client et SGI. Les fonctionnalités décrites couvrent la
-gestion de la relation client, la conformité KYC, le suivi des portefeuilles et le
-traitement des ordres de bourse. Chaque fonctionnalité a été détaillée à travers une fiche
-textuelle structurée et illustrée par un diagramme de séquence. Ces besoins s'accompagnent
-d'exigences essentielles en matière de sécurité, de confidentialité, de performance et de
-traçabilité.
+I-SIB pour les modules Relation Client et SGI. L'analyse a d'abord précisé les
+acteurs concernés et le rôle attendu du système, puis elle a présenté les
+fonctionnalités principales à couvrir. Elle a ensuite approfondi deux scénarios
+représentatifs : la création d'un prospect pour le module Relation Client et le
+passage d'ordre pour le module SGI. Ces besoins s'accompagnent d'exigences
+essentielles en matière de sécurité, de confidentialité, de performance, de
+disponibilité et de traçabilité.
 
 Cette analyse constitue la base de la conception fonctionnelle et technique du système,
 présentée dans le chapitre suivant.
