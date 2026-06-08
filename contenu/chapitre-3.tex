@@ -10,7 +10,7 @@
 
 Ce chapitre traduit les besoins identifiés au chapitre précédent en une solution
 structurée et implémentable. Il présente d'abord les principes retenus pour organiser
-la plateforme, puis l'architecture fonctionnelle d'I-SIB, les choix technologiques,
+la plateforme, puis l'architecture logique d'I-SIB, les choix technologiques,
 l'architecture technique, la conception détaillée de la fonctionnalité Gestion des
 prospects et enfin l'architecture de déploiement.
 
@@ -55,24 +55,24 @@ spécialisés qui communiquent entre eux de manière contrôlée \cite{fowler_mi
 
 La solution I-SIB repose sur une architecture microservices organisée en plusieurs couches. Les utilisateurs accèdent à la plateforme via deux interfaces web : un back-office pour les employés et un front-office pour les clients. Les requêtes passent par une passerelle API chargée du routage et du contrôle des accès, en lien avec le service d'authentification.
 
-L’architecture regroupe les interfaces utilisateur, les services métier ainsi que les composants techniques assurant la sécurité, le routage, le stockage des données, le cache, la messagerie et la traçabilité. La figure~\ref{fig:architecture_fonctionnelle} présente l’organisation fonctionnelle de ces composants et leurs interactions.
+L’architecture regroupe les interfaces utilisateur, les services métier ainsi que les composants techniques assurant la sécurité, le routage, le stockage des données, le cache, la messagerie et la traçabilité. La figure~\ref{fig:architecture_logique} présente l’organisation fonctionnelle de ces composants et leurs interactions.
 
 
 
 \begin{figure}[H]
     \centering
     \MemoireFigureLarge{images/contenu/chapitre-3/architecture_fonctionnelle.png}
-    \caption{Architecture fonctionnelle de la plateforme I-SIB}
-    \label{fig:architecture_fonctionnelle}
+    \caption{Architecture logique de la plateforme I-SIB}
+    \label{fig:architecture_logique}
 \end{figure}
 
-Comme le montre la figure~\ref{fig:architecture_fonctionnelle}, la passerelle API joue
+Comme le montre la figure~\ref{fig:architecture_logique}, la passerelle API joue
 un rôle central : elle constitue la frontière entre les applications web et les
 microservices internes. Les services métier restent ainsi isolés de tout accès
 direct depuis l'extérieur.
 \subsection{Description des blocs}
 
-La figure~\ref{fig:architecture_fonctionnelle} est organisée autour de plusieurs blocs
+La figure~\ref{fig:architecture_logique} est organisée autour de plusieurs blocs
 complémentaires, chacun correspondant à une responsabilité précise dans la plateforme.
 
 \begin{description}
@@ -121,7 +121,7 @@ complémentaires, chacun correspondant à une responsabilité précise dans la p
 
 \section{Choix des outils et technologies}
 
-Les choix technologiques traduisent l'architecture fonctionnelle en composants
+Les choix technologiques traduisent l'architecture logique en composants
 réalisables. Ils ont été retenus en fonction des responsabilités à couvrir :
 interfaces web, services backend, sécurité, routage, persistance des données,
 messagerie, cache, stockage documentaire, traçabilité et déploiement. Cette section
@@ -185,7 +185,7 @@ et les composants applicatifs.
 % ─────────────────────────────────────────────────
 \section{Conception détaillée}
 
-Après la présentation des architectures fonctionnelle et technique, cette section détaille
+Après la présentation des architectures logique et technique, cette section détaille
 le fonctionnement interne d'un scénario représentatif du module Relation Client :
 \textbf{la création d'un prospect}. Ce choix permet d'illustrer, de manière ciblée,
 le cheminement d'une demande depuis l'interface back-office jusqu'aux services backend,
@@ -269,11 +269,10 @@ Compose, les réseaux de conteneurs et le principe de redéploiement progressif.
 
 Le déploiement est structuré en quatre ensembles : \texttt{infra},
 \texttt{core}, \texttt{module} et \texttt{office}. Ce découpage reste aligné
-avec Docker Compose en local \cite{docker_compose_docs}, tandis que l'exécution
-sur le VPS s'appuie sur Podman \cite{podman_docs} et Podman Compose
-\cite{podman_compose_docs}. Les quatre ensembles isolent respectivement les
-services communs, les référentiels, les modules métier et les interfaces
-utilisateur.
+avec Docker \cite{docker_docs} et Docker Compose \cite{docker_compose_docs},
+aussi bien en local que sur le VPS AlmaLinux utilisé pour la validation. Les
+quatre ensembles isolent respectivement les services communs, les référentiels,
+les modules métier et les interfaces utilisateur.
 
 Deux réseaux organisent les échanges. Le réseau \texttt{sib\_public} expose la
 passerelle API et les applications web, tandis que le réseau

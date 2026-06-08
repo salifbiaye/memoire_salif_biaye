@@ -146,11 +146,7 @@ sécurité applicative \cite{owasp_asvs}.
     \item[IA à consolider.] Les scores associés aux prospects et les indicateurs
           de risque de départ devront être évalués sur des données réelles afin
           de confirmer leur pertinence métier.
-    \item[Contraintes de déploiement.] Docker \cite{docker_docs} et Docker Compose \cite{docker_compose_docs} restent les
-          références utilisées en local et dans l'organisation cible des
-          services. Sur le VPS AlmaLinux,
-          Podman \cite{podman_docs} et Podman Compose \cite{podman_compose_docs} ont été utilisés pendant les tests pour
-          répondre à des difficultés réseau propres à cet environnement.
+    \item[Industrialisation du déploiement.] Le déploiement de validation repose sur Docker \cite{docker_docs} et Docker Compose \cite{docker_compose_docs} sur le VPS AlmaLinux. Cette base reste à compléter par une supervision renforcée, des sauvegardes et une stratégie de reprise avant la production.
 \end{description}
 
 \subsection{Perspectives d'amélioration}

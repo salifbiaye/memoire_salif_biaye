@@ -4,40 +4,41 @@
 \markboth{Conclusion générale}{Conclusion générale}
 
 Ce mémoire avait pour objectif de concevoir et de réaliser une solution bancaire
-intelligente capable de rapprocher la gestion de la relation client et les services
-d'investissement. À travers la plateforme \textbf{I-SIB}, le travail réalisé a
-cherché à proposer une solution modulaire, sécurisée et évolutive, adaptée aux
-besoins d'un environnement bancaire moderne.
+intelligente centrée sur deux volets complémentaires : la gestion de la relation
+client et les services d'investissement. À travers la plateforme \textbf{I-SIB},
+le travail mené a permis de proposer une base applicative modulaire, sécurisée
+et évolutive, adaptée à un contexte bancaire où la centralisation des
+informations et la continuité des parcours deviennent essentielles.
 
-La démarche adoptée a permis d'analyser les besoins, de définir les exigences
-fonctionnelles et non fonctionnelles, puis de concevoir une architecture fondée
-sur des microservices, une passerelle API, des services métier spécialisés et des
-mécanismes de sécurité et de traçabilité. Afin de garder une étude maîtrisée,
-l'analyse détaillée s'est concentrée sur deux fonctionnalités représentatives :
-la gestion des prospects et le passage d'ordres.
+La démarche suivie a d'abord consisté à analyser les besoins, à identifier les
+acteurs et à préciser les exigences fonctionnelles et non fonctionnelles. Elle
+a ensuite conduit à la conception d'une architecture microservices organisée
+autour d'une passerelle API, de services métier spécialisés, de composants de
+sécurité et de mécanismes de traçabilité. Pour garder une étude lisible et
+maîtrisée, la conception détaillée s'est concentrée sur deux scénarios
+représentatifs : la création d'un prospect et le passage d'ordres.
 
-Les résultats obtenus mettent en évidence une couverture fonctionnelle du
-périmètre réalisé. Le module Relation Client centralise les informations client, facilite
-le suivi des prospects, intègre le scoring et la détection du churn. Le module
-SGI permet la consultation des portefeuilles, le suivi des cotations BRVM,
-l'analyse des titres et le suivi des opérations d'investissement. Ces résultats
-montrent l'intérêt d'une plateforme unifiée pour améliorer la continuité entre
-les parcours commerciaux, bancaires et d'investissement. La plateforme réalisée
-a également été déployée dans un environnement de validation sur un VPS
-AlmaLinux, où les évolutions peuvent être testées progressivement après
-redéploiement.
+Les résultats obtenus couvrent le périmètre fonctionnel réalisé. Le module
+Relation Client permet de centraliser les informations utiles au suivi
+commercial, de gérer les prospects et d'exploiter des indicateurs d'aide au
+suivi, notamment autour du scoring et du risque de départ. Le module SGI permet
+la consultation des portefeuilles, des instruments BRVM et des informations
+nécessaires à la préparation des opérations d'investissement. La plateforme a
+également été déployée dans un environnement de validation sur un VPS
+AlmaLinux, avec une organisation basée sur Docker et Docker Compose afin de
+tester progressivement les services réalisés.
 
-Certaines limites demeurent cependant : les cotations BRVM restent simulées, les
-modèles d'IA devront être améliorés avec des données réelles et les connexions
-avec tous les modules bancaires ne sont pas finalisées. Le passage de
-l'environnement de validation à la production nécessitera également davantage
-de tests, un audit de sécurité approfondi et une observabilité plus complète.
-Les perspectives portent donc sur l'intégration de flux de marché officiels,
-l'industrialisation de la production, la haute disponibilité et l'ouverture
-future vers le mobile ou le multilingue.
+Le travail réalisé reste toutefois à consolider avant une exploitation en
+production. Les données de marché utilisées pour les cotations BRVM sont encore
+simulées, les modèles d'intelligence artificielle devront être évalués avec des
+données réelles, et certaines connexions avec les autres modules bancaires
+restent à finaliser. Le passage en production nécessitera également des tests
+complémentaires, un audit de sécurité, une supervision renforcée, des
+sauvegardes et une stratégie de reprise clairement définie.
 
-En définitive, ce projet a permis de démontrer la faisabilité d'une plateforme
-unifiée combinant relation client, services d'investissement, architecture
-modulaire et intelligence artificielle. Il constitue une base solide pour la
-poursuite du développement d'I-SIB et son adaptation progressive aux besoins
-réels des institutions financières.
+En définitive, ce projet montre la faisabilité d'une plateforme bancaire
+unifiée associant relation client, services d'investissement, architecture
+modulaire et premiers mécanismes d'aide intelligente. I-SIB constitue ainsi une
+base de travail solide, appelée à évoluer progressivement vers une solution plus
+complète, mieux intégrée aux données réelles et adaptée aux besoins opérationnels
+des institutions financières.
