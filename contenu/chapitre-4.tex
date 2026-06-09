@@ -81,8 +81,8 @@ obligations. L'utilisateur peut accéder aux principaux
 variation, volume et classement des hausses ou baisses.
 
 Dans l'environnement de validation, les valeurs affichées sont simulées faute
-d'accès actuel à un flux officiel de la BRVM \cite{brvm_actions}. Cette phase
-permet de vérifier le
+d'accès actuel à la BRVM \cite{brvm_actions} comme source officielle de marché.
+Cette phase permet de vérifier le
 parcours de consultation, le filtrage et la lecture des instruments avant le
 raccordement à des données de marché réelles.
 
@@ -130,7 +130,7 @@ sécurité applicative \cite{owasp_asvs}.
           et des traces d'opérations contribue à encadrer les accès et à suivre
           les actions réalisées.
     \item[Déploiement de validation.] La plateforme a été installée sur un VPS
-          AlmaLinux pour tester les services réalisés et le redéploiement
+          AlmaLinux \cite{almalinux_official} pour tester les services réalisés et le redéploiement
           progressif des composants.
 \end{description}
 
@@ -146,13 +146,13 @@ sécurité applicative \cite{owasp_asvs}.
     \item[IA à consolider.] Les scores associés aux prospects et les indicateurs
           de risque de départ devront être évalués sur des données réelles afin
           de confirmer leur pertinence métier.
-    \item[Industrialisation du déploiement.] Le déploiement de validation repose sur Docker \cite{docker_docs} et Docker Compose \cite{docker_compose_docs} sur le VPS AlmaLinux. Cette base reste à compléter par une supervision renforcée, des sauvegardes et une stratégie de reprise avant la production.
+    \item[Industrialisation du déploiement.] Le déploiement de validation repose sur Docker \cite{docker_docs} et Docker Compose \cite{docker_compose_docs} sur le VPS AlmaLinux \cite{almalinux_official}. Cette base reste à compléter par une supervision renforcée, des sauvegardes et une stratégie de reprise avant la production.
 \end{description}
 
 \subsection{Perspectives d'amélioration}
 
 Les perspectives prioritaires concernent l'achèvement des intégrations avec les
-autres modules, le raccordement à un flux BRVM officiel \cite{brvm_actions}, l'amélioration des
+autres modules, le raccordement à la BRVM \cite{brvm_actions} comme source officielle de marché, l'amélioration des
 modèles de scoring et de churn, la stabilisation de la stratégie de déploiement
 et l'ouverture de la plateforme vers des usages mobiles.
 

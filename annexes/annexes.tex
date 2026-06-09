@@ -20,7 +20,7 @@ soumission d'un ordre d'investissement.
 Les comptes, identités et montants affichés dans les interfaces de cette
 annexe ont été créés uniquement pour les tests et ne correspondent pas à des
 clients réels. De même, les données de marché utilisées dans les vues SGI
-sont simulées, l'accès à un flux officiel BRVM \cite{brvm_actions} n'étant pas encore disponible
+sont simulées, l'accès à la BRVM \cite{brvm_actions} comme source officielle de marché n'étant pas encore disponible
 dans l'environnement de validation.
 
 Quatre interfaces sont présentées :
@@ -90,7 +90,7 @@ année). Cette vue soutient la lecture du marché avant la soumission d'un ordre
 \paragraph*{Résultat illustré.}
 La vue de palmarès présente le classement des titres par variation sur la
 période choisie. Les valeurs sont simulées et destinées à valider le parcours
-d'analyse, en l'absence d'un flux officiel BRVM \cite{brvm_actions}.
+d'analyse, en l'absence de la BRVM \cite{brvm_actions} comme source officielle de marché.
 
 
 \section{Saisie d'un ordre}
@@ -429,16 +429,18 @@ ce qui matérialise la consultation des traces associées au scénario prospect.
 
 Cette dernière annexe rassemble les preuves visuelles de l'environnement de
 validation présenté au chapitre~3. Elle documente les ensembles Docker
-\cite{docker_docs} déployés sur le VPS AlmaLinux, l'enregistrement des services et une exécution
+\cite{docker_docs} déployés sur le VPS AlmaLinux \cite{almalinux_official}, l'enregistrement des services et une exécution
 réussie de la chaîne de redéploiement utilisée pour la recette.
 
 Trois éléments sont présentés :
 \begin{itemize}
   \item les stacks Docker Compose \cite{docker_compose_docs} visibles dans l'interface Portainer
+        \cite{portainer_docs}
         (figure~\ref{fig:ann_portainer}) ;
   \item l'enregistrement des microservices dans le registre Eureka
+        \cite{spring_eureka_docs}
         (figure~\ref{fig:ann_eureka}) ;
-  \item l'historique de redéploiement attestant du processus itératif
+  \item l'historique de redéploiement GitHub Actions \cite{github_actions_docs} attestant du processus itératif
         de mise à jour (figure~\ref{fig:ann_redeploiement}).
 \end{itemize}
 
@@ -457,13 +459,13 @@ dans les captures issues de l'environnement de validation.
 \textbf{Preuve} & \textbf{Statut} \\ \hline
 Stacks Compose &
 Stacks \texttt{i-sib-infra}, \texttt{i-sib-core}, \texttt{i-sib-module} et
-\texttt{i-sib-office} visibles dans Portainer. &
+\texttt{i-sib-office} visibles dans Portainer \cite{portainer_docs}. &
 Figure~\ref{fig:ann_portainer} & Conforme \\ \hline
 Découverte des services &
-Instances applicatives enregistrées avec statut \texttt{UP} dans Eureka. &
+Instances applicatives enregistrées avec statut \texttt{UP} dans Eureka \cite{spring_eureka_docs}. &
 Figure~\ref{fig:ann_eureka} & Conforme \\ \hline
 Redéploiement ciblé &
-Exécution GitHub Actions réussie pour les composants concernés par l'évolution. &
+Exécution GitHub Actions \cite{github_actions_docs} réussie pour les composants concernés par l'évolution. &
 Figure~\ref{fig:ann_redeploiement} & Conforme \\ \hline
 \end{tabularx}
 \end{table}
@@ -471,9 +473,10 @@ Figure~\ref{fig:ann_redeploiement} & Conforme \\ \hline
 \newpage
 \section{Stacks Compose déployées}
 
-La capture Portainer présente les quatre ensembles applicatifs organisés sous
+La capture Portainer \cite{portainer_docs} présente les quatre ensembles applicatifs organisés sous
 forme de stacks Compose : \texttt{infra}, \texttt{core}, \texttt{module} et
-\texttt{office}. Elle documente leur présence sur le serveur de validation.
+\texttt{office}. Elle documente leur présence sur le serveur AlmaLinux
+\cite{almalinux_official}.
 
 \begin{figure}[H]
 \centering
@@ -488,7 +491,7 @@ documente l'organisation du déploiement utilisée pour la validation.
 
 \section{Enregistrement des services}
 
-Le tableau Eureka affiche les microservices enregistrés auprès du registre de
+Le tableau Eureka \cite{spring_eureka_docs} affiche les microservices enregistrés auprès du registre de
 services au moment de la capture.
 
 \begin{figure}[H]

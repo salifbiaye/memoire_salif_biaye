@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.5.11)  9 JUN 2026 12:37
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.5.11)  9 JUN 2026 13:06
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1612,7 +1612,7 @@ Package pdftex.def Info: images/contenu/chapitre-3/conception_creation_prospect
 [21 <./images/contenu/chapitre-3/workflow_creation_prospect.png (PNG copy)>]
 LaTeX Font Info:    Font shape `T1/ntxtt/m/n' will be
 (Font)              scaled to size 12.0pt on input line 271.
-<images/contenu/chapitre-3/architecture_deploiement.png, id=656, 1541.76pt x 10
+<images/contenu/chapitre-3/architecture_deploiement.png, id=658, 1541.76pt x 10
 27.84pt>
 File: images/contenu/chapitre-3/architecture_deploiement.png Graphic file (type
  png)
@@ -1625,7 +1625,7 @@ Package pdftex.def Info: images/contenu/chapitre-3/architecture_deploiement.png
 (contenu/chapitre-4.tex [23 <./images/contenu/chapitre-3/architecture_deploieme
 nt.png>]
 Chapitre 4.
-<images/contenu/chapitre-4/portefeuille_clients_annote.png, id=668, 1677.26625p
+<images/contenu/chapitre-4/portefeuille_clients_annote.png, id=672, 1677.26625p
 t x 944.52875pt>
 File: images/contenu/chapitre-4/portefeuille_clients_annote.png Graphic file (t
 ype png)
@@ -1636,7 +1636,7 @@ png  used on input line 40.
 [24
 
 ] [25 <./images/contenu/chapitre-4/portefeuille_clients_annote.png (PNG copy)>]
-<images/contenu/chapitre-4/cotations_brvm_annote.png, id=684, 1596.96625pt x 99
+<images/contenu/chapitre-4/cotations_brvm_annote.png, id=688, 1596.96625pt x 99
 2.70876pt>
 File: images/contenu/chapitre-4/cotations_brvm_annote.png Graphic file (type pn
 g)
@@ -1731,7 +1731,7 @@ n-ta-tion\T1/ntxtlf/m/n/12 (+20) . Dis-po-nible sur : []$\T1/ntxtt/m/n/12 https
  : / / zipkin . io / pages /
  []
 
-) (annexes/resume-abstract-final.tex [30]) [31
+[30]) (annexes/resume-abstract-final.tex [31]) [32
 
 
 ] (main.aux)
@@ -1743,11 +1743,11 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: 1A34A08E2C3A850C56B7B95469D55674;11146.
  ) 
 Here is how much of TeX's memory you used:
- 36095 strings out of 467871
- 689467 string characters out of 5418860
- 1153927 words of memory out of 5000000
- 63926 multiletter control sequences out of 15000+600000
- 715027 words of font info for 240 fonts, out of 8000000 for 9000
+ 36104 strings out of 467871
+ 689637 string characters out of 5418860
+ 1154047 words of memory out of 5000000
+ 63929 multiletter control sequences out of 15000+600000
+ 715119 words of font info for 241 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  89i,13n,120p,1003b,964s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/DELL/AppData/Local/Programs/MiKTeX/fonts/type1/public/tex-gyre/qtmr
@@ -1757,9 +1757,9 @@ tmb.pfb><C:/Users/DELL/AppData/Local/Programs/MiKTeX/fonts/type1/public/newtx/z
 tmbi.pfb><C:/Users/DELL/AppData/Local/Programs/MiKTeX/fonts/type1/public/newtx/
 ztmr.pfb><C:/Users/DELL/AppData/Local/Programs/MiKTeX/fonts/type1/public/newtx/
 ztmri.pfb>
-Output written on main.pdf (43 pages, 13088164 bytes).
+Output written on main.pdf (44 pages, 13091985 bytes).
 PDF statistics:
- 846 PDF objects out of 1000 (max. 8388607)
- 184 named destinations out of 1000 (max. 500000)
+ 864 PDF objects out of 1000 (max. 8388607)
+ 188 named destinations out of 1000 (max. 500000)
  41515 words of extra memory for PDF output out of 42996 (max. 10000000)
 

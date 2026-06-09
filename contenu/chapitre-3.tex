@@ -263,7 +263,7 @@ passerelle, service métier, données, intelligence artificielle et audit.
 % ─────────────────────────────────────────────────
 \section{Architecture de déploiement}
 
-La plateforme réalisée est déployée sur un VPS AlmaLinux mis à notre
+La plateforme réalisée est déployée sur un VPS AlmaLinux \cite{almalinux_official} mis à notre
 disposition. Cette vue complète l'architecture logique en présentant
 l'organisation des ensembles Compose \cite{docker_compose_docs}, les réseaux de conteneurs et le principe
 de redéploiement progressif.
@@ -271,7 +271,7 @@ de redéploiement progressif.
 Le déploiement est structuré en quatre ensembles : \texttt{infra},
 \texttt{core}, \texttt{module} et \texttt{office}. Ce découpage reste aligné
 avec Docker \cite{docker_docs} et Docker Compose \cite{docker_compose_docs},
-aussi bien en local que sur le VPS AlmaLinux. Les quatre ensembles isolent
+aussi bien en local que sur le VPS AlmaLinux \cite{almalinux_official}. Les quatre ensembles isolent
 respectivement les services communs, les référentiels, les modules métier et
 les interfaces utilisateur.
 
@@ -302,7 +302,7 @@ réalisés.
 
 Ce chapitre a défini les architectures fonctionnelle et technique d'I-SIB,
 puis détaillé la création d'un prospect comme scénario représentatif du module
-Relation Client. La solution a ensuite été déployée sur le VPS AlmaLinux mis à
+Relation Client. La solution a ensuite été déployée sur le VPS AlmaLinux \cite{almalinux_official} mis à
 notre disposition, ce qui a permis de vérifier progressivement le fonctionnement
 des services réalisés. Le chapitre suivant présente les résultats obtenus et
 les limites restant à traiter.
