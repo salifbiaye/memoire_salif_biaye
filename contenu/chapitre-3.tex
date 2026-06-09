@@ -290,12 +290,14 @@ La figure~\ref{fig:architecture_deploiement} synthétise cette organisation.
     \label{fig:architecture_deploiement}
 \end{figure}
 
-L'ordre de démarrage suit les dépendances : \texttt{infra}, puis \texttt{core},
-\texttt{module} et \texttt{office}. Après une évolution validée,
-GitHub Actions \cite{github_actions_docs} reconstruit et redéploie les
-composants concernés, tandis que Portainer \cite{portainer_docs} permet de
-suivre les stacks déployées sur le VPS. Cet accès permet de vérifier
-progressivement le fonctionnement des services réalisés.
+Dans la pratique, le déploiement est organisé par ensembles. L'ensemble
+\texttt{infra} regroupe les services de base nécessaires au fonctionnement de
+la plateforme, comme la passerelle API, Keycloak, Eureka,
+Redis, RabbitMQ, etc. Les ensembles \texttt{core} et \texttt{module} regroupent les
+services applicatifs, tandis que \texttt{office} contient les interfaces. Lorsqu'une
+modification est intégrée au projet, GitHub Actions \cite{github_actions_docs}
+déclenche le redéploiement des stacks concernées via Portainer
+\cite{portainer_docs}, ce qui facilite le suivi du déploiement sur le VPS.
 % ─────────────────────────────────────────────────
 \section*{Conclusion}
 \phantomsection
