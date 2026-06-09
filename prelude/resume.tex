@@ -7,38 +7,33 @@
 \markboth{Résumé}{Résumé}
 
 \hspace{0.5cm}
-Ce mémoire présente la conception et le développement des modules
+Ce mémoire présente la conception et la réalisation des modules
 \textbf{Relation Client} et \textbf{SGI} (Société de Gestion et
-d'Intermédiation) de la plateforme \textbf{I-SIB}, un système d'information
-bancaire intelligent développé au sein d'INNOV4AFRICA. Le projet répond au
-besoin de centraliser la connaissance client, de suivre la prospection et
-d'accompagner les opérations d'investissement dans une plateforme bancaire
-modulaire.
+d'Intermédiation) de la plateforme \textbf{I-SIB}. Le travail s'inscrit dans le
+besoin de centraliser la connaissance client et d'accompagner les opérations
+d'investissement dans un système d'information bancaire modulaire.
 
 \hspace{0.5cm}
-La démarche adoptée combine analyse fonctionnelle, modélisation, architecture
-microservices et logique \textit{full API}. Les technologies utilisées incluent
-Spring Boot, Next.js, PostgreSQL, Redis, RabbitMQ, Keycloak et Docker. La
-conception détaillée met l'accent sur la création d'un prospect pour le module
-Relation Client et sur le passage d'ordres pour le module SGI, afin d'illustrer
-le fonctionnement interne de la solution à partir de scénarios représentatifs.
+La démarche suivie combine analyse fonctionnelle, modélisation, conception de
+la solution, architecture microservices, développement d'interfaces et validation
+sur un VPS AlmaLinux. La conception de la solution définit l'architecture
+fonctionnelle, les choix technologiques, l'architecture technique, la conception
+détaillée et l'organisation du déploiement. L'étude détaillée est concentrée sur
+la création d'un prospect pour le module Relation Client et sur le passage
+d'ordres pour le module SGI.
 
 \hspace{0.5cm}
-La plateforme réalisée met à disposition des interfaces de suivi client, de
-gestion des prospects, de consultation des informations d'investissement et de
-préparation des ordres. Elle intègre également des fonctions d'aide à l'analyse,
-notamment le scoring des prospects et la détection du churn. Une instance de
-validation a été déployée sur un VPS AlmaLinux au moyen de conteneurs Docker,
-ce qui permet de vérifier progressivement les services réalisés. Les principales
-perspectives concernent l'intégration complète des modules, l'accès à des
-données de marché officielles, la consolidation des modèles d'intelligence
-artificielle et la préparation de la production.
+Les résultats obtenus portent sur le suivi client, la prospection, la
+consultation des informations d'investissement et la préparation des ordres. Les
+données BRVM utilisées pour la validation sont des données de démonstration. Les
+limites identifiées concernent notamment l'accès à un flux de marché officiel,
+la consolidation des modèles d'intelligence artificielle, l'audit de sécurité et
+la préparation de la production.
 
 \vspace{0.8cm}
 \noindent
 \textbf{Mots-clés :} système d'information bancaire, relation client, SGI,
-microservices, intelligence artificielle, KYC, portefeuille, BRVM, Spring Boot,
-Next.js, I-SIB.
+microservices, intelligence artificielle, BRVM, I-SIB.
 
 \cleardoublepage
 
@@ -51,35 +46,30 @@ Next.js, I-SIB.
 \markboth{Abstract}{Abstract}
 
 \hspace{0.5cm}
-This thesis presents the design and development of the \textbf{Customer
+This dissertation presents the design and implementation of the \textbf{Customer
 Relationship} and \textbf{SGI} (Securities Management and Intermediation)
-modules of the \textbf{I-SIB} platform, an intelligent banking information
-system developed at INNOV4AFRICA. The project addresses the need to centralize
-customer knowledge, support prospect tracking and assist investment operations
-within a modular banking platform.
+modules of the \textbf{I-SIB} platform. The work addresses the need to
+centralize customer knowledge and support investment operations within a modular
+banking information system.
 
 \hspace{0.5cm}
-The adopted approach combines functional analysis, modelling, microservices
-architecture and a full API design. The technologies used include Spring Boot,
-Next.js, PostgreSQL, Redis, RabbitMQ, Keycloak and Docker. The detailed design
-focuses on prospect creation for the Customer Relationship module and order
-placement for the SGI module, in order to illustrate the internal behaviour of
-the solution through representative scenarios.
+The approach combines functional analysis, modelling, solution design,
+microservices architecture, interface development and validation on an AlmaLinux
+VPS. The design defines the functional architecture, technology choices,
+technical architecture, detailed design and deployment organization. The
+detailed study focuses on prospect creation for the Customer Relationship module
+and on order placement for the SGI module.
 
 \hspace{0.5cm}
-The implemented platform provides interfaces for customer monitoring, prospect
-management, investment information consultation and order preparation. It also
-integrates analysis support features, including prospect scoring and churn
-detection. A validation instance has been deployed on an AlmaLinux VPS using
-Docker containers, allowing the implemented services to be progressively
-verified. The main perspectives concern complete module integration, access to
-official market data, consolidation of artificial intelligence models and
-production preparation.
+The results cover customer monitoring, prospect tracking, investment information
+consultation and order preparation. The BRVM data used for validation are
+demonstration data. The main limitations concern access to an official market
+data feed, consolidation of artificial intelligence models, security auditing
+and production readiness.
 
 \vspace{0.8cm}
 \noindent
 \textbf{Keywords:} banking information system, customer relationship management,
-SGI, microservices, artificial intelligence, KYC, portfolio, BRVM, Spring Boot,
-Next.js, I-SIB.
+SGI, microservices, artificial intelligence, BRVM, I-SIB.
 
 \cleardoublepage
