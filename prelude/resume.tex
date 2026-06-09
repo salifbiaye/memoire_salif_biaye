@@ -14,13 +14,17 @@ besoin de centraliser la connaissance client et d'accompagner les opérations
 d'investissement dans un système d'information bancaire modulaire.
 
 \hspace{0.5cm}
-La démarche suivie combine analyse fonctionnelle, modélisation, conception de
-la solution, architecture microservices, développement d'interfaces et validation
-sur un VPS AlmaLinux. La conception de la solution définit l'architecture
-fonctionnelle, les choix technologiques, l'architecture technique, la conception
-détaillée et l'organisation du déploiement. L'étude détaillée est concentrée sur
-la création d'un prospect pour le module Relation Client et sur le passage
-d'ordres pour le module SGI.
+La solution conçue repose sur une architecture microservices et une logique
+\textit{full API}, afin de séparer les responsabilités métier et de faciliter
+l'évolution progressive de la plateforme. Elle s'appuie sur des interfaces web
+développées avec Next.js, des services backend Spring Boot, une passerelle API,
+Keycloak pour la gestion des accès, PostgreSQL pour la persistance, ainsi que
+Redis, RabbitMQ et Docker pour le cache, les échanges asynchrones et le
+déploiement. La conception couvre l'architecture fonctionnelle, les choix
+technologiques, l'architecture technique, la conception détaillée et
+l'organisation du déploiement sur un VPS AlmaLinux. L'étude détaillée est
+concentrée sur la création d'un prospect pour le module Relation Client et sur
+le passage d'ordres pour le module SGI.
 
 \hspace{0.5cm}
 Les résultats obtenus portent sur le suivi client, la prospection, la
@@ -53,12 +57,16 @@ centralize customer knowledge and support investment operations within a modular
 banking information system.
 
 \hspace{0.5cm}
-The approach combines functional analysis, modelling, solution design,
-microservices architecture, interface development and validation on an AlmaLinux
-VPS. The design defines the functional architecture, technology choices,
-technical architecture, detailed design and deployment organization. The
-detailed study focuses on prospect creation for the Customer Relationship module
-and on order placement for the SGI module.
+The designed solution is based on a microservices architecture and a full API
+approach, in order to separate business responsibilities and support the
+progressive evolution of the platform. It relies on web interfaces developed
+with Next.js, Spring Boot backend services, an API gateway, Keycloak for access
+management, PostgreSQL for persistence, as well as Redis, RabbitMQ and Docker
+for caching, asynchronous exchanges and deployment. The design covers the
+functional architecture, technology choices, technical architecture, detailed
+design and deployment organization on an AlmaLinux VPS. The detailed study
+focuses on prospect creation for the Customer Relationship module and on order
+placement for the SGI module.
 
 \hspace{0.5cm}
 The results cover customer monitoring, prospect tracking, investment information
