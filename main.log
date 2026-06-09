@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.5.11)  9 JUN 2026 13:16
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.5.11)  9 JUN 2026 13:24
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1625,7 +1625,7 @@ Package pdftex.def Info: images/contenu/chapitre-3/architecture_deploiement.png
 (contenu/chapitre-4.tex [23 <./images/contenu/chapitre-3/architecture_deploieme
 nt.png>]
 Chapitre 4.
-<images/contenu/chapitre-4/portefeuille_clients_annote.png, id=672, 1677.26625p
+<images/contenu/chapitre-4/portefeuille_clients_annote.png, id=676, 1677.26625p
 t x 944.52875pt>
 File: images/contenu/chapitre-4/portefeuille_clients_annote.png Graphic file (t
 ype png)
@@ -1636,7 +1636,7 @@ png  used on input line 40.
 [24
 
 ] [25 <./images/contenu/chapitre-4/portefeuille_clients_annote.png (PNG copy)>]
-<images/contenu/chapitre-4/cotations_brvm_annote.png, id=688, 1596.96625pt x 99
+<images/contenu/chapitre-4/cotations_brvm_annote.png, id=692, 1596.96625pt x 99
 2.70876pt>
 File: images/contenu/chapitre-4/cotations_brvm_annote.png Graphic file (type pn
 g)
@@ -1707,11 +1707,11 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: 1A34A08E2C3A850C56B7B95469D55674;11146.
  ) 
 Here is how much of TeX's memory you used:
- 36103 strings out of 467871
- 689628 string characters out of 5418860
- 1153968 words of memory out of 5000000
- 63927 multiletter control sequences out of 15000+600000
- 715391 words of font info for 243 fonts, out of 8000000 for 9000
+ 36109 strings out of 467871
+ 689748 string characters out of 5418860
+ 1154047 words of memory out of 5000000
+ 63929 multiletter control sequences out of 15000+600000
+ 715527 words of font info for 244 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  89i,13n,120p,1003b,964s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/DELL/AppData/Local/Programs/MiKTeX/fonts/type1/public/tex-gyre/qtmr
@@ -1721,9 +1721,9 @@ tmb.pfb><C:/Users/DELL/AppData/Local/Programs/MiKTeX/fonts/type1/public/newtx/z
 tmbi.pfb><C:/Users/DELL/AppData/Local/Programs/MiKTeX/fonts/type1/public/newtx/
 ztmr.pfb><C:/Users/DELL/AppData/Local/Programs/MiKTeX/fonts/type1/public/newtx/
 ztmri.pfb>
-Output written on main.pdf (43 pages, 13088945 bytes).
+Output written on main.pdf (43 pages, 13090484 bytes).
 PDF statistics:
- 852 PDF objects out of 1000 (max. 8388607)
- 185 named destinations out of 1000 (max. 500000)
+ 859 PDF objects out of 1000 (max. 8388607)
+ 187 named destinations out of 1000 (max. 500000)
  41515 words of extra memory for PDF output out of 42996 (max. 10000000)
 

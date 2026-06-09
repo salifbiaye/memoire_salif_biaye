@@ -291,10 +291,11 @@ La figure~\ref{fig:architecture_deploiement} synthétise cette organisation.
 \end{figure}
 
 L'ordre de démarrage suit les dépendances : \texttt{infra}, puis \texttt{core},
-\texttt{module} et \texttt{office}. Après une évolution validée, la chaîne de
-livraison reconstruit et redéploie les composants concernés sur le VPS. Cet
-accès au VPS permet de vérifier progressivement le fonctionnement des services
-réalisés.
+\texttt{module} et \texttt{office}. Après une évolution validée,
+GitHub Actions \cite{github_actions_docs} reconstruit et redéploie les
+composants concernés, tandis que Portainer \cite{portainer_docs} permet de
+suivre les stacks déployées sur le VPS. Cet accès permet de vérifier
+progressivement le fonctionnement des services réalisés.
 % ─────────────────────────────────────────────────
 \section*{Conclusion}
 \phantomsection
