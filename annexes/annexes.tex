@@ -20,14 +20,14 @@ soumission d'un ordre d'investissement.
 Les comptes, identités et montants affichés dans les interfaces de cette
 annexe ont été créés uniquement pour les tests et ne correspondent pas à des
 clients réels. De même, les données de marché utilisées dans les vues SGI
-sont simulées, l'accès à un flux officiel BRVM n'étant pas encore disponible
+sont simulées, l'accès à un flux officiel BRVM \cite{brvm_actions} n'étant pas encore disponible
 dans l'environnement de validation.
 
 Quatre interfaces sont présentées :
 \begin{itemize}
   \item la consultation du portefeuille client
         (figure~\ref{fig:ann_portefeuille_client}) ;
-  \item la fiche détaillée d'un titre coté sur la BRVM
+  \item la fiche détaillée d'un titre coté sur la BRVM \cite{brvm_actions}
         (figure~\ref{fig:ann_detail_titre}) ;
   \item l'analyse et le palmarès des titres
         (figure~\ref{fig:palmares_titres}) ;
@@ -90,7 +90,7 @@ année). Cette vue soutient la lecture du marché avant la soumission d'un ordre
 \paragraph*{Résultat illustré.}
 La vue de palmarès présente le classement des titres par variation sur la
 période choisie. Les valeurs sont simulées et destinées à valider le parcours
-d'analyse, en l'absence d'un flux officiel BRVM.
+d'analyse, en l'absence d'un flux officiel BRVM \cite{brvm_actions}.
 
 
 \section{Saisie d'un ordre}
@@ -429,12 +429,12 @@ ce qui matérialise la consultation des traces associées au scénario prospect.
 
 Cette dernière annexe rassemble les preuves visuelles de l'environnement de
 validation présenté au chapitre~3. Elle documente les ensembles Docker
-déployés sur le VPS AlmaLinux, l'enregistrement des services et une exécution
+\cite{docker_docs} déployés sur le VPS AlmaLinux, l'enregistrement des services et une exécution
 réussie de la chaîne de redéploiement utilisée pour la recette.
 
 Trois éléments sont présentés :
 \begin{itemize}
-  \item les stacks Docker Compose visibles dans l'interface Portainer
+  \item les stacks Docker Compose \cite{docker_compose_docs} visibles dans l'interface Portainer
         (figure~\ref{fig:ann_portainer}) ;
   \item l'enregistrement des microservices dans le registre Eureka
         (figure~\ref{fig:ann_eureka}) ;

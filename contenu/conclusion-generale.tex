@@ -22,14 +22,15 @@ Les résultats obtenus couvrent le périmètre fonctionnel réalisé. Le module
 Relation Client permet de centraliser les informations utiles au suivi
 commercial, de gérer les prospects et d'exploiter des indicateurs d'aide au
 suivi, notamment autour du scoring et du risque de départ. Le module SGI permet
-la consultation des portefeuilles, des instruments BRVM et des informations
+la consultation des portefeuilles, des instruments BRVM \cite{brvm_actions} et des informations
 nécessaires à la préparation des opérations d'investissement. La plateforme a
 également été déployée dans un environnement de validation sur un VPS
-AlmaLinux, avec une organisation basée sur Docker et Docker Compose afin de
-tester progressivement les services réalisés.
+AlmaLinux, avec une organisation basée sur Docker \cite{docker_docs} et
+Docker Compose \cite{docker_compose_docs} afin de tester progressivement les
+services réalisés.
 
 Le travail réalisé reste toutefois à consolider avant une exploitation en
-production. Les données de marché utilisées pour les cotations BRVM sont encore
+production. Les données de marché utilisées pour les cotations BRVM \cite{brvm_actions} sont encore
 simulées, les modèles d'intelligence artificielle devront être évalués avec des
 données réelles, et certaines connexions avec les autres modules bancaires
 restent à finaliser. Le passage en production nécessitera également des tests

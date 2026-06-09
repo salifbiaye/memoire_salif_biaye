@@ -263,16 +263,17 @@ passerelle, service métier, données, intelligence artificielle et audit.
 % ─────────────────────────────────────────────────
 \section{Architecture de déploiement}
 
-La plateforme réalisée est déployée en validation sur un VPS AlmaLinux. Cette
-vue complète l'architecture logique en présentant l'organisation des ensembles
-Compose, les réseaux de conteneurs et le principe de redéploiement progressif.
+La plateforme réalisée est déployée sur un VPS AlmaLinux mis à notre
+disposition. Cette vue complète l'architecture logique en présentant
+l'organisation des ensembles Compose \cite{docker_compose_docs}, les réseaux de conteneurs et le principe
+de redéploiement progressif.
 
 Le déploiement est structuré en quatre ensembles : \texttt{infra},
 \texttt{core}, \texttt{module} et \texttt{office}. Ce découpage reste aligné
 avec Docker \cite{docker_docs} et Docker Compose \cite{docker_compose_docs},
-aussi bien en local que sur le VPS AlmaLinux utilisé pour la validation. Les
-quatre ensembles isolent respectivement les services communs, les référentiels,
-les modules métier et les interfaces utilisateur.
+aussi bien en local que sur le VPS AlmaLinux. Les quatre ensembles isolent
+respectivement les services communs, les référentiels, les modules métier et
+les interfaces utilisateur.
 
 Deux réseaux organisent les échanges. Le réseau \texttt{sib\_public} expose la
 passerelle API et les applications web, tandis que le réseau
@@ -280,21 +281,20 @@ passerelle API et les applications web, tandis que le réseau
 passerelle appartient aux deux réseaux et assure la frontière entre accès
 extérieur et services internes.
 
-La figure~\ref{fig:architecture_deploiement} synthétise cette organisation de
-validation.
+La figure~\ref{fig:architecture_deploiement} synthétise cette organisation.
 
 \begin{figure}[H]
     \centering
     \MemoireFigureLarge{images/contenu/chapitre-3/architecture_deploiement.png}
-    \caption{Déploiement de validation d'I-SIB sur un VPS AlmaLinux}
+    \caption{Déploiement d'I-SIB sur un VPS AlmaLinux}
     \label{fig:architecture_deploiement}
 \end{figure}
 
 L'ordre de démarrage suit les dépendances : \texttt{infra}, puis \texttt{core},
 \texttt{module} et \texttt{office}. Après une évolution validée, la chaîne de
 livraison reconstruit et redéploie les composants concernés sur le VPS. Cet
-environnement sert à la validation progressive de la solution et reste distinct
-de la production.
+accès au VPS permet de vérifier progressivement le fonctionnement des services
+réalisés.
 % ─────────────────────────────────────────────────
 \section*{Conclusion}
 \phantomsection
