@@ -54,8 +54,8 @@
 \contentsline {subsection}{\numberline {I.1}Centralisation de la connaissance client}{24}{subsection.4.1.1}%
 \contentsline {subsection}{\numberline {I.2}Suivi commercial et gestion des prospects}{25}{subsection.4.1.2}%
 \contentsline {subsection}{\numberline {I.3}Consultation des instruments et aide à la décision SGI}{25}{subsection.4.1.3}%
-\contentsline {section}{\numberline {II}Analyse critique de la réalisation}{26}{section.4.2}%
-\contentsline {subsection}{\numberline {II.1}Points forts}{26}{subsection.4.2.1}%
+\contentsline {section}{\numberline {II}Analyse critique de la réalisation}{27}{section.4.2}%
+\contentsline {subsection}{\numberline {II.1}Points forts}{27}{subsection.4.2.1}%
 \contentsline {subsection}{\numberline {II.2}Points faibles et limites}{27}{subsection.4.2.2}%
 \contentsline {subsection}{\numberline {II.3}Perspectives d'amélioration}{27}{subsection.4.2.3}%
 \contentsline {section}{Conclusion}{27}{section*.37}%

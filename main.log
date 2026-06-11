@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.5.11)  9 JUN 2026 16:18
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.5.11)  11 JUN 2026 14:09
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1606,19 +1606,19 @@ File: images/contenu/chapitre-3/conception_creation_prospect.png Graphic file (
 type png)
 <use images/contenu/chapitre-3/conception_creation_prospect.png>
 Package pdftex.def Info: images/contenu/chapitre-3/conception_creation_prospect
-.png  used on input line 254.
+.png  used on input line 263.
 (pdftex.def)             Requested size: 415.9796pt x 311.9879pt.
 
 [21 <./images/contenu/chapitre-3/workflow_creation_prospect.png (PNG copy)>]
 LaTeX Font Info:    Font shape `T1/ntxtt/m/n' will be
-(Font)              scaled to size 12.0pt on input line 271.
+(Font)              scaled to size 12.0pt on input line 280.
 <images/contenu/chapitre-3/architecture_deploiement.png, id=652, 1541.76pt x 10
 27.84pt>
 File: images/contenu/chapitre-3/architecture_deploiement.png Graphic file (type
  png)
 <use images/contenu/chapitre-3/architecture_deploiement.png>
 Package pdftex.def Info: images/contenu/chapitre-3/architecture_deploiement.png
-  used on input line 288.
+  used on input line 297.
 (pdftex.def)             Requested size: 445.00023pt x 296.65445pt.
 
 [22 <./images/contenu/chapitre-3/conception_creation_prospect.png (PNG copy)>])
@@ -1704,11 +1704,11 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: D20C68E39434B255D667686300B4811D;10999.
  ) 
 Here is how much of TeX's memory you used:
- 36079 strings out of 467871
- 689057 string characters out of 5418860
+ 36083 strings out of 467871
+ 689131 string characters out of 5418860
  1154047 words of memory out of 5000000
  63922 multiletter control sequences out of 15000+600000
- 715061 words of font info for 239 fonts, out of 8000000 for 9000
+ 715242 words of font info for 241 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  89i,13n,120p,1003b,964s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/DELL/AppData/Local/Programs/MiKTeX/fonts/type1/public/tex-gyre/qtmr
@@ -1718,7 +1718,7 @@ tmb.pfb><C:/Users/DELL/AppData/Local/Programs/MiKTeX/fonts/type1/public/newtx/z
 tmbi.pfb><C:/Users/DELL/AppData/Local/Programs/MiKTeX/fonts/type1/public/newtx/
 ztmr.pfb><C:/Users/DELL/AppData/Local/Programs/MiKTeX/fonts/type1/public/newtx/
 ztmri.pfb>
-Output written on main.pdf (42 pages, 13085396 bytes).
+Output written on main.pdf (42 pages, 13085543 bytes).
 PDF statistics:
  837 PDF objects out of 1000 (max. 8388607)
  177 named destinations out of 1000 (max. 500000)
