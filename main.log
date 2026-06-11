@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.5.11)  11 JUN 2026 14:24
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.5.11)  11 JUN 2026 14:36
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1530,7 +1530,7 @@ File: images/contenu/chapitre-2/use_case_relation_client.png Graphic file (type
  png)
 <use images/contenu/chapitre-2/use_case_relation_client.png>
 Package pdftex.def Info: images/contenu/chapitre-2/use_case_relation_client.png
-  used on input line 90.
+  used on input line 91.
 (pdftex.def)             Requested size: 385.49382pt x 520.05972pt.
  [8] [9 <./images/contenu/chapitre-2/use_case_relation_client.png (PNG copy)>]
 <images/contenu/chapitre-2/rc_seq_prospects.png, id=530, 1091.07625pt x 1452.42
@@ -1538,7 +1538,7 @@ Package pdftex.def Info: images/contenu/chapitre-2/use_case_relation_client.png
 File: images/contenu/chapitre-2/rc_seq_prospects.png Graphic file (type png)
 <use images/contenu/chapitre-2/rc_seq_prospects.png>
 Package pdftex.def Info: images/contenu/chapitre-2/rc_seq_prospects.png  used o
-n input line 160.
+n input line 161.
 (pdftex.def)             Requested size: 415.9796pt x 553.74501pt.
  [10]
 <images/contenu/chapitre-2/use_case_sgi.png, id=542, 773.13844pt x 1055.44313pt
@@ -1546,7 +1546,7 @@ n input line 160.
 File: images/contenu/chapitre-2/use_case_sgi.png Graphic file (type png)
 <use images/contenu/chapitre-2/use_case_sgi.png>
 Package pdftex.def Info: images/contenu/chapitre-2/use_case_sgi.png  used on in
-put line 175.
+put line 176.
 (pdftex.def)             Requested size: 415.9796pt x 567.8694pt.
  [11 <./images/contenu/chapitre-2/rc_seq_prospects.png (PNG copy)>]
 [12 <./images/contenu/chapitre-2/use_case_sgi.png>] [13]
@@ -1556,10 +1556,10 @@ File: images/contenu/chapitre-2/sgi_seq_passage_ordres.png Graphic file (type p
 ng)
 <use images/contenu/chapitre-2/sgi_seq_passage_ordres.png>
 Package pdftex.def Info: images/contenu/chapitre-2/sgi_seq_passage_ordres.png  
-used on input line 255.
+used on input line 256.
 (pdftex.def)             Requested size: 474.02086pt x 632.01518pt.
 
-Overfull \hbox (3.924pt too wide) in paragraph at lines 255--256
+Overfull \hbox (3.924pt too wide) in paragraph at lines 256--257
  [][][][] 
  []
 
@@ -1712,7 +1712,7 @@ tmb.pfb><C:/Users/DELL/AppData/Local/Programs/MiKTeX/fonts/type1/public/newtx/z
 tmbi.pfb><C:/Users/DELL/AppData/Local/Programs/MiKTeX/fonts/type1/public/newtx/
 ztmr.pfb><C:/Users/DELL/AppData/Local/Programs/MiKTeX/fonts/type1/public/newtx/
 ztmri.pfb>
-Output written on main.pdf (42 pages, 13084441 bytes).
+Output written on main.pdf (42 pages, 13084532 bytes).
 PDF statistics:
  834 PDF objects out of 1000 (max. 8388607)
  176 named destinations out of 1000 (max. 500000)
