@@ -53,9 +53,9 @@ spécialisés qui communiquent entre eux de manière contrôlée \cite{fowler_mi
 
 \subsection{Vue d'ensemble}
 
-La solution I-SIB repose sur une architecture microservices organisée en plusieurs couches. Les utilisateurs accèdent à la plateforme via deux interfaces web : un back-office pour les employés et un front-office pour les clients. Les requêtes passent par une passerelle API chargée du routage et du contrôle des accès, en lien avec le service d'authentification.
+La solution I-SIB repose sur une architecture microservices organisée en cinq couches. Les utilisateurs accèdent à la plateforme par le front-office destiné aux clients ou par le back-office réservé aux employés. Une interface distincte, le Module Manager, permet aux administrateurs de paramétrer les modules, les fonctionnalités et les droits associés. Les requêtes applicatives passent par une passerelle API chargée du routage et du contrôle des accès, en lien avec le service d'authentification.
 
-L’architecture regroupe les interfaces utilisateur, les services métier ainsi que les composants techniques assurant la sécurité, le routage, le stockage des données, le cache, la messagerie et la traçabilité. La figure~\ref{fig:architecture_logique} présente l’organisation fonctionnelle de ces composants et leurs interactions.
+L’architecture regroupe les interfaces utilisateur, les services métier ainsi que les composants techniques assurant la sécurité, le routage, le stockage des données, le cache, la messagerie et la traçabilité. La figure~\ref{fig:architecture_logique} présente l’organisation logique simplifiée de ces composants et leurs interactions.
 
 
 
@@ -70,53 +70,46 @@ Comme le montre la figure~\ref{fig:architecture_logique}, la passerelle API joue
 un rôle central : elle constitue la frontière entre les applications web et les
 microservices internes. Les services métier restent ainsi isolés de tout accès
 direct depuis l'extérieur.
-\subsection{Description des blocs}
+\subsection{Description des couches et des blocs}
 
-La figure~\ref{fig:architecture_logique} est organisée autour de plusieurs blocs
-complémentaires, chacun correspondant à une responsabilité précise dans la plateforme.
+L'architecture logique est organisée en cinq couches. Chaque couche regroupe des
+blocs qui ont un rôle proche. Cette organisation permet de séparer les
+interfaces, la sécurité et le routage, les services métier, la gestion des
+données ainsi que les outils nécessaires au fonctionnement de la plateforme.
 
 \begin{description}
-    \item[Front-office] Espace destiné aux clients de la banque. Il permet de consulter
-    les comptes, les transactions, les portefeuilles et les ordres de bourse depuis
-    une interface en libre-service.
+    \item[Couche présentation] Elle contient les interfaces utilisées pour accéder à
+    la plateforme. Le \textbf{Front-Office} est l'interface destinée aux clients de
+    la banque. Le \textbf{Back-Office} est utilisé par les employés. Le
+    \textbf{Module Manager} permet aux administrateurs de gérer les modules, leurs
+    fonctionnalités et les autorisations. Le \textbf{Backend Module Manager} traite
+    les demandes de ces interfaces et centralise leur configuration.
 
-    \item[Back-office] Espace réservé aux employés. Il regroupe les modules utilisés par
-    les chargés de clientèle, les gestionnaires SGI, les équipes d'agence, la
-    trésorerie, la comptabilité et l'administration.
+    \item[Couche sécurité et routage] Elle sécurise l'accès à la plateforme et dirige
+    les demandes vers le bon service. Le bloc \textbf{Authentification et accès}
+    vérifie l'identité et le rôle de l'utilisateur. La \textbf{Passerelle de
+    communication} reçoit les requêtes des interfaces, les contrôle, puis les envoie
+    au service concerné. Le \textbf{Registre des services} indique à la passerelle
+    où se trouve chaque microservice disponible.
 
-    \item[Module Manager] Composant d'administration qui permet de gérer les
-    modules disponibles, les fonctionnalités associées et les rôles autorisés
-    à y accéder. Il fournit ainsi un point de paramétrage des accès fonctionnels
-    de la plateforme.
+    \item[Couche métier] Elle regroupe les services qui réalisent les opérations de la
+    plateforme : \textbf{CRM}, \textbf{SGI}, \textbf{utilisateurs}, \textbf{comptes
+    et transactions}, \textbf{agence}, \textbf{comptabilité}, \textbf{trésorerie}
+    et \textbf{crédit}. Le \textbf{service d'audit} conserve une trace des actions
+    importantes réalisées dans le système.
 
-    \item[Authentification et accès] Bloc chargé de contrôler l'identité des utilisateurs,
-    les rôles, les sessions et les règles de sécurité avant l'accès aux services.
+    \item[Couche données et services techniques] Elle regroupe les outils utilisés par
+    les services métier pour enregistrer et échanger les informations. La
+    \textbf{base de données} conserve les données, le \textbf{cache} accélère certains
+    accès, la \textbf{messagerie} permet les échanges asynchrones et le
+    \textbf{stockage objet} conserve les fichiers et les documents.
 
-    \item[Passerelle de communication] Point d'entrée central entre les interfaces et les
-    microservices. Elle sécurise les échanges, valide les requêtes, applique les
-    contrôles d'accès et route les demandes vers les services concernés.
-
-    \item[Registre des services] Annuaire permettant de localiser les services actifs et
-    de suivre leur état. Il facilite la communication entre la passerelle et les
-    microservices internes.
-
-    \item[Services métier] Ensemble des microservices qui portent les fonctionnalités de
-    la plateforme : Relation Client, SGI, utilisateurs, comptes et transactions,
-    agence, comptabilité, trésorerie et crédit.
-
-    \item[Audit service] Bloc dédié à la journalisation des événements, à l'historique des
-    actions sensibles et au suivi de la conformité réglementaire.
-
-    \item[Données et services de support] Ensemble des composants de support aux
-    traitements métier : base de données, cache système, messagerie asynchrone et
-    stockage objet des fichiers et documents.
-
-    \item[Services IA et analytique] Bloc qui regroupe l'assistant intelligent, l'analyse
-    prédictive et la segmentation client afin d'apporter une aide à la décision.
-
-    \item[Observabilité et déploiement] Ensemble des éléments qui facilitent l'exploitation
-    de la plateforme : logs, traçabilité des requêtes, intégration continue,
-    déploiement automatisé et orchestration des conteneurs.
+    \item[Infrastructure et exploitation] Elle contient les outils qui permettent de
+    faire fonctionner, surveiller et mettre à jour la plateforme. Les \textbf{services
+    IA et analytiques} assurent notamment le scoring et la segmentation. Les outils
+    d'\textbf{observabilité} permettent de suivre les appels et de repérer les
+    problèmes. La chaîne \textbf{CI/CD} automatise la construction et le
+    redéploiement des applications.
 \end{description}
 
 \section{Choix des outils et technologies}
@@ -130,7 +123,7 @@ I-SIB. La section suivante montrera comment ces technologies s'assemblent concr�
 dans l'architecture technique de la solution.
 
 Les interfaces web de la plateforme sont développées avec \textbf{Next.js 16}
-\cite{nextjs_docs} et \textbf{TypeScript} \cite{typescript_docs}, afin de construire des applications front-office et back-office
+\cite{nextjs_docs} et \textbf{TypeScript} \cite{typescript_docs}, afin de construire les applications front-office, back-office et Module Manager
 modernes, maintenables et adaptées aux différents profils utilisateurs. Le backend repose
 sur \textbf{Spring Boot 3.5} \cite{spring_boot_docs}, utilisé comme socle de développement des microservices
 métier. L'accès aux services est centralisé par \textbf{Spring Cloud Gateway}
