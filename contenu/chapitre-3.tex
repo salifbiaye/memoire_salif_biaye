@@ -26,25 +26,16 @@ Cette section présente donc les principes retenus, qui serviront de base à l'a
 globale de la plateforme, en cohérence avec les principes de qualité logicielle
 \cite{iso25010} et de sécurité applicative \cite{owasp_asvs}.
 
-Les principaux principes retenus sont les suivants :
-
-\begin{itemize}
-    \item \textbf{Séparer les responsabilités} afin que chaque module conserve un périmètre
-    clair, notamment pour la Relation Client, la SGI, l'authentification, l'audit et
-    les services transversaux.
-    \item \textbf{Filtrer et contrôler les accès entrants}
- via un composant dédié, afin de garantir que seules les requêtes autorisées atteignent les services métier.
-
-    \item \textbf{Protéger les données sensibles} en limitant les accès selon les rôles et
-    en isolant les informations manipulées par les différents services.
-    \item \textbf{Assurer la traçabilité} des opérations importantes, en particulier les
-    actions liées au KYC, aux prospects, aux portefeuilles et aux ordres de bourse.
-    \item \textbf{Faciliter l'évolution du système} afin de pouvoir ajouter de nouveaux
-    modules ou de nouvelles fonctionnalités sans remettre en cause toute la
-    plateforme.
-    \item \textbf{Maintenir une expérience utilisateur cohérente} entre les interfaces
-    destinées aux clients et celles utilisées par les équipes internes.
-\end{itemize}
+Plusieurs principes ont guidé cette organisation. Séparer les responsabilités,
+pour commencer, afin que chaque module --- Relation Client, SGI,
+authentification, audit ou services transversaux --- garde un périmètre clair.
+Un composant dédié filtre les accès entrants et ne laisse atteindre les services
+métier que les requêtes autorisées. Les données sensibles, elles, restent
+cloisonnées par service, avec des accès restreints selon les rôles. La
+traçabilité porte sur les opérations les plus sensibles, comme le KYC, les
+prospects, les portefeuilles ou les ordres de bourse. L'ensemble doit aussi
+pouvoir évoluer sans tout casser, en gardant des interfaces cohérentes côté
+clients comme côté équipes internes.
 
 Ces principes conduisent à retenir une architecture modulaire, organisée autour de blocs
 spécialisés qui communiquent entre eux de manière contrôlée \cite{fowler_microservices}.
@@ -80,10 +71,11 @@ données ainsi que les outils nécessaires au fonctionnement de la plateforme.
 \begin{description}
     \item[Couche présentation] Elle contient les interfaces utilisées pour accéder à
     la plateforme. Le \textbf{Front-Office} est l'interface destinée aux clients de
-    la banque. Le \textbf{Back-Office} est utilisé par les employés. Le
-    \textbf{Module Manager} permet aux administrateurs de gérer les modules, leurs
-    fonctionnalités et les autorisations. Le \textbf{Backend Module Manager} traite
-    les demandes de ces interfaces et centralise leur configuration.
+    la banque. Le \textbf{Back-Office} est utilisé par les employés. Les
+    administrateurs s'appuient sur le \textbf{Module Manager} pour paramétrer les
+    modules, leurs fonctionnalités et les droits associés. Derrière, le
+    \textbf{Backend Module Manager} reçoit les demandes de ces interfaces et
+    regroupe leur configuration.
 
     \item[Couche sécurité et routage] Elle sécurise l'accès à la plateforme et dirige
     les demandes vers le bon service. Le bloc \textbf{Authentification et accès}
@@ -92,11 +84,11 @@ données ainsi que les outils nécessaires au fonctionnement de la plateforme.
     au service concerné. Le \textbf{Registre des services} indique à la passerelle
     où se trouve chaque microservice disponible.
 
-    \item[Couche métier] Elle regroupe les services qui réalisent les opérations de la
-    plateforme : \textbf{CRM}, \textbf{SGI}, \textbf{utilisateurs}, \textbf{comptes
-    et transactions}, \textbf{agence}, \textbf{comptabilité}, \textbf{trésorerie}
-    et \textbf{crédit}. Le \textbf{service d'audit} conserve une trace des actions
-    importantes réalisées dans le système.
+    \item[Couche métier] On y trouve les services qui exécutent les opérations de
+    la plateforme --- \textbf{CRM}, \textbf{SGI}, \textbf{utilisateurs},
+    \textbf{comptes et transactions}, \textbf{agence}, \textbf{comptabilité},
+    \textbf{trésorerie} et \textbf{crédit}. À leurs côtés, le \textbf{service
+    d'audit} garde la trace des actions importantes effectuées dans le système.
 
     \item[Couche données et services techniques] Elle regroupe les outils utilisés par
     les services métier pour enregistrer et échanger les informations. La

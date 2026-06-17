@@ -11,22 +11,22 @@ Après la présentation du cadre général du projet, ce deuxième chapitre a po
 d'analyser les besoins auxquels doit répondre le futur système I-SIB dans le périmètre des
 modules Relation Client et SGI. Il s'agit de préciser les utilisateurs concernés, le rôle
 attendu du système, les fonctionnalités nécessaires et les exigences de qualité qui doivent
-guider la conception. Cette étape est essentielle, car elle permet de transformer la
-problématique générale en besoins concrets et exploitables pour la suite du projet.
+guider la conception. Ce travail conditionne la suite, puisqu'il transforme une problématique encore
+générale en besoins concrets, directement exploitables pour la conception.
 
-Le système futur doit résoudre une difficulté centrale : la séparation entre la gestion de
-la relation client et les services d'investissement. Dans de nombreux environnements, les
-informations clients, les interactions commerciales, les données KYC, les comptes bancaires,
-les portefeuilles-titres et les ordres de bourse sont traités dans des outils différents.
-Cette fragmentation entraîne une perte de visibilité pour les équipes internes, notamment
-les chargés de clientèle et les équipes SGI, ainsi qu'une dégradation de l'expérience
-client. L'analyse suivante vise donc à définir une solution capable de centraliser et
-d'unifier ces informations.
+La difficulté à lever est bien identifiée. Aujourd'hui, la relation client et les
+services d'investissement vivent séparés. Informations clients, interactions
+commerciales, données KYC, comptes bancaires, portefeuilles-titres, ordres de
+bourse… tout cela se retrouve souvent réparti dans des outils qui ne se parlent
+pas. Faute de communication entre ces systèmes, il devient difficile de
+reconstituer une vue unifiée d'un même client, et son expérience reste
+fragmentée, éclatée d'un outil à l'autre. L'enjeu de l'analyse qui suit est donc
+de poser une solution capable de centraliser et d'unifier ces informations.
 
-Le chapitre présente d'abord le rôle du système et les acteurs concernés. Il
-décrit ensuite les fonctionnalités retenues, avec un accent particulier sur la
-création d'un prospect pour le module Relation Client et le passage d'ordre pour
-le module SGI. Enfin, il précise les exigences non fonctionnelles qui orientent
+Le chapitre commence par situer le rôle du système et les acteurs concernés,
+avant de présenter les fonctionnalités retenues. Deux d'entre elles sont mises
+en avant, la création d'un prospect du côté Relation Client et le passage
+d'ordre du côté SGI. Enfin, il précise les exigences non fonctionnelles qui orientent
 les choix de conception.
 
 % ─────────────────────────────────────────────────
@@ -56,12 +56,12 @@ pertinentes et de prioriser ses actions commerciales, notamment lorsque le suivi
 fait apparaître un risque de départ.
 
 L'\textbf{équipe SGI} est un utilisateur interne spécialisé dans les opérations sur titres
-et la gestion de portefeuille. Elle attend du système la capacité de superviser les
-portefeuilles clients, de traiter les ordres de bourse, d'analyser les performances et
-d'exploiter les cotations pour accompagner les décisions d'investissement.
+et la gestion de portefeuille. Du système, elle attend de quoi superviser les
+portefeuilles clients, traiter les ordres de bourse, suivre les performances et
+s'appuyer sur les cotations pour éclairer les décisions d'investissement.
 
-Ainsi, le système futur constitue un point de convergence entre deux dimensions : la
-relation client et l'investissement. Il doit garantir que chaque acteur accède uniquement
+Le système à concevoir fait ainsi le pont entre deux dimensions jusque-là
+distinctes, la relation client et l'investissement. Il doit garantir que chaque acteur accède uniquement
 aux informations et aux actions correspondant à son rôle, tout en assurant la cohérence
 globale des données manipulées.
 
@@ -287,11 +287,12 @@ dont le système doit être conçu, sécurisé, maintenu et utilisé.
     utilisateurs afin de réduire les erreurs et de faciliter l'adoption du système.
 \end{description}
 
-La sécurité et la confidentialité sont prioritaires, car le système manipule des
-informations sensibles. La traçabilité est indispensable pour reconstituer les opérations
-et répondre aux exigences de contrôle. L'ergonomie doit être prise en compte dès la
-conception, car un système complet mais difficile à utiliser risque d'être insuffisamment
-adopté.
+Ces exigences sont d'autant plus sensibles que le système manipule des données
+personnelles et financières. La sécurité et la confidentialité protègent ces
+données contre les accès non autorisés. La traçabilité permet, de son côté, de
+reconstituer les opérations et de répondre aux contrôles. Quant à l'ergonomie,
+elle conditionne directement l'adoption du système, car un outil complet mais
+difficile à utiliser finit rarement par être employé.
 
 % ─────────────────────────────────────────────────
 \section*{Conclusion}

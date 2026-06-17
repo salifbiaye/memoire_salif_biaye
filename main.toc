@@ -15,14 +15,14 @@
 \contentsline {subsection}{\numberline {I.2}Domaines d'activités}{2}{subsection.1.1.2}%
 \contentsline {section}{\numberline {II}Présentation du sujet}{3}{section.1.2}%
 \contentsline {subsection}{\numberline {II.1}Contexte}{3}{subsection.1.2.1}%
-\contentsline {subsection}{\numberline {II.2}Problématique}{4}{subsection.1.2.2}%
+\contentsline {subsection}{\numberline {II.2}Problématique}{3}{subsection.1.2.2}%
 \contentsline {subsection}{\numberline {II.3}Objectifs}{4}{subsection.1.2.3}%
 \contentsline {subsubsection}{\numberline {II.3.1}Objectif général}{4}{subsubsection.1.2.3.1}%
 \contentsline {subsubsection}{\numberline {II.3.2}Objectifs spécifiques}{4}{subsubsection.1.2.3.2}%
-\contentsline {section}{\numberline {III}Démarche méthodologique}{5}{section.1.3}%
-\contentsline {subsection}{\numberline {III.1}Caractéristiques du projet}{5}{subsection.1.3.1}%
+\contentsline {section}{\numberline {III}Démarche méthodologique}{4}{section.1.3}%
+\contentsline {subsection}{\numberline {III.1}Caractéristiques du projet}{4}{subsection.1.3.1}%
 \contentsline {subsection}{\numberline {III.2}Méthodologie de travail}{5}{subsection.1.3.2}%
-\contentsline {section}{Conclusion}{6}{Item.9}%
+\contentsline {section}{Conclusion}{6}{subsection.1.3.2}%
 \contentsline {chapter}{\numberline {2}Analyse fonctionnelle et non fonctionnelle des besoins}{7}{chapter.2}%
 \contentsline {section}{Introduction}{7}{section*.19}%
 \contentsline {section}{\numberline {I}Rôle du système et acteurs}{7}{section.2.1}%
@@ -36,9 +36,9 @@
 \contentsline {chapter}{\numberline {3}Conception de la solution}{16}{chapter.3}%
 \contentsline {section}{Introduction}{16}{section*.26}%
 \contentsline {section}{\numberline {I}Principes de conception de l'architecture}{16}{section.3.1}%
-\contentsline {section}{\numberline {II}Architecture logique de la solution}{17}{section.3.2}%
-\contentsline {subsection}{\numberline {II.1}Vue d'ensemble}{17}{subsection.3.2.1}%
-\contentsline {subsection}{\numberline {II.2}Description des couches et des blocs}{18}{subsection.3.2.2}%
+\contentsline {section}{\numberline {II}Architecture logique de la solution}{16}{section.3.2}%
+\contentsline {subsection}{\numberline {II.1}Vue d'ensemble}{16}{subsection.3.2.1}%
+\contentsline {subsection}{\numberline {II.2}Description des couches et des blocs}{17}{subsection.3.2.2}%
 \contentsline {section}{\numberline {III}Choix des outils et technologies}{18}{section.3.3}%
 \contentsline {section}{\numberline {IV}Architecture technique de la solution}{19}{section.3.4}%
 \contentsline {section}{\numberline {V}Conception détaillée}{20}{section.3.5}%
@@ -54,8 +54,8 @@
 \contentsline {subsection}{\numberline {I.1}Centralisation de la connaissance client}{24}{subsection.4.1.1}%
 \contentsline {subsection}{\numberline {I.2}Suivi commercial et gestion des prospects}{25}{subsection.4.1.2}%
 \contentsline {subsection}{\numberline {I.3}Consultation des instruments et aide à la décision SGI}{25}{subsection.4.1.3}%
-\contentsline {section}{\numberline {II}Analyse critique de la réalisation}{27}{section.4.2}%
-\contentsline {subsection}{\numberline {II.1}Points forts}{27}{subsection.4.2.1}%
+\contentsline {section}{\numberline {II}Analyse critique de la réalisation}{26}{section.4.2}%
+\contentsline {subsection}{\numberline {II.1}Points forts}{26}{subsection.4.2.1}%
 \contentsline {subsection}{\numberline {II.2}Points faibles et limites}{27}{subsection.4.2.2}%
 \contentsline {subsection}{\numberline {II.3}Perspectives d'amélioration}{27}{subsection.4.2.3}%
 \contentsline {section}{Conclusion}{27}{section*.37}%

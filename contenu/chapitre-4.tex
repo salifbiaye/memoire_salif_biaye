@@ -15,9 +15,10 @@ prospection et des services SGI, puis montre comment ces résultats répondent a
 périmètre fonctionnel étudié.
 
 Les résultats sont décrits à partir des principaux parcours observés dans
-l'environnement de validation. Les données affichées dans les illustrations sont
-des données de démonstration utilisées pour présenter le fonctionnement de
-l'application. Le chapitre se termine par une analyse critique des apports, des
+l'environnement de validation. Les illustrations s'appuient sur des données de
+démonstration pour la partie client, tandis que les cotations BRVM
+\cite{brvm_data_public} proviennent d'une source publique tierce actualisée
+quotidiennement. Le chapitre se termine par une analyse critique des apports, des
 limites et des perspectives d'évolution de la solution.
 
 % ─────────────────────────────────────────────────
@@ -77,11 +78,12 @@ obligations. L'utilisateur peut accéder aux principaux
 éléments nécessaires à la prise de décision : symbole, dénomination, prix,
 variation, volume et classement des hausses ou baisses.
 
-Dans l'environnement de validation, les valeurs affichées sont simulées faute
-d'accès actuel à la BRVM \cite{brvm_actions} comme source officielle de marché.
-Cette phase permet de vérifier le
-parcours de consultation, le filtrage et la lecture des instruments avant le
-raccordement à des données de marché réelles.
+Dans l'environnement de validation, les cotations proviennent d'une source
+publique tierce \cite{brvm_data_public} qui publie chaque jour les données de la
+BRVM \cite{brvm_actions}, en attendant un accès direct au flux de marché
+officiel. Cette phase permet de vérifier le parcours de consultation, le
+filtrage et la lecture des instruments avant un branchement ultérieur sur ce
+flux.
 
 L'écran de cotation présenté à la figure~\ref{fig:cotations_brvm} montre
 l'organisation de cette consultation autour des classements de titres, des
@@ -90,7 +92,7 @@ filtres de navigation et du tableau des instruments disponibles.
 \begin{figure}[H]
     \centering
     \MemoireFigureLarge{images/contenu/chapitre-4/cotations_brvm_annote.png}
-    \caption{Consultation d'instruments BRVM sur données simulées}
+    \caption{Consultation d'instruments BRVM (source publique tierce, données quotidiennes)}
     \label{fig:cotations_brvm}
 \end{figure}
 
@@ -103,7 +105,7 @@ indices, actions et obligations. Le repère \textbf{4} présente enfin le tablea
 des instruments, avec les informations de marché utiles avant une décision
 d'achat ou de vente.
 
-\newpage{}
+
 % ─────────────────────────────────────────────────
 \section{Analyse critique de la réalisation}
 
@@ -134,12 +136,17 @@ sécurité applicative \cite{owasp_asvs}.
     \item[Périmètre encore incomplet.] La plateforme couvre un périmètre large,
           mais toutes les fonctionnalités et toutes les connexions avec les
           autres modules bancaires ne sont pas encore finalisées.
-    \item[Données de marché simulées.] Les cotations BRVM \cite{brvm_actions} utilisées dans
-          l'environnement de validation sont fictives. Un flux officiel devra
-          être intégré pour permettre une exploitation opérationnelle.
-    \item[IA à consolider.] Les scores associés aux prospects et les indicateurs
-          de risque de départ devront être évalués sur des données réelles afin
-          de confirmer leur pertinence métier.
+    \item[Données non officielles.] Les cotations BRVM \cite{brvm_actions}
+          utilisées dans l'environnement de validation proviennent d'une source
+          publique tierce \cite{brvm_data_public} mise à jour quotidiennement,
+          et non directement du flux de marché officiel, dont l'intégration
+          reste à prévoir pour une exploitation opérationnelle. De même,
+          l'exécution des ordres est simulée, faute de connexion à un
+          intermédiaire de marché réel.
+    \item[Intégration de l'IA.] La pertinence métier des scores de prospect et
+          des indicateurs de risque de départ relève du module IA et devra être
+          confirmée sur des données réelles ; côté intégration, le parcours
+          consomme déjà ces scores et gère l'indisponibilité du service.
     \item[Industrialisation du déploiement.] Le déploiement de validation repose sur Docker \cite{docker_docs} et Docker Compose \cite{docker_compose_docs} sur le VPS AlmaLinux \cite{almalinux_official}. Cette base reste à compléter par une supervision renforcée, des sauvegardes et une stratégie de reprise avant la production.
 \end{description}
 

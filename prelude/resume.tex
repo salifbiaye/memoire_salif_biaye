@@ -16,21 +16,21 @@ d'investissement dans un système d'information bancaire modulaire.
 \hspace{0.5cm}
 La solution conçue repose sur une architecture microservices et une logique
 \textit{full API}, afin de séparer les responsabilités métier et de faciliter
-l'évolution progressive de la plateforme. Elle combine des interfaces web, des
-services backend, une passerelle API, un mécanisme de gestion des accès, une
-base de données relationnelle, des services de cache et de messagerie, ainsi
-qu'un déploiement conteneurisé sur VPS AlmaLinux. La conception couvre
-l'architecture fonctionnelle, les choix technologiques, l'architecture
-technique, la conception détaillée et l'organisation du déploiement. Dans cette
-conception détaillée, l'accent est mis sur la création d'un prospect pour le
-module Relation Client, tandis que le module SGI est abordé à travers les
-résultats fonctionnels liés à la consultation des informations d'investissement
-et à la préparation des ordres.
+l'évolution progressive de la plateforme. Chaque service métier expose ses
+fonctions via une passerelle API et conserve sa propre base de données, des
+composants communs assurant le cache, la messagerie et la gestion des accès. La
+plateforme a été déployée en conteneurs sur un VPS AlmaLinux. Pour la partie
+détaillée, nous avons retenu la création d'un prospect comme scénario
+représentatif du module Relation Client ; le module SGI, lui, est présenté à
+travers les résultats fonctionnels liés à la consultation des informations
+d'investissement et à la préparation des ordres.
 
 \hspace{0.5cm}
 Les résultats obtenus portent sur le suivi client, la prospection, la
 consultation des informations d'investissement et la préparation des ordres. Les
-données BRVM utilisées pour la validation sont des données de démonstration. Les
+cotations BRVM utilisées pour la validation proviennent d'une source publique
+tierce qui relaie quotidiennement les données de la BRVM, faute d'un accès
+direct au flux de marché officiel. Les
 limites identifiées concernent notamment l'accès à un flux de marché officiel,
 la consolidation des modèles d'intelligence artificielle, l'audit de sécurité et
 la préparation de la production.
@@ -60,20 +60,19 @@ banking information system.
 \hspace{0.5cm}
 The designed solution is based on a microservices architecture and a full API
 approach, in order to separate business responsibilities and support the
-progressive evolution of the platform. It combines web interfaces, backend
-services, an API gateway, an access management mechanism, a relational database,
-cache and messaging services, as well as containerized deployment on an
-AlmaLinux VPS. The design covers the functional architecture, technology
-choices, technical architecture, detailed design and deployment organization.
-In this detailed design, the focus is placed on prospect creation for the
-Customer Relationship module, while the SGI module is addressed through the
-functional results related to investment information consultation and order
-preparation.
+progressive evolution of the platform. Each business service exposes its
+functions through an API gateway and keeps its own database, with shared
+components handling caching, messaging and access management. The platform was
+deployed in containers on an AlmaLinux VPS. For the detailed part, we selected prospect creation
+as a representative scenario of the Customer Relationship module; the SGI
+module, in turn, is presented through the functional results related to
+investment information consultation and order preparation.
 
 \hspace{0.5cm}
 The results cover customer monitoring, prospect tracking, investment information
-consultation and order preparation. The BRVM data used for validation are
-demonstration data. The main limitations concern access to an official market
+consultation and order preparation. The BRVM quotes used for validation come
+from a third-party public source that relays the BRVM data daily, without direct
+access to the official market feed. The main limitations concern access to an official market
 data feed, consolidation of artificial intelligence models, security auditing
 and production readiness.
 

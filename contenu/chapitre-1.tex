@@ -37,15 +37,7 @@ d'envergure à gros budget au Sénégal.
 
 INNOV4AFRICA se distingue par sa capacité à concevoir et à déployer des innovations majeures dans le domaine des technologies de l'information et de la communication (TIC), au service des gouvernements, des entreprises et des citoyens à travers l'Afrique.
 
-L'entreprise intervient dans plusieurs secteurs stratégiques du numérique. Ses principaux domaines d'activités se présentent comme suit.
-
-\begin{itemize}
-    \item \textbf{Services publics numériques} : e-Government, e-Santé et e-Éducation .
-    \item \textbf{soutien à l'innovation} : incubation de start-ups et gestion de fonds d'investissement .
-    \item \textbf{solutions technologiques avancées} : cybersécurité, paiements électroniques, biométrie et transfert de technologies .
-    \item \textbf{développement numérique} : conception de logiciels, applications mobiles, télécommunications et e-commerce .
-    \item \textbf{communication et accompagnement} : solutions médias, systèmes d'identification, développement d'affaires et partenariats stratégiques.
-\end{itemize}
+Le numérique d'INNOV4AFRICA touche plusieurs secteurs. L'entreprise est présente dans les services publics --- e-Government, e-Santé, e-Éducation --- et dans le soutien à l'innovation, où elle incube des start-ups et gère des fonds d'investissement. Côté technologie, son terrain va de la cybersécurité à la biométrie, en passant par les paiements électroniques et le transfert de technologies. Elle conçoit aussi des logiciels et des applications mobiles, et intervient sur les télécommunications et le e-commerce. Le reste de son activité tourne autour de la communication et de l'accompagnement : médias, systèmes d'identification, développement d'affaires, partenariats stratégiques.
 % ─────────────────────────────────────────────────
 \section{Présentation du sujet}
 
@@ -58,13 +50,12 @@ métiers. Les clients attendent désormais une expérience simple, continue et
 personnalisée, tandis que les établissements financiers doivent maîtriser leurs
 risques, respecter la conformité et optimiser leurs coûts d'exploitation.
 
-Dans ce contexte, un Système d'Information Bancaire (SIB) ne peut plus être
-seulement un outil de tenue de comptes. Il devient une plateforme centrale
-capable de gérer la relation client, les opérations, la conformité, le
-reporting, l'analyse de données et les services à valeur ajoutée. Les banques,
-institutions de microfinance, établissements de paiement, établissements
-financiers de crédit, émetteurs de monnaie électronique et SGI ont donc besoin
-de solutions plus modulaires, ouvertes et intelligentes.
+Dans ce contexte, un Système d'Information Bancaire (SIB) ne sert plus seulement
+à tenir les comptes. Il doit aujourd'hui réunir au même endroit la relation
+client, les opérations bancaires et l'investissement, sans baisser la garde sur
+la sécurité et la traçabilité. C'est pourquoi les banques, comme les autres
+établissements financiers, ont besoin de solutions plus souples, plus ouvertes,
+et capables d'intégrer de l'intelligence artificielle.
 
 \textbf{I-SIB}, porté par INNOV4AFRICA, s'inscrit dans cette évolution. Il
 vise à proposer un système d'information bancaire complet, construit autour
@@ -85,12 +76,12 @@ concepts utilisés sont définis ci-dessous.
     microservices.
     \item[Microservice] Application autonome dédiée à une responsabilité métier
     précise, pouvant évoluer et être déployée indépendamment.
-    \item[Portefeuille] Ensemble des actifs financiers détenus par un client :
-    actions, obligations.
-    \item[Cotation] Valorisation ou prix de marché d'un instrument financier
+    \item[Portefeuille] Les actifs financiers que détient un client, par
+    exemple des actions et des obligations.
+    \item[Cotation] Le prix auquel se négocie un titre (action ou obligation)
     à un moment donné.
-    \item[Passage d'ordres] Processus par lequel un client demande l'achat
-    ou la vente d'un instrument financier.
+    \item[Passage d'ordres] L'opération par laquelle un client demande
+    d'acheter ou de vendre un titre.
 \end{description}
 
 % ─────────────────────────────────────────────────
@@ -103,11 +94,12 @@ ou contacter une autre structure pour accéder aux services de placement, achete
 ou vendre des actions BRVM \cite{brvm_actions}, suivre ses obligations ou visualiser la performance
 de son portefeuille-titres.
 
-Cette séparation crée plusieurs difficultés concrètes : le client ne peut pas
-prendre une décision de placement en ayant simultanément sous les yeux sa
-liquidité disponible et les opportunités de marché ; il doit reformuler ses
-informations à chaque changement de canal. L'expérience est fragmentée, ce qui
-freine l'engagement sur les produits d'investissement.
+Cette séparation limite la prise de décision du client, car même lorsqu'il peut
+alimenter son compte d'investissement depuis son compte bancaire, il ne dispose
+pas toujours d'une vue unifiée reliant sa liquidité bancaire, son
+portefeuille-titres, les opportunités de marché et son historique relationnel
+avec la banque. L'expérience est fragmentée, ce qui freine l'engagement sur les
+produits d'investissement.
 
 Pour les équipes internes, l'absence de passerelle entre les deux systèmes
 empêche de croiser les données bancaires et les données d'investissement d'un
@@ -130,25 +122,19 @@ produits d'investissement depuis une plateforme unique.
 
 \subsubsection{Objectifs spécifiques}
 
-Les objectifs spécifiques du projet se déclinent en plusieurs axes. Ils sont présentés ci-dessous.
-
-\begin{itemize}
-    \item Mettre en place un tableau de bord Relation Client adapté au client.
-    au chargé de clientèle et à la direction.
-    \item Gérer les prospects avec un pipeline de conversion et un score
-    automatique.
-    \item Construire une vue 360° client incluant identité, KYC, comptes,
-    produits, transactions et interactions.
-    \item Dématérialiser les documents et courriers administratifs liés au cycle
-    de vie client.
-    \item Intégrer les exigences KYC dans les processus de suivi client.
-    \item Détecter les risques de perte de clients grâce à l'IA afin d'appuyer
-    le suivi relationnel.
-    \item Permettre la consultation des portefeuilles, de la performance, des
-    gains/pertes et de la répartition des actifs.
-    \item Gérer les cotations, le passage d'ordres et le suivi des achats ou
-    ventes d'actions et d'obligations.
-\end{itemize}
+Concrètement, ces objectifs couvrent plusieurs axes. Sur le plan du pilotage, le
+projet vise à mettre en place un tableau de bord Relation Client adapté aux
+besoins du client et du chargé de clientèle. Il doit aussi faciliter le suivi des
+prospects dans un pipeline de conversion, avec un score attribué automatiquement
+pour aider à identifier les profils les plus prioritaires. Au-delà, le système
+doit offrir une vue 360° du client --- identité, KYC, comptes, produits, transactions
+et interactions ---, dématérialiser les documents et courriers administratifs
+liés à son cycle de vie, et intégrer les exigences KYC directement dans le
+suivi. L'intelligence artificielle vient en appui pour repérer les risques de
+départ et renforcer le suivi relationnel. Enfin, du côté investissement, la
+plateforme donne accès aux portefeuilles (performance, gains et pertes,
+répartition des actifs) et prend en charge les cotations, le passage d'ordres
+ainsi que le suivi des achats et ventes de titres.
 
 % ─────────────────────────────────────────────────
 % ─────────────────────────────────────────────────
@@ -166,11 +152,11 @@ Dans le cadre de ce stage, le travail porte sur le projet \textbf{I-SIB – Syst
 
 Les principaux bénéficiaires de cette solution sont les banques, les institutions de microfinance, les établissements de paiement, les SGI, ainsi que les clients finaux et les chargés de clientèle. Le produit développé est une application bancaire modulaire, intelligente, exposée via des API (\textit{full API}) et reposant sur une architecture orientée microservices.
 
-Les échanges avec le client permettent de préciser progressivement les besoins au cours du développement. En conséquence, l'organisation retenue repose sur un développement par modules, avec des validations successives permettant d'ajuster les fonctionnalités en fonction des retours.
+Le projet étant issu d'une vision métier définie au sein de l'entreprise, son organisation repose sur un développement par modules. Cette approche permet de préciser progressivement les fonctionnalités et de les ajuster au fur et à mesure de leur conception.
 
-Le projet est soumis à plusieurs contraintes majeures, notamment en matière de sécurité, de conformité réglementaire (KYC), de traçabilité des opérations, d'ergonomie des interfaces et d'intégration avec le cœur du système bancaire existant.
+Travailler dans un environnement bancaire impose un cadre exigeant. La sécurité, la conformité réglementaire (KYC), la traçabilité des opérations et l'ergonomie des interfaces sont autant de contraintes à respecter, auxquelles s'ajoute l'intégration avec le cœur du système bancaire existant.
 
-Par ailleurs, plusieurs risques ont été identifiés, tels que la mauvaise compréhension des besoins métiers, la complexité liée à l'intégration avec les systèmes existants, la gestion de données incomplètes, une interprétation incorrecte des règles de conformité, ainsi qu'un risque d'adoption insuffisante par les utilisateurs finaux.
+Plusieurs risques ont par ailleurs été identifiés. Les besoins métiers peuvent être mal compris, l'intégration avec les systèmes existants s'avérer complexe, les données disponibles se révéler incomplètes ou les règles de conformité mal interprétées ; s'y ajoute le risque d'une adoption trop faible par les utilisateurs finaux.
 
 Les résultats attendus concernent la mise en place d'un parcours client plus unifié, une meilleure centralisation de la connaissance client, un accès intégré aux services d'investissement et un appui au pilotage des activités métier. Le projet vise également à limiter les ruptures applicatives entre les différents systèmes.
 
@@ -180,33 +166,22 @@ Compte tenu de ces éléments, une approche entièrement figée dès le départ 
 % ─────────────────────────────────────────────────
 \subsection{Méthodologie de travail}
 
-La mise en œuvre de cette démarche s'organise en plusieurs étapes successives,
-présentées ci-dessous.
+Concrètement, le travail a démarré par un cadrage, pour poser le périmètre,
+identifier les acteurs et s'entendre sur les objectifs et les contraintes. Une
+fois ce cadre fixé, nous avons étudié les processus métier --- relation client,
+KYC, gestion de portefeuille, passage d'ordres --- afin de comprendre ce que le
+système devait réellement faire. Ces observations ont été traduites en modèles,
+en nous appuyant sur \textbf{UML} pour représenter les fonctionnalités, les
+interactions et les flux de données. La conception applicative a suivi, avec le
+découpage en modules et microservices, puis la définition des API, des rôles et
+des principales règles de gestion.
 
-\begin{enumerate}
-    \item \textbf{Cadrage du besoin :} identifier le périmètre, les acteurs,
-    les objectifs et les contraintes.
-    \item \textbf{Analyse métier :} étudier les processus de relation client,
-    de KYC, de gestion de portefeuille et de passage d'ordres.
-
-    \item \textbf{Modélisation fonctionnelle :} représenter les fonctionnalités,
-    les interactions entre acteurs et les flux de données du système.
-    Le langage \textbf{UML} est mobilisé comme support de modélisation
-    pour illustrer ces différents aspects.
-
-    \item \textbf{Conception applicative :} définir les modules, les
-    microservices, les API, les rôles et les principales règles de gestion.
-    \item \textbf{Prototypage :} réaliser des maquettes ou écrans clés pour
-    valider l'expérience utilisateur.
-    \item \textbf{Validation itérative :} recueillir les retours, ajuster le
-    backlog et prioriser les fonctionnalités.
-    \item \textbf{Développement et intégration :} construire les fonctionnalités
-    par lots cohérents et les connecter au reste de I-SIB.
-    \item \textbf{Tests et recette :} vérifier la conformité fonctionnelle, la
-    sécurité, la performance et l'expérience utilisateur.
-    \item \textbf{Déploiement progressif :} livrer par étapes afin de limiter
-    les risques et faciliter l'appropriation.
-\end{enumerate}
+Plutôt que de tout figer au départ, nous avancions par étapes. Toutes les deux
+semaines, le vendredi, nous présentions l'avancement du travail. De temps en
+temps, des experts d'un module précis --- la SGI par exemple --- venaient
+apporter leur regard métier, ce qui nous aidait à corriger et à améliorer ce qui
+avait été développé. Les fonctionnalités étaient ainsi construites puis intégrées
+au fur et à mesure au reste d'I-SIB.
 
 
 \section*{Conclusion}

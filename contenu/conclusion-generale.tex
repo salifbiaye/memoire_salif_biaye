@@ -10,13 +10,14 @@ le travail mené a permis de proposer une base applicative modulaire, sécurisé
 et évolutive, adaptée à un contexte bancaire où la centralisation des
 informations et la continuité des parcours deviennent essentielles.
 
-La démarche suivie a d'abord consisté à analyser les besoins, à identifier les
-acteurs et à préciser les exigences fonctionnelles et non fonctionnelles. Elle
-a ensuite conduit à la conception d'une architecture microservices organisée
-autour d'une passerelle API, de services métier spécialisés, de composants de
-sécurité et de mécanismes de traçabilité. Pour garder une étude lisible et
-maîtrisée, la conception détaillée s'est concentrée sur deux scénarios
-représentatifs : la création d'un prospect et le passage d'ordres.
+L'analyse des besoins et des acteurs du système a constitué le point de départ,
+d'où ont découlé les exigences fonctionnelles et non fonctionnelles.
+L'architecture microservices était fixée comme cadre du projet ; nous l'avons
+organisée en services métier distincts, placés derrière une passerelle API. Pour
+la sécurité et la traçabilité, la plateforme s'appuie sur une gestion des accès
+par rôles et sur un service d'audit. Enfin, pour garder une étude lisible, nous
+avons resserré la conception détaillée sur deux scénarios, la création d'un
+prospect et le passage d'ordres.
 
 Les résultats obtenus couvrent le périmètre fonctionnel réalisé. Le module
 Relation Client permet de centraliser les informations utiles au suivi
@@ -30,8 +31,9 @@ Docker Compose \cite{docker_compose_docs} afin de tester progressivement les
 services réalisés.
 
 Le travail réalisé reste toutefois à consolider avant une exploitation en
-production. Les données de marché utilisées pour les cotations BRVM \cite{brvm_actions} sont encore
-simulées, les modèles d'intelligence artificielle devront être évalués avec des
+production. Les cotations BRVM \cite{brvm_actions} proviennent encore d'une
+source publique tierce \cite{brvm_data_public}, sans branchement direct sur le
+flux de marché officiel ; les modèles d'intelligence artificielle devront être évalués sur des
 données réelles, et certaines connexions avec les autres modules bancaires
 restent à finaliser. Le passage en production nécessitera également des tests
 complémentaires, un audit de sécurité, une supervision renforcée, des
