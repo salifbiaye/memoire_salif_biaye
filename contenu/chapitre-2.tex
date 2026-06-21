@@ -8,19 +8,18 @@
 \addcontentsline{toc}{section}{Introduction}
 
 
-Après la présentation du cadre général du projet, ce deuxième chapitre est consacré à l'analyse des besoins auxquels doit répondre le futur système I-SIB dans le périmètre des modules Relation Client et SGI. Il s'agit d'identifier les utilisateurs concernés, de préciser le rôle du système, les fonctionnalités attendues ainsi que les principales exigences de qualité à prendre en compte.
+Cette analyse précise les utilisateurs concernés, les fonctions attendues et
+les exigences de qualité du système.
 
-Dans de nombreux établissements, les activités de relation client et les activités d'investissement sont gérées séparément. Les données clients, les informations KYC, les comptes bancaires, les portefeuilles et les ordres de bourse sont souvent répartis entre plusieurs outils. Les utilisateurs doivent alors passer d'une application à l'autre pour accéder aux informations nécessaires.
+Dans de nombreux établissements, les informations liées aux clients et aux
+investissements sont enregistrées dans plusieurs outils. C'est notamment le cas
+des données KYC, des comptes bancaires, des portefeuilles et des ordres de
+bourse. Les utilisateurs doivent donc consulter plusieurs applications. I-SIB
+doit réunir ces informations sur une même plateforme.
 
-L'analyse présentée dans ce chapitre vise donc à définir les besoins d'une solution capable de réunir ces différents domaines au sein d'une même plateforme.
-
-
-
-Le chapitre commence par situer le rôle du système et les acteurs concernés,
-avant de présenter les fonctionnalités retenues. Deux d'entre elles sont mises
-en avant, la création d'un prospect du côté Relation Client et le passage
-d'ordre du côté SGI. Enfin, il précise les exigences non fonctionnelles qui orientent
-les choix de conception.
+Le chapitre présente d'abord le rôle du système et ses acteurs, puis les
+fonctionnalités retenues. La création d'un prospect et le passage d'ordre sont
+ensuite détaillés. Enfin, les exigences non fonctionnelles sont présentées.
 
 % ─────────────────────────────────────────────────
 \section{Rôle du système et acteurs}
@@ -49,13 +48,17 @@ Il doit également permettre d'identifier plus facilement les clients nécessita
 
 L'\textbf{équipe SGI} est un utilisateur interne spécialisé dans les opérations sur titres et la gestion de portefeuille. Elle utilise le système pour gérer les portefeuilles clients, traiter les ordres de bourse et suivre l'évolution des investissements à partir des informations de marché disponibles.
 
-Le système réunit au sein d'une même plateforme les fonctionnalités liées à la relation client et aux activités d'investissement.
-Chaque utilisateur accède uniquement aux informations et aux actions correspondant à son rôle.
+La plateforme regroupe les services de relation client et d'investissement. Les
+droits attribués à chaque utilisateur déterminent les informations et les
+fonctions auxquelles il peut accéder.
 
 % ─────────────────────────────────────────────────
 \section{Fonctionnalités du système}
 
-I-SIB comprend deux modules principaux. Le module \textbf{Relation Client} regroupe les fonctionnalités liées à la gestion des clients, au suivi des prospects et aux activités commerciales. Le module \textbf{SGI} (Société de Gestion et d'Intermédiation) prend en charge les opérations liées aux investissements, notamment le suivi des portefeuilles et le traitement des ordres de bourse.
+Dans le périmètre étudié, I-SIB comprend les modules \textbf{Relation Client} et
+\textbf{SGI} (Société de Gestion et d'Intermédiation). Le premier sert à gérer
+les clients, les prospects et le suivi commercial. Le second permet de suivre
+les portefeuilles et de traiter les ordres de bourse.
 
 
  La présente section décrit les fonctionnalités offertes par chacun de ces modules.
@@ -133,17 +136,17 @@ La fiche~\ref{tab:rc_creation_prospect} en présente la description détaillée.
 
         Scénario alternatif &
         \begin{minipage}[t]{\linewidth}\vspace{2pt}
-            \textbf{A1 -- Email déjà utilisé :} la création est refusée car un prospect est déjà associé à cette adresse email.
+            \textbf{A1 -- Adresse email déjà utilisée :} le système bloque la création et indique qu'un prospect utilise déjà cette adresse.
             \vspace{2pt}\end{minipage}
         \\ \hline
 
         Scénario d'exception &
         \textbf{E1 -- Service de scoring indisponible :}
-        le score de conversion ne peut pas être calculé. Le prospect est néanmoins créé avec son score initial et l'incident est journalisé.
+        le prospect est quand même enregistré avec son score initial. L'incident est conservé dans le journal du système.
         \\ \hline
 
         Postconditions &
-        Le prospect est créé, rattaché au conseiller concerné et positionné au stade \textit{LEAD}. Une entrée correspondante est ajoutée au journal d'audit.
+        Le prospect est enregistré, affecté au chargé de clientèle et placé au stade \textit{LEAD}. L'opération est inscrite dans le journal d'audit.
         \\ \hline
 
     \end{tabular}
@@ -275,13 +278,16 @@ Les fonctionnalités accessibles dépendent du rôle de l'utilisateur. Un client
 Les informations personnelles, bancaires, KYC et les données d'investissement ne doivent être consultées que par les personnes autorisées.
 
 \paragraph{Traçabilité}
-Les opérations importantes, telles que les validations d'ordres, les modifications de données ou les changements de statut, doivent laisser une trace consultable.
+Chaque validation d'ordre, modification de donnée ou changement de statut doit
+être enregistré afin de pouvoir retrouver l'historique des opérations.
 
 \paragraph{Disponibilité}
-Les utilisateurs doivent pouvoir accéder au système et consulter les informations nécessaires à leurs activités sans interruption prolongée.
+Le système doit rester accessible afin que les utilisateurs puissent consulter
+les informations nécessaires à leur travail.
 
 \paragraph{Évolutivité}
-L'ajout de nouveaux modules ou de nouvelles fonctionnalités ne doit pas nécessiter une refonte importante du système existant.
+Il doit être possible d'ajouter un module ou une fonctionnalité sans reprendre
+l'ensemble du système.
 
 \paragraph{Ergonomie}
 Les écrans doivent être faciles à comprendre et à utiliser afin de limiter les erreurs de manipulation.
@@ -303,7 +309,3 @@ Ce chapitre a présenté les attentes auxquelles doit répondre I-SIB dans le p�
 La création d'un prospect et le passage d'ordre ont été retenus pour illustrer plus concrètement le fonctionnement attendu. Le chapitre a également présenté les principales exigences non fonctionnelles auxquelles la solution devra répondre.
 
 Le chapitre suivant est consacré à la conception de la solution proposée.
-
-
-
-

@@ -17,19 +17,17 @@ prospect et enfin l'architecture de déploiement.
 % ─────────────────────────────────────────────────
 \section{Principes de conception de l'architecture}
 
-La conception de la solution repose sur plusieurs principes visant à répondre aux
-besoins identifiés et aux contraintes du contexte bancaire. L'objectif est de
-garantir la sécurité des accès, la protection des données, la traçabilité des
-opérations et la capacité d'évolution du système.
+La conception d'I-SIB repose sur la séparation des responsabilités et la
+modularité. Chaque service prend en charge un domaine précis de la plateforme.
 
-Pour cela, les responsabilités sont réparties entre des modules spécialisés,
-les accès sont contrôlés par des mécanismes dédiés et les données sensibles sont
-isolées selon leur domaine fonctionnel. Les opérations importantes font l'objet
-d'une traçabilité adaptée, tandis que l'organisation retenue facilite l'ajout ou
-l'évolution des fonctionnalités.
+Cette organisation facilite la maintenance et l'ajout de nouvelles
+fonctionnalités. Elle permet aussi de gérer les accès et de conserver une trace
+des opérations importantes.
 
-Ces principes conduisent à une architecture modulaire composée de services
-spécialisés communiquant de manière contrôlée \cite{fowler_microservices}.% ─────────────────────────────────────────────────
+Ces choix conduisent à une architecture en microservices
+\cite{fowler_microservices}, dans laquelle les services communiquent entre eux
+selon les besoins.
+% ─────────────────────────────────────────────────
 \section{Architecture logique de la solution}
 
 
@@ -72,35 +70,32 @@ Les administrateurs utilisent le \textbf{Module Manager} pour gérer les modules
  Le \textbf{Registre des services} indique à la passerelle
     où se trouve chaque microservice disponible.
 
-    \item[Couche métier] On y trouve les services qui exécutent les opérations de
-    la plateforme --- \textbf{CRM}, \textbf{SGI}, \textbf{utilisateurs},
-    \textbf{comptes et transactions}, \textbf{agence}, \textbf{comptabilité},
-    \textbf{trésorerie} et \textbf{crédit}. À leurs côtés, le \textbf{service
-    d'audit} garde la trace des actions importantes effectuées dans le système.
+    \item[Couche métier] Elle regroupe les modules qui réalisent les principales
+    fonctions de la plateforme : \textbf{CRM}, \textbf{SGI},
+    \textbf{utilisateurs}, \textbf{comptes et transactions}, \textbf{agence},
+    \textbf{comptabilité}, \textbf{trésorerie} et \textbf{crédit}. Le
+    \textbf{service d'audit} enregistre les actions importantes.
 
-    \item[Couche données et services techniques] Elle regroupe les outils utilisés par
-    les services métier pour enregistrer et échanger les informations. La
-    \textbf{base de données} conserve les données, le \textbf{cache} accélère certains
-    accès, la \textbf{messagerie} permet les échanges asynchrones et le
-    \textbf{stockage objet} conserve les fichiers et les documents.
+    \item[Couche données et services techniques] La \textbf{base de données}
+    conserve les informations, le \textbf{cache} accélère certains accès, la
+    \textbf{messagerie} facilite les échanges entre services et le
+    \textbf{stockage objet} contient les fichiers et les documents.
 
-    \item[Infrastructure et exploitation] Elle contient les outils qui permettent de
-    faire fonctionner, surveiller et mettre à jour la plateforme. Les \textbf{services
-    IA et analytiques} assurent notamment le scoring et la segmentation. Les outils
-    d'\textbf{observabilité} permettent de suivre les appels et de repérer les
-    problèmes. La chaîne \textbf{CI/CD} automatise la construction et le
-    redéploiement des applications.
+    \item[Infrastructure et exploitation] Cette couche rassemble les outils
+    nécessaires au déploiement et au suivi de la plateforme. Les modules peuvent
+    utiliser des \textbf{services d'intelligence artificielle} selon leurs
+    besoins. Les outils d'\textbf{observabilité} servent à repérer les problèmes,
+    tandis que la chaîne \textbf{CI/CD} automatise la construction et le
+    déploiement des applications.
 \end{description}
 
 \section{Choix des outils et technologies}
 
-Les choix technologiques traduisent l'architecture logique en composants
-réalisables. Ils ont été retenus en fonction des responsabilités à couvrir :
-interfaces web, services backend, sécurité, routage, persistance des données,
-messagerie, cache, stockage documentaire, traçabilité et déploiement. Cette section
-présente les principaux outils utilisés et précise le rôle de chacun dans la plateforme
-I-SIB. La section suivante montrera comment ces technologies s'assemblent concrètement
-dans l'architecture technique de la solution.
+Les technologies ont été choisies selon le rôle de chaque composant :
+interfaces web, services métier, gestion des accès, échanges entre services,
+stockage et déploiement. Cette section présente les principaux outils utilisés
+dans I-SIB. Leur organisation sera ensuite détaillée dans l'architecture
+technique.
 
 Les interfaces web de la plateforme sont développées avec \textbf{Next.js 16}
 \cite{nextjs_docs} et \textbf{TypeScript} \cite{typescript_docs}, afin de construire les applications front-office, back-office et Module Manager
@@ -108,10 +103,11 @@ modernes, maintenables et adaptées aux différents profils utilisateurs. Le bac
 sur \textbf{Spring Boot 3.5} \cite{spring_boot_docs}, utilisé comme socle de développement des microservices
 métier.
 
-L'accès aux différents services passe par \textbf{Spring Cloud Gateway}
-\cite{spring_gateway_docs}, qui constitue le point d'entrée de la plateforme. Les requêtes des applications y transitent avant d'être dirigées vers les microservices concernés. La gestion des utilisateurs et des droits d'accès est assurée par \textbf{Keycloak}
-\cite{keycloak_docs}, tandis que \textbf{Netflix Eureka}
-\cite{spring_eureka_docs} facilite la découverte des services au sein de l'architecture.
+\textbf{Spring Cloud Gateway} \cite{spring_gateway_docs} sert de point d'entrée
+aux applications. Il reçoit leurs requêtes et les transmet au microservice
+concerné. \textbf{Keycloak} \cite{keycloak_docs} gère les utilisateurs et leurs
+droits d'accès. \textbf{Netflix Eureka} \cite{spring_eureka_docs} permet à la
+passerelle de retrouver les microservices disponibles.
 
 Chaque microservice dispose de sa propre base \textbf{PostgreSQL}
 \cite{postgresql_docs}. Cette organisation permet à chaque service de gérer ses données de manière indépendante. \textbf{Redis}

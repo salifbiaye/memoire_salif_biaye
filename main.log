@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.5.11)  21 JUN 2026 19:08
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.5.11)  21 JUN 2026 20:15
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1301,7 +1301,7 @@ Package hyperref Info: Link coloring OFF on input line 4.
 
 Package hyperref Info: Option `pageanchor' set `false' on input line 5.
  (prelude/page_de_garde.tex
-<images/page-de-garde/drapeau_senegal.png, id=209, 276.03125pt x 183.68625pt>
+<images/page-de-garde/drapeau_senegal.png, id=245, 276.03125pt x 183.68625pt>
 File: images/page-de-garde/drapeau_senegal.png Graphic file (type png)
 <use images/page-de-garde/drapeau_senegal.png>
 Package pdftex.def Info: images/page-de-garde/drapeau_senegal.png  used on inpu
@@ -1311,7 +1311,7 @@ LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
 (Font)              scaled to size 17.28pt on input line 31.
 LaTeX Font Info:    Font shape `T1/ntxtlf/b/n' will be
 (Font)              scaled to size 17.28pt on input line 31.
-<images/page-de-garde/logo_ucad.png, id=210, 250.9375pt x 250.9375pt>
+<images/page-de-garde/logo_ucad.png, id=246, 250.9375pt x 250.9375pt>
 File: images/page-de-garde/logo_ucad.png Graphic file (type png)
 <use images/page-de-garde/logo_ucad.png>
 Package pdftex.def Info: images/page-de-garde/logo_ucad.png  used on input line
@@ -1331,7 +1331,7 @@ LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
 (Font)              scaled to size 14.4pt on input line 67.
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/it' will be
 (Font)              scaled to size 12.0pt on input line 68.
-<images/page-de-garde/innov4africa_logo.jpg, id=212, 48.18pt x 48.18pt>
+<images/page-de-garde/innov4africa_logo.jpg, id=248, 48.18pt x 48.18pt>
 File: images/page-de-garde/innov4africa_logo.jpg Graphic file (type jpg)
 <use images/page-de-garde/innov4africa_logo.jpg>
 Package pdftex.def Info: images/page-de-garde/innov4africa_logo.jpg  used on in
@@ -1440,24 +1440,55 @@ put line 81.
 
 ])
 Package hyperref Info: Option `pageanchor' set `true' on input line 8.
- (contenu/introduction-generale.tex
+ (prelude/dedicaces.tex
 LaTeX Font Info:    Font shape `T1/ntxtlf/b/n' will be
-(Font)              scaled to size 24.88pt on input line 1.
+(Font)              scaled to size 24.88pt on input line 5.
+ [1
 
 
-LaTeX Warning: Citation `vives_digital_banking' on page 1 undefined on input li
-ne 6.
+]
+LaTeX Font Info:    Font shape `T1/ntxtlf/m/it' will be
+(Font)              scaled to size 10.95pt on input line 89.
+Package babel Info: 'french' activates 'french' shorthands.
+(babel)             Reported on input line 89.
+ [2]) (prelude/remerciements.tex [3
 
 
-LaTeX Warning: Citation `bceao_fintech' on page 1 undefined on input line 6.
+])
+(prelude/avant_propos.tex [4
 
 
-LaTeX Warning: Citation `payne_frow_crm' on page 1 undefined on input line 10.
+]) (prelude/resume.tex [5
 
 
-LaTeX Warning: Citation `crepmf_sgi' on page 1 undefined on input line 10.
+] [6
 
-) (contenu/chapitre-1.tex [1
+
+])
+(prelude/liminaires.tex (main.toc [7
+
+
+])
+\tf@toc=\write5
+\openout5 = `main.toc'.
+
+ [8] (main.lof)
+\tf@lof=\write6
+\openout6 = `main.lof'.
+
+ [9
+
+] (main.lot)
+\tf@lot=\write7
+\openout7 = `main.lot'.
+
+ [10
+
+])
+(prelude/sigles_abreviations.tex [11
+
+]) (contenu/introduction-generale.tex)
+(contenu/chapitre-1.tex [1
 
 
 ]
@@ -1468,15 +1499,7 @@ Package hyperref Warning: The anchor of a bookmark and its parent's must not
 
 [2
 
-]
-
-LaTeX Warning: Citation `brvm_actions' on page 3 undefined on input line 94.
-
-LaTeX Font Info:    Font shape `T1/ntxtlf/m/it' will be
-(Font)              scaled to size 10.95pt on input line 101.
-Package babel Info: 'french' activates 'french' shorthands.
-(babel)             Reported on input line 101.
-[3] [4] [5]) (contenu/chapitre-2.tex [6]
+] [3] [4] [5]) (contenu/chapitre-2.tex [6]
 Chapitre 2.
 
 Package hyperref Warning: The anchor of a bookmark and its parent's must not
@@ -1485,39 +1508,39 @@ Package hyperref Warning: The anchor of a bookmark and its parent's must not
 [7
 
 ]
-<images/contenu/chapitre-2/use_case_relation_client.png, id=259, 1084.05pt x 14
+<images/contenu/chapitre-2/use_case_relation_client.png, id=528, 1084.05pt x 14
 62.46375pt>
 File: images/contenu/chapitre-2/use_case_relation_client.png Graphic file (type
  png)
 <use images/contenu/chapitre-2/use_case_relation_client.png>
 Package pdftex.def Info: images/contenu/chapitre-2/use_case_relation_client.png
-  used on input line 77.
+  used on input line 80.
 (pdftex.def)             Requested size: 385.49382pt x 520.05972pt.
  [8] [9 <./images/contenu/chapitre-2/use_case_relation_client.png (PNG copy)>]
-<images/contenu/chapitre-2/rc_seq_prospects.png, id=273, 1091.07625pt x 1452.42
+<images/contenu/chapitre-2/rc_seq_prospects.png, id=540, 1091.07625pt x 1452.42
 625pt>
 File: images/contenu/chapitre-2/rc_seq_prospects.png Graphic file (type png)
 <use images/contenu/chapitre-2/rc_seq_prospects.png>
 Package pdftex.def Info: images/contenu/chapitre-2/rc_seq_prospects.png  used o
-n input line 159.
+n input line 162.
 (pdftex.def)             Requested size: 415.9796pt x 553.74501pt.
  [10]
-<images/contenu/chapitre-2/use_case_sgi.png, id=286, 773.13844pt x 1055.44313pt
+<images/contenu/chapitre-2/use_case_sgi.png, id=552, 773.13844pt x 1055.44313pt
 >
 File: images/contenu/chapitre-2/use_case_sgi.png Graphic file (type png)
 <use images/contenu/chapitre-2/use_case_sgi.png>
 Package pdftex.def Info: images/contenu/chapitre-2/use_case_sgi.png  used on in
-put line 174.
+put line 177.
 (pdftex.def)             Requested size: 415.9796pt x 567.8694pt.
  [11 <./images/contenu/chapitre-2/rc_seq_prospects.png (PNG copy)>]
 [12 <./images/contenu/chapitre-2/use_case_sgi.png>] [13]
-<images/contenu/chapitre-2/sgi_seq_passage_ordres.png, id=314, 1027.84pt x 1541
+<images/contenu/chapitre-2/sgi_seq_passage_ordres.png, id=577, 1027.84pt x 1541
 .76pt>
 File: images/contenu/chapitre-2/sgi_seq_passage_ordres.png Graphic file (type p
 ng)
 <use images/contenu/chapitre-2/sgi_seq_passage_ordres.png>
 Package pdftex.def Info: images/contenu/chapitre-2/sgi_seq_passage_ordres.png  
-used on input line 259.
+used on input line 262.
 (pdftex.def)             Requested size: 415.9796pt x 623.9624pt.
  [14
 
@@ -1525,167 +1548,72 @@ used on input line 259.
 /chapitre-3.tex
 [15]
 Chapitre 3.
-
-LaTeX Warning: Citation `fowler_microservices' on page 16 undefined on input li
-ne 32.
-
-<images/contenu/chapitre-3/architecture_fonctionnelle.png, id=329, 1452.42625pt
+<images/contenu/chapitre-3/architecture_fonctionnelle.png, id=593, 1452.42625pt
  x 1091.07625pt>
 File: images/contenu/chapitre-3/architecture_fonctionnelle.png Graphic file (ty
 pe png)
 <use images/contenu/chapitre-3/architecture_fonctionnelle.png>
 Package pdftex.def Info: images/contenu/chapitre-3/architecture_fonctionnelle.p
-ng  used on input line 47.
+ng  used on input line 45.
 (pdftex.def)             Requested size: 445.00023pt x 334.28445pt.
 [16
 
-] [17 <./images/contenu/chapitre-3/architecture_fonctionnelle.png (PNG copy)>]
-
-LaTeX Warning: Citation `nextjs_docs' on page 18 undefined on input line 106.
-
-
-LaTeX Warning: Citation `typescript_docs' on page 18 undefined on input line 10
-6.
-
-
-LaTeX Warning: Citation `spring_boot_docs' on page 18 undefined on input line 1
-08.
-
-
-LaTeX Warning: Citation `spring_gateway_docs' on page 18 undefined on input lin
-e 112.
-
-
-LaTeX Warning: Citation `keycloak_docs' on page 18 undefined on input line 113.
-
-
-
-LaTeX Warning: Citation `spring_eureka_docs' on page 18 undefined on input line
- 114.
-
-
-LaTeX Warning: Citation `postgresql_docs' on page 18 undefined on input line 11
-7.
-
-
-LaTeX Warning: Citation `redis_docs' on page 18 undefined on input line 118.
-
-
-LaTeX Warning: Citation `rabbitmq_docs' on page 18 undefined on input line 119.
-
-
-
-LaTeX Warning: Citation `minio_docs' on page 18 undefined on input line 120.
-
-
-LaTeX Warning: Citation `rasa_docs' on page 18 undefined on input line 123.
-
-
-LaTeX Warning: Citation `rabbitmq_docs' on page 18 undefined on input line 126.
-
-
-
-LaTeX Warning: Citation `minio_docs' on page 18 undefined on input line 127.
-
+] [17 <./images/contenu/chapitre-3/architecture_fonctionnelle.png (PNG copy)>] 
 [18]
-
-LaTeX Warning: Citation `rasa_docs' on page 19 undefined on input line 130.
-
-
-LaTeX Warning: Citation `zipkin_docs' on page 19 undefined on input line 132.
-
-
-LaTeX Warning: Citation `docker_docs' on page 19 undefined on input line 133.
-
-
-LaTeX Warning: Citation `docker_compose_docs' on page 19 undefined on input lin
-e 134.
-
-<images/contenu/chapitre-3/architecture_technique.png, id=346, 1453.43pt x 1090
+<images/contenu/chapitre-3/architecture_technique.png, id=638, 1453.43pt x 1090
 .0725pt>
 File: images/contenu/chapitre-3/architecture_technique.png Graphic file (type p
 ng)
 <use images/contenu/chapitre-3/architecture_technique.png>
 Package pdftex.def Info: images/contenu/chapitre-3/architecture_technique.png  
-used on input line 156.
+used on input line 152.
 (pdftex.def)             Requested size: 445.00023pt x 333.74406pt.
-[19] [20 <./images/contenu/chapitre-3/architecture_technique.png (PNG copy)>]
-<images/contenu/chapitre-3/workflow_creation_prospect.png, id=357, 1497.595pt x
+ [19 <./images/contenu/chapitre-3/architecture_technique.png (PNG copy)>]
+<images/contenu/chapitre-3/workflow_creation_prospect.png, id=647, 1497.595pt x
  1057.9525pt>
 File: images/contenu/chapitre-3/workflow_creation_prospect.png Graphic file (ty
 pe png)
 <use images/contenu/chapitre-3/workflow_creation_prospect.png>
 Package pdftex.def Info: images/contenu/chapitre-3/workflow_creation_prospect.p
-ng  used on input line 185.
+ng  used on input line 181.
 (pdftex.def)             Requested size: 445.00023pt x 314.36945pt.
+ [20]
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 10.0pt on input line 190.
+(Font)              scaled to size 10.0pt on input line 186.
 LaTeX Font Info:    Font shape `T1/ntxtlf/b/n' will be
-(Font)              scaled to size 10.0pt on input line 192.
-
-(C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex/latex/newtx\t1ntxtt.fd)
-
-LaTeX Warning: Citation `jacobson_oose' on page 21 undefined on input line 226.
-
-
-<images/contenu/chapitre-3/conception_creation_prospect.png, id=360, 1541.76pt 
+(Font)              scaled to size 10.0pt on input line 188.
+ (C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex/latex/newtx\t1ntxtt.fd)
+<images/contenu/chapitre-3/conception_creation_prospect.png, id=655, 1541.76pt 
 x 1027.84pt>
 File: images/contenu/chapitre-3/conception_creation_prospect.png Graphic file (
 type png)
 <use images/contenu/chapitre-3/conception_creation_prospect.png>
 Package pdftex.def Info: images/contenu/chapitre-3/conception_creation_prospect
-.png  used on input line 230.
+.png  used on input line 226.
 (pdftex.def)             Requested size: 415.9796pt x 277.31662pt.
 [21 <./images/contenu/chapitre-3/workflow_creation_prospect.png (PNG copy)>]
-
-LaTeX Warning: Citation `almalinux_official' on page 22 undefined on input line
- 242.
-
-
-LaTeX Warning: Citation `docker_docs' on page 22 undefined on input line 242.
-
-
-LaTeX Warning: Citation `docker_compose_docs' on page 22 undefined on input lin
-e 242.
-
 LaTeX Font Info:    Font shape `T1/ntxtt/m/n' will be
-(Font)              scaled to size 12.0pt on input line 242.
-<images/contenu/chapitre-3/architecture_deploiement.png, id=370, 1452.42625pt x
+(Font)              scaled to size 12.0pt on input line 238.
+<images/contenu/chapitre-3/architecture_deploiement.png, id=666, 1452.42625pt x
  1091.07625pt>
 File: images/contenu/chapitre-3/architecture_deploiement.png Graphic file (type
  png)
 <use images/contenu/chapitre-3/architecture_deploiement.png>
 Package pdftex.def Info: images/contenu/chapitre-3/architecture_deploiement.png
-  used on input line 247.
+  used on input line 243.
 (pdftex.def)             Requested size: 445.00023pt x 334.28445pt.
 
-Overfull \hbox (18.54243pt too wide) in paragraph at lines 244--250
+Overfull \hbox (18.54243pt too wide) in paragraph at lines 240--246
 []\T1/ntxtlf/m/n/12 (-20) Deux ré-seaux as-surent les com-mu-ni-ca-tions : \T1/
 ntxtt/m/n/12 sib_public\T1/ntxtlf/m/n/12 (-20) , des-tiné aux ac-cès ex-ternes,
  et \T1/ntxtt/m/n/12 sib_internal\T1/ntxtlf/m/n/12 (-20) ,
  []
 
-[22 <./images/contenu/chapitre-3/conception_creation_prospect.png (PNG copy)>]
-
-LaTeX Warning: Citation `github_actions_docs' on page 23 undefined on input lin
-e 257.
-
-
-LaTeX Warning: Citation `portainer_docs' on page 23 undefined on input line 259
-.
-
-
-LaTeX Warning: Citation `almalinux_official' on page 23 undefined on input line
- 266.
-
-) (contenu/chapitre-4.tex [23 <./images/contenu/chapitre-3/architecture_deploie
-ment.png (PNG copy)>]
+[22 <./images/contenu/chapitre-3/conception_creation_prospect.png (PNG copy)>])
+(contenu/chapitre-4.tex [23 <./images/contenu/chapitre-3/architecture_deploieme
+nt.png (PNG copy)>]
 Chapitre 4.
-
-LaTeX Warning: Citation `brvm_data_public' on page 24 undefined on input line 1
-4.
-
-<images/contenu/chapitre-4/portefeuille_clients_annote.png, id=382, 1677.26625p
+<images/contenu/chapitre-4/portefeuille_clients_annote.png, id=683, 1677.26625p
 t x 944.52875pt>
 File: images/contenu/chapitre-4/portefeuille_clients_annote.png Graphic file (t
 ype png)
@@ -1695,101 +1623,114 @@ png  used on input line 36.
 (pdftex.def)             Requested size: 445.00023pt x 250.58717pt.
 [24
 
-]
-
-LaTeX Warning: Citation `brvm_actions' on page 25 undefined on input line 66.
-
-[25 <./images/contenu/chapitre-4/portefeuille_clients_annote.png (PNG copy)>]
-
-LaTeX Warning: Citation `brvm_data_public' on page 26 undefined on input line 7
-2.
-
-
-LaTeX Warning: Citation `brvm_actions' on page 26 undefined on input line 73.
-
-<images/contenu/chapitre-4/cotations_brvm_annote.png, id=393, 1596.96625pt x 99
+] [25 <./images/contenu/chapitre-4/portefeuille_clients_annote.png (PNG copy)>]
+<images/contenu/chapitre-4/cotations_brvm_annote.png, id=698, 1596.96625pt x 99
 2.70876pt>
 File: images/contenu/chapitre-4/cotations_brvm_annote.png Graphic file (type pn
 g)
 <use images/contenu/chapitre-4/cotations_brvm_annote.png>
 Package pdftex.def Info: images/contenu/chapitre-4/cotations_brvm_annote.png  u
-sed on input line 84.
+sed on input line 80.
 (pdftex.def)             Requested size: 445.00023pt x 276.62358pt.
 
-LaTeX Warning: Citation `iso25010' on page 26 undefined on input line 103.
 
-
-LaTeX Warning: Citation `owasp_asvs' on page 26 undefined on input line 104.
+LaTeX Warning: `h' float specifier changed to `ht'.
 
 [26 <./images/contenu/chapitre-4/cotations_brvm_annote.png (PNG copy)>]
+[27]) (contenu/conclusion-generale.tex [28]) (annexes/references.tex [29
 
-LaTeX Warning: Citation `almalinux_official' on page 27 undefined on input line
- 156.
-
-
-LaTeX Warning: Citation `brvm_actions' on page 27 undefined on input line 170.
-
-
-LaTeX Warning: Citation `brvm_data_public' on page 27 undefined on input line 1
-72.
-
-[27]
-
-LaTeX Warning: Citation `docker_docs' on page 28 undefined on input line 181.
+]
+Underfull \hbox (badness 10000) in paragraph at lines 21--23
+\T1/ntxtt/m/n/12 / / owasp . org / www-[]project-[]application-[]security-[]ver
+ification-[]standard/$[]\T1/ntxtlf/m/n/12 (+20) .
+ []
 
 
-LaTeX Warning: Citation `docker_compose_docs' on page 28 undefined on input lin
-e 181.
+Underfull \hbox (badness 10000) in paragraph at lines 33--35
+[]\T1/ntxtlf/m/n/12 (+20) BCEAO, \T1/ntxtlf/m/it/12 (+20) Fin-Tech et di-gi-ta-
+li-sa-tion des ser-vices fi-nan-ciers dans
+ []
 
 
-LaTeX Warning: Citation `almalinux_official' on page 28 undefined on input line
- 181.
+Underfull \hbox (badness 10000) in paragraph at lines 33--35
+\T1/ntxtlf/m/it/12 (+20) l'UE-MOA\T1/ntxtlf/m/n/12 (+20) . Dis-po-nible sur : [
+]$\T1/ntxtt/m/n/12 https : / / www . bceao . int / fr / content /
+ []
 
 
-LaTeX Warning: Citation `brvm_actions' on page 28 undefined on input line 187.
+Underfull \hbox (badness 10000) in paragraph at lines 33--35
+\T1/ntxtt/m/n/12 fintech-[]et-[]digitalisation-[]des-[]services-[]financiers-[]
+dans-[]luemoa$[]\T1/ntxtlf/m/n/12 (+20) . Consulté
+ []
 
-) (contenu/conclusion-generale.tex [28]
+LaTeX Font Info:    Font shape `T1/ntxtlf/m/it' will be
+(Font)              scaled to size 8.8pt on input line 40.
 
-LaTeX Warning: Citation `brvm_actions' on page 29 undefined on input line 22.
-
-
-LaTeX Warning: Citation `almalinux_official' on page 29 undefined on input line
- 25.
-
-
-LaTeX Warning: Citation `docker_docs' on page 29 undefined on input line 25.
-
-
-LaTeX Warning: Citation `docker_compose_docs' on page 29 undefined on input lin
-e 26.
+Underfull \hbox (badness 10000) in paragraph at lines 37--43
+[]\T1/ntxtlf/m/n/12 (+20) CREPMF, \T1/ntxtlf/m/it/12 (+20) Ins-truc-tion n$[]$ 
+065/CREPMF/2021 re-la-tive au ca-pi-tal so-cial mi-ni-
+ []
 
 
-LaTeX Warning: Citation `brvm_actions' on page 29 undefined on input line 30.
+Underfull \hbox (badness 2753) in paragraph at lines 37--43
+\T1/ntxtlf/m/it/12 (+20) mum re-quis et aux normes pru-den-tielles des So-cié-t
+és de Ges-tion et d'In-ter-mé-
+ []
 
 
-LaTeX Warning: Citation `brvm_data_public' on page 29 undefined on input line 3
-1.
+Underfull \hbox (badness 2717) in paragraph at lines 37--43
+\T1/ntxtlf/m/it/12 (+20) dia-tion agréées sur le mar-ché fi-nan-cier ré-gio-nal
+ de l'UMOA\T1/ntxtlf/m/n/12 (+20) , 2021. Dis-po-nible
+ []
 
-) [29
 
-] (main.aux)
+Underfull \hbox (badness 10000) in paragraph at lines 37--43
+\T1/ntxtlf/m/n/12 (+20) sur : []$\T1/ntxtt/m/n/12 https : / / www . brvm . org 
+/ sites / default / files / 20230801 _ -[] _ instruction _
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 37--43
+\T1/ntxtt/m/n/12 ndeg065-[]crepmf-[]2021 _ -[] _ capital _ social _ minimum _ r
+equis _ et _ aux _ normes _
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 37--43
+\T1/ntxtt/m/n/12 prudentielles _ des _ sgi _ agreees _ sur _ le _ mfr _ de _ lu
+moa _ 0 . pdf$[]\T1/ntxtlf/m/n/12 (+20) . Consulté le 26
+ []
+
+[30
+
+]
+Underfull \hbox (badness 1960) in paragraph at lines 83--85
+[]\T1/ntxtlf/m/n/12 (+20) Keycloak, \T1/ntxtlf/m/it/12 (+20) Key-cloak Do-cu-me
+n-ta-tion\T1/ntxtlf/m/n/12 (+20) . Dis-po-nible sur : []$\T1/ntxtt/m/n/12 https
+ : / / www . keycloak . org /
+ []
+
+
+Underfull \hbox (badness 3199) in paragraph at lines 107--109
+[]\T1/ntxtlf/m/n/12 (+20) OpenZipkin, \T1/ntxtlf/m/it/12 (+20) Zip-kin Do-cu-me
+n-ta-tion\T1/ntxtlf/m/n/12 (+20) . Dis-po-nible sur : []$\T1/ntxtt/m/n/12 https
+ : / / zipkin . io / pages /
+ []
+
+) [31] (main.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2020/03/25>
  ***********
-
-
-LaTeX Warning: There were undefined references.
-
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 2ED459BE7CA6BE87ECB0CFB1D278105E;10498.
+(rerunfilecheck)             Checksum: EF62B66D70F9BF78499DDD9FB4E65D56;11657.
  ) 
 Here is how much of TeX's memory you used:
- 35783 strings out of 467871
- 683043 string characters out of 5418860
- 1153079 words of memory out of 5000000
- 63801 multiletter control sequences out of 15000+600000
- 704480 words of font info for 196 fonts, out of 8000000 for 9000
+ 36005 strings out of 467871
+ 687704 string characters out of 5418860
+ 1154188 words of memory out of 5000000
+ 63893 multiletter control sequences out of 15000+600000
+ 709686 words of font info for 216 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  89i,13n,120p,1003b,964s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/DELL/AppData/Local/Programs/MiKTeX/fonts/type1/public/txfonts/t1xtt
@@ -1798,9 +1739,9 @@ Here is how much of TeX's memory you used:
 i.pfb><C:/Users/DELL/AppData/Local/Programs/MiKTeX/fonts/type1/public/newtx/ztm
 r.pfb><C:/Users/DELL/AppData/Local/Programs/MiKTeX/fonts/type1/public/newtx/ztm
 ri.pfb>
-Output written on main.pdf (31 pages, 12389862 bytes).
+Output written on main.pdf (44 pages, 12479699 bytes).
 PDF statistics:
- 465 PDF objects out of 1000 (max. 8388607)
- 119 named destinations out of 1000 (max. 500000)
- 35307 words of extra memory for PDF output out of 35830 (max. 10000000)
+ 855 PDF objects out of 1000 (max. 8388607)
+ 179 named destinations out of 1000 (max. 500000)
+ 37427 words of extra memory for PDF output out of 42996 (max. 10000000)
 
