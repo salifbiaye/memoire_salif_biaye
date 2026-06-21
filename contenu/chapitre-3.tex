@@ -162,7 +162,6 @@ Après la présentation des architectures logique et technique, cette section il
 \subsection{Périmètre du scénario}
 
 
-\subsection{Périmètre du scénario}
 
 Le scénario étudié porte sur la création d'un prospect par un chargé de clientèle. Il comprend la saisie des informations, leur transmission au système, l'enregistrement du prospect dans le module CRM, l'attribution d'un score initial ainsi que l'enregistrement d'une trace d'audit. Les étapes suivantes du traitement du prospect ne sont pas prises en compte dans cette étude.
 
@@ -218,8 +217,9 @@ résumées dans le tableau~\ref{tab:endpoints_prospect}.
 
 La figure~\ref{fig:conception_creation_prospect} complète le workflow en
 reliant les interfaces \textit{boundary}, les composants de coordination
-\textit{control} et les données métier \textit{entity}, selon les
-stéréotypes de Jacobson \cite{jacobson_oose}.
+\textit{control} et les données métier \textit{entity}, selon les stéréotypes
+de l'approche Entity-Control-Boundary introduite par Jacobson
+\cite{jacobson_oose,ecb_pattern}.
 
 \begin{figure}[H]
     \centering
@@ -244,7 +244,7 @@ Deux réseaux assurent les communications : \texttt{sib\_public}, destiné aux a
     \caption{Déploiement d'I-SIB sur un VPS AlmaLinux}
     \label{fig:architecture_deploiement}
 \end{figure}
-
+\newpage{}
 Dans la pratique, le déploiement est organisé par ensembles. L'ensemble
 \texttt{infra} regroupe les services de base nécessaires au fonctionnement de
 la plateforme, comme la passerelle API, Keycloak, Eureka,
