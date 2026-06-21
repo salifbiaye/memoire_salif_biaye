@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.5.11)  21 JUN 2026 20:49
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.5.11)  21 JUN 2026 20:57
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1583,7 +1583,7 @@ LaTeX Font Info:    Font shape `T1/ntxtlf/b/n' will be
 (Font)              scaled to size 10.0pt on input line 187.
  [19 <./images/contenu/chapitre-3/workflow_creation_prospect.png (PNG copy)>]
 (C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex/latex/newtx\t1ntxtt.fd)
-<images/contenu/chapitre-3/conception_creation_prospect.png, id=646, 1541.76pt 
+<images/contenu/chapitre-3/conception_creation_prospect.png, id=645, 1541.76pt 
 x 1027.84pt>
 File: images/contenu/chapitre-3/conception_creation_prospect.png Graphic file (
 type png)
@@ -1595,7 +1595,7 @@ LaTeX Font Info:    Font shape `T1/ntxtt/m/n' will be
 (Font)              scaled to size 12.0pt on input line 238.
 
 [20 <./images/contenu/chapitre-3/conception_creation_prospect.png (PNG copy)>]
-<images/contenu/chapitre-3/architecture_deploiement.png, id=658, 1452.42625pt x
+<images/contenu/chapitre-3/architecture_deploiement.png, id=656, 1452.42625pt x
  1091.07625pt>
 File: images/contenu/chapitre-3/architecture_deploiement.png Graphic file (type
  png)
@@ -1613,7 +1613,7 @@ ntxtt/m/n/12 sib_public\T1/ntxtlf/m/n/12 (-20) , des-tiné aux ac-cès ex-ternes,
 [21 <./images/contenu/chapitre-3/architecture_deploiement.png (PNG copy)>])
 (contenu/chapitre-4.tex [22]
 Chapitre 4.
-<images/contenu/chapitre-4/portefeuille_clients_annote.png, id=675, 1677.26625p
+<images/contenu/chapitre-4/portefeuille_clients_annote.png, id=673, 1677.26625p
 t x 944.52875pt>
 File: images/contenu/chapitre-4/portefeuille_clients_annote.png Graphic file (t
 ype png)
@@ -1624,7 +1624,7 @@ png  used on input line 36.
 [23
 
 ] [24 <./images/contenu/chapitre-4/portefeuille_clients_annote.png (PNG copy)>]
-<images/contenu/chapitre-4/cotations_brvm_annote.png, id=690, 1596.96625pt x 99
+<images/contenu/chapitre-4/cotations_brvm_annote.png, id=688, 1596.96625pt x 99
 2.70876pt>
 File: images/contenu/chapitre-4/cotations_brvm_annote.png Graphic file (type pn
 g)
@@ -1717,7 +1717,7 @@ n-ta-tion\T1/ntxtlf/m/n/12 (+20) . Dis-po-nible sur : []$\T1/ntxtt/m/n/12 https
  : / / zipkin . io / pages /
  []
 
-[30]) [31] (main.aux)
+) [30] (main.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2020/03/25>
@@ -1726,10 +1726,10 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: 9E1FB25128F9DAEF8CD5874C72ABCCB0;11453.
  ) 
 Here is how much of TeX's memory you used:
- 36005 strings out of 467871
- 687699 string characters out of 5418860
- 1154221 words of memory out of 5000000
- 63893 multiletter control sequences out of 15000+600000
+ 36002 strings out of 467871
+ 687663 string characters out of 5418860
+ 1154187 words of memory out of 5000000
+ 63892 multiletter control sequences out of 15000+600000
  709686 words of font info for 216 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  89i,13n,120p,1003b,964s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -1739,9 +1739,9 @@ Here is how much of TeX's memory you used:
 i.pfb><C:/Users/DELL/AppData/Local/Programs/MiKTeX/fonts/type1/public/newtx/ztm
 r.pfb><C:/Users/DELL/AppData/Local/Programs/MiKTeX/fonts/type1/public/newtx/ztm
 ri.pfb>
-Output written on main.pdf (44 pages, 12479784 bytes).
+Output written on main.pdf (43 pages, 12477990 bytes).
 PDF statistics:
- 853 PDF objects out of 1000 (max. 8388607)
- 179 named destinations out of 1000 (max. 500000)
+ 845 PDF objects out of 1000 (max. 8388607)
+ 177 named destinations out of 1000 (max. 500000)
  37419 words of extra memory for PDF output out of 42996 (max. 10000000)
 
