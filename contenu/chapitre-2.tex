@@ -91,64 +91,64 @@ enrichit automatiquement d'un score de conversion calculé par intelligence arti
 La fiche~\ref{tab:rc_creation_prospect} en présente la description détaillée.
 
 
+
 \begin{table}[H]
-\centering
-\caption{Fiche descriptive -- Création d'un prospect}
-\label{tab:rc_creation_prospect}
-\renewcommand{\arraystretch}{1.5}
-\begin{tabular}{|>{\bfseries}p{3.8cm}|p{10.5cm}|}
-\hline
-Acteurs & Chargé de clientèle \\ \hline
+    \centering
+    \caption{Fiche descriptive -- Création d'un prospect}
+    \label{tab:rc_creation_prospect}
+    \renewcommand{\arraystretch}{1.5}
 
-    Préconditions &
-    \begin{minipage}[t]{\linewidth}\vspace{2pt}
-    \begin{itemize}[leftmargin=*,topsep=0pt,itemsep=1pt,parsep=0pt]
-        \item L'utilisateur est authentifié avec le rôle \textit{chargé de clientèle}
-        \item Le module de gestion des prospects est accessible
-    \end{itemize}
-    \vspace{2pt}\end{minipage} \\ \hline
+    \begin{tabular}{|>{\bfseries}p{3.8cm}|p{10.5cm}|}
+        \hline
 
-    Scénario nominal &
-    \begin{minipage}[t]{\linewidth}\vspace{2pt}
-    \begin{enumerate}[leftmargin=*,topsep=0pt,itemsep=2pt,parsep=0pt]
-        \item Le chargé de clientèle renseigne les informations du prospect
-        (nom, prénom, email, téléphone, source ; éventuellement société,
-        valeur estimée et produits d'intérêt)
+        Acteurs &
+        Chargé de clientèle \\ \hline
 
-        \item Le système vérifie qu'aucun prospect existant n'utilise déjà
-        cette adresse email
+        Préconditions &
+        \begin{minipage}[t]{\linewidth}\vspace{2pt}
+            \begin{itemize}[leftmargin=*,topsep=0pt,itemsep=1pt,parsep=0pt]
+                \item L'utilisateur est authentifié avec le rôle \textit{chargé de clientèle}
+                \item Le module de gestion des prospects est accessible
+            \end{itemize}
+            \vspace{2pt}\end{minipage}
+        \\ \hline
 
-        \item Le prospect est enregistré au stade initial
-        \textit{LEAD}, puis associé automatiquement au conseiller qui l'a créé.
-        Un score initial lui est attribué
+        Scénario nominal &
+        \begin{minipage}[t]{\linewidth}\vspace{2pt}
+            \begin{enumerate}[leftmargin=*,topsep=0pt,itemsep=2pt,parsep=0pt]
+                \item Le chargé de clientèle renseigne les informations du prospect (nom, prénom, email, téléphone, source ; éventuellement société, valeur estimée et produits d'intérêt).
 
-        \item Une évaluation est réalisée afin d'estimer le potentiel de
-        conversion du prospect
+                \item Le système vérifie qu'aucun prospect existant n'est déjà associé à cette adresse email.
 
-        \item Les résultats obtenus sont enregistrés dans la fiche du prospect,
-        notamment son score, sa probabilité de conversion et son niveau de priorité
+                \item Le prospect est créé au stade initial \textit{LEAD} et automatiquement rattaché au conseiller qui l'a enregistré. Un score initial lui est attribué.
 
-        \item Le système confirme l'enregistrement et affiche la fiche du prospect
-    \end{enumerate}
-    \vspace{2pt}\end{minipage} \\ \hline
+                \item Un score de conversion est calculé à partir des informations disponibles.
 
-    Scénario alternatif &
-    \begin{minipage}[t]{\linewidth}\vspace{2pt}
-    \textbf{A1 -- Email déjà utilisé :} la création est refusée et un message
-    indique qu'un prospect est déjà associé à cette adresse email.
-    \vspace{2pt}\end{minipage} \\ \hline
+                \item Le score obtenu, la probabilité de conversion et le niveau de priorité sont ajoutés à la fiche du prospect.
 
-    Scénario d'exception &
-    \textbf{E1 -- Service de scoring indisponible :} l'évaluation du prospect
-    ne peut pas être réalisée. Le prospect est néanmoins créé avec son score
-    initial et l'incident est enregistré dans les journaux du système. \\ \hline
+                \item La fiche du prospect est affichée avec les informations enregistrées.
+            \end{enumerate}
+            \vspace{2pt}\end{minipage}
+        \\ \hline
 
-    Postconditions &
-    Le prospect est créé, associé au conseiller concerné et positionné au
-    stade \textit{LEAD}. Une trace de création est conservée dans le journal
-    d'audit. \\ \hline
-\end{tabular}
+        Scénario alternatif &
+        \begin{minipage}[t]{\linewidth}\vspace{2pt}
+            \textbf{A1 -- Email déjà utilisé :} la création est refusée car un prospect est déjà associé à cette adresse email.
+            \vspace{2pt}\end{minipage}
+        \\ \hline
+
+        Scénario d'exception &
+        \textbf{E1 -- Service de scoring indisponible :}
+        le score de conversion ne peut pas être calculé. Le prospect est néanmoins créé avec son score initial et l'incident est journalisé.
+        \\ \hline
+
+        Postconditions &
+        Le prospect est créé, rattaché au conseiller concerné et positionné au stade \textit{LEAD}. Une entrée correspondante est ajoutée au journal d'audit.
+        \\ \hline
+
+    \end{tabular}
 \end{table}
+
 
 
 La figure~\ref{fig:rc_prospects} représente le déroulement de cette fonctionnalité à
@@ -186,59 +186,69 @@ permet au client d'exprimer une intention d'achat ou de vente, et à l'équipe S
 contrôler, valider ou rejeter la demande selon les règles métier en vigueur. La
 fiche~\ref{tab:sgi_ordres} en présente la description détaillée.
 
+
 \begin{table}[H]
-    \centering
-    \caption{Fiche descriptive -- Passage d'ordres}
-    \label{tab:sgi_ordres}
-    \renewcommand{\arraystretch}{1.5}
-    \begin{tabular}{|>{\bfseries}p{3.8cm}|p{10.5cm}|}
-        \hline
-        Acteurs            & Client, Équipe SGI \\ \hline
-        Préconditions      &
-        \begin{minipage}[t]{\linewidth}\vspace{2pt}
-        \begin{itemize}[leftmargin=*,topsep=0pt,itemsep=1pt,parsep=0pt]
-            \item Le client est authentifié et propriétaire d'un portefeuille
-            \item Le titre visé est référencé et sa cotation est disponible
-            \item Le compte espèces du portefeuille est approvisionné
-        \end{itemize}
-        \vspace{2pt}\end{minipage} \\ \hline
-        Scénario nominal   &
-        \begin{minipage}[t]{\linewidth}\vspace{2pt}
+\centering
+\caption{Fiche descriptive -- Passage d'ordres}
+\label{tab:sgi_ordres}
+\renewcommand{\arraystretch}{1.5}
+\begin{tabular}{|>{\bfseries}p{3.8cm}|p{10.5cm}|}
+\hline
+Acteurs & Client, Équipe SGI \\ \hline
 
-        \begin{enumerate}[leftmargin=*,topsep=0pt,itemsep=2pt,parsep=0pt]
-            \item Le client saisit un ordre en indiquant le titre concerné, le type d'opération (achat ou vente) ainsi que la quantité souhaitée.
-            \item Le système vérifie que le portefeuille est bien associé au client et récupère les informations de cotation du titre.
-            \item L'ordre est enregistré avec le statut \textit{En attente}.
-            \item L'équipe SGI consulte les ordres en attente de traitement.
-            \item Après examen, l'équipe SGI valide l'ordre. Le système vérifie alors la disponibilité des fonds nécessaires et attribue à l'ordre le statut \textit{Approuvé}.
-            \item L'équipe SGI procède à l'exécution de l'ordre. Le système met à jour les comptes concernés, applique les frais éventuels, actualise le portefeuille et affecte à l'ordre le statut
-            \item \textit{Exécuté}.
-            \item Le client consulte l'état actualisé de son ordre et de son
-            portefeuille
-        \end{enumerate}
-        \vspace{2pt}\end{minipage} \\ \hline
-        Scénario alternatif &
-        \begin{minipage}[t]{\linewidth}\vspace{2pt}
-        \textbf{A1 -- Rejet de l'ordre :} l'équipe SGI rejette l'ordre en
-        saisissant un motif ; le statut passe à \textit{Rejeté} et le motif est
-        enregistré, puis communiqué au client
-        \vspace{2pt}\end{minipage} \\ \hline
-        Scénario d'exception &
-        \begin{minipage}[t]{\linewidth}\vspace{2pt}
-        \textbf{E1 -- Liquidité insuffisante :} au moment de l'approbation, le
-        contrôle du solde espèces échoue ; le système refuse l'approbation et
-        l'ordre reste au statut \textit{En attente}
+    Préconditions &
+    \begin{minipage}[t]{\linewidth}\vspace{2pt}
+    \begin{itemize}[leftmargin=*,topsep=0pt,itemsep=1pt,parsep=0pt]
+        \item Le client est authentifié et dispose d'un portefeuille
+        \item Le titre concerné est référencé et sa cotation est disponible
+        \item Le compte espèces associé au portefeuille est approvisionné
+    \end{itemize}
+    \vspace{2pt}\end{minipage} \\ \hline
 
-        \medskip
-        \textbf{E2 -- Titre non coté :} la cotation du titre n'est pas
-        disponible ; la création de l'ordre est refusée
-        \vspace{2pt}\end{minipage} \\ \hline
-        Postconditions     & L'ordre est enregistré avec son statut final ;
-        en cas d'exécution, le portefeuille et les comptes espèces et titres
-        sont mis à jour, et un journal d'exécution est créé ; un évènement
-        d'audit est journalisé à chaque étape \\ \hline
-    \end{tabular}
+    Scénario nominal &
+    \begin{minipage}[t]{\linewidth}\vspace{2pt}
+    \begin{enumerate}[leftmargin=*,topsep=0pt,itemsep=2pt,parsep=0pt]
+
+        \item Le client saisit un ordre en précisant le titre, le type d'opération (achat ou vente) et la quantité souhaitée
+
+        \item Le système vérifie que le portefeuille appartient au client et récupère les informations de cotation du titre
+
+        \item L'ordre est enregistré avec le statut \textit{En attente}
+
+        \item L'équipe SGI consulte les ordres en attente de traitement
+
+        \item Après vérification, l'équipe SGI approuve l'ordre. Les contrôles nécessaires sont effectués et le statut devient \textit{Approuvé}
+
+        \item L'équipe SGI exécute l'ordre. Les comptes concernés et le portefeuille sont mis à jour, les frais éventuels sont pris en compte et l'ordre passe au statut \textit{Exécuté}
+
+        \item Le client consulte l'état mis à jour de son ordre et de son portefeuille
+
+    \end{enumerate}
+    \vspace{2pt}\end{minipage} \\ \hline
+
+    Scénario alternatif &
+    \begin{minipage}[t]{\linewidth}\vspace{2pt}
+    \textbf{A1 -- Rejet de l'ordre :} l'équipe SGI refuse l'ordre en indiquant un motif. Le statut passe à \textit{Rejeté} et l'information est communiquée au client.
+    \vspace{2pt}\end{minipage} \\ \hline
+
+    Scénario d'exception &
+    \begin{minipage}[t]{\linewidth}\vspace{2pt}
+
+    \textbf{E1 -- Solde insuffisant :} lors de la validation, les fonds disponibles ne permettent pas d'exécuter l'opération. L'ordre n'est pas approuvé et reste au statut \textit{En attente}.
+
+    \medskip
+
+    \textbf{E2 -- Cotation indisponible :} les informations de marché nécessaires ne sont pas disponibles ; l'ordre ne peut pas être enregistré.
+
+    \vspace{2pt}\end{minipage} \\ \hline
+
+    Postconditions &
+    L'ordre est enregistré avec son statut final. En cas d'exécution, le portefeuille ainsi que les comptes espèces et titres sont mis à jour. Les opérations réalisées sont conservées dans les journaux du système. \\ \hline
+
+\end{tabular}
 \end{table}
+
+
 
 La figure~\ref{fig:sgi_ordres} représente le déroulement de cette fonctionnalité à
 travers un diagramme de séquence.
@@ -258,19 +268,23 @@ fonctionnelles.
 Ces exigences complètent les besoins fonctionnels présentés précédemment. Elles décrivent les contraintes que le système doit respecter afin de répondre aux attentes des utilisateurs et aux exigences du domaine bancaire.
 
 
-\begin{description}
-\item[Sécurité] Les fonctionnalités accessibles dépendent du rôle de l'utilisateur. Un client accède uniquement à ses propres informations, tandis que les collaborateurs disposent des droits nécessaires à leurs missions.
+\paragraph{Sécurité}
+Les fonctionnalités accessibles dépendent du rôle de l'utilisateur. Un client accède uniquement à ses propres informations, tandis que les collaborateurs disposent des droits nécessaires à leurs missions.
 
-\item[Confidentialité] Les informations personnelles, bancaires, KYC et les données d'investissement ne doivent être consultées que par les personnes autorisées.
+\paragraph{Confidentialité}
+Les informations personnelles, bancaires, KYC et les données d'investissement ne doivent être consultées que par les personnes autorisées.
 
-\item[Traçabilité] Les opérations importantes, telles que les validations d'ordres, les modifications de données ou les changements de statut, doivent laisser une trace consultable.
+\paragraph{Traçabilité}
+Les opérations importantes, telles que les validations d'ordres, les modifications de données ou les changements de statut, doivent laisser une trace consultable.
 
-\item[Disponibilité] Les utilisateurs doivent pouvoir accéder au système et consulter les informations nécessaires à leurs activités sans interruption prolongée.
+\paragraph{Disponibilité}
+Les utilisateurs doivent pouvoir accéder au système et consulter les informations nécessaires à leurs activités sans interruption prolongée.
 
-\item[Évolutivité] L'ajout de nouveaux modules ou de nouvelles fonctionnalités ne doit pas nécessiter une refonte importante du système existant.
+\paragraph{Évolutivité}
+L'ajout de nouveaux modules ou de nouvelles fonctionnalités ne doit pas nécessiter une refonte importante du système existant.
 
-\item[Ergonomie] Les écrans doivent être faciles à comprendre et à utiliser afin de limiter les erreurs de manipulation.
-\end{description}
+\paragraph{Ergonomie}
+Les écrans doivent être faciles à comprendre et à utiliser afin de limiter les erreurs de manipulation.
 
 L'ensemble de ces exigences devra être pris en compte lors de la conception et de la mise en œuvre de la solution.
  La sécurité et la confidentialité protègent ces

@@ -32,11 +32,13 @@ Ces principes conduisent à une architecture modulaire composée de services
 spécialisés communiquant de manière contrôlée \cite{fowler_microservices}.% ─────────────────────────────────────────────────
 \section{Architecture logique de la solution}
 
+
 \subsection{Vue d'ensemble}
 
-La solution I-SIB repose sur une architecture microservices organisée en cinq couches. Les utilisateurs accèdent à la plateforme par le front-office destiné aux clients ou par le back-office réservé aux employés. Une interface distincte, le Module Manager, permet aux administrateurs de paramétrer les modules, les fonctionnalités et les droits associés. Les requêtes applicatives passent par une passerelle API chargée du routage et du contrôle des accès, en lien avec le service d'authentification.
+La solution I-SIB repose sur une architecture microservices organisée en plusieurs couches. Cette organisation permet de séparer les responsabilités entre les différents composants du système et de faciliter leur évolution.
 
-L’architecture regroupe les interfaces utilisateur, les services métier ainsi que les composants techniques assurant la sécurité, le routage, le stockage des données, le cache, la messagerie et la traçabilité. La figure~\ref{fig:architecture_logique} présente l’organisation logique simplifiée de ces composants et leurs interactions.
+L'architecture regroupe les interfaces utilisateur, les services métier et les composants techniques nécessaires au fonctionnement de la plateforme. La figure~\ref{fig:architecture_logique} présente l'organisation générale de ces éléments ainsi que leurs principales interactions.
+
 
 
 
@@ -61,17 +63,13 @@ données ainsi que les outils nécessaires au fonctionnement de la plateforme.
 \begin{description}
     \item[Couche présentation] Elle contient les interfaces utilisées pour accéder à
     la plateforme. Le \textbf{Front-Office} est l'interface destinée aux clients de
-    la banque. Le \textbf{Back-Office} est utilisé par les employés. Les
-    administrateurs s'appuient sur le \textbf{Module Manager} pour paramétrer les
-    modules, leurs fonctionnalités et les droits associés. Derrière, le
-    \textbf{Backend Module Manager} reçoit les demandes de ces interfaces et
-    regroupe leur configuration.
+    la banque. Le \textbf{Back-Office} est utilisé par les employés.
 
-    \item[Couche sécurité et routage] Elle sécurise l'accès à la plateforme et dirige
-    les demandes vers le bon service. Le bloc \textbf{Authentification et accès}
-    vérifie l'identité et le rôle de l'utilisateur. La \textbf{Passerelle de
-    communication} reçoit les requêtes des interfaces, les contrôle, puis les envoie
-    au service concerné. Le \textbf{Registre des services} indique à la passerelle
+Les administrateurs utilisent le \textbf{Module Manager} pour gérer les modules, les fonctionnalités disponibles et les droits associés. Les configurations définies depuis cette interface sont prises en charge par le \textbf{Backend Module Manager}, qui centralise les informations nécessaires au fonctionnement du système.
+
+\item[Couche sécurité et routage] Cette couche contrôle l'accès à la plateforme et assure l'acheminement des requêtes vers les différents services. Le composant \textbf{Authentification et accès} gère l'identification des utilisateurs et la vérification de leurs autorisations. La \textbf{Passerelle de communication} constitue le point d'entrée des applications et redirige les requêtes vers les microservices concernés.
+
+ Le \textbf{Registre des services} indique à la passerelle
     où se trouve chaque microservice disponible.
 
     \item[Couche métier] On y trouve les services qui exécutent les opérations de
@@ -109,14 +107,22 @@ Les interfaces web de la plateforme sont développées avec \textbf{Next.js 16}
 modernes, maintenables et adaptées aux différents profils utilisateurs. Le backend repose
 sur \textbf{Spring Boot 3.5} \cite{spring_boot_docs}, utilisé comme socle de développement des microservices
 métier.
+
 L'accès aux différents services passe par \textbf{Spring Cloud Gateway}
-\cite{spring_gateway_docs}, qui joue le rôle de point d'entrée de l'architecture. Il assure le routage des requêtes et applique les mécanismes de sécurité communs. La gestion des utilisateurs et des rôles repose sur \textbf{Keycloak}
+\cite{spring_gateway_docs}, qui constitue le point d'entrée de la plateforme. Les requêtes des applications y transitent avant d'être dirigées vers les microservices concernés. La gestion des utilisateurs et des droits d'accès est assurée par \textbf{Keycloak}
 \cite{keycloak_docs}, tandis que \textbf{Netflix Eureka}
-\cite{spring_eureka_docs} facilite la localisation des microservices au sein du système.
+\cite{spring_eureka_docs} facilite la découverte des services au sein de l'architecture.
 
 Chaque microservice dispose de sa propre base \textbf{PostgreSQL}
-\cite{postgresql_docs}, ce qui permet de conserver une séparation claire des données. \textbf{Redis}
-\cite{redis_docs} intervient pour les besoins de cache et certaines fonctionnalités techniques comme la limitation du nombre de requêtes. Les échanges asynchrones entre services reposent sur \textbf{RabbitMQ}
+\cite{postgresql_docs}. Cette organisation permet à chaque service de gérer ses données de manière indépendante. \textbf{Redis}
+\cite{redis_docs} est utilisé pour certaines fonctions de cache et de limitation de débit. Les échanges asynchrones reposent sur \textbf{RabbitMQ}
+\cite{rabbitmq_docs}, notamment pour la diffusion des événements d'audit. Les documents clients et les pièces KYC sont stockés dans \textbf{MinIO}
+\cite{minio_docs}.
+
+Les fonctionnalités d'intelligence artificielle s'appuient sur \textbf{Rasa}
+\cite{rasa_docs} pour les interactions conversationnelles ainsi que sur des services dédiés à l'analyse et à l'évaluation des prospects.
+
+ intervient pour les besoins de cache et certaines fonctionnalités techniques comme la limitation du nombre de requêtes. Les échanges asynchrones entre services reposent sur \textbf{RabbitMQ}
 \cite{rabbitmq_docs}, notamment pour la diffusion des événements d'audit. Les documents clients et les pièces KYC sont quant à eux stockés dans \textbf{MinIO}
 \cite{minio_docs}.
 
@@ -132,10 +138,12 @@ l'organisation des composants en ensembles Compose.
 \section{Architecture technique de la solution}
 
 
-Après la présentation des technologies retenues, il est nécessaire de préciser leur organisation au sein de la plateforme. L’architecture technique décrit la manière dont les différents composants interagissent pour assurer le fonctionnement du système.
+Après la présentation des technologies retenues, il est nécessaire de préciser leur organisation au sein de la plateforme.
+L'architecture technique présente les principaux composants de la plateforme ainsi que leurs interactions.
+
+Les applications front-office et back-office accèdent aux différents services par l'intermédiaire d'une passerelle API chargée de centraliser les accès. Les fonctionnalités métier sont réparties entre plusieurs microservices, chacun disposant de sa propre base de données. Des composants complémentaires, tels que la messagerie, le cache ou les outils de supervision, viennent compléter l'architecture.
 
 
-Les applications front-office et back-office communiquent avec les microservices à travers une passerelle API qui centralise les accès et applique les règles de sécurité. Chaque microservice dispose de sa propre base de données et peut utiliser des services transversaux tels que la messagerie, le cache ou la supervision selon ses besoins.
 
 
 Cette architecture permet de garantir la modularité du système et facilite son évolution. La figure~\ref{fig:architecture_technique} présente l’organisation générale des composants et leurs interactions.
@@ -157,16 +165,16 @@ Cette architecture permet de garantir la modularité du système et facilite son
 Après la présentation des architectures logique et technique, cette section illustre le fonctionnement du module Relation Client à travers le scénario de création d’un prospect. Elle présente le périmètre retenu, le workflow associé ainsi que les principaux composants impliqués dans le traitement de la demande.
 \subsection{Périmètre du scénario}
 
-Le scénario retenu concerne la création d’un prospect par un chargé de clientèle.
-Il couvre la saisie des informations, leur transmission au backend, l’enregistrement
-du prospect dans le service CRM, le calcul d’un score initial ainsi que la génération
-d’une trace d’audit. Les étapes suivantes du cycle de vie du prospect ne sont pas
-abordées afin de conserver un périmètre limité.
+
+\subsection{Périmètre du scénario}
+
+Le scénario étudié porte sur la création d'un prospect par un chargé de clientèle. Il comprend la saisie des informations, leur transmission au système, l'enregistrement du prospect dans le module CRM, l'attribution d'un score initial ainsi que l'enregistrement d'une trace d'audit. Les étapes suivantes du traitement du prospect ne sont pas prises en compte dans cette étude.
 
 \subsection{Workflow de création}
 
-La création d’un prospect débute par la saisie des informations dans l’interface
-back-office. La demande est ensuite transmise à la passerelle API, puis routée vers
+Le processus commence lorsqu'un chargé de clientèle renseigne les informations du prospect depuis l'interface Back-office.
+
+ La demande est ensuite transmise à la passerelle API, puis routée vers
 le service CRM. Après validation des données, le prospect est enregistré, un score
 initial est calculé par le service d’IA et une trace d’audit est générée. La
 figure~\ref{fig:workflow_creation_prospect} présente les principales étapes de ce
@@ -254,9 +262,7 @@ déclenche le redéploiement des stacks concernées via Portainer
 \phantomsection
 \addcontentsline{toc}{section}{Conclusion}
 
-Ce chapitre a défini les architectures fonctionnelle et technique d'I-SIB,
-puis détaillé la création d'un prospect comme scénario représentatif du module
-Relation Client. La solution a ensuite été déployée sur le VPS AlmaLinux \cite{almalinux_official} mis à
-notre disposition, ce qui a permis de vérifier progressivement le fonctionnement
-des services réalisés. Le chapitre suivant présente les résultats obtenus et
-les limites restant à traiter.
+
+Ce chapitre a présenté la conception fonctionnelle et technique d'I-SIB ainsi que le scénario de création d'un prospect. Il a également décrit le déploiement de la solution sur le VPS AlmaLinux \cite{almalinux_official}. Le chapitre suivant présente les résultats obtenus.
+
+

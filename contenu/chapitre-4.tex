@@ -39,16 +39,11 @@ liste des clients suivis.
 \end{figure}
 
 \noindent
-Le repère \textbf{1} indique les principaux indicateurs de synthèse du
-portefeuille, notamment le nombre de clients, les clients actifs, les nouvelles
-acquisitions et le taux de rétention. Le repère \textbf{2} correspond à la zone
-de recherche et aux filtres utilisés pour retrouver rapidement un client ou un
-segment précis. Le repère \textbf{3} présente la liste détaillée des clients
-suivis, avec les informations utiles au suivi commercial : statut, niveau de
-risque, comptes, produits, solde et indicateur de risque de départ.
 
-Cette vue regroupe les éléments nécessaires au suivi quotidien du portefeuille
-et à l'identification des dossiers nécessitant une attention particulière.
+Le repère \textbf{1} regroupe les principaux indicateurs liés à l'activité commerciale, tels que le nombre de clients, les clients actifs, les nouvelles acquisitions et le taux de rétention. Le repère \textbf{2} permet d'effectuer des recherches et d'appliquer des filtres afin de retrouver rapidement un client ou un segment particulier. Le repère \textbf{3} affiche la liste des clients suivis avec les informations utiles à leur gestion : statut, niveau de risque, comptes, produits détenus, solde et risque de départ.
+
+Cette interface offre une vue d'ensemble des clients suivis et facilite le repérage des dossiers nécessitant un suivi particulier.
+
 
 \subsection{Suivi commercial et gestion des prospects}
 
@@ -147,17 +142,22 @@ Les mesures ont été effectuées sur un environnement de test simple. Elles mon
 
 Une amélioration possible consisterait à effectuer le calcul du score après la création du prospect, en arrière-plan, afin d'éviter toute attente supplémentaire en cas d'indisponibilité du service.
 
+
 \subsection{Points forts}
 
 \begin{description}[itemsep=1pt,parsep=0pt]
-\item[Modules complémentaires.] La plateforme réunit dans un même environnement les fonctionnalités liées à la relation client et aux activités d'investissement.
 
-\item[Architecture par microservices.] L'organisation retenue facilite l'ajout de nouvelles fonctionnalités et limite les dépendances entre les différents domaines métier.
+\item[Intégration des modules.] La plateforme réunit les fonctionnalités de relation client et de gestion d'investissement.
 
-\item[Gestion des accès et suivi des opérations.] Les mécanismes d'authentification, d'autorisation et de journalisation contribuent à sécuriser l'utilisation du système.
+\item[Architecture modulaire.] Le découpage en microservices facilite l'évolution de la solution.
 
-\item[Validation en environnement réel.] La plateforme a été déployée sur un serveur VPS AlmaLinux \cite{almalinux_official} afin de vérifier son fonctionnement et les procédures de mise à jour des services.
+\item[Sécurité et traçabilité.] Les accès sont contrôlés selon les rôles et les opérations importantes sont enregistrées.
+
+\item[Déploiement sur serveur.] La plateforme a été installée sur un VPS AlmaLinux \cite{almalinux_official} et validée dans un environnement de test.
+
 \end{description}
+
+
 
 
 
