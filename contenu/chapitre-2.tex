@@ -7,17 +7,13 @@
 \section*{Introduction}
 \addcontentsline{toc}{section}{Introduction}
 
-Après la présentation du cadre général du projet, ce deuxième chapitre a pour objectif
-d'analyser les besoins auxquels doit répondre le futur système I-SIB dans le périmètre des
-modules Relation Client et SGI.
-L'objectif est d'identifier les utilisateurs concernés, de préciser le rôle du système, les fonctionnalités attendues ainsi que les principales exigences de qualité à prendre en compte.
-Cette étape a pour objectif de préciser les besoins du système et les fonctionnalités à mettre en œuvre.
 
-Dans de nombreux établissements, les activités de relation client et les activités d'investissement sont gérées séparément. Les données clients, les informations KYC, les comptes bancaires, les portefeuilles et les ordres de bourse sont souvent répartis entre plusieurs outils.
+Après la présentation du cadre général du projet, ce deuxième chapitre est consacré à l'analyse des besoins auxquels doit répondre le futur système I-SIB dans le périmètre des modules Relation Client et SGI. Il s'agit d'identifier les utilisateurs concernés, de préciser le rôle du système, les fonctionnalités attendues ainsi que les principales exigences de qualité à prendre en compte.
 
-Cette situation rend le suivi d'un client plus complexe, car les informations nécessaires sont dispersées dans plusieurs outils.
+Dans de nombreux établissements, les activités de relation client et les activités d'investissement sont gérées séparément. Les données clients, les informations KYC, les comptes bancaires, les portefeuilles et les ordres de bourse sont souvent répartis entre plusieurs outils. Les utilisateurs doivent alors passer d'une application à l'autre pour accéder aux informations nécessaires.
 
- L'analyse présentée dans ce chapitre vise donc à définir les besoins d'une solution capable de rapprocher ces différents domaines au sein d'une même plateforme.
+L'analyse présentée dans ce chapitre vise donc à définir les besoins d'une solution capable de réunir ces différents domaines au sein d'une même plateforme.
+
 
 
 Le chapitre commence par situer le rôle du système et les acteurs concernés,
@@ -53,12 +49,14 @@ Il doit également permettre d'identifier plus facilement les clients nécessita
 
 L'\textbf{équipe SGI} est un utilisateur interne spécialisé dans les opérations sur titres et la gestion de portefeuille. Elle utilise le système pour gérer les portefeuilles clients, traiter les ordres de bourse et suivre l'évolution des investissements à partir des informations de marché disponibles.
 
-Le système réunit au sein d'une même plateforme les fonctionnalités liées à la relation client et aux activités d'investissement. Chaque utilisateur accède uniquement aux informations et aux actions correspondant à son rôle, tout en travaillant sur des données partagées entre les différents modules.
+Le système réunit au sein d'une même plateforme les fonctionnalités liées à la relation client et aux activités d'investissement.
+Chaque utilisateur accède uniquement aux informations et aux actions correspondant à son rôle.
 
 % ─────────────────────────────────────────────────
 \section{Fonctionnalités du système}
 
-I-SIB comprend deux modules principaux. Le module \textbf{Relation Client} regroupe les fonctionnalités liées à la gestion des clients, au suivi des prospects et aux activités commerciales. Le module \textbf{SGI} (Société de Gestion et d'Intermédiation) prend en charge les fonctionnalités associées aux investissements, notamment le suivi des portefeuilles et le traitement des ordres de bourse.
+I-SIB comprend deux modules principaux. Le module \textbf{Relation Client} regroupe les fonctionnalités liées à la gestion des clients, au suivi des prospects et aux activités commerciales. Le module \textbf{SGI} (Société de Gestion et d'Intermédiation) prend en charge les opérations liées aux investissements, notamment le suivi des portefeuilles et le traitement des ordres de bourse.
+
 
  La présente section décrit les fonctionnalités offertes par chacun de ces modules.
 
@@ -281,18 +279,17 @@ reconstituer les opérations et de répondre aux contrôles. Quant à l'ergonomi
 elle conditionne directement l'adoption du système, car un outil complet mais
 difficile à utiliser finit rarement par être employé.
 
+
 % ─────────────────────────────────────────────────
 \section*{Conclusion}
 \addcontentsline{toc}{section}{Conclusion}
 
-Ce chapitre a permis d'identifier les besoins fonctionnels et non fonctionnels du système
-I-SIB pour les modules Relation Client et SGI. L'analyse a d'abord précisé les
-acteurs concernés et le rôle attendu du système, puis elle a présenté les
-fonctionnalités principales à couvrir. Elle a ensuite approfondi deux scénarios
-représentatifs : la création d'un prospect pour le module Relation Client et le
-passage d'ordre pour le module SGI. Ces besoins s'accompagnent d'exigences
-essentielles en matière de sécurité, de confidentialité, de performance, de
-disponibilité et de traçabilité.
+Ce chapitre a présenté les attentes auxquelles doit répondre I-SIB dans le périmètre des modules Relation Client et SGI. Il a précisé les utilisateurs concernés, le rôle attendu du système ainsi que les principales fonctionnalités à mettre en œuvre.
 
-Cette analyse constitue la base de la conception fonctionnelle et technique du système,
-présentée dans le chapitre suivant.
+La création d'un prospect et le passage d'ordre ont été retenus pour illustrer plus concrètement le fonctionnement attendu. Le chapitre a également présenté les principales exigences non fonctionnelles auxquelles la solution devra répondre.
+
+Le chapitre suivant est consacré à la conception de la solution proposée.
+
+
+
+
