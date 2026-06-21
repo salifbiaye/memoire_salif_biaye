@@ -17,29 +17,19 @@ prospect et enfin l'architecture de déploiement.
 % ─────────────────────────────────────────────────
 \section{Principes de conception de l'architecture}
 
-En prenant en compte les besoins fonctionnels et non fonctionnels identifiés au chapitre
-précédent, la conception de la solution doit s'appuyer sur des principes d'organisation
-clairs. Ces principes permettent d'orienter les choix d'architecture afin de répondre aux
-contraintes du contexte bancaire, notamment la sécurité des accès, la protection des
-données, la traçabilité des opérations et l'évolution progressive des modules métier.
-Cette section présente donc les principes retenus, qui serviront de base à l'architecture
-globale de la plateforme, en cohérence avec les principes de qualité logicielle
-\cite{iso25010} et de sécurité applicative \cite{owasp_asvs}.
+La conception de la solution repose sur plusieurs principes visant à répondre aux
+besoins identifiés et aux contraintes du contexte bancaire. L'objectif est de
+garantir la sécurité des accès, la protection des données, la traçabilité des
+opérations et la capacité d'évolution du système.
 
-Plusieurs principes ont guidé cette organisation. Séparer les responsabilités,
-pour commencer, afin que chaque module --- Relation Client, SGI,
-authentification, audit ou services transversaux --- garde un périmètre clair.
-Un composant dédié filtre les accès entrants et ne laisse atteindre les services
-métier que les requêtes autorisées. Les données sensibles, elles, restent
-cloisonnées par service, avec des accès restreints selon les rôles. La
-traçabilité porte sur les opérations les plus sensibles, comme le KYC, les
-prospects, les portefeuilles ou les ordres de bourse. L'ensemble doit aussi
-pouvoir évoluer sans tout casser, en gardant des interfaces cohérentes côté
-clients comme côté équipes internes.
+Pour cela, les responsabilités sont réparties entre des modules spécialisés,
+les accès sont contrôlés par des mécanismes dédiés et les données sensibles sont
+isolées selon leur domaine fonctionnel. Les opérations importantes font l'objet
+d'une traçabilité adaptée, tandis que l'organisation retenue facilite l'ajout ou
+l'évolution des fonctionnalités.
 
-Ces principes conduisent à retenir une architecture modulaire, organisée autour de blocs
-spécialisés qui communiquent entre eux de manière contrôlée \cite{fowler_microservices}.
-% ─────────────────────────────────────────────────
+Ces principes conduisent à une architecture modulaire composée de services
+spécialisés communiquant de manière contrôlée \cite{fowler_microservices}.% ─────────────────────────────────────────────────
 \section{Architecture logique de la solution}
 
 \subsection{Vue d'ensemble}
@@ -118,23 +108,22 @@ Les interfaces web de la plateforme sont développées avec \textbf{Next.js 16}
 \cite{nextjs_docs} et \textbf{TypeScript} \cite{typescript_docs}, afin de construire les applications front-office, back-office et Module Manager
 modernes, maintenables et adaptées aux différents profils utilisateurs. Le backend repose
 sur \textbf{Spring Boot 3.5} \cite{spring_boot_docs}, utilisé comme socle de développement des microservices
-métier. L'accès aux services est centralisé par \textbf{Spring Cloud Gateway}
-\cite{spring_gateway_docs}, qui assure
-le routage, les filtres de sécurité et la résilience. La gestion des identités et des
-rôles est confiée à \textbf{Keycloak} \cite{keycloak_docs}, tandis que
-\textbf{Netflix Eureka} \cite{spring_eureka_docs} permet la découverte dynamique des services.
+métier.
+L'accès aux différents services passe par \textbf{Spring Cloud Gateway}
+\cite{spring_gateway_docs}, qui joue le rôle de point d'entrée de l'architecture. Il assure le routage des requêtes et applique les mécanismes de sécurité communs. La gestion des utilisateurs et des rôles repose sur \textbf{Keycloak}
+\cite{keycloak_docs}, tandis que \textbf{Netflix Eureka}
+\cite{spring_eureka_docs} facilite la localisation des microservices au sein du système.
 
-Pour la persistance, \textbf{PostgreSQL} \cite{postgresql_docs} est retenu comme système de gestion de bases de
-données relationnel, avec une base isolée par microservice afin de préserver l'autonomie
-des données. \textbf{Redis} \cite{redis_docs} est utilisé pour le cache et le contrôle de débit, tandis que
-\textbf{RabbitMQ} \cite{rabbitmq_docs} prend en charge la communication asynchrone entre les services,
-notamment pour les événements d'audit. Les documents clients et les pièces KYC sont
-stockés dans \textbf{MinIO} \cite{minio_docs}, qui permet de gérer un stockage objet sécurisé.
+Chaque microservice dispose de sa propre base \textbf{PostgreSQL}
+\cite{postgresql_docs}, ce qui permet de conserver une séparation claire des données. \textbf{Redis}
+\cite{redis_docs} intervient pour les besoins de cache et certaines fonctionnalités techniques comme la limitation du nombre de requêtes. Les échanges asynchrones entre services reposent sur \textbf{RabbitMQ}
+\cite{rabbitmq_docs}, notamment pour la diffusion des événements d'audit. Les documents clients et les pièces KYC sont quant à eux stockés dans \textbf{MinIO}
+\cite{minio_docs}.
 
-Les fonctionnalités d'intelligence artificielle s'appuient notamment sur \textbf{Rasa}
-\cite{rasa_docs}
-pour le chatbot conversationnel et sur des services spécialisés de scoring ou de
-segmentation. La traçabilité technique est assurée par \textbf{Zipkin} \cite{zipkin_docs}, qui permet de
+Les fonctionnalités d'intelligence artificielle reposent notamment sur \textbf{Rasa}
+\cite{rasa_docs} pour les échanges conversationnels, ainsi que sur des services dédiés à l'évaluation des prospects et à l'analyse des données clients.
+
+ La traçabilité technique est assurée par \textbf{Zipkin} \cite{zipkin_docs}, qui permet de
 suivre les appels entre microservices. Enfin, \textbf{Docker} \cite{docker_docs} et
 \textbf{Docker Compose} \cite{docker_compose_docs}
 constituent l'environnement de référence pour le développement local et
@@ -142,23 +131,17 @@ l'organisation des composants en ensembles Compose.
 
 \section{Architecture technique de la solution}
 
-Après le choix des outils, l'architecture technique précise la manière dont ces
-technologies sont assemblées pour faire fonctionner la plateforme. Elle met en relation
-les applications web, la passerelle API, les microservices, les bases de données et les
-composants transversaux nécessaires à la sécurité, à la communication et à
-l'observabilité.
 
-Dans cette architecture, les applications front-office et back-office consomment les API
-exposées par la passerelle. Celle-ci constitue le point d'entrée technique vers les
-services internes et applique les règles de sécurité et de routage. Les microservices
-métier, dont le service Relation Client et le service SGI, disposent chacun de leur propre
-persistance et communiquent avec les services transversaux selon les besoins de leurs
-traitements.
+Après la présentation des technologies retenues, il est nécessaire de préciser leur organisation au sein de la plateforme. L’architecture technique décrit la manière dont les différents composants interagissent pour assurer le fonctionnement du système.
 
-Cette organisation permet de matérialiser les principes définis précédemment tout en
-préparant le passage vers la conception détaillée des fonctionnalités. La
-figure~\ref{fig:architecture_technique} montre les liens entre les technologies retenues
-et les composants applicatifs.
+
+Les applications front-office et back-office communiquent avec les microservices à travers une passerelle API qui centralise les accès et applique les règles de sécurité. Chaque microservice dispose de sa propre base de données et peut utiliser des services transversaux tels que la messagerie, le cache ou la supervision selon ses besoins.
+
+
+Cette architecture permet de garantir la modularité du système et facilite son évolution. La figure~\ref{fig:architecture_technique} présente l’organisation générale des composants et leurs interactions.
+
+
+
 
 \begin{figure}[H]
     \centering
@@ -170,33 +153,24 @@ et les composants applicatifs.
 % ─────────────────────────────────────────────────
 \section{Conception détaillée}
 
-Après la présentation des architectures logique et technique, cette section détaille
-le fonctionnement interne d'un scénario représentatif du module Relation Client :
-\textbf{la création d'un prospect}. Ce choix permet d'illustrer, de manière ciblée,
-le cheminement d'une demande depuis l'interface back-office jusqu'aux services backend,
-en passant par la passerelle API, le service CRM et sa persistance, le scoring par
-intelligence artificielle et la traçabilité.
 
-La section présente successivement le périmètre du scénario retenu, le workflow
-de création illustré par une figure, une synthèse des principales API mobilisées,
-puis une vue de conception montrant les artefacts concernés et leurs relations.
-
+Après la présentation des architectures logique et technique, cette section illustre le fonctionnement du module Relation Client à travers le scénario de création d’un prospect. Elle présente le périmètre retenu, le workflow associé ainsi que les principaux composants impliqués dans le traitement de la demande.
 \subsection{Périmètre du scénario}
 
-Le scénario étudié correspond à l'enregistrement initial d'un prospect par le
-chargé de clientèle. Il couvre la saisie des informations commerciales, la
-transmission de la demande au backend, la création de l'enregistrement dans le
-service CRM, le calcul d'un score initial et la publication d'une trace d'audit.
-Les évolutions ultérieures du dossier prospect ne sont pas détaillées dans cette
-conception afin de garder un périmètre maîtrisé.
+Le scénario retenu concerne la création d’un prospect par un chargé de clientèle.
+Il couvre la saisie des informations, leur transmission au backend, l’enregistrement
+du prospect dans le service CRM, le calcul d’un score initial ainsi que la génération
+d’une trace d’audit. Les étapes suivantes du cycle de vie du prospect ne sont pas
+abordées afin de conserver un périmètre limité.
 
 \subsection{Workflow de création}
 
-La création d'un prospect commence par la saisie des informations dans la vue Prospects.
-La demande est transmise à la passerelle API, puis routée vers le service CRM. Celui-ci
-contrôle les informations reçues, persiste le prospect, sollicite le service de scoring IA
-et publie une trace d'audit. La figure~\ref{fig:workflow_creation_prospect} illustre ce
-scénario.
+La création d’un prospect débute par la saisie des informations dans l’interface
+back-office. La demande est ensuite transmise à la passerelle API, puis routée vers
+le service CRM. Après validation des données, le prospect est enregistré, un score
+initial est calculé par le service d’IA et une trace d’audit est générée. La
+figure~\ref{fig:workflow_creation_prospect} présente les principales étapes de ce
+processus.
 
 \begin{figure}[H]
     \centering
@@ -257,26 +231,9 @@ passerelle, service métier, données, intelligence artificielle et audit.
 % ─────────────────────────────────────────────────
 \section{Architecture de déploiement}
 
-La plateforme réalisée est déployée sur un VPS AlmaLinux \cite{almalinux_official} mis à notre
-disposition. Cette vue complète l'architecture logique en présentant
-l'organisation des ensembles Compose \cite{docker_compose_docs}, les réseaux de conteneurs et le principe
-de redéploiement progressif.
+La plateforme est déployée sur un VPS AlmaLinux \cite{almalinux_official} à l’aide de Docker \cite{docker_docs} et Docker Compose \cite{docker_compose_docs}. Le déploiement est organisé en quatre ensembles : \texttt{infra}, \texttt{core}, \texttt{module} et \texttt{office}, qui regroupent respectivement les services communs, les référentiels, les modules métier et les interfaces utilisateur.
 
-Le déploiement est structuré en quatre ensembles : \texttt{infra},
-\texttt{core}, \texttt{module} et \texttt{office}. Ce découpage reste aligné
-avec Docker \cite{docker_docs} et Docker Compose \cite{docker_compose_docs},
-aussi bien en local que sur le VPS AlmaLinux \cite{almalinux_official}. Les quatre ensembles isolent
-respectivement les services communs, les référentiels, les modules métier et
-les interfaces utilisateur.
-
-Deux réseaux organisent les échanges. Le réseau \texttt{sib\_public} expose la
-passerelle API et les applications web, tandis que le réseau
-\texttt{sib\_internal} isole les microservices et les bases de données. La
-passerelle appartient aux deux réseaux et assure la frontière entre accès
-extérieur et services internes.
-
-La figure~\ref{fig:architecture_deploiement} synthétise cette organisation.
-
+Deux réseaux assurent les communications : \texttt{sib\_public}, destiné aux accès externes, et \texttt{sib\_internal}, réservé aux échanges internes entre microservices et bases de données. La figure~\ref{fig:architecture_deploiement} présente cette organisation.
 \begin{figure}[H]
     \centering
     \MemoireFigureLarge{images/contenu/chapitre-3/architecture_deploiement.png}

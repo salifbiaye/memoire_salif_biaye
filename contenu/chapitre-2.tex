@@ -9,19 +9,16 @@
 
 Après la présentation du cadre général du projet, ce deuxième chapitre a pour objectif
 d'analyser les besoins auxquels doit répondre le futur système I-SIB dans le périmètre des
-modules Relation Client et SGI. Il s'agit de préciser les utilisateurs concernés, le rôle
-attendu du système, les fonctionnalités nécessaires et les exigences de qualité qui doivent
-guider la conception. Ce travail conditionne la suite, puisqu'il transforme une problématique encore
-générale en besoins concrets, directement exploitables pour la conception.
+modules Relation Client et SGI.
+L'objectif est d'identifier les utilisateurs concernés, de préciser le rôle du système, les fonctionnalités attendues ainsi que les principales exigences de qualité à prendre en compte.
+Cette étape a pour objectif de préciser les besoins du système et les fonctionnalités à mettre en œuvre.
 
-La difficulté à lever est bien identifiée. Aujourd'hui, la relation client et les
-services d'investissement vivent séparés. Informations clients, interactions
-commerciales, données KYC, comptes bancaires, portefeuilles-titres, ordres de
-bourse… tout cela se retrouve souvent réparti dans des outils qui ne se parlent
-pas. Faute de communication entre ces systèmes, il devient difficile de
-reconstituer une vue unifiée d'un même client, et son expérience reste
-fragmentée, éclatée d'un outil à l'autre. L'enjeu de l'analyse qui suit est donc
-de poser une solution capable de centraliser et d'unifier ces informations.
+Dans de nombreux établissements, les activités de relation client et les activités d'investissement sont gérées séparément. Les données clients, les informations KYC, les comptes bancaires, les portefeuilles et les ordres de bourse sont souvent répartis entre plusieurs outils.
+
+Cette situation rend le suivi d'un client plus complexe, car les informations nécessaires sont dispersées dans plusieurs outils.
+
+ L'analyse présentée dans ce chapitre vise donc à définir les besoins d'une solution capable de rapprocher ces différents domaines au sein d'une même plateforme.
+
 
 Le chapitre commence par situer le rôle du système et les acteurs concernés,
 avant de présenter les fonctionnalités retenues. Deux d'entre elles sont mises
@@ -50,33 +47,24 @@ les cotations et soumettre des demandes d'achat ou de vente de titres sans sorti
 l'écosystème bancaire.
 
 Le \textbf{chargé de clientèle} est un utilisateur interne chargé du suivi commercial et
-de l'accompagnement des clients. Il attend du système une vue complète sur chaque client,
-la possibilité de suivre les prospects dans un pipeline structuré, de recevoir des alertes
-pertinentes et de prioriser ses actions commerciales, notamment lorsque le suivi client
-fait apparaître un risque de départ.
+de l'accompagnement des clients.
+Il attend du système qu'il facilite le suivi des clients et des prospects, tout en lui donnant accès aux informations dont il a besoin pour mener ses activités commerciales.
+Il doit également permettre d'identifier plus facilement les clients nécessitant une attention particulière.
 
-L'\textbf{équipe SGI} est un utilisateur interne spécialisé dans les opérations sur titres
-et la gestion de portefeuille. Du système, elle attend de quoi superviser les
-portefeuilles clients, traiter les ordres de bourse, suivre les performances et
-s'appuyer sur les cotations pour éclairer les décisions d'investissement.
+L'\textbf{équipe SGI} est un utilisateur interne spécialisé dans les opérations sur titres et la gestion de portefeuille. Elle utilise le système pour gérer les portefeuilles clients, traiter les ordres de bourse et suivre l'évolution des investissements à partir des informations de marché disponibles.
 
-Le système à concevoir fait ainsi le pont entre deux dimensions jusque-là
-distinctes, la relation client et l'investissement. Il doit garantir que chaque acteur accède uniquement
-aux informations et aux actions correspondant à son rôle, tout en assurant la cohérence
-globale des données manipulées.
+Le système réunit au sein d'une même plateforme les fonctionnalités liées à la relation client et aux activités d'investissement. Chaque utilisateur accède uniquement aux informations et aux actions correspondant à son rôle, tout en travaillant sur des données partagées entre les différents modules.
 
 % ─────────────────────────────────────────────────
 \section{Fonctionnalités du système}
 
-Le système I-SIB est structuré autour de deux modules fonctionnels complémentaires. Le
-module \textbf{Relation Client} est dédié à la centralisation de la connaissance client et
-au pilotage commercial. Le module \textbf{SGI} (Société de Gestion et d'Intermédiation)
-couvre les services d'investissement, du suivi de portefeuille au traitement des ordres de
-bourse. La présente section décrit les fonctionnalités offertes par chacun de ces modules.
-Pour chaque module, une première illustration présente la liste générale des fonctionnalités
-et les interactions avec les acteurs. Une fonctionnalité représentative est ensuite
-détaillée à travers un tableau descriptif, puis complétée par une représentation graphique
-du flux de traitement.
+I-SIB comprend deux modules principaux. Le module \textbf{Relation Client} regroupe les fonctionnalités liées à la gestion des clients, au suivi des prospects et aux activités commerciales. Le module \textbf{SGI} (Société de Gestion et d'Intermédiation) prend en charge les fonctionnalités associées aux investissements, notamment le suivi des portefeuilles et le traitement des ordres de bourse.
+
+ La présente section décrit les fonctionnalités offertes par chacun de ces modules.
+
+Pour chaque module, les principales fonctionnalités et les interactions avec les acteurs sont d'abord présentées. Une fonctionnalité jugée représentative est ensuite détaillée à travers une fiche descriptive puis illustrée afin de montrer les différentes étapes de son traitement.
+
+
 
 % ─────────────────────────────────────────────────
 \subsection{Module Relation Client}
@@ -104,54 +92,66 @@ de clientèle enregistre un nouveau contact, que le système positionne au stade
 enrichit automatiquement d'un score de conversion calculé par intelligence artificielle.
 La fiche~\ref{tab:rc_creation_prospect} en présente la description détaillée.
 
+
 \begin{table}[H]
-    \centering
-    \caption{Fiche descriptive -- Création d'un prospect}
-    \label{tab:rc_creation_prospect}
-    \renewcommand{\arraystretch}{1.5}
-    \begin{tabular}{|>{\bfseries}p{3.8cm}|p{10.5cm}|}
-        \hline
-        Acteurs            & Chargé de clientèle \\ \hline
-        Préconditions      &
-        \begin{minipage}[t]{\linewidth}\vspace{2pt}
-        \begin{itemize}[leftmargin=*,topsep=0pt,itemsep=1pt,parsep=0pt]
-            \item L'utilisateur est authentifié avec le rôle \textit{chargé de clientèle}
-            \item Le module de gestion des prospects est accessible
-        \end{itemize}
-        \vspace{2pt}\end{minipage} \\ \hline
-        Scénario nominal   &
-        \begin{minipage}[t]{\linewidth}\vspace{2pt}
-        \begin{enumerate}[leftmargin=*,topsep=0pt,itemsep=2pt,parsep=0pt]
-            \item Le chargé de clientèle saisit les informations du prospect
-            (nom, prénom, email, téléphone, source ; éventuellement société,
-            valeur estimée, produits d'intérêt)
-            \item Le système vérifie que l'email n'est pas déjà associé à un
-            prospect existant
-            \item Le système enregistre le prospect au stade initial
-            \textit{LEAD}, l'assigne automatiquement au conseiller créateur et
-            lui attribue un score par défaut
-            \item Le système sollicite l'API d'intelligence artificielle pour
-            calculer le score de conversion du prospect
-            \item Le score, la probabilité de conversion et la priorité
-            recommandée sont appliqués au prospect
-            \item Le système confirme la création et affiche la fiche du prospect
-        \end{enumerate}
-        \vspace{2pt}\end{minipage} \\ \hline
-        Scénario alternatif &
-        \begin{minipage}[t]{\linewidth}\vspace{2pt}
-        \textbf{A1 -- Email déjà existant :} le système rejette la création et
-        signale que l'adresse email est déjà associée à un prospect ; aucune
-        donnée n'est enregistrée
-        \vspace{2pt}\end{minipage} \\ \hline
-        Scénario d'exception &
-        \textbf{E1 -- API de scoring indisponible :} le calcul du score échoue ;
-        le système conserve le prospect avec son score par défaut et journalise
-        l'incident. La création du prospect reste valide \\ \hline
-        Postconditions     & Le prospect est créé, rattaché au conseiller et
-        positionné au stade \textit{LEAD} dans le pipeline ; un évènement
-        d'audit \textit{CREATED / PROSPECT} est enregistré \\ \hline
-    \end{tabular}
+\centering
+\caption{Fiche descriptive -- Création d'un prospect}
+\label{tab:rc_creation_prospect}
+\renewcommand{\arraystretch}{1.5}
+\begin{tabular}{|>{\bfseries}p{3.8cm}|p{10.5cm}|}
+\hline
+Acteurs & Chargé de clientèle \\ \hline
+
+    Préconditions &
+    \begin{minipage}[t]{\linewidth}\vspace{2pt}
+    \begin{itemize}[leftmargin=*,topsep=0pt,itemsep=1pt,parsep=0pt]
+        \item L'utilisateur est authentifié avec le rôle \textit{chargé de clientèle}
+        \item Le module de gestion des prospects est accessible
+    \end{itemize}
+    \vspace{2pt}\end{minipage} \\ \hline
+
+    Scénario nominal &
+    \begin{minipage}[t]{\linewidth}\vspace{2pt}
+    \begin{enumerate}[leftmargin=*,topsep=0pt,itemsep=2pt,parsep=0pt]
+        \item Le chargé de clientèle renseigne les informations du prospect
+        (nom, prénom, email, téléphone, source ; éventuellement société,
+        valeur estimée et produits d'intérêt)
+
+        \item Le système vérifie qu'aucun prospect existant n'utilise déjà
+        cette adresse email
+
+        \item Le prospect est enregistré au stade initial
+        \textit{LEAD}, puis associé automatiquement au conseiller qui l'a créé.
+        Un score initial lui est attribué
+
+        \item Une évaluation est réalisée afin d'estimer le potentiel de
+        conversion du prospect
+
+        \item Les résultats obtenus sont enregistrés dans la fiche du prospect,
+        notamment son score, sa probabilité de conversion et son niveau de priorité
+
+        \item Le système confirme l'enregistrement et affiche la fiche du prospect
+    \end{enumerate}
+    \vspace{2pt}\end{minipage} \\ \hline
+
+    Scénario alternatif &
+    \begin{minipage}[t]{\linewidth}\vspace{2pt}
+    \textbf{A1 -- Email déjà utilisé :} la création est refusée et un message
+    indique qu'un prospect est déjà associé à cette adresse email.
+    \vspace{2pt}\end{minipage} \\ \hline
+
+    Scénario d'exception &
+    \textbf{E1 -- Service de scoring indisponible :} l'évaluation du prospect
+    ne peut pas être réalisée. Le prospect est néanmoins créé avec son score
+    initial et l'incident est enregistré dans les journaux du système. \\ \hline
+
+    Postconditions &
+    Le prospect est créé, associé au conseiller concerné et positionné au
+    stade \textit{LEAD}. Une trace de création est conservée dans le journal
+    d'audit. \\ \hline
+\end{tabular}
 \end{table}
+
 
 La figure~\ref{fig:rc_prospects} représente le déroulement de cette fonctionnalité à
 travers un diagramme de séquence.
@@ -206,20 +206,15 @@ fiche~\ref{tab:sgi_ordres} en présente la description détaillée.
         \vspace{2pt}\end{minipage} \\ \hline
         Scénario nominal   &
         \begin{minipage}[t]{\linewidth}\vspace{2pt}
+
         \begin{enumerate}[leftmargin=*,topsep=0pt,itemsep=2pt,parsep=0pt]
-            \item Le client saisit un ordre en précisant le titre, le sens
-            (achat ou vente) et la quantité
-            \item Le système vérifie que le portefeuille appartient au client
-            et récupère la cotation du titre
-            \item Le système enregistre l'ordre au statut \textit{En attente}
-            \item L'équipe SGI consulte la liste des ordres en attente
-            \item L'équipe SGI approuve l'ordre ; le système contrôle la
-            liquidité (solde espèces suffisant) et passe le statut à
-            \textit{Approuvé}
-            \item L'équipe SGI exécute l'ordre ; le système simule l'exécution
-            (prix, quantité, frais), débite le compte espèces, crédite le compte
-            titres, met à jour le portefeuille et passe le statut à
-            \textit{Exécuté}
+            \item Le client saisit un ordre en indiquant le titre concerné, le type d'opération (achat ou vente) ainsi que la quantité souhaitée.
+            \item Le système vérifie que le portefeuille est bien associé au client et récupère les informations de cotation du titre.
+            \item L'ordre est enregistré avec le statut \textit{En attente}.
+            \item L'équipe SGI consulte les ordres en attente de traitement.
+            \item Après examen, l'équipe SGI valide l'ordre. Le système vérifie alors la disponibilité des fonds nécessaires et attribue à l'ordre le statut \textit{Approuvé}.
+            \item L'équipe SGI procède à l'exécution de l'ordre. Le système met à jour les comptes concernés, applique les frais éventuels, actualise le portefeuille et affecte à l'ordre le statut
+            \item \textit{Exécuté}.
             \item Le client consulte l'état actualisé de son ordre et de son
             portefeuille
         \end{enumerate}
@@ -253,7 +248,7 @@ travers un diagramme de séquence.
 \clearpage
 \begin{figure}[H]
     \centering
-    \MemoireFigureBox{width=\linewidth,keepaspectratio}{0.98\textwidth}{images/contenu/chapitre-2/sgi_seq_passage_ordres.png}
+    \MemoireFigureMedium{images/contenu/chapitre-2/sgi_seq_passage_ordres.png}
     \caption{Circuit de soumission et de traitement d'un ordre de bourse du client à l'exécution}
     \label{fig:sgi_ordres}
 \end{figure}
@@ -261,34 +256,26 @@ travers un diagramme de séquence.
 \section{Exigences non fonctionnelles}
 
 En plus des fonctionnalités, le système doit respecter plusieurs exigences non
-fonctionnelles. Ces exigences déterminent la qualité globale de la solution et sont
-particulièrement importantes dans un environnement bancaire. Elles encadrent la manière
-dont le système doit être conçu, sécurisé, maintenu et utilisé.
+fonctionnelles.
+Ces exigences complètent les besoins fonctionnels présentés précédemment. Elles décrivent les contraintes que le système doit respecter afin de répondre aux attentes des utilisateurs et aux exigences du domaine bancaire.
+
 
 \begin{description}
-    \item[Sécurité] Les accès doivent être contrôlés par rôle. Un client ne doit accéder
-    qu'à ses propres données, tandis que les utilisateurs internes doivent disposer
-    d'autorisations adaptées à leurs responsabilités.
+\item[Sécurité] Les fonctionnalités accessibles dépendent du rôle de l'utilisateur. Un client accède uniquement à ses propres informations, tandis que les collaborateurs disposent des droits nécessaires à leurs missions.
 
-    \item[Confidentialité] Les données personnelles, KYC, bancaires et d'investissement
-    doivent être protégées contre tout accès non autorisé.
+\item[Confidentialité] Les informations personnelles, bancaires, KYC et les données d'investissement ne doivent être consultées que par les personnes autorisées.
 
-    \item[Traçabilité] Les actions importantes doivent être historisées : consultation
-    sensible, modification de données, validation ou rejet d'ordre, et mise à jour
-    de statut.
+\item[Traçabilité] Les opérations importantes, telles que les validations d'ordres, les modifications de données ou les changements de statut, doivent laisser une trace consultable.
 
-    \item[Disponibilité] Le système doit être accessible de manière continue afin de
-    permettre la consultation des informations et le suivi des opérations.
+\item[Disponibilité] Les utilisateurs doivent pouvoir accéder au système et consulter les informations nécessaires à leurs activités sans interruption prolongée.
 
-    \item[Évolutivité] La solution doit pouvoir intégrer de nouvelles fonctionnalités et
-    de nouveaux modules sans remettre en cause l'ensemble de l'architecture existante.
+\item[Évolutivité] L'ajout de nouveaux modules ou de nouvelles fonctionnalités ne doit pas nécessiter une refonte importante du système existant.
 
-    \item[Ergonomie] Les interfaces doivent être simples, lisibles et adaptées aux profils
-    utilisateurs afin de réduire les erreurs et de faciliter l'adoption du système.
+\item[Ergonomie] Les écrans doivent être faciles à comprendre et à utiliser afin de limiter les erreurs de manipulation.
 \end{description}
 
-Ces exigences sont d'autant plus sensibles que le système manipule des données
-personnelles et financières. La sécurité et la confidentialité protègent ces
+L'ensemble de ces exigences devra être pris en compte lors de la conception et de la mise en œuvre de la solution.
+ La sécurité et la confidentialité protègent ces
 données contre les accès non autorisés. La traçabilité permet, de son côté, de
 reconstituer les opérations et de répondre aux contrôles. Quant à l'ergonomie,
 elle conditionne directement l'adoption du système, car un outil complet mais

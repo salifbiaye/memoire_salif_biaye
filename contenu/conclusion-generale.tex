@@ -1,23 +1,19 @@
+
 \chapter*{Conclusion générale}
 \phantomsection
 \addcontentsline{toc}{chapter}{Conclusion générale}
 \markboth{Conclusion générale}{Conclusion générale}
 
-Ce mémoire avait pour objectif de concevoir et de réaliser une solution bancaire
-intelligente centrée sur deux volets complémentaires : la gestion de la relation
-client et les services d'investissement. À travers la plateforme \textbf{I-SIB},
-le travail mené a permis de proposer une base applicative modulaire, sécurisée
-et évolutive, adaptée à un contexte bancaire où la centralisation des
-informations et la continuité des parcours deviennent essentielles.
+Ce mémoire avait pour objectif de concevoir et de réaliser une solution bancaire intégrant la gestion de la relation client et les services d'investissement. Les travaux réalisés autour de la plateforme \textbf{I-SIB} ont permis de mettre en place une solution reposant sur une architecture à microservices et couvrant les principales fonctionnalités étudiées dans le cadre du projet.
 
-L'analyse des besoins et des acteurs du système a constitué le point de départ,
-d'où ont découlé les exigences fonctionnelles et non fonctionnelles.
-L'architecture microservices était fixée comme cadre du projet ; nous l'avons
-organisée en services métier distincts, placés derrière une passerelle API. Pour
-la sécurité et la traçabilité, la plateforme s'appuie sur une gestion des accès
-par rôles et sur un service d'audit. Enfin, pour garder une étude lisible, nous
-avons resserré la conception détaillée sur deux scénarios, la création d'un
-prospect et le passage d'ordres.
+
+Le travail a commencé par l'étude du contexte et des besoins du projet. Cette étape a permis de préciser les fonctionnalités à développer ainsi que les contraintes propres au domaine bancaire.
+
+L'architecture mise en place est composée de plusieurs services métier communiquant à travers une passerelle API. Les droits d'accès sont gérés selon le rôle de chaque utilisateur et les principales opérations réalisées dans le système sont enregistrées à des fins de suivi.
+
+ Afin d'illustrer la conception et la réalisation de la solution, l'étude s'est concentrée sur deux fonctionnalités représentatives : la création d'un prospect pour le module Relation Client et le passage d'ordre pour le module SGI.
+
+
 
 Les résultats obtenus couvrent le périmètre fonctionnel réalisé. Le module
 Relation Client permet de centraliser les informations utiles au suivi
@@ -35,13 +31,8 @@ production. Les cotations BRVM \cite{brvm_actions} proviennent encore d'une
 source publique tierce \cite{brvm_data_public}, sans branchement direct sur le
 flux de marché officiel ; les modèles d'intelligence artificielle devront être évalués sur des
 données réelles, et certaines connexions avec les autres modules bancaires
-restent à finaliser. Le passage en production nécessitera également des tests
-complémentaires, un audit de sécurité, une supervision renforcée, des
-sauvegardes et une stratégie de reprise clairement définie.
+restent à finaliser.
+Avant une mise en production, certains aspects devront être approfondis, notamment la sécurité, la supervision de la plateforme et la gestion des sauvegardes.
 
-En définitive, ce projet montre la faisabilité d'une plateforme bancaire
-unifiée associant relation client, services d'investissement, architecture
-modulaire et premiers mécanismes d'aide intelligente. I-SIB constitue ainsi une
-base de travail solide, appelée à évoluer progressivement vers une solution plus
-complète, mieux intégrée aux données réelles et adaptée aux besoins opérationnels
-des institutions financières.
+Au terme de ce travail, I-SIB propose une première implémentation réunissant les modules de relation client et de gestion d'investissement au sein d'un même système. Les fonctionnalités développées répondent aux objectifs définis dans le périmètre étudié et offrent une base sur laquelle la solution pourra continuer à évoluer.
+

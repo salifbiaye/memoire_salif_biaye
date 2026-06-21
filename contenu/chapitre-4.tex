@@ -8,18 +8,13 @@
 \phantomsection
 \addcontentsline{toc}{section}{Introduction}
 
-Après l'analyse des besoins et la conception de la solution, ce chapitre
-présente les résultats obtenus lors de la réalisation de la plateforme I-SIB.
-Il met en évidence les usages disponibles autour de la relation client, de la
-prospection et des services SGI, puis montre comment ces résultats répondent au
-périmètre fonctionnel étudié.
 
-Les résultats sont décrits à partir des principaux parcours observés dans
-l'environnement de validation. Les illustrations s'appuient sur des données de
-démonstration pour la partie client, tandis que les cotations BRVM
-\cite{brvm_data_public} proviennent d'une source publique tierce actualisée
-quotidiennement. Le chapitre se termine par une analyse critique des apports, des
-limites et des perspectives d'évolution de la solution.
+Après l'analyse des besoins et la conception de la solution, ce chapitre présente la réalisation de la plateforme I-SIB. Il s'intéresse aux fonctionnalités mises en œuvre dans les modules Relation Client et SGI, en s'appuyant sur plusieurs scénarios représentatifs du périmètre étudié.
+
+Les exemples présentés ont été réalisés dans l'environnement de validation. Les données utilisées pour la partie Relation Client sont des données de démonstration, tandis que les informations boursières reposent sur les cotations BRVM \cite{brvm_data_public}, issues d'une source publique mise à jour quotidiennement.
+
+Le chapitre se termine par un retour sur les principaux apports de la solution ainsi que sur les améliorations qui pourront être envisagées par la suite.
+
 
 % ─────────────────────────────────────────────────
 \section{Résultats fonctionnels obtenus}
@@ -113,22 +108,58 @@ Cette section met en perspective les résultats obtenus au regard des attentes
 fonctionnelles, de la qualité logicielle \cite{iso25010} et des exigences de
 sécurité applicative \cite{owasp_asvs}.
 
+\subsection{Évaluation de la dégradation gracieuse du scoring}
+
+Nous avons mené une expérimentation pour tester la dégradation gracieuse du
+scoring. Le principe consiste à créer 40 prospects via la passerelle
+(\texttt{POST /api/crm/prospects}), une première fois avec le service de scoring
+actif, puis une seconde fois après son arrêt. Le tableau~\ref{tab:eval_degradation}
+présente les résultats obtenus. Pour chaque requête, le code HTTP et le temps de
+réponse sont relevés, les appels étant espacés afin de respecter la limitation
+de débit de la passerelle.
+
+\begin{table}[h]
+    \centering
+    \renewcommand{\arraystretch}{1.4}
+    \setlength{\tabcolsep}{10pt}
+    \begin{tabular}{|l|c|c|c|c|}
+        \hline
+        \textbf{Condition} & \textbf{Taux de succès} & \textbf{Moyenne} & \textbf{p50} & \textbf{p95} \\
+        \hline
+        Scoring actif   & 40/40 (100\,\%) & 82\,ms   & 47\,ms   & 67\,ms \\
+        \hline
+        Scoring arrêté  & 40/40 (100\,\%) & 1593\,ms & 1544\,ms & 2034\,ms \\
+        \hline
+    \end{tabular}
+    \caption{Création de prospect avec et sans service de scoring
+        (40 requêtes par condition).}
+    \label{tab:eval_degradation}
+\end{table}
+
+Dans les deux conditions, les 40 créations aboutissent~: la dégradation gracieuse
+est totale.
+Lorsque le service de scoring est indisponible, la création d'un prospect reste possible. Dans ce cas, le système attribue un score par défaut et la requête se termine normalement avec un code de réponse 201. Le fonctionnement du module de création ne dépend donc pas directement de la disponibilité du service de scoring.
+
+La principale différence observée concerne le temps de réponse. Avec le service de scoring actif, la création d'un prospect s'effectue en quelques dizaines de millisecondes.
+Lorsque le service de scoring n'est pas disponible, le système attend jusqu'à deux secondes avant d'appliquer un score par défaut. Cette limite évite que l'indisponibilité du service ne retarde excessivement la création d'un prospect.
+
+Les mesures ont été effectuées sur un environnement de test simple. Elles montrent que la création d'un prospect reste possible même en l'absence du service de scoring.
+
+Une amélioration possible consisterait à effectuer le calcul du score après la création du prospect, en arrière-plan, afin d'éviter toute attente supplémentaire en cas d'indisponibilité du service.
+
 \subsection{Points forts}
 
 \begin{description}[itemsep=1pt,parsep=0pt]
-    \item[Parcours métier intégrés.] I-SIB regroupe dans une même plateforme le
-          portefeuille client, le suivi des prospects et la préparation des
-          opérations d'investissement.
-    \item[Architecture évolutive.] Le découpage en microservices
-          \cite{fowler_microservices} facilite l'enrichissement progressif de la
-          solution et l'isolation des responsabilités métier.
-    \item[Sécurité et traçabilité intégrées.] La gestion des identités, des rôles
-          et des traces d'opérations contribue à encadrer les accès et à suivre
-          les actions réalisées.
-    \item[Déploiement de validation.] La plateforme a été installée sur un VPS
-          AlmaLinux \cite{almalinux_official} pour tester les services réalisés et le redéploiement
-          progressif des composants.
+\item[Modules complémentaires.] La plateforme réunit dans un même environnement les fonctionnalités liées à la relation client et aux activités d'investissement.
+
+\item[Architecture par microservices.] L'organisation retenue facilite l'ajout de nouvelles fonctionnalités et limite les dépendances entre les différents domaines métier.
+
+\item[Gestion des accès et suivi des opérations.] Les mécanismes d'authentification, d'autorisation et de journalisation contribuent à sécuriser l'utilisation du système.
+
+\item[Validation en environnement réel.] La plateforme a été déployée sur un serveur VPS AlmaLinux \cite{almalinux_official} afin de vérifier son fonctionnement et les procédures de mise à jour des services.
 \end{description}
+
+
 
 \subsection{Points faibles et limites}
 
@@ -158,14 +189,13 @@ modèles de scoring et de churn, la stabilisation de la stratégie de déploieme
 et l'ouverture de la plateforme vers des usages mobiles.
 
 % ─────────────────────────────────────────────────
+
 \section*{Conclusion}
 \phantomsection
 \addcontentsline{toc}{section}{Conclusion}
 
-Ce chapitre a présenté les résultats obtenus avec I-SIB. La plateforme offre une
-base fonctionnelle pour centraliser la connaissance client, suivre les
-prospects, consulter les instruments SGI et préparer les opérations
-d'investissement. L'analyse critique montre que la solution constitue une base
-exploitable en environnement de validation, mais qu'elle reste à consolider sur
-plusieurs points : intégration de données réelles, évaluation des modèles IA,
-renforcement de la sécurité et stabilisation du déploiement avant la production.
+Ce chapitre a présenté les résultats obtenus avec I-SIB. La plateforme permet de centraliser les informations liées à la relation client, de suivre les prospects et de prendre en charge les principales fonctionnalités du module SGI.
+Les tests menés au cours du projet ont permis de valider les principaux choix réalisés lors de la conception et du développement.
+
+Les fonctionnalités mises en œuvre couvrent les besoins définis pour les modules étudiés. D'autres évolutions pourront être envisagées par la suite, notamment autour de l'exploitation de données réelles et de l'ajout de nouvelles fonctionnalités.
+
