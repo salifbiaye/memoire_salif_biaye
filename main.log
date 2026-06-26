@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.5.11)  26 JUN 2026 16:36
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.5.11)  26 JUN 2026 18:14
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1301,7 +1301,7 @@ Package hyperref Info: Link coloring OFF on input line 4.
 
 Package hyperref Info: Option `pageanchor' set `false' on input line 5.
  (prelude/page_de_garde.tex
-<images/page-de-garde/drapeau_senegal.png, id=244, 276.03125pt x 183.68625pt>
+<images/page-de-garde/drapeau_senegal.png, id=248, 276.03125pt x 183.68625pt>
 File: images/page-de-garde/drapeau_senegal.png Graphic file (type png)
 <use images/page-de-garde/drapeau_senegal.png>
 Package pdftex.def Info: images/page-de-garde/drapeau_senegal.png  used on inpu
@@ -1311,7 +1311,7 @@ LaTeX Font Info:    Font shape `T1/ntxtlf/b/n' will be
 (Font)              scaled to size 12.0pt on input line 35.
 LaTeX Font Info:    Font shape `T1/ntxtlf/b/n' will be
 (Font)              scaled to size 16.8pt on input line 35.
-<images/page-de-garde/officiel_logo_esp.png, id=245, 1541.76pt x 1027.84pt>
+<images/page-de-garde/officiel_logo_esp.png, id=249, 1541.76pt x 1027.84pt>
 File: images/page-de-garde/officiel_logo_esp.png Graphic file (type png)
 <use images/page-de-garde/officiel_logo_esp.png>
 Package pdftex.def Info: images/page-de-garde/officiel_logo_esp.png  used on in
@@ -1326,7 +1326,7 @@ LaTeX Font Info:    Font shape `T1/ntxtlf/b/n' will be
 LaTeX Font Info:    Font shape `T1/ntxtlf/b/n' will be
 (Font)              scaled to size 13.3pt on input line 73.
 LaTeX Font Info:    Font shape `T1/ntxtlf/b/n' will be
-(Font)              scaled to size 12.4pt on input line 75.
+(Font)              scaled to size 12.5pt on input line 75.
 LaTeX Font Info:    Font shape `T1/ntxtlf/b/n' will be
 (Font)              scaled to size 13.2pt on input line 77.
 LaTeX Font Info:    Trying to load font information for OT1+minntx on input lin
@@ -1413,12 +1413,12 @@ LaTeX Font Info:    Font shape `T1/ntxtlf/b/n' will be
 (Font)              scaled to size 13.4pt on input line 93.
 LaTeX Font Info:    Font shape `T1/ntxtlf/b/n' will be
 (Font)              scaled to size 10.7pt on input line 95.
-<images/page-de-garde/innov4africa_logo.jpg, id=247, 1541.76pt x 1027.84pt>
+<images/page-de-garde/innov4africa_logo.jpg, id=251, 1541.76pt x 1027.84pt>
 File: images/page-de-garde/innov4africa_logo.jpg Graphic file (type jpg)
 <use images/page-de-garde/innov4africa_logo.jpg>
 Package pdftex.def Info: images/page-de-garde/innov4africa_logo.jpg  used on in
 put line 99.
-(pdftex.def)             Requested size: 85.3499pt x 56.9055pt.
+(pdftex.def)             Requested size: 106.68738pt x 71.13188pt.
 LaTeX Font Info:    Font shape `T1/ntxtlf/b/n' will be
 (Font)              scaled to size 11.8pt on input line 110.
 LaTeX Font Info:    Font shape `T1/ntxtlf/b/n' will be
@@ -1450,7 +1450,7 @@ File: images/page-de-garde/innov4africa_logo.jpg Graphic file (type jpg)
 <use images/page-de-garde/innov4africa_logo.jpg>
 Package pdftex.def Info: images/page-de-garde/innov4africa_logo.jpg  used on in
 put line 99.
-(pdftex.def)             Requested size: 85.3499pt x 56.9055pt.
+(pdftex.def)             Requested size: 106.68738pt x 71.13188pt.
 [2
 
 ])
@@ -1487,6 +1487,7 @@ Package babel Info: 'french' activates 'french' shorthands.
 (prelude/liminaires.tex (main.toc [7
 
 
+
 ])
 \tf@toc=\write5
 \openout5 = `main.toc'.
@@ -1497,11 +1498,13 @@ Package babel Info: 'french' activates 'french' shorthands.
 
  [9
 
+
 ] (main.lof)
 \tf@lof=\write7
 \openout7 = `main.lof'.
 
  [10
+
 
 ])
 (prelude/sigles_abreviations.tex
@@ -1532,7 +1535,7 @@ Package hyperref Warning: The anchor of a bookmark and its parent's must not
 [6
 
 ]
-<images/contenu/chapitre-2/use_case_relation_client.png, id=526, 1086.0575pt x 
+<images/contenu/chapitre-2/use_case_relation_client.png, id=534, 1086.0575pt x 
 1459.4525pt>
 File: images/contenu/chapitre-2/use_case_relation_client.png Graphic file (type
  png)
@@ -1541,7 +1544,7 @@ Package pdftex.def Info: images/contenu/chapitre-2/use_case_relation_client.png
   used on input line 80.
 (pdftex.def)             Requested size: 387.00314pt x 520.05785pt.
  [7] [8 <./images/contenu/chapitre-2/use_case_relation_client.png (PNG copy)>]
-<images/contenu/chapitre-2/rc_seq_prospects.png, id=538, 823.57687pt x 853.6893
+<images/contenu/chapitre-2/rc_seq_prospects.png, id=546, 823.57687pt x 853.6893
 8pt>
 File: images/contenu/chapitre-2/rc_seq_prospects.png Graphic file (type png)
 <use images/contenu/chapitre-2/rc_seq_prospects.png>
@@ -1549,7 +1552,7 @@ Package pdftex.def Info: images/contenu/chapitre-2/rc_seq_prospects.png  used o
 n input line 162.
 (pdftex.def)             Requested size: 415.9796pt x 431.19441pt.
  [9]
-<images/contenu/chapitre-2/use_case_sgi.png, id=550, 773.13844pt x 1055.44313pt
+<images/contenu/chapitre-2/use_case_sgi.png, id=558, 773.13844pt x 1055.44313pt
 >
 File: images/contenu/chapitre-2/use_case_sgi.png Graphic file (type png)
 <use images/contenu/chapitre-2/use_case_sgi.png>
@@ -1558,7 +1561,7 @@ put line 177.
 (pdftex.def)             Requested size: 415.9796pt x 567.8694pt.
  [10 <./images/contenu/chapitre-2/rc_seq_prospects.png>] [11 <./images/contenu/
 chapitre-2/use_case_sgi.png>]
-<images/contenu/chapitre-2/sgi_seq_passage_ordres.png, id=564, 1027.84pt x 1709
+<images/contenu/chapitre-2/sgi_seq_passage_ordres.png, id=572, 1027.84pt x 1709
 .38625pt>
 File: images/contenu/chapitre-2/sgi_seq_passage_ordres.png Graphic file (type p
 ng)
@@ -1573,7 +1576,7 @@ Overfull \vbox (12.61899pt too high) has occurred while \output is active []
 [13 <./images/contenu/chapitre-2/sgi_seq_passage_ordres.png (PNG copy)>])
 (contenu/chapitre-3.tex [14]
 Chapitre 3.
-<images/contenu/chapitre-3/architecture_fonctionnelle.png, id=587, 1452.42625pt
+<images/contenu/chapitre-3/architecture_fonctionnelle.png, id=595, 1452.42625pt
  x 1091.07625pt>
 File: images/contenu/chapitre-3/architecture_fonctionnelle.png Graphic file (ty
 pe png)
@@ -1585,7 +1588,7 @@ ng  used on input line 45.
 
 ] [16 <./images/contenu/chapitre-3/architecture_fonctionnelle.png (PNG copy)>] 
 [17]
-<images/contenu/chapitre-3/architecture_technique.png, id=629, 1453.43pt x 1090
+<images/contenu/chapitre-3/architecture_technique.png, id=637, 1453.43pt x 1090
 .0725pt>
 File: images/contenu/chapitre-3/architecture_technique.png Graphic file (type p
 ng)
@@ -1594,7 +1597,7 @@ Package pdftex.def Info: images/contenu/chapitre-3/architecture_technique.png
 used on input line 144.
 (pdftex.def)             Requested size: 445.00023pt x 333.74406pt.
  [18 <./images/contenu/chapitre-3/architecture_technique.png (PNG copy)>]
-<images/contenu/chapitre-3/workflow_creation_prospect.png, id=636, 1497.595pt x
+<images/contenu/chapitre-3/workflow_creation_prospect.png, id=644, 1497.595pt x
  1057.9525pt>
 File: images/contenu/chapitre-3/workflow_creation_prospect.png Graphic file (ty
 pe png)
@@ -1608,7 +1611,7 @@ LaTeX Font Info:    Font shape `T1/ntxtlf/b/n' will be
 (Font)              scaled to size 10.0pt on input line 179.
  (C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex/latex/newtx\t1ntxtt.fd)
 [19 <./images/contenu/chapitre-3/workflow_creation_prospect.png (PNG copy)>]
-<images/contenu/chapitre-3/conception_creation_prospect.png, id=644, 1541.76pt 
+<images/contenu/chapitre-3/conception_creation_prospect.png, id=652, 1541.76pt 
 x 1027.84pt>
 File: images/contenu/chapitre-3/conception_creation_prospect.png Graphic file (
 type png)
@@ -1620,7 +1623,7 @@ Package pdftex.def Info: images/contenu/chapitre-3/conception_creation_prospect
 [20 <./images/contenu/chapitre-3/conception_creation_prospect.png (PNG copy)>]
 LaTeX Font Info:    Font shape `T1/ntxtt/m/n' will be
 (Font)              scaled to size 12.0pt on input line 231.
-<images/contenu/chapitre-3/architecture_deploiement.png, id=655, 1452.42625pt x
+<images/contenu/chapitre-3/architecture_deploiement.png, id=663, 1452.42625pt x
  1091.07625pt>
 File: images/contenu/chapitre-3/architecture_deploiement.png Graphic file (type
  png)
@@ -1638,7 +1641,7 @@ ntxtt/m/n/12 sib_public\T1/ntxtlf/m/n/12 (-20) , des-tiné aux ac-cès ex-ternes,
 [21 <./images/contenu/chapitre-3/architecture_deploiement.png (PNG copy)>])
 (contenu/chapitre-4.tex [22]
 Chapitre 4.
-<images/contenu/chapitre-4/portefeuille_clients_annote.png, id=672, 1927.2pt x 
+<images/contenu/chapitre-4/portefeuille_clients_annote.png, id=680, 1927.2pt x 
 1014.79124pt>
 File: images/contenu/chapitre-4/portefeuille_clients_annote.png Graphic file (t
 ype png)
@@ -1649,7 +1652,7 @@ png  used on input line 36.
 [23
 
 ] [24 <./images/contenu/chapitre-4/portefeuille_clients_annote.png (PNG copy)>]
-<images/contenu/chapitre-4/cotations_brvm_annote.png, id=687, 1927.2pt x 1010.7
+<images/contenu/chapitre-4/cotations_brvm_annote.png, id=695, 1927.2pt x 1010.7
 7625pt>
 File: images/contenu/chapitre-4/cotations_brvm_annote.png Graphic file (type pn
 g)
@@ -1706,13 +1709,13 @@ LaTeX2e <2025-11-01>
 L3 programming layer <2020/03/25>
  ***********
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 654CF1BB419B9E385582E0955F3C6ABE;11675.
+(rerunfilecheck)             Checksum: C3BFFE98955C685560E6BC32CBEFF95F;12049.
  ) 
 Here is how much of TeX's memory you used:
- 36048 strings out of 467871
- 688379 string characters out of 5418860
- 1150864 words of memory out of 5000000
- 63892 multiletter control sequences out of 15000+600000
+ 36052 strings out of 467871
+ 688425 string characters out of 5418860
+ 1150858 words of memory out of 5000000
+ 63893 multiletter control sequences out of 15000+600000
  746572 words of font info for 254 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  89i,13n,120p,1003b,764s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -1722,9 +1725,9 @@ Here is how much of TeX's memory you used:
 i.pfb><C:/Users/DELL/AppData/Local/Programs/MiKTeX/fonts/type1/public/newtx/ztm
 r.pfb><C:/Users/DELL/AppData/Local/Programs/MiKTeX/fonts/type1/public/newtx/ztm
 ri.pfb>
-Output written on main.pdf (43 pages, 16082652 bytes).
+Output written on main.pdf (43 pages, 16083865 bytes).
 PDF statistics:
- 840 PDF objects out of 1000 (max. 8388607)
- 171 named destinations out of 1000 (max. 500000)
- 62003 words of extra memory for PDF output out of 74296 (max. 10000000)
+ 848 PDF objects out of 1000 (max. 8388607)
+ 174 named destinations out of 1000 (max. 500000)
+ 62011 words of extra memory for PDF output out of 74296 (max. 10000000)
 
