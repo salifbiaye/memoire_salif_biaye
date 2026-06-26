@@ -1,121 +1,136 @@
-
 %=====================================================
-%  ██  PAGE DE GARDE  ██
+%  ██  PAGE DE GARDE — style UCAD / ESP (officiel) ██
 %=====================================================
 \thispagestyle{empty}
 
-\AddToShipoutPictureBG*{%
-  \begin{tikzpicture}[remember picture, overlay]
-    % Ligne verticale gauche (bleue)
-    \draw[bleuESP, line width=3pt]
-      ($(current page.north west)+(1.35cm,-1cm)$)
-      -- ($(current page.south west)+(1.35cm,1.6cm)$);
-    % Ligne verticale droite (orange)
-    \draw[orangeESP, line width=2pt]
-      ($(current page.north east)+(-1.1cm,-1cm)$)
-      -- ($(current page.south east)+(-1.1cm,1.6cm)$);
-    % Petit carré bas gauche
-    \draw[bleuESP, line width=2pt]
-      ($(current page.south west)+(1.1cm,1.6cm)$)
-      rectangle ++(0.5cm,0.5cm);
-    % Petit carré bas droite
-    \draw[orangeESP, line width=2pt]
-      ($(current page.south east)+(-1.35cm,1.6cm)$)
-      rectangle ++(0.5cm,0.5cm);
-  \end{tikzpicture}%
-}
+\definecolor{espblue}{RGB}{51,51,153}
+\definecolor{deepblue}{RGB}{0,0,105}
+\definecolor{darkred}{RGB}{145,32,32}
+\definecolor{greyline}{RGB}{172,172,172}
+\definecolor{logoorange}{RGB}{225,125,45}
 
-\begin{center}
-  \oldincludegraphics[height=1.05cm]{images/page-de-garde/drapeau_senegal.png}\\[0.08cm]
-  % Titre université avec soulignement rouge (style image 2)
-  {\Large\bfseries UNIVERSITÉ CHEIKH ANTA DIOP DE DAKAR}\\[-0.05cm]
-  {\color{red}\rule{\linewidth}{1.5pt}}\\[0.1cm]
-  \oldincludegraphics[height=1.55cm]{images/page-de-garde/logo_ucad.png}\\[0.02cm]
-  {\small\bfseries ÉCOLE SUPÉRIEURE POLYTECHNIQUE}\\[0.08cm]
-  {\color{bleuESP}\rule{\linewidth}{1pt}}\\[0.05cm]
-  {\color{bleuESP}\bfseries\itshape\uline{DÉPARTEMENT GÉNIE INFORMATIQUE}}\\[0.02cm]
-  {\color{bleuESP}\rule{\linewidth}{1pt}}\\[0.1cm]
+\begin{tikzpicture}[remember picture,overlay,shift={(current page.south west)},x=1cm,y=1cm]
 
-  % Boîte MEMOIRE — contour bleu, fond blanc (style image 2)
-  \begin{tcolorbox}[
-    enhanced,
-    arc=4pt, boxrule=1.5pt,
-    left=6pt, right=6pt, top=3pt, bottom=3pt,
-    colback=white, colframe=bleuESP,
-    halign=center,
-  ]
-    \textbf{\large MÉMOIRE DE FIN DE CYCLE}\\[0.08cm]
-    \textbf{Pour l'obtention du :}\\[0.04cm]
-    \textbf{DIPLÔME D'INGÉNIEUR DE CONCEPTION EN GÉNIE INFORMATIQUE}\\[0.04cm]
-    \textbf{OPTION : INFORMATIQUE}
-  \end{tcolorbox}
-  \vspace{0.08cm}
+  %=====================================================
+  %  Bordures decoratives
+  %=====================================================
+  \draw[deepblue,line width=1.7pt] (1.70,29.25) -- (1.70,1.78) -- (19.05,1.78);
+  \draw[darkred,line width=1.35pt] (2.25,28.65) -- (2.25,1.23) -- (19.78,1.23);
+  % carres haut gauche
+  \draw[deepblue,line width=1.7pt] (1.68,29.25) rectangle ++(0.72,-0.72);
+  \draw[greyline,line width=1.4pt] (1.98,28.88) rectangle ++(0.72,-0.72);
+  % carres bas gauche
+  \draw[greyline,line width=1.4pt] (2.03,1.66) rectangle ++(0.72,0.72);
+  \draw[deepblue,line width=1.7pt] (1.68,1.33) rectangle ++(0.72,0.72);
+  % carres bas droite
+  \draw[greyline,line width=1.4pt] (19.25,1.23) rectangle ++(0.72,0.72);
+  \draw[darkred,line width=1.35pt] (19.68,0.90) rectangle ++(0.72,0.72);
 
-  % Boîte SUJET — contour bleu, fond blanc, texte noir (style image 2)
-  \begin{tcolorbox}[
-    enhanced,
-    arc=4pt,
-    boxrule=1.5pt,
-    colback=white,
-    colframe=bleuESP,
-    left=6pt,
-    right=6pt,
-    top=3pt,
-    bottom=3pt,
-    halign=center,
-  ]
-    {\large\bfseries\uline{SUJET :}}\\[0.1cm]
-    {\itshape
-    Conception d'un système d'information bancaire intelligent : cas des modules
-    Relation Client et SGI (Société de Gestion et d'Intermédiation).}
-  \end{tcolorbox}
+%=====================================================
+%  En-tête (+1 cm vers la droite)
+%=====================================================
+  \node at (11.5,27.70) {\oldincludegraphics[width=1.22cm]{images/page-de-garde/drapeau_senegal.png}};
 
+  \node[font=\bfseries\fontsize{16.8}{20}\selectfont] at (11.5,26.48)
+    {UNIVERSITE CHEIKH ANTA DIOP DE DAKAR};
 
-\begin{boitestage}
-    \noindent
-    \textbf{Lieu de stage :} \textcolor{orangeESP}{\textbf{INNOV4AFRICA}}
-    \hfill
-    \textbf{Période de stage :} \textcolor{orangeESP}{\textbf{15/08/2025 -- 30/06/2026}}
-    \vspace{0.02cm}
-    \begin{center}
-        \oldincludegraphics[height=2.05cm]{images/page-de-garde/innov4africa_logo.jpg}
-    \end{center}
-    \vspace{-0.45cm}
-\end{boitestage}
-\end{center}
+  \draw[darkred,line width=1.1pt]
+  (7.55,26.14) -- (15.45,26.14);
 
+  \node at (11.5,23.78)
+    {\oldincludegraphics[width=3.25cm]{images/page-de-garde/officiel_logo_esp.png}};
 
+  \draw[deepblue,line width=1.2pt]
+  (10.55,21.48) -- (12.45,21.48);
 
-\noindent\textbf{Présenté et soutenu par:}\quad Salif Biaye\\[0.06cm]
-\textbf{\quad PROMOTION: 2026 \;--\; DATE DE SOUTENANCE: xx/07/2026}
+  \node[font=\bfseries\itshape\fontsize{15.2}{18}\selectfont]
+  at (11.5,20.82)
+    {DEPARTEMENT GENIE INFORMATIQUE};
 
- 
+  %=====================================================
+  %  Grand bloc principal
+  %=====================================================
+  \coordinate (boxNW) at (3.05,19.95);
+  \coordinate (boxSE) at (20.25,11.25);
+  \filldraw[fill=espblue,draw=espblue,line width=1.25pt,rounded corners=13pt]
+    (boxNW) rectangle (boxSE);
+  % bloc diplome
+  \filldraw[white,draw=espblue,line width=1.25pt,rounded corners=13pt]
+    (3.05,19.95) rectangle (20.25,16.43);
+  % bloc sujet (marge gauche/droite)
+  \filldraw[white,draw=espblue,line width=1.1pt,rounded corners=12pt]
+    (3.15,15.95) rectangle (20.15,13.50);
+  % bloc periode
+  \filldraw[white,draw=espblue,line width=1.1pt,rounded corners=8pt]
+    (3.05,13.03) rectangle (20.25,11.25);
 
-\textcolor{bleuESP}{\textbf{MEMBRES DU JURY:}}
+  %=====================================================
+  %  Texte du bloc diplome
+  %=====================================================
+  \node[font=\bfseries\color{deepblue}\fontsize{14.5}{17}\selectfont] at (11.65,19.47)
+    {MEMOIRE DE FIN DE CYCLE};
+  \node[font=\bfseries\fontsize{13.3}{16}\selectfont] at (11.65,18.83)
+    {Pour l'obtention du :};
+  \node[font=\bfseries\fontsize{12.4}{15}\selectfont] at (11.65,18.13)
+    {DIPLOME D'INGENIEUR DE CONCEPTION EN GENIE INFORMATIQUE};
+  \node[font=\bfseries\fontsize{13.2}{16}\selectfont] at (11.65,17.32)
+    {OPTION : INFORMATIQUE};
 
-\vspace{0.04cm}
-\noindent
-\begin{tabular}{@{}p{5.2cm} p{4.3cm} p{5.1cm}@{}}
-  \textcolor{bleuESP}{PRÉSIDENT}            & & \\[1pt]
-  \textcolor{bleuESP}{RAPPORTEUR}           & & \\[1pt]
-  \textcolor{bleuESP}{EXAMINATEUR}          & & \\[1pt]
-  \textcolor{bleuESP}{ENCADRANT}            & Pr Ibrahima Fall  & Professeur titulaire du CAMES \\[1pt]
-  \textcolor{bleuESP}{MAÎTRE DE STAGE}      & Khassoum WONE     & Ingénieur Informatique \\[1pt]
-  \textcolor{bleuESP}{DIRECTEUR DE MÉMOIRE} & Pr Ibrahima Fall  & Professeur titulaire du CAMES \\
-\end{tabular}
+  %=====================================================
+  %  Sujet
+  %=====================================================
+  \node[font=\bfseries\underline{\fontsize{14.2}{17}\selectfont}] at (11.65,15.53) {SUJET :};
+  \node[text width=14.40cm,align=center,inner sep=0pt,
+    font=\bfseries\color{blue!45!black}\fontsize{10.9}{13.1}\selectfont]
+    at (11.65,14.60)
+  {Conception d'un système d'information bancaire intelligent : cas des modules\\
+   Relation Client et SGI (Société de Gestion et d'Intermédiation)};
 
-\vfill
+  %=====================================================
+  %  Periode et lieu
+  %=====================================================
+  \node[anchor=west,font=\bfseries\underline{\fontsize{13.4}{16}\selectfont}]
+    at (3.45,12.10) {PERIODE ET LIEU DU STAGE :};
+  \node[anchor=west,font=\bfseries\color{deepblue}\fontsize{10.7}{13}\selectfont]
+    at (10.25,12.10) {15/08/2025 - 30/06/2026};
+  \node[anchor=west,font=\bfseries\color{deepblue}\fontsize{10.7}{13}\selectfont]
+    at (14.25,12.10) {INNOV4AFRICA};
+  \node[anchor=east] at (19.95,12.10)
+    {\oldincludegraphics[height=1.35cm]{images/page-de-garde/innov4africa_logo.jpg}};
 
-\begin{tcolorbox}[
-  enhanced,
-  arc=4pt, boxrule=1.5pt,
-  left=6pt, right=6pt, top=3pt, bottom=3pt,
-  colback=white, colframe=bleuESP,
-  halign=center,
-]
-  
-  \small Année universitaire : 2025 - 2026\\[0.1cm]
-  
-\end{tcolorbox}
+  %=====================================================
+  %  Infos candidat + jury
+  %=====================================================
+  \node[anchor=west,font=\bfseries\fontsize{13.2}{16}\selectfont] at (3.45,10.58)
+    {Présenté et soutenu par :};
+  \node[anchor=east,font=\bfseries\fontsize{13.2}{16}\selectfont] at (19.25,10.58)
+    {Salif Biaye};
 
+  \node[font=\bfseries\fontsize{11.8}{14.2}\selectfont] at (11.65,9.58)
+    {PROMOTION : 2026 \quad - \quad DATE DE SOUTENANCE : xx/07/2026};
+
+  \node[anchor=west,font=\bfseries\color{deepblue}\fontsize{12.6}{15}\selectfont] at (3.45,8.57)
+    {MEMBRES DU JURY :};
+
+  \node[anchor=north west,inner sep=0pt] at (3.60,7.92) {%
+    \begin{tabular}{@{}%
+        >{\raggedright\arraybackslash\bfseries\color{deepblue}\fontsize{9.2}{11.2}\selectfont}p{4.85cm}%
+        >{\bfseries\color{deepblue}\fontsize{8.8}{10.8}\selectfont}p{4.25cm}%
+        >{\bfseries\color{deepblue}\fontsize{8.8}{10.8}\selectfont}p{4.45cm}@{}}
+
+      PRESIDENT : & & \\[0.15cm]
+      RAPPORTEUR : & & \\[0.22cm]
+      ENCADRANT : & Pr Ibrahima Fall & Professeur titulaire du CAMES\\[0.22cm]
+      MAITRE DE STAGE : & Khassoum WONE & Ingénieur Informatique\\[0.22cm]
+      DIRECTEUR DE MEMOIRE : & Pr Ibrahima Fall & Professeur titulaire du CAMES
+    \end{tabular}
+  };
+
+  %=====================================================
+  %  Pied de page
+  %=====================================================
+  \node[font=\bfseries\color{blue!35!black}\fontsize{10.8}{13}\selectfont]
+    at (15.00,1.50) {Année universitaire : 2025 - 2026};
+
+\end{tikzpicture}
 \cleardoublepage

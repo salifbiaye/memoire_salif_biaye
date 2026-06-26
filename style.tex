@@ -49,6 +49,8 @@
 \renewcommand{\contentsname}{Table des matières}
 \renewcommand{\listfigurename}{Liste des figures}
 \renewcommand{\listtablename}{Liste des tableaux}
+% Le guide DGI exige le mot « Tableau » (et non « Table ») au-dessus des tableaux.
+\addto\captionsfrench{\renewcommand{\tablename}{Tableau}}
 
 %=====================================================
 %  TITRES CHAPITRES
@@ -91,7 +93,14 @@
 
 \fancyhead[L]{\small\textit{\leftmark}}
 \fancyhead[R]{\small\textit{ESP – UCAD}}
-\fancyfoot[C]{\thepage}
+\fancyfoot[R]{\normalcolor\thepage}
+
+% Pages d'ouverture de chapitre (style « plain ») : numéro aussi en bas à droite, en noir.
+\fancypagestyle{plain}{%
+  \fancyhf{}%
+  \fancyfoot[R]{\normalcolor\thepage}%
+  \renewcommand{\headrulewidth}{0pt}%
+}
 
 %=====================================================
 %  BOÎTES (optionnel)
@@ -153,20 +162,18 @@
 \setlength{\fboxsep}{6pt}      % espace entre image et cadre
 \setlength{\fboxrule}{0.8pt}   % épaisseur du cadre
 
-% Encadrement automatique de toutes les figures
+% Figures sans cadre (rendu épuré).
 \let\oldincludegraphics\includegraphics
 \renewcommand{\includegraphics}[2][]{%
-  \fcolorbox{grisCadre}{white}{\oldincludegraphics[#1]{#2}}%
+  \oldincludegraphics[#1]{#2}%
 }
 
 % Formats fixes pour harmoniser la largeur des cadres de figures.
 \newcommand{\MemoireFigureBox}[3]{%
-  \fcolorbox{grisCadre}{white}{%
-    \begin{minipage}{#2}%
-      \centering
-      \oldincludegraphics[#1]{#3}%
-    \end{minipage}%
-  }%
+  \begin{minipage}{#2}%
+    \centering
+    \oldincludegraphics[#1]{#3}%
+  \end{minipage}%
 }
 
 \newcommand{\MemoireFigureLarge}[1]{%
@@ -187,6 +194,8 @@
   labelfont=bf,
   labelsep=period
 }
+% Guide DGI : titre de tableau aligné à gauche (les figures restent centrées).
+\captionsetup[table]{justification=raggedright,singlelinecheck=false}
 
 %=====================================================
 %  LIENS CLIQUABLES DANS LE PDF

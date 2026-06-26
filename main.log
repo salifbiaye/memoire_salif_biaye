@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.5.11)  21 JUN 2026 20:57
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.5.11)  26 JUN 2026 16:09
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1155,7 +1155,7 @@ LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
 
 (main.aux
 Package babel Info: 'french' activates 'french' shorthands.
-(babel)             Reported on input line 12.
+(babel)             Reported on input line 11.
 )
 \openout1 = `main.aux'.
 
@@ -1301,141 +1301,157 @@ Package hyperref Info: Link coloring OFF on input line 4.
 
 Package hyperref Info: Option `pageanchor' set `false' on input line 5.
  (prelude/page_de_garde.tex
-<images/page-de-garde/drapeau_senegal.png, id=241, 276.03125pt x 183.68625pt>
+<images/page-de-garde/drapeau_senegal.png, id=244, 276.03125pt x 183.68625pt>
 File: images/page-de-garde/drapeau_senegal.png Graphic file (type png)
 <use images/page-de-garde/drapeau_senegal.png>
 Package pdftex.def Info: images/page-de-garde/drapeau_senegal.png  used on inpu
-t line 29.
-(pdftex.def)             Requested size: 44.89455pt x 29.87547pt.
-LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 17.28pt on input line 31.
+t line 32.
+(pdftex.def)             Requested size: 34.71239pt x 23.09805pt.
 LaTeX Font Info:    Font shape `T1/ntxtlf/b/n' will be
-(Font)              scaled to size 17.28pt on input line 31.
-<images/page-de-garde/logo_ucad.png, id=242, 250.9375pt x 250.9375pt>
-File: images/page-de-garde/logo_ucad.png Graphic file (type png)
-<use images/page-de-garde/logo_ucad.png>
-Package pdftex.def Info: images/page-de-garde/logo_ucad.png  used on input line
- 33.
-(pdftex.def)             Requested size: 44.10233pt x 44.10185pt.
-LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 10.95pt on input line 34.
+(Font)              scaled to size 12.0pt on input line 35.
 LaTeX Font Info:    Font shape `T1/ntxtlf/b/n' will be
-(Font)              scaled to size 10.95pt on input line 34.
-LaTeX Font Info:    Font shape `T1/ntxtlf/b/n' will be
-(Font)              scaled to size 12.0pt on input line 36.
+(Font)              scaled to size 16.8pt on input line 35.
+<images/page-de-garde/officiel_logo_esp.png, id=245, 209.78375pt x 241.90375pt>
+
+File: images/page-de-garde/officiel_logo_esp.png Graphic file (type png)
+<use images/page-de-garde/officiel_logo_esp.png>
+Package pdftex.def Info: images/page-de-garde/officiel_logo_esp.png  used on in
+put line 41.
+(pdftex.def)             Requested size: 92.47145pt x 106.62991pt.
 LaTeX Font Info:    Font shape `T1/ntxtlf/b/it' will be
-(Font)              scaled to size 12.0pt on input line 36.
+(Font)              scaled to size 12.0pt on input line 48.
+LaTeX Font Info:    Font shape `T1/ntxtlf/b/it' will be
+(Font)              scaled to size 15.2pt on input line 48.
 LaTeX Font Info:    Font shape `T1/ntxtlf/b/n' will be
-(Font)              scaled to size 14.4pt on input line 47.
-LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 14.4pt on input line 67.
-LaTeX Font Info:    Font shape `T1/ntxtlf/m/it' will be
-(Font)              scaled to size 12.0pt on input line 68.
-<images/page-de-garde/innov4africa_logo.jpg, id=244, 48.18pt x 48.18pt>
-File: images/page-de-garde/innov4africa_logo.jpg Graphic file (type jpg)
-<use images/page-de-garde/innov4africa_logo.jpg>
-Package pdftex.def Info: images/page-de-garde/innov4africa_logo.jpg  used on in
-put line 81.
-(pdftex.def)             Requested size: 58.32808pt x 58.32823pt.
+(Font)              scaled to size 14.5pt on input line 71.
+LaTeX Font Info:    Font shape `T1/ntxtlf/b/n' will be
+(Font)              scaled to size 13.3pt on input line 73.
+LaTeX Font Info:    Font shape `T1/ntxtlf/b/n' will be
+(Font)              scaled to size 12.4pt on input line 75.
+LaTeX Font Info:    Font shape `T1/ntxtlf/b/n' will be
+(Font)              scaled to size 13.2pt on input line 77.
 LaTeX Font Info:    Trying to load font information for OT1+minntx on input lin
-e 98.
+e 82.
 
 (C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex/latex/newtx\ot1minntx.fd
 File: ot1minntx.fd 2023/09/09 v1.1 font definition file for OT1/minntx
 )
 LaTeX Font Info:    Font shape `OT1/minntx/m/n' will be
-(Font)              scaled to size 12.0pt on input line 98.
+(Font)              scaled to size 12.0pt on input line 82.
 Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `minntx' (encoding: OT1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 LaTeX Font Info:    Font shape `OT1/minntx/m/n' will be
-(Font)              scaled to size 8.8pt on input line 98.
+(Font)              scaled to size 8.8pt on input line 82.
 LaTeX Font Info:    Font shape `OT1/minntx/m/n' will be
-(Font)              scaled to size 6.6pt on input line 98.
+(Font)              scaled to size 6.6pt on input line 82.
 LaTeX Font Info:    Font shape `OML/ntxmi/m/it' will be
-(Font)              scaled to size 12.0pt on input line 98.
+(Font)              scaled to size 12.0pt on input line 82.
 LaTeX Font Info:    Font shape `OML/ntxmi/m/it' will be
-(Font)              scaled to size 8.8pt on input line 98.
+(Font)              scaled to size 8.8pt on input line 82.
 LaTeX Font Info:    Font shape `OML/ntxmi/m/it' will be
-(Font)              scaled to size 6.6pt on input line 98.
+(Font)              scaled to size 6.6pt on input line 82.
 LaTeX Font Info:    Font shape `LMS/ntxsy/m/n' will be
-(Font)              scaled to size 12.0pt on input line 98.
+(Font)              scaled to size 12.0pt on input line 82.
 LaTeX Font Info:    Font shape `LMS/ntxsy/m/n' will be
-(Font)              scaled to size 8.8pt on input line 98.
+(Font)              scaled to size 8.8pt on input line 82.
 LaTeX Font Info:    Font shape `LMS/ntxsy/m/n' will be
-(Font)              scaled to size 6.6pt on input line 98.
+(Font)              scaled to size 6.6pt on input line 82.
 LaTeX Font Info:    Font shape `LMX/ntxexx/m/n' will be
-(Font)              scaled to size 12.0pt on input line 98.
+(Font)              scaled to size 12.0pt on input line 82.
 LaTeX Font Info:    Font shape `LMX/ntxexx/m/n' will be
-(Font)              scaled to size 8.8pt on input line 98.
+(Font)              scaled to size 8.8pt on input line 82.
 LaTeX Font Info:    Font shape `LMX/ntxexx/m/n' will be
-(Font)              scaled to size 6.6pt on input line 98.
+(Font)              scaled to size 6.6pt on input line 82.
 LaTeX Font Info:    Trying to load font information for U+ntxmia on input line 
-98.
+82.
 
 (C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex/latex/newtx\untxmia.fd
 File: untxmia.fd 2024/04/09 Fontinst v1.933 font definitions for U/ntxmia.
 )
 LaTeX Font Info:    Font shape `U/ntxmia/m/it' will be
-(Font)              scaled to size 12.0pt on input line 98.
+(Font)              scaled to size 12.0pt on input line 82.
 LaTeX Font Info:    Font shape `U/ntxmia/m/it' will be
-(Font)              scaled to size 8.8pt on input line 98.
+(Font)              scaled to size 8.8pt on input line 82.
 LaTeX Font Info:    Font shape `U/ntxmia/m/it' will be
-(Font)              scaled to size 6.6pt on input line 98.
+(Font)              scaled to size 6.6pt on input line 82.
 LaTeX Font Info:    Trying to load font information for U+ntxsym on input line 
-98.
+82.
 
 (C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex/latex/newtx\untxsym.fd
 File: untxsym.fd 2023/08/16 Fontinst v1.933 font definitions for U/ntxsym.
 )
 LaTeX Font Info:    Font shape `U/ntxsym/m/n' will be
-(Font)              scaled to size 12.0pt on input line 98.
+(Font)              scaled to size 12.0pt on input line 82.
 LaTeX Font Info:    Font shape `U/ntxsym/m/n' will be
-(Font)              scaled to size 8.8pt on input line 98.
+(Font)              scaled to size 8.8pt on input line 82.
 LaTeX Font Info:    Font shape `U/ntxsym/m/n' will be
-(Font)              scaled to size 6.6pt on input line 98.
+(Font)              scaled to size 6.6pt on input line 82.
 LaTeX Font Info:    Trying to load font information for U+ntxsyc on input line 
-98.
+82.
 
 (C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex/latex/newtx\untxsyc.fd
 File: untxsyc.fd 2012/04/12 Fontinst v1.933 font definitions for U/ntxsyc.
 )
 LaTeX Font Info:    Font shape `U/ntxsyc/m/n' will be
-(Font)              scaled to size 12.0pt on input line 98.
+(Font)              scaled to size 12.0pt on input line 82.
 LaTeX Font Info:    Font shape `U/ntxsyc/m/n' will be
-(Font)              scaled to size 8.8pt on input line 98.
+(Font)              scaled to size 8.8pt on input line 82.
 LaTeX Font Info:    Font shape `U/ntxsyc/m/n' will be
-(Font)              scaled to size 6.6pt on input line 98.
+(Font)              scaled to size 6.6pt on input line 82.
 LaTeX Font Info:    Font shape `U/ntxexa/m/n' will be
-(Font)              scaled to size 12.0pt on input line 98.
+(Font)              scaled to size 12.0pt on input line 82.
 LaTeX Font Info:    Font shape `U/ntxexa/m/n' will be
-(Font)              scaled to size 8.8pt on input line 98.
+(Font)              scaled to size 8.8pt on input line 82.
 LaTeX Font Info:    Font shape `U/ntxexa/m/n' will be
-(Font)              scaled to size 6.6pt on input line 98.
+(Font)              scaled to size 6.6pt on input line 82.
+LaTeX Font Info:    Font shape `T1/ntxtlf/b/n' will be
+(Font)              scaled to size 14.2pt on input line 82.
+LaTeX Font Info:    Font shape `T1/ntxtlf/b/n' will be
+(Font)              scaled to size 10.9pt on input line 86.
+LaTeX Font Info:    Font shape `T1/ntxtlf/b/n' will be
+(Font)              scaled to size 13.4pt on input line 93.
+LaTeX Font Info:    Font shape `T1/ntxtlf/b/n' will be
+(Font)              scaled to size 10.7pt on input line 95.
+<images/page-de-garde/innov4africa_logo.jpg, id=246, 48.18pt x 48.18pt>
+File: images/page-de-garde/innov4africa_logo.jpg Graphic file (type jpg)
+<use images/page-de-garde/innov4africa_logo.jpg>
+Package pdftex.def Info: images/page-de-garde/innov4africa_logo.jpg  used on in
+put line 99.
+(pdftex.def)             Requested size: 38.41096pt x 38.41139pt.
+LaTeX Font Info:    Font shape `T1/ntxtlf/b/n' will be
+(Font)              scaled to size 11.8pt on input line 110.
+LaTeX Font Info:    Font shape `T1/ntxtlf/b/n' will be
+(Font)              scaled to size 12.6pt on input line 113.
+LaTeX Font Info:    Font shape `T1/ntxtlf/b/n' will be
+(Font)              scaled to size 9.2pt on input line 121.
+LaTeX Font Info:    Font shape `T1/ntxtlf/b/n' will be
+(Font)              scaled to size 8.8pt on input line 121.
+LaTeX Font Info:    Font shape `T1/ntxtlf/b/n' will be
+(Font)              scaled to size 10.8pt on input line 133.
 
 [1
 
 {C:/Users/DELL/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}{C:/Users/DELL/
 AppData/Local/Programs/MiKTeX/fonts/enc/dvips/newtx/ntx-ec-tlf.enc} <./images/p
-age-de-garde/drapeau_senegal.png> <./images/page-de-garde/logo_ucad.png> <./ima
-ges/page-de-garde/innov4africa_logo.jpg>]) (prelude/page_de_garde.tex
+age-de-garde/drapeau_senegal.png> <./images/page-de-garde/officiel_logo_esp.png
+> <./images/page-de-garde/innov4africa_logo.jpg>]) (prelude/page_de_garde.tex
 File: images/page-de-garde/drapeau_senegal.png Graphic file (type png)
 <use images/page-de-garde/drapeau_senegal.png>
 Package pdftex.def Info: images/page-de-garde/drapeau_senegal.png  used on inpu
-t line 29.
-(pdftex.def)             Requested size: 44.89455pt x 29.87547pt.
-File: images/page-de-garde/logo_ucad.png Graphic file (type png)
-<use images/page-de-garde/logo_ucad.png>
-Package pdftex.def Info: images/page-de-garde/logo_ucad.png  used on input line
- 33.
-(pdftex.def)             Requested size: 44.10233pt x 44.10185pt.
+t line 32.
+(pdftex.def)             Requested size: 34.71239pt x 23.09805pt.
+File: images/page-de-garde/officiel_logo_esp.png Graphic file (type png)
+<use images/page-de-garde/officiel_logo_esp.png>
+Package pdftex.def Info: images/page-de-garde/officiel_logo_esp.png  used on in
+put line 41.
+(pdftex.def)             Requested size: 92.47145pt x 106.62991pt.
 File: images/page-de-garde/innov4africa_logo.jpg Graphic file (type jpg)
 <use images/page-de-garde/innov4africa_logo.jpg>
 Package pdftex.def Info: images/page-de-garde/innov4africa_logo.jpg  used on in
-put line 81.
-(pdftex.def)             Requested size: 58.32808pt x 58.32823pt.
-
+put line 99.
+(pdftex.def)             Requested size: 38.41096pt x 38.41139pt.
 [2
 
 ])
@@ -1443,10 +1459,14 @@ Package hyperref Info: Option `pageanchor' set `true' on input line 8.
  (prelude/dedicaces.tex
 LaTeX Font Info:    Font shape `T1/ntxtlf/b/n' will be
 (Font)              scaled to size 24.88pt on input line 5.
+LaTeX Font Info:    Font shape `T1/ntxtlf/m/it' will be
+(Font)              scaled to size 12.0pt on input line 12.
  [1
 
 
 ]
+LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
+(Font)              scaled to size 10.95pt on input line 89.
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/it' will be
 (Font)              scaled to size 10.95pt on input line 89.
 Package babel Info: 'french' activates 'french' shorthands.
@@ -1472,20 +1492,23 @@ Package babel Info: 'french' activates 'french' shorthands.
 \tf@toc=\write5
 \openout5 = `main.toc'.
 
- [8] (main.lof)
-\tf@lof=\write6
-\openout6 = `main.lof'.
+ [8] (main.lot)
+\tf@lot=\write6
+\openout6 = `main.lot'.
 
  [9
 
-] (main.lot)
-\tf@lot=\write7
-\openout7 = `main.lot'.
+] (main.lof)
+\tf@lof=\write7
+\openout7 = `main.lof'.
 
  [10
 
 ])
-(prelude/sigles_abreviations.tex [11
+(prelude/sigles_abreviations.tex
+LaTeX Font Info:    Font shape `T1/ntxtlf/b/n' will be
+(Font)              scaled to size 10.95pt on input line 12.
+ [11
 
 ]) (contenu/introduction-generale.tex)
 (contenu/chapitre-1.tex [1
@@ -1493,6 +1516,8 @@ Package babel Info: 'french' activates 'french' shorthands.
 
 ]
 Chapitre 1.
+LaTeX Font Info:    Font shape `T1/ntxtlf/b/n' will be
+(Font)              scaled to size 17.28pt on input line 4.
 
 Package hyperref Warning: The anchor of a bookmark and its parent's must not
 (hyperref)                be the same. Added a new anchor on input line 8.
@@ -1508,47 +1533,48 @@ Package hyperref Warning: The anchor of a bookmark and its parent's must not
 [6
 
 ]
-<images/contenu/chapitre-2/use_case_relation_client.png, id=518, 1084.05pt x 14
-62.46375pt>
+<images/contenu/chapitre-2/use_case_relation_client.png, id=524, 1086.0575pt x 
+1459.4525pt>
 File: images/contenu/chapitre-2/use_case_relation_client.png Graphic file (type
  png)
 <use images/contenu/chapitre-2/use_case_relation_client.png>
 Package pdftex.def Info: images/contenu/chapitre-2/use_case_relation_client.png
   used on input line 80.
-(pdftex.def)             Requested size: 385.49382pt x 520.05972pt.
+(pdftex.def)             Requested size: 387.00314pt x 520.05785pt.
  [7] [8 <./images/contenu/chapitre-2/use_case_relation_client.png (PNG copy)>]
-<images/contenu/chapitre-2/rc_seq_prospects.png, id=530, 1091.07625pt x 1452.42
-625pt>
+<images/contenu/chapitre-2/rc_seq_prospects.png, id=536, 823.57687pt x 853.6893
+8pt>
 File: images/contenu/chapitre-2/rc_seq_prospects.png Graphic file (type png)
 <use images/contenu/chapitre-2/rc_seq_prospects.png>
 Package pdftex.def Info: images/contenu/chapitre-2/rc_seq_prospects.png  used o
 n input line 162.
-(pdftex.def)             Requested size: 415.9796pt x 553.74501pt.
+(pdftex.def)             Requested size: 415.9796pt x 431.19441pt.
  [9]
-<images/contenu/chapitre-2/use_case_sgi.png, id=542, 773.13844pt x 1055.44313pt
+<images/contenu/chapitre-2/use_case_sgi.png, id=549, 773.13844pt x 1055.44313pt
 >
 File: images/contenu/chapitre-2/use_case_sgi.png Graphic file (type png)
 <use images/contenu/chapitre-2/use_case_sgi.png>
 Package pdftex.def Info: images/contenu/chapitre-2/use_case_sgi.png  used on in
 put line 177.
 (pdftex.def)             Requested size: 415.9796pt x 567.8694pt.
- [10 <./images/contenu/chapitre-2/rc_seq_prospects.png (PNG copy)>]
-[11 <./images/contenu/chapitre-2/use_case_sgi.png>] [12]
-<images/contenu/chapitre-2/sgi_seq_passage_ordres.png, id=567, 1027.84pt x 1541
-.76pt>
+ [10 <./images/contenu/chapitre-2/rc_seq_prospects.png>] [11 <./images/contenu/
+chapitre-2/use_case_sgi.png>]
+<images/contenu/chapitre-2/sgi_seq_passage_ordres.png, id=563, 1027.84pt x 1709
+.38625pt>
 File: images/contenu/chapitre-2/sgi_seq_passage_ordres.png Graphic file (type p
 ng)
 <use images/contenu/chapitre-2/sgi_seq_passage_ordres.png>
 Package pdftex.def Info: images/contenu/chapitre-2/sgi_seq_passage_ordres.png  
 used on input line 262.
-(pdftex.def)             Requested size: 415.9796pt x 623.9624pt.
- [13
+(pdftex.def)             Requested size: 415.9796pt x 691.80208pt.
+ [12]
+Overfull \vbox (12.61899pt too high) has occurred while \output is active []
 
- <./images/contenu/chapitre-2/sgi_seq_passage_ordres.png (PNG copy)>]) (contenu
-/chapitre-3.tex
-[14]
+
+[13 <./images/contenu/chapitre-2/sgi_seq_passage_ordres.png (PNG copy)>])
+(contenu/chapitre-3.tex [14]
 Chapitre 3.
-<images/contenu/chapitre-3/architecture_fonctionnelle.png, id=583, 1452.42625pt
+<images/contenu/chapitre-3/architecture_fonctionnelle.png, id=586, 1452.42625pt
  x 1091.07625pt>
 File: images/contenu/chapitre-3/architecture_fonctionnelle.png Graphic file (ty
 pe png)
@@ -1560,51 +1586,51 @@ ng  used on input line 45.
 
 ] [16 <./images/contenu/chapitre-3/architecture_fonctionnelle.png (PNG copy)>] 
 [17]
-<images/contenu/chapitre-3/architecture_technique.png, id=627, 1453.43pt x 1090
+<images/contenu/chapitre-3/architecture_technique.png, id=628, 1453.43pt x 1090
 .0725pt>
 File: images/contenu/chapitre-3/architecture_technique.png Graphic file (type p
 ng)
 <use images/contenu/chapitre-3/architecture_technique.png>
 Package pdftex.def Info: images/contenu/chapitre-3/architecture_technique.png  
-used on input line 152.
+used on input line 144.
 (pdftex.def)             Requested size: 445.00023pt x 333.74406pt.
  [18 <./images/contenu/chapitre-3/architecture_technique.png (PNG copy)>]
-<images/contenu/chapitre-3/workflow_creation_prospect.png, id=637, 1497.595pt x
+<images/contenu/chapitre-3/workflow_creation_prospect.png, id=635, 1497.595pt x
  1057.9525pt>
 File: images/contenu/chapitre-3/workflow_creation_prospect.png Graphic file (ty
 pe png)
 <use images/contenu/chapitre-3/workflow_creation_prospect.png>
 Package pdftex.def Info: images/contenu/chapitre-3/workflow_creation_prospect.p
-ng  used on input line 180.
+ng  used on input line 172.
 (pdftex.def)             Requested size: 445.00023pt x 314.36945pt.
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 10.0pt on input line 185.
+(Font)              scaled to size 10.0pt on input line 177.
 LaTeX Font Info:    Font shape `T1/ntxtlf/b/n' will be
-(Font)              scaled to size 10.0pt on input line 187.
- [19 <./images/contenu/chapitre-3/workflow_creation_prospect.png (PNG copy)>]
-(C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex/latex/newtx\t1ntxtt.fd)
-<images/contenu/chapitre-3/conception_creation_prospect.png, id=645, 1541.76pt 
+(Font)              scaled to size 10.0pt on input line 179.
+ (C:\Users\DELL\AppData\Local\Programs\MiKTeX\tex/latex/newtx\t1ntxtt.fd)
+[19 <./images/contenu/chapitre-3/workflow_creation_prospect.png (PNG copy)>]
+<images/contenu/chapitre-3/conception_creation_prospect.png, id=643, 1541.76pt 
 x 1027.84pt>
 File: images/contenu/chapitre-3/conception_creation_prospect.png Graphic file (
 type png)
 <use images/contenu/chapitre-3/conception_creation_prospect.png>
 Package pdftex.def Info: images/contenu/chapitre-3/conception_creation_prospect
-.png  used on input line 226.
-(pdftex.def)             Requested size: 415.9796pt x 277.31662pt.
-LaTeX Font Info:    Font shape `T1/ntxtt/m/n' will be
-(Font)              scaled to size 12.0pt on input line 238.
+.png  used on input line 218.
+(pdftex.def)             Requested size: 483.69687pt x 322.45389pt.
 
 [20 <./images/contenu/chapitre-3/conception_creation_prospect.png (PNG copy)>]
-<images/contenu/chapitre-3/architecture_deploiement.png, id=656, 1452.42625pt x
+LaTeX Font Info:    Font shape `T1/ntxtt/m/n' will be
+(Font)              scaled to size 12.0pt on input line 231.
+<images/contenu/chapitre-3/architecture_deploiement.png, id=654, 1452.42625pt x
  1091.07625pt>
 File: images/contenu/chapitre-3/architecture_deploiement.png Graphic file (type
  png)
 <use images/contenu/chapitre-3/architecture_deploiement.png>
 Package pdftex.def Info: images/contenu/chapitre-3/architecture_deploiement.png
-  used on input line 243.
+  used on input line 236.
 (pdftex.def)             Requested size: 445.00023pt x 334.28445pt.
 
-Overfull \hbox (18.54243pt too wide) in paragraph at lines 240--246
+Overfull \hbox (18.54243pt too wide) in paragraph at lines 233--239
 []\T1/ntxtlf/m/n/12 (-20) Deux ré-seaux as-surent les com-mu-ni-ca-tions : \T1/
 ntxtt/m/n/12 sib_public\T1/ntxtlf/m/n/12 (-20) , des-tiné aux ac-cès ex-ternes,
  et \T1/ntxtt/m/n/12 sib_internal\T1/ntxtlf/m/n/12 (-20) ,
@@ -1613,25 +1639,25 @@ ntxtt/m/n/12 sib_public\T1/ntxtlf/m/n/12 (-20) , des-tiné aux ac-cès ex-ternes,
 [21 <./images/contenu/chapitre-3/architecture_deploiement.png (PNG copy)>])
 (contenu/chapitre-4.tex [22]
 Chapitre 4.
-<images/contenu/chapitre-4/portefeuille_clients_annote.png, id=673, 1677.26625p
-t x 944.52875pt>
+<images/contenu/chapitre-4/portefeuille_clients_annote.png, id=671, 1927.2pt x 
+1014.79124pt>
 File: images/contenu/chapitre-4/portefeuille_clients_annote.png Graphic file (t
 ype png)
 <use images/contenu/chapitre-4/portefeuille_clients_annote.png>
 Package pdftex.def Info: images/contenu/chapitre-4/portefeuille_clients_annote.
 png  used on input line 36.
-(pdftex.def)             Requested size: 445.00023pt x 250.58717pt.
+(pdftex.def)             Requested size: 445.00023pt x 234.31065pt.
 [23
 
 ] [24 <./images/contenu/chapitre-4/portefeuille_clients_annote.png (PNG copy)>]
-<images/contenu/chapitre-4/cotations_brvm_annote.png, id=688, 1596.96625pt x 99
-2.70876pt>
+<images/contenu/chapitre-4/cotations_brvm_annote.png, id=686, 1927.2pt x 1010.7
+7625pt>
 File: images/contenu/chapitre-4/cotations_brvm_annote.png Graphic file (type pn
 g)
 <use images/contenu/chapitre-4/cotations_brvm_annote.png>
 Package pdftex.def Info: images/contenu/chapitre-4/cotations_brvm_annote.png  u
 sed on input line 80.
-(pdftex.def)             Requested size: 445.00023pt x 276.62358pt.
+(pdftex.def)             Requested size: 445.00023pt x 233.3836pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
@@ -1642,7 +1668,7 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 ]
 Underfull \hbox (badness 10000) in paragraph at lines 21--23
 \T1/ntxtt/m/n/12 / / owasp . org / www-[]project-[]application-[]security-[]ver
-ification-[]standard/$[]\T1/ntxtlf/m/n/12 (+20) .
+ification-[]standard/$[]\T1/ntxtlf/m/n/12 (+20) ,
  []
 
 
@@ -1657,61 +1683,19 @@ Underfull \hbox (badness 10000) in paragraph at lines 33--35
 ]$\T1/ntxtt/m/n/12 https : / / www . bceao . int / fr / content /
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 33--35
-\T1/ntxtt/m/n/12 fintech-[]et-[]digitalisation-[]des-[]services-[]financiers-[]
-dans-[]luemoa$[]\T1/ntxtlf/m/n/12 (+20) . Consulté
- []
-
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/it' will be
 (Font)              scaled to size 8.8pt on input line 40.
-
-Underfull \hbox (badness 10000) in paragraph at lines 37--43
-[]\T1/ntxtlf/m/n/12 (+20) CREPMF, \T1/ntxtlf/m/it/12 (+20) Ins-truc-tion n$[]$ 
-065/CREPMF/2021 re-la-tive au ca-pi-tal so-cial mi-ni-
- []
-
-
-Underfull \hbox (badness 2753) in paragraph at lines 37--43
-\T1/ntxtlf/m/it/12 (+20) mum re-quis et aux normes pru-den-tielles des So-cié-t
-és de Ges-tion et d'In-ter-mé-
- []
-
-
-Underfull \hbox (badness 2717) in paragraph at lines 37--43
-\T1/ntxtlf/m/it/12 (+20) dia-tion agréées sur le mar-ché fi-nan-cier ré-gio-nal
- de l'UMOA\T1/ntxtlf/m/n/12 (+20) , 2021. Dis-po-nible
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 37--43
-\T1/ntxtlf/m/n/12 (+20) sur : []$\T1/ntxtt/m/n/12 https : / / www . brvm . org 
-/ sites / default / files / 20230801 _ -[] _ instruction _
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 37--43
-\T1/ntxtt/m/n/12 ndeg065-[]crepmf-[]2021 _ -[] _ capital _ social _ minimum _ r
-equis _ et _ aux _ normes _
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 37--43
-\T1/ntxtt/m/n/12 prudentielles _ des _ sgi _ agreees _ sur _ le _ mfr _ de _ lu
-moa _ 0 . pdf$[]\T1/ntxtlf/m/n/12 (+20) . Consulté le 26
- []
-
 [29
 
 ]
-Underfull \hbox (badness 1960) in paragraph at lines 83--85
+Underfull \hbox (badness 1960) in paragraph at lines 82--84
 []\T1/ntxtlf/m/n/12 (+20) Keycloak, \T1/ntxtlf/m/it/12 (+20) Key-cloak Do-cu-me
 n-ta-tion\T1/ntxtlf/m/n/12 (+20) . Dis-po-nible sur : []$\T1/ntxtt/m/n/12 https
  : / / www . keycloak . org /
  []
 
 
-Underfull \hbox (badness 3199) in paragraph at lines 107--109
+Underfull \hbox (badness 3199) in paragraph at lines 102--104
 []\T1/ntxtlf/m/n/12 (+20) OpenZipkin, \T1/ntxtlf/m/it/12 (+20) Zip-kin Do-cu-me
 n-ta-tion\T1/ntxtlf/m/n/12 (+20) . Dis-po-nible sur : []$\T1/ntxtt/m/n/12 https
  : / / zipkin . io / pages /
@@ -1723,25 +1707,25 @@ LaTeX2e <2025-11-01>
 L3 programming layer <2020/03/25>
  ***********
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 9E1FB25128F9DAEF8CD5874C72ABCCB0;11453.
+(rerunfilecheck)             Checksum: 654CF1BB419B9E385582E0955F3C6ABE;11675.
  ) 
 Here is how much of TeX's memory you used:
- 36002 strings out of 467871
- 687663 string characters out of 5418860
- 1154187 words of memory out of 5000000
+ 36048 strings out of 467871
+ 688379 string characters out of 5418860
+ 1150864 words of memory out of 5000000
  63892 multiletter control sequences out of 15000+600000
- 709686 words of font info for 216 fonts, out of 8000000 for 9000
+ 746572 words of font info for 254 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 89i,13n,120p,1003b,964s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 89i,13n,120p,1003b,764s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/DELL/AppData/Local/Programs/MiKTeX/fonts/type1/public/txfonts/t1xtt
 .pfb><C:/Users/DELL/AppData/Local/Programs/MiKTeX/fonts/type1/public/newtx/ztmb
 .pfb><C:/Users/DELL/AppData/Local/Programs/MiKTeX/fonts/type1/public/newtx/ztmb
 i.pfb><C:/Users/DELL/AppData/Local/Programs/MiKTeX/fonts/type1/public/newtx/ztm
 r.pfb><C:/Users/DELL/AppData/Local/Programs/MiKTeX/fonts/type1/public/newtx/ztm
 ri.pfb>
-Output written on main.pdf (43 pages, 12477990 bytes).
+Output written on main.pdf (43 pages, 10498374 bytes).
 PDF statistics:
- 845 PDF objects out of 1000 (max. 8388607)
- 177 named destinations out of 1000 (max. 500000)
- 37419 words of extra memory for PDF output out of 42996 (max. 10000000)
+ 839 PDF objects out of 1000 (max. 8388607)
+ 171 named destinations out of 1000 (max. 500000)
+ 62003 words of extra memory for PDF output out of 74296 (max. 10000000)
 

@@ -9,9 +9,9 @@
 \addcontentsline{toc}{section}{Introduction}
 
 
-Après l'analyse des besoins et la conception de la solution, ce chapitre présente la réalisation de la plateforme I-SIB. Il s'intéresse aux fonctionnalités mises en œuvre dans les modules Relation Client et SGI, en s'appuyant sur plusieurs scénarios représentatifs du périmètre étudié.
+Après l'analyse des besoins et la conception de la solution, ce chapitre présente la réalisation de la plateforme I-SIB. Il s'intéresse aux fonctionnalités mises en œuvre dans les modules Relation Client et SGI, en s'appuyant sur des scénarios représentatifs du périmètre étudié.
 
-Les exemples présentés ont été réalisés dans l'environnement de validation. Les données utilisées pour la partie Relation Client sont des données de démonstration, tandis que les informations boursières reposent sur les cotations BRVM \cite{brvm_data_public}, issues d'une source publique mise à jour quotidiennement.
+ Les données utilisées pour la partie Relation Client sont des données de démonstration, tandis que les informations boursières reposent sur les cotations BRVM \cite{brvm_data_public}, issues d'une source publique mise à jour quotidiennement.
 
 Le chapitre se termine par un retour sur les principaux apports de la solution ainsi que sur les améliorations qui pourront être envisagées par la suite.
 
@@ -129,10 +129,9 @@ de débit de la passerelle.
 
 Dans les deux conditions, les 40 créations aboutissent~: la dégradation gracieuse
 est totale.
-Lorsque le service de scoring est indisponible, la création d'un prospect reste possible. Dans ce cas, le système attribue un score par défaut et la requête se termine normalement avec un code de réponse 201. Le fonctionnement du module de création ne dépend donc pas directement de la disponibilité du service de scoring.
+Même lorsque le service de scoring tombe, le prospect est bien créé. Le système lui attribue alors un score par défaut et la requête se termine normalement, avec un code de réponse 201. La création ne dépend donc pas du service de scoring pour aboutir.
 
-La principale différence observée concerne le temps de réponse. Avec le service de scoring actif, la création d'un prospect s'effectue en quelques dizaines de millisecondes.
-Lorsque le service de scoring n'est pas disponible, le système attend jusqu'à deux secondes avant d'appliquer un score par défaut. Cette limite évite que l'indisponibilité du service ne retarde excessivement la création d'un prospect.
+La vraie différence se situe sur le temps de réponse. Avec le service de scoring actif, une création prend 82 ms en moyenne (47 ms en médiane). Sans lui, ce temps grimpe à environ 1,6 s en moyenne et atteint 2 s pour les requêtes les plus lentes (p95), le système patientant jusqu'à l'expiration du délai d'appel avant d'appliquer le score par défaut. Ce plafond évite qu'une panne du service ne bloque trop longtemps la création.
 
 Les mesures ont été effectuées sur un environnement de test simple. Elles montrent que la création d'un prospect reste possible même en l'absence du service de scoring.
 

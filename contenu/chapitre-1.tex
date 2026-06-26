@@ -42,24 +42,32 @@ INNOV4AFRICA intervient dans plusieurs secteurs, notamment l'administration num�
 \subsection{Contexte}
 
 Les services bancaires sont de plus en plus accessibles depuis des applications
-numériques. Les clients souhaitent effectuer rapidement leurs opérations et
-retrouver leurs informations sur une même plateforme. De leur côté, les
-établissements financiers doivent proposer ces services tout en respectant les
-règles de sécurité et de conformité.
+numériques \cite{vives_digital_banking}. Dans l'espace UEMOA, cette
+transformation s'appuie sur un écosystème de FinTech en pleine expansion, la
+BCEAO en ayant recensé plus de 130 dans l'Union en 2022 \cite{bceao_fintech},
+ainsi que sur l'ouverture progressive des systèmes bancaires au moyen d'API. Les
+clients y attendent désormais des opérations rapides, accessibles à tout moment
+et regroupées sur une même interface. De leur côté, les établissements
+financiers doivent répondre à ces attentes tout en maîtrisant leurs risques, en
+respectant la conformité réglementaire et en maintenant un haut niveau de
+sécurité.
 
-Un système d'information bancaire ne se limite plus à la gestion des comptes et
-des opérations. Il doit aussi relier les services utilisés par les clients et
-les équipes de la banque. Ces échanges doivent rester sécurisés et chaque
-opération importante doit pouvoir être retracée.
+Dans ce contexte, un système d'information bancaire ne se limite plus à la tenue
+des comptes et au suivi des opérations courantes. Il devient le point de
+rencontre entre les services destinés aux clients et ceux utilisés par les
+équipes internes, et doit faire circuler l'information entre eux de manière
+fluide. Cette circulation impose toutefois des garde-fous, car les échanges
+doivent rester sécurisés et chaque opération importante doit pouvoir être
+retracée.
 
-Pour répondre à ces besoins, INNOV4AFRICA développe \textbf{I-SIB}. La
-plateforme est composée de plusieurs services qui communiquent par des API.
-Chaque module a également vocation à intégrer des fonctions d'intelligence
-artificielle adaptées à son domaine métier.
+% ─────────────────────────────────────────────────
+\subsection{Périmètre et définitions}
 
-
-Le périmètre traité dans cette étude concerne deux modules complémentaires d'I-SIB. Le module \textbf{Relation Client} regroupe les informations sur les clients et le suivi des échanges commerciaux. Le module \textbf{SGI} prend en charge les portefeuilles d'investissement, les cotations et les ordres de bourse.
-
+Le périmètre traité dans cette étude concerne deux modules complémentaires
+d'\textbf{I-SIB}, la plateforme développée par INNOV4AFRICA. Le module
+\textbf{Relation Client} regroupe les informations sur les clients et le suivi
+des échanges commerciaux. Le module \textbf{SGI} prend en charge les
+portefeuilles d'investissement, les cotations et les ordres de bourse.
 
 Quelques termes utilisés dans la suite du mémoire sont précisés ci-dessous.
 
@@ -77,6 +85,9 @@ Quelques termes utilisés dans la suite du mémoire sont précisés ci-dessous.
     \item[Passage d'ordres] L'opération par laquelle un client demande
     d'acheter ou de vendre un titre.
 \end{description}
+
+
+
 
 % ─────────────────────────────────────────────────
 \subsection{Problématique}
@@ -113,7 +124,7 @@ Le système doit aussi centraliser les principales informations relatives au cli
 
 Des fonctionnalités d'intelligence artificielle peuvent également être utilisées pour détecter certains signaux de désengagement et aider les conseillers dans le suivi de la relation client.
 
-l. Enfin, du côté investissement, la
+Enfin, du côté investissement, la
 plateforme donne accès aux portefeuilles (performance, gains et pertes,
 répartition des actifs) et prend en charge les cotations, le passage d'ordres
 ainsi que le suivi des achats et ventes de titres.
@@ -125,7 +136,7 @@ ainsi que le suivi des achats et ventes de titres.
 
 La démarche retenue est itérative et incrémentale. Ce choix est cohérent avec
 la nature du projet. Dans cette section, nous allons présenter les différentes
-caractéristiques du projet .
+caractéristiques du projet.
 
 % ─────────────────────────────────────────────────
 
@@ -162,13 +173,12 @@ Le travail a débuté par une phase de cadrage destinée à préciser le périm�
 
 Nous avons ensuite défini l'organisation de la solution, le découpage des modules et des microservices, les API nécessaires aux échanges ainsi que les rôles des différents utilisateurs.
 
-Plutôt que de tout figer au départ, nous avancions par étapes. Toutes les deux semaines, le vendredi, nous présentions l'avancement du travail. De temps en temps, des experts d'un module précis — la SGI par exemple — venaient apporter leur regard métier, ce qui nous aidait à corriger et à améliorer ce qui avait été développé. Les fonctionnalités étaient ainsi construites puis intégrées progressivement au reste d'I-SIB.
+Plutôt que de tout figer au départ, nous avancions par étapes. Toutes les deux semaines, le vendredi, nous présentions l'avancement du travail. De temps en temps, des experts d'un module précis, comme la SGI, venaient apporter leur regard métier, ce qui nous aidait à corriger et à améliorer ce qui avait été développé. Les fonctionnalités étaient ainsi construites puis intégrées progressivement au reste d'I-SIB.
 
 
 
 
 
-Le développement a été mené selon une approche itérative et incrémentale. Toutes les deux semaines, les fonctionnalités réalisées étaient présentées et évaluées. Les retours des experts métiers permettaient d'affiner les développements avant leur intégration progressive au sein d'I-SIB.
 
 
 
@@ -179,4 +189,4 @@ Le développement a été mené selon une approche itérative et incrémentale. 
 
 Ce chapitre a introduit le contexte du projet et les problématiques auxquelles il cherche à répondre. Il a notamment mis en avant les limites liées à la séparation entre les activités de relation client et les services d'investissement, ainsi que l'intérêt de les réunir au sein d'une même plateforme.
 
-Le chapitre suivant présente l'analyse des besoins et la modélisation fonctionnelle de la solution .
+Le chapitre suivant présente l'analyse des besoins et la modélisation fonctionnelle de la solution.

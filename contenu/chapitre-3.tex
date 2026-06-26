@@ -115,17 +115,9 @@ Chaque microservice dispose de sa propre base \textbf{PostgreSQL}
 \cite{rabbitmq_docs}, notamment pour la diffusion des événements d'audit. Les documents clients et les pièces KYC sont stockés dans \textbf{MinIO}
 \cite{minio_docs}.
 
-Les fonctionnalités d'intelligence artificielle s'appuient sur \textbf{Rasa}
-\cite{rasa_docs} pour les interactions conversationnelles ainsi que sur des services dédiés à l'analyse et à l'évaluation des prospects.
+Les fonctionnalités d'intelligence artificielle reposent sur des services dédiés à l'analyse et à l'évaluation des prospects.
 
- intervient pour les besoins de cache et certaines fonctionnalités techniques comme la limitation du nombre de requêtes. Les échanges asynchrones entre services reposent sur \textbf{RabbitMQ}
-\cite{rabbitmq_docs}, notamment pour la diffusion des événements d'audit. Les documents clients et les pièces KYC sont quant à eux stockés dans \textbf{MinIO}
-\cite{minio_docs}.
-
-Les fonctionnalités d'intelligence artificielle reposent notamment sur \textbf{Rasa}
-\cite{rasa_docs} pour les échanges conversationnels, ainsi que sur des services dédiés à l'évaluation des prospects et à l'analyse des données clients.
-
- La traçabilité technique est assurée par \textbf{Zipkin} \cite{zipkin_docs}, qui permet de
+La traçabilité technique est assurée par \textbf{Zipkin} \cite{zipkin_docs}, qui permet de
 suivre les appels entre microservices. Enfin, \textbf{Docker} \cite{docker_docs} et
 \textbf{Docker Compose} \cite{docker_compose_docs}
 constituent l'environnement de référence pour le développement local et
@@ -223,11 +215,12 @@ de l'approche Entity-Control-Boundary introduite par Jacobson
 
 \begin{figure}[H]
     \centering
-    \MemoireFigureMedium{images/contenu/chapitre-3/conception_creation_prospect.png}
+    \MemoireFigureBox{width=\linewidth,keepaspectratio}{\textwidth}{images/contenu/chapitre-3/conception_creation_prospect.png}
     \caption{Vue de conception du scénario Création d'un prospect}
     \label{fig:conception_creation_prospect}
 \end{figure}
 
+\newpage
 Ainsi, la conception détaillée de la création d'un prospect montre comment un
 scénario métier s'appuie sur les couches définies précédemment : interface,
 passerelle, service métier, données, intelligence artificielle et audit.

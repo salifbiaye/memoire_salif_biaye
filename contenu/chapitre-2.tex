@@ -125,11 +125,11 @@ La fiche~\ref{tab:rc_creation_prospect} en présente la description détaillée.
 
                 \item Le prospect est créé au stade initial \textit{LEAD} et automatiquement rattaché au conseiller qui l'a enregistré. Un score initial lui est attribué.
 
-                \item Un score de conversion est calculé à partir des informations disponibles.
+                \item Le service de scoring calcule un score de conversion à partir des informations disponibles.
 
                 \item Le score obtenu, la probabilité de conversion et le niveau de priorité sont ajoutés à la fiche du prospect.
 
-                \item La fiche du prospect est affichée avec les informations enregistrées.
+                \item La fiche du prospect est communiquée avec les informations enregistrées.
             \end{enumerate}
             \vspace{2pt}\end{minipage}
         \\ \hline
@@ -256,7 +256,7 @@ Acteurs & Client, Équipe SGI \\ \hline
 La figure~\ref{fig:sgi_ordres} représente le déroulement de cette fonctionnalité à
 travers un diagramme de séquence.
 
-\clearpage
+
 \begin{figure}[H]
     \centering
     \MemoireFigureMedium{images/contenu/chapitre-2/sgi_seq_passage_ordres.png}
@@ -267,37 +267,23 @@ travers un diagramme de séquence.
 \section{Exigences non fonctionnelles}
 
 En plus des fonctionnalités, le système doit respecter plusieurs exigences non
-fonctionnelles.
-Ces exigences complètent les besoins fonctionnels présentés précédemment. Elles décrivent les contraintes que le système doit respecter afin de répondre aux attentes des utilisateurs et aux exigences du domaine bancaire.
-
-
-\paragraph{Sécurité}
-Les fonctionnalités accessibles dépendent du rôle de l'utilisateur. Un client accède uniquement à ses propres informations, tandis que les collaborateurs disposent des droits nécessaires à leurs missions.
-
-\paragraph{Confidentialité}
-Les informations personnelles, bancaires, KYC et les données d'investissement ne doivent être consultées que par les personnes autorisées.
-
-\paragraph{Traçabilité}
-Chaque validation d'ordre, modification de donnée ou changement de statut doit
-être enregistré afin de pouvoir retrouver l'historique des opérations.
-
-\paragraph{Disponibilité}
-Le système doit rester accessible afin que les utilisateurs puissent consulter
-les informations nécessaires à leur travail.
-
-\paragraph{Évolutivité}
-Il doit être possible d'ajouter un module ou une fonctionnalité sans reprendre
-l'ensemble du système.
-
-\paragraph{Ergonomie}
-Les écrans doivent être faciles à comprendre et à utiliser afin de limiter les erreurs de manipulation.
+fonctionnelles, qui traduisent les contraintes propres au domaine bancaire.
+Côté \textbf{sécurité}, les fonctionnalités accessibles dépendent du rôle de
+chacun. Un client ne voit que ses propres informations, tandis que les
+collaborateurs disposent des droits liés à leurs missions. La
+\textbf{confidentialité} va de pair, les données personnelles, bancaires, KYC et
+d'investissement ne devant être consultées que par les personnes autorisées.
+S'y ajoute la \textbf{traçabilité}, puisque chaque validation d'ordre,
+modification de donnée ou changement de statut est enregistré, de façon à
+pouvoir reconstituer l'historique des opérations et répondre aux contrôles. Le
+système doit aussi rester \textbf{disponible}, pour que les utilisateurs
+accèdent à tout moment aux informations dont ils ont besoin, et
+\textbf{évolutif}, afin qu'un nouveau module ou une nouvelle fonctionnalité
+puisse être ajouté sans tout reprendre. L'\textbf{ergonomie}, enfin, conditionne
+l'adoption, car des écrans clairs et simples à utiliser limitent les erreurs de
+manipulation.
 
 L'ensemble de ces exigences devra être pris en compte lors de la conception et de la mise en œuvre de la solution.
- La sécurité et la confidentialité protègent ces
-données contre les accès non autorisés. La traçabilité permet, de son côté, de
-reconstituer les opérations et de répondre aux contrôles. Quant à l'ergonomie,
-elle conditionne directement l'adoption du système, car un outil complet mais
-difficile à utiliser finit rarement par être employé.
 
 
 % ─────────────────────────────────────────────────

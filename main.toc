@@ -4,8 +4,8 @@
 \contentsline {chapter}{Avant-propos}{iv}{section*.6}%
 \contentsline {chapter}{Résumé}{v}{section*.8}%
 \contentsline {chapter}{Abstract}{vi}{section*.10}%
-\contentsline {chapter}{Liste des figures}{ix}{chapter*.12}%
-\contentsline {chapter}{Liste des tableaux}{x}{chapter*.13}%
+\contentsline {chapter}{Liste des tableaux}{ix}{chapter*.12}%
+\contentsline {chapter}{Liste des figures}{x}{chapter*.13}%
 \contentsline {chapter}{Liste des sigles et abréviations}{xi}{section*.15}%
 \contentsline {chapter}{Introduction générale}{1}{section*.17}%
 \contentsline {chapter}{\numberline {1}Présentations générales}{2}{chapter.1}%
@@ -15,10 +15,11 @@
 \contentsline {subsection}{\numberline {I.2}Domaines d'activités}{2}{subsection.1.1.2}%
 \contentsline {section}{\numberline {II}Présentation du sujet}{2}{section.1.2}%
 \contentsline {subsection}{\numberline {II.1}Contexte}{2}{subsection.1.2.1}%
-\contentsline {subsection}{\numberline {II.2}Problématique}{3}{subsection.1.2.2}%
-\contentsline {subsection}{\numberline {II.3}Objectifs}{4}{subsection.1.2.3}%
-\contentsline {subsubsection}{\numberline {II.3.1}Objectif général}{4}{subsubsection.1.2.3.1}%
-\contentsline {subsubsection}{\numberline {II.3.2}Objectifs spécifiques}{4}{subsubsection.1.2.3.2}%
+\contentsline {subsection}{\numberline {II.2}Périmètre et définitions}{3}{subsection.1.2.2}%
+\contentsline {subsection}{\numberline {II.3}Problématique}{3}{subsection.1.2.3}%
+\contentsline {subsection}{\numberline {II.4}Objectifs}{4}{subsection.1.2.4}%
+\contentsline {subsubsection}{\numberline {II.4.1}Objectif général}{4}{subsubsection.1.2.4.1}%
+\contentsline {subsubsection}{\numberline {II.4.2}Objectifs spécifiques}{4}{subsubsection.1.2.4.2}%
 \contentsline {section}{\numberline {III}Démarche méthodologique}{4}{section.1.3}%
 \contentsline {subsection}{\numberline {III.1}Caractéristiques du projet}{4}{subsection.1.3.1}%
 \contentsline {subsection}{\numberline {III.2}Méthodologie de travail}{5}{subsection.1.3.2}%
@@ -30,32 +31,26 @@
 \contentsline {subsection}{\numberline {II.1}Module Relation Client}{7}{subsection.2.2.1}%
 \contentsline {subsubsection}{\numberline {II.1.1}Création d'un prospect}{8}{subsubsection.2.2.1.1}%
 \contentsline {subsection}{\numberline {II.2}Module SGI}{10}{subsection.2.2.2}%
-\contentsline {subsubsection}{\numberline {II.2.1}Passage d'ordres}{12}{subsubsection.2.2.2.1}%
+\contentsline {subsubsection}{\numberline {II.2.1}Passage d'ordres}{11}{subsubsection.2.2.2.1}%
 \contentsline {section}{\numberline {III}Exigences non fonctionnelles}{14}{section.2.3}%
-\contentsline {paragraph}{Sécurité}{14}{paragraph*.26}%
-\contentsline {paragraph}{Confidentialité}{14}{paragraph*.27}%
-\contentsline {paragraph}{Traçabilité}{14}{paragraph*.28}%
-\contentsline {paragraph}{Disponibilité}{14}{paragraph*.29}%
-\contentsline {paragraph}{Évolutivité}{14}{paragraph*.30}%
-\contentsline {paragraph}{Ergonomie}{14}{paragraph*.31}%
-\contentsline {section}{Conclusion}{14}{paragraph*.31}%
+\contentsline {section}{Conclusion}{14}{section.2.3}%
 \contentsline {chapter}{\numberline {3}Conception de la solution}{15}{chapter.3}%
-\contentsline {section}{Introduction}{15}{section*.32}%
+\contentsline {section}{Introduction}{15}{section*.26}%
 \contentsline {section}{\numberline {I}Principes de conception de l'architecture}{15}{section.3.1}%
 \contentsline {section}{\numberline {II}Architecture logique de la solution}{15}{section.3.2}%
 \contentsline {subsection}{\numberline {II.1}Vue d'ensemble}{15}{subsection.3.2.1}%
 \contentsline {subsection}{\numberline {II.2}Description des couches et des blocs}{16}{subsection.3.2.2}%
 \contentsline {section}{\numberline {III}Choix des outils et technologies}{17}{section.3.3}%
 \contentsline {section}{\numberline {IV}Architecture technique de la solution}{18}{section.3.4}%
-\contentsline {section}{\numberline {V}Conception détaillée}{19}{section.3.5}%
+\contentsline {section}{\numberline {V}Conception détaillée}{18}{section.3.5}%
 \contentsline {subsection}{\numberline {V.1}Périmètre du scénario}{19}{subsection.3.5.1}%
 \contentsline {subsection}{\numberline {V.2}Workflow de création}{19}{subsection.3.5.2}%
-\contentsline {subsection}{\numberline {V.3}Synthèse des API}{20}{subsection.3.5.3}%
+\contentsline {subsection}{\numberline {V.3}Synthèse des API}{19}{subsection.3.5.3}%
 \contentsline {subsection}{\numberline {V.4}Vue de conception du scénario}{20}{subsection.3.5.4}%
 \contentsline {section}{\numberline {VI}Architecture de déploiement}{21}{section.3.6}%
-\contentsline {section}{Conclusion}{22}{section*.39}%
+\contentsline {section}{Conclusion}{22}{section*.33}%
 \contentsline {chapter}{\numberline {4}Présentation des résultats et analyse critique}{23}{chapter.4}%
-\contentsline {section}{Introduction}{23}{section*.40}%
+\contentsline {section}{Introduction}{23}{section*.34}%
 \contentsline {section}{\numberline {I}Résultats fonctionnels obtenus}{23}{section.4.1}%
 \contentsline {subsection}{\numberline {I.1}Centralisation de la connaissance client}{23}{subsection.4.1.1}%
 \contentsline {subsection}{\numberline {I.2}Suivi commercial et gestion des prospects}{24}{subsection.4.1.2}%
@@ -65,6 +60,6 @@
 \contentsline {subsection}{\numberline {II.2}Points forts}{26}{subsection.4.2.2}%
 \contentsline {subsection}{\numberline {II.3}Points faibles et limites}{26}{subsection.4.2.3}%
 \contentsline {subsection}{\numberline {II.4}Perspectives d'amélioration}{27}{subsection.4.2.4}%
-\contentsline {section}{Conclusion}{27}{section*.44}%
-\contentsline {chapter}{Conclusion générale}{28}{section*.46}%
-\contentsline {chapter}{Références bibliographiques}{29}{section*.48}%
+\contentsline {section}{Conclusion}{27}{section*.38}%
+\contentsline {chapter}{Conclusion générale}{28}{section*.40}%
+\contentsline {chapter}{Références bibliographiques}{29}{section*.42}%
