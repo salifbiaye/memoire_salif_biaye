@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.5.11)  26 JUN 2026 16:32
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.5.11)  26 JUN 2026 16:36
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1722,7 +1722,7 @@ Here is how much of TeX's memory you used:
 i.pfb><C:/Users/DELL/AppData/Local/Programs/MiKTeX/fonts/type1/public/newtx/ztm
 r.pfb><C:/Users/DELL/AppData/Local/Programs/MiKTeX/fonts/type1/public/newtx/ztm
 ri.pfb>
-Output written on main.pdf (43 pages, 16082653 bytes).
+Output written on main.pdf (43 pages, 16082652 bytes).
 PDF statistics:
  840 PDF objects out of 1000 (max. 8388607)
  171 named destinations out of 1000 (max. 500000)
