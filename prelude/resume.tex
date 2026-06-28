@@ -9,31 +9,29 @@
 \hspace{0.5cm}
 Ce mémoire présente la conception et la réalisation des modules
 \textbf{Relation Client} et \textbf{SGI} (Société de Gestion et
-d'Intermédiation) de la plateforme \textbf{I-SIB}. Le travail s'inscrit dans le
-besoin de centraliser la connaissance client et d'accompagner les opérations
-d'investissement dans un système d'information bancaire modulaire.
+d'Intermédiation) de la plateforme \textbf{I-SIB}. Le travail répond au besoin
+de centraliser la connaissance client et d'accompagner les opérations
+d'investissement au sein d'un système d'information bancaire modulaire.
 
 \hspace{0.5cm}
-La solution conçue repose sur une architecture microservices et une logique
-\textit{full API}, afin de séparer les responsabilités métier et de faciliter
-l'évolution progressive de la plateforme. Chaque service métier expose ses
-fonctions via une passerelle API et conserve sa propre base de données, des
-composants communs assurant le cache, la messagerie et la gestion des accès. La
-plateforme a été déployée en conteneurs sur un VPS AlmaLinux. Pour la partie
-détaillée, nous avons retenu la création d'un prospect comme scénario
-représentatif du module Relation Client ; le module SGI, lui, est présenté à
-travers les résultats fonctionnels liés à la consultation des informations
-d'investissement et à la préparation des ordres.
+La solution repose sur une architecture en microservices, dans laquelle chaque
+service métier gère son propre domaine et sa propre base de données, ce qui
+facilite l'évolution progressive de la plateforme. Des composants communs
+assurent la sécurité des accès, les échanges entre services et la mise en cache.
+L'ensemble a été déployé sur un serveur. La
+conception détaillée s'appuie sur la création d'un prospect pour le module
+Relation Client, tandis que le module SGI est illustré par la consultation des
+informations d'investissement et la préparation des ordres.
 
 \hspace{0.5cm}
 Les résultats obtenus portent sur le suivi client, la prospection, la
 consultation des informations d'investissement et la préparation des ordres. Les
-cotations BRVM utilisées pour la validation proviennent d'une source publique
-tierce qui relaie quotidiennement les données de la BRVM, faute d'un accès
-direct au flux de marché officiel. Les
-limites identifiées concernent notamment l'accès à un flux de marché officiel,
-la consolidation des modèles d'intelligence artificielle, l'audit de sécurité et
-la préparation de la production.
+cotations BRVM (Bourse Régionale des Valeurs Mobilières) utilisées pour la
+validation proviennent d'une source publique tierce qui relaie quotidiennement
+les données du marché, faute d'un accès direct au flux officiel. Les principales
+limites concernent l'accès à ce flux officiel, la consolidation des modèles
+d'intelligence artificielle, l'audit de sécurité et la préparation de la mise en
+production.
 
 \vspace{0.8cm}
 \noindent
@@ -58,23 +56,21 @@ centralize customer knowledge and support investment operations within a modular
 banking information system.
 
 \hspace{0.5cm}
-The designed solution is based on a microservices architecture and a full API
-approach, in order to separate business responsibilities and support the
-progressive evolution of the platform. Each business service exposes its
-functions through an API gateway and keeps its own database, with shared
-components handling caching, messaging and access management. The platform was
-deployed in containers on an AlmaLinux VPS. For the detailed part, we selected prospect creation
-as a representative scenario of the Customer Relationship module; the SGI
-module, in turn, is presented through the functional results related to
+The solution is based on a microservices architecture, in which each business
+service manages its own domain and its own database, which facilitates the
+progressive evolution of the platform. Shared components handle access security,
+communication between services and caching. The whole was deployed on a server,
+in a validation environment. The detailed design relies on prospect creation for
+the Customer Relationship module, while the SGI module is illustrated through
 investment information consultation and order preparation.
 
 \hspace{0.5cm}
 The results cover customer monitoring, prospect tracking, investment information
-consultation and order preparation. The BRVM quotes used for validation come
-from a third-party public source that relays the BRVM data daily, without direct
-access to the official market feed. The main limitations concern access to an official market
-data feed, consolidation of artificial intelligence models, security auditing
-and production readiness.
+consultation and order preparation. The BRVM (Bourse Régionale des Valeurs
+Mobilières) quotes used for validation come from a third-party public source
+that relays the market data daily, without direct access to the official feed.
+The main limitations concern access to that official feed, consolidation of
+artificial intelligence models, security auditing and production readiness.
 
 \vspace{0.8cm}
 \noindent
