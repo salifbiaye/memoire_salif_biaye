@@ -14,20 +14,46 @@
   %=====================================================
   %  Bordures decoratives
   %=====================================================
-  \draw[deepblue,line width=1.7pt] (1.70,29.25) -- (1.70,1.78) -- (19.05,1.78);
-  \draw[darkred,line width=1.35pt] (2.25,28.65) -- (2.25,1.23) -- (19.78,1.23);
-  % carres haut gauche
-  \draw[deepblue,line width=1.7pt] (1.68,29.25) rectangle ++(0.72,-0.72);
-  \draw[greyline,line width=1.4pt] (1.98,28.88) rectangle ++(0.72,-0.72);
-  % carres bas gauche
-  \draw[greyline,line width=1.4pt] (2.03,1.66) rectangle ++(0.72,0.72);
-  \draw[deepblue,line width=1.7pt] (1.68,1.33) rectangle ++(0.72,0.72);
-  % carres bas droite
-  \draw[greyline,line width=1.4pt] (19.25,1.23) rectangle ++(0.72,0.72);
-  \draw[darkred,line width=1.35pt] (19.68,0.90) rectangle ++(0.72,0.72);
+  \def\borderBlueX{1.70}
+  \def\borderRedX{2.25}
+  \def\borderTopBlueY{29.25}
+  \def\borderTopRedY{28.65}
+  \def\borderBlueBottomY{1.78}
+  \def\borderRedBottomY{1.23}
+  \def\borderBlueRightX{19.05}
+  \def\borderRedRightX{19.78}
+  \def\cornerMainSize{0.72}
+  \def\cornerGreySize{0.74}
+
+  \draw[deepblue,line width=1.7pt,line join=round]
+  (\borderBlueX,\borderTopBlueY) -- (\borderBlueX,\borderBlueBottomY);
+  \draw[darkred,line width=1.35pt,line join=round]
+  (\borderRedX+0.2,\borderTopRedY-0.5) -- (\borderRedX+0.2,\borderRedBottomY+1);
+  \draw[deepblue,line width=1.7pt,line join=round]
+  (\borderRedX+0.5,\borderBlueBottomY+0.1) -- (\borderBlueRightX,\borderBlueBottomY+0.1);
+  \draw[darkred,line width=1.35pt,line join=round]
+  (\borderRedX,\borderRedBottomY) -- (\borderRedRightX,\borderRedBottomY);
+
+  % carrés haut gauche
+  \draw[deepblue,line width=1.7pt]
+  (\borderBlueX,28.62) rectangle ++(\cornerMainSize,\cornerMainSize);
+  \draw[greyline,line width=1.1pt,opacity=0.55]
+  (1.96,28.15) rectangle ++(\cornerGreySize,\cornerGreySize);
+
+  % carrés bas gauche
+  \draw[greyline,line width=1.1pt,opacity=0.55]
+  (2.08,1.55) rectangle ++(\cornerGreySize,\cornerGreySize);
+  \draw[deepblue,line width=1.35pt]
+  (\borderBlueX,\borderRedBottomY) rectangle ++(\cornerMainSize,\cornerMainSize);
+
+  % carrés bas droite
+  \draw[greyline,line width=1.1pt,opacity=0.55]
+  (19.05,1.48) rectangle ++(\cornerGreySize,\cornerGreySize);
+  \draw[darkred,line width=1.7pt]
+  (19.50,\borderRedBottomY) rectangle ++(\cornerMainSize,\cornerMainSize);
 
 %=====================================================
-%  En-tête (+1 cm vers la droite)
+%  En-tête
 %=====================================================
   \node at (11,27.70) {\oldincludegraphics[width=1.22cm]{images/page-de-garde/drapeau_senegal.png}};
 
@@ -39,6 +65,7 @@
 
   \node at (11,23.78)
     {\oldincludegraphics[width=3.25cm]{images/page-de-garde/officiel_logo_esp.png}};
+
   \draw[deepblue,line width=1.2pt]
   (10,21.48) -- (12.0,21.48);
 
@@ -46,90 +73,106 @@
   at (11,20.82)
     {DÉPARTEMENT GÉNIE INFORMATIQUE};
 
-  %=====================================================
-  %  Grand bloc principal
-  %=====================================================
+%=====================================================
+%  Grand bloc principal
+%=====================================================
   \coordinate (boxNW) at (3.05,19.95);
   \coordinate (boxSE) at (20.25,11.25);
-  \filldraw[fill=espblue,draw=espblue,line width=1.25pt,rounded corners=13pt]
-    (boxNW) rectangle (boxSE);
-  % bloc diplome
-  \filldraw[white,draw=espblue,line width=1.25pt,rounded corners=13pt]
-    (3.05,19.95) rectangle (20.25,16.43);
-  % bloc sujet (marge gauche/droite)
-  \filldraw[white,draw=espblue,line width=1.1pt,rounded corners=12pt]
-    (3.15,15.95) rectangle (20.15,13.50);
-  % bloc periode
-  \filldraw[white,draw=espblue,line width=1.1pt,rounded corners=8pt]
-    (3.05,13.03) rectangle (20.25,11.25);
 
-  %=====================================================
-  %  Texte du bloc diplome
-  %=====================================================
+  \filldraw[fill=espblue,draw=espblue,line width=1.25pt,rounded corners=13pt]
+  (boxNW) rectangle (boxSE);
+
+  \filldraw[white,draw=espblue,line width=1.25pt,rounded corners=13pt]
+  (3.05,19.95) rectangle (20.25,16.43);
+
+  \filldraw[white,draw=espblue,line width=1.1pt,rounded corners=12pt]
+  (3.15,15.95) rectangle (20.15,13.50);
+
+  \filldraw[white,draw=espblue,line width=1.1pt,rounded corners=8pt]
+  (3.05,13.03) rectangle (20.25,11.25);
+
+%=====================================================
+%  Texte du bloc diplôme
+%=====================================================
   \node[font=\bfseries\color{deepblue}\fontsize{14.5}{17}\selectfont] at (11.65,19.47)
     {MÉMOIRE DE FIN DE CYCLE};
+
   \node[font=\bfseries\fontsize{13.3}{16}\selectfont] at (11.65,18.83)
     {Pour l'obtention du :};
+
   \node[font=\bfseries\fontsize{12.5}{15}\selectfont] at (11.65,18.13)
     {DIPLÔME D'INGÉNIEUR DE CONCEPTION EN GÉNIE INFORMATIQUE};
+
   \node[font=\bfseries\fontsize{13.2}{16}\selectfont] at (11.65,17.32)
     {OPTION : INFORMATIQUE};
 
-  %=====================================================
-  %  Sujet
-  %=====================================================
-  \node[font=\bfseries\underline{\fontsize{14.2}{17}\selectfont}] at (11.65,15.53) {SUJET :};
+%=====================================================
+%  Sujet
+%=====================================================
+\node[font=\bfseries] at (11.65,15.53)
+  {\fontsize{14.2}{17}\selectfont \uline{SUJET} :};
+
   \node[text width=14.40cm,align=center,inner sep=0pt,
     font=\bfseries\color{blue!45!black}\fontsize{10.9}{13.1}\selectfont]
-    at (11.65,14.60)
-  {Conception d'un système d'information bancaire intelligent: cas des modules\\
-   Relation Client et SGI (Société de Gestion et d'Intermédiation)};
+  at (11.65,14.60)
+    {Conception d'un système d'information bancaire intelligent: cas des modules\\
+  Relation Client et SGI (Société de Gestion et d'Intermédiation)};
 
-  %=====================================================
-  %  Periode et lieu
-  %=====================================================
-  \node[anchor=west,font=\bfseries\underline{\fontsize{13.4}{16}\selectfont}]
-    at (3.45,12.10) {PÉRIODE ET LIEU DU STAGE :};
+%=====================================================
+%  Période et lieu
+%=====================================================
+\node[anchor=west]
+at (3.45,12.10)
+{\bfseries\fontsize{12.5}{12.6}\selectfont
+\uline{PÉRIODE ET LIEU DU STAGE}\, :};
   \node[anchor=west,font=\bfseries\color{deepblue}\fontsize{10.7}{13}\selectfont]
-    at (10.25,12.10) {15/08/2025 - 30/06/2026};
+  at (10.25,12.10) {15/08/2025 - 30/06/2026};
+
   \node[anchor=west,font=\bfseries\color{deepblue}\fontsize{10.7}{13}\selectfont]
-    at (14.25,12.10) {INNOV4AFRICA};
+  at (14.25,12.10) {INNOV4AFRICA};
+
   \node[anchor=east] at (20.75,12.10)
     {\oldincludegraphics[height=2.5cm]{images/page-de-garde/innov4africa_logo.jpg}};
 
-  %=====================================================
-  %  Infos candidat + jury
-  %=====================================================
+%=====================================================
+%  Infos candidat + jury
+%=====================================================
   \node[anchor=west,font=\bfseries\fontsize{13.2}{16}\selectfont] at (3.45,10.58)
     {Présenté et soutenu par :};
+
   \node[anchor=east,font=\bfseries\fontsize{13.2}{16}\selectfont] at (19.25,10.58)
     {Salif Biaye};
 
   \node[font=\bfseries\fontsize{11.8}{14.2}\selectfont] at (11.65,9.58)
     {PROMOTION : 2026 \quad - \quad DATE DE SOUTENANCE : xx/07/2026};
 
-  \node[anchor=west,font=\bfseries\color{deepblue}\fontsize{12.6}{15}\selectfont] at (3.45,8.57)
+  \node[anchor=west,font=\bfseries\color{deepblue}\fontsize{12.6}{15}\selectfont] at (3.45,8.35)
     {MEMBRES DU JURY :};
 
-  \node[anchor=north west,inner sep=0pt] at (3.60,7.92) {%
+  \node[anchor=north west,inner sep=0pt] at (3.60,7.55) {%
     \begin{tabular}{@{}%
         >{\raggedright\arraybackslash\bfseries\color{deepblue}\fontsize{9.2}{11.2}\selectfont}p{4.85cm}%
         >{\bfseries\color{deepblue}\fontsize{8.8}{10.8}\selectfont}p{4.25cm}%
         >{\bfseries\color{deepblue}\fontsize{8.8}{10.8}\selectfont}p{4.45cm}@{}}
 
-      PRÉSIDENT : & & \\[0.15cm]
-      RAPPORTEUR : & & \\[0.22cm]
-      ENCADRANT : & Pr Ibrahima Fall & Professeur titulaire du CAMES\\[0.22cm]
-      MAÎTRE DE STAGE : & Khassoum WONE & Ingénieur Informatique\\[0.22cm]
-      DIRECTEUR DE MÉMOIRE : & Pr Ibrahima Fall & Professeur titulaire du CAMES
+      PRÉSIDENT : & Pr Moussa DIALLO & Professeur titulaire du CAMES\\[0.22cm]
+
+      RAPPORTEUR : & M. Amadou MBAYE & Ingénieur en informatique\\[0.22cm]
+
+      ENCADRANT : & Pr Ibrahima FALL & Professeur titulaire du CAMES\\[0.22cm]
+
+      MAÎTRE DE STAGE : & Khassoum WONE & Ingénieur informatique\\[0.22cm]
+
+      DIRECTEUR DE MÉMOIRE : & Pr Ibrahima FALL & Professeur titulaire du CAMES
+
     \end{tabular}
   };
 
-  %=====================================================
-  %  Pied de page
-  %=====================================================
+%=====================================================
+%  Pied de page
+%=====================================================
   \node[font=\bfseries\color{blue!35!black}\fontsize{10.8}{13}\selectfont]
-    at (15.00,1.50) {Année universitaire : 2025 - 2026};
+  at (15.00,1.50) {Année universitaire : 2025 - 2026};
 
 \end{tikzpicture}
 \cleardoublepage

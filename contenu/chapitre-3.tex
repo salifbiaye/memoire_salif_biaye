@@ -58,36 +58,30 @@ blocs qui ont un rôle proche. Cette organisation permet de séparer les
 interfaces, la sécurité et le routage, les services métier, la gestion des
 données ainsi que les outils nécessaires au fonctionnement de la plateforme.
 
-\begin{description}
-    \item[Couche présentation] Elle contient les interfaces utilisées pour accéder à
-    la plateforme. Le \textbf{Front-Office} est l'interface destinée aux clients de
-    la banque. Le \textbf{Back-Office} est utilisé par les employés.
+
+\textbf{La couche de présentation} contient les interfaces utilisées pour accéder à la plateforme. Le \textbf{Front-Office} est destiné aux clients de la banque, tandis que le \textbf{Back-Office} est utilisé par les employés.
 
 Les administrateurs utilisent le \textbf{Module Manager} pour gérer les modules, les fonctionnalités disponibles et les droits associés. Les configurations définies depuis cette interface sont prises en charge par le \textbf{Backend Module Manager}, qui centralise les informations nécessaires au fonctionnement du système.
 
-\item[Couche sécurité et routage] Cette couche contrôle l'accès à la plateforme et assure l'acheminement des requêtes vers les différents services. Le composant \textbf{Authentification et accès} gère l'identification des utilisateurs et la vérification de leurs autorisations. La \textbf{Passerelle de communication} constitue le point d'entrée des applications et redirige les requêtes vers les microservices concernés.
+\medskip
 
- Le \textbf{Registre des services} indique à la passerelle
-    où se trouve chaque microservice disponible.
+\textbf{La couche de sécurité et de routage} contrôle l'accès à la plateforme et assure l'acheminement des requêtes vers les différents services. Le composant \textbf{Authentification et accès} gère l'identification des utilisateurs ainsi que la vérification de leurs autorisations. La \textbf{Passerelle de communication} constitue le point d'entrée des applications et redirige les requêtes vers les microservices concernés.
 
-    \item[Couche métier] Elle regroupe les modules qui réalisent les principales
-    fonctions de la plateforme : \textbf{CRM}, \textbf{SGI},
-    \textbf{utilisateurs}, \textbf{comptes et transactions}, \textbf{agence},
-    \textbf{comptabilité}, \textbf{trésorerie} et \textbf{crédit}. Le
-    \textbf{service d'audit} enregistre les actions importantes.
+Le \textbf{Registre des services} indique à la passerelle l'emplacement de chaque microservice disponible.
 
-    \item[Couche données et services techniques] La \textbf{base de données}
-    conserve les informations, le \textbf{cache} accélère certains accès, la
-    \textbf{messagerie} facilite les échanges entre services et le
-    \textbf{stockage objet} contient les fichiers et les documents.
+\medskip
 
-    \item[Infrastructure et exploitation] Cette couche rassemble les outils
-    nécessaires au déploiement et au suivi de la plateforme. Les modules peuvent
-    utiliser des \textbf{services d'intelligence artificielle} selon leurs
-    besoins. Les outils d'\textbf{observabilité} servent à repérer les problèmes,
-    tandis que la chaîne \textbf{CI/CD} automatise la construction et le
-    déploiement des applications.
-\end{description}
+\textbf{La couche métier} regroupe les modules qui assurent les principales fonctionnalités de la plateforme : \textbf{CRM}, \textbf{SGI}, \textbf{gestion des utilisateurs}, \textbf{gestion des comptes et des transactions}, \textbf{gestion des agences}, \textbf{comptabilité}, \textbf{trésorerie} et \textbf{crédit}. Le \textbf{service d'audit} enregistre les actions importantes afin d'assurer leur traçabilité.
+
+\medskip
+
+\textbf{La couche de données et de services techniques} regroupe les composants nécessaires au stockage des données et aux services techniques. La \textbf{base de données} conserve les informations, le \textbf{cache} accélère les accès aux données, la \textbf{messagerie} facilite les échanges entre les services et le \textbf{stockage objet} héberge les fichiers et les documents.
+
+\medskip
+
+\textbf{La couche d'infrastructure et d'exploitation} rassemble les outils nécessaires au déploiement, à l'exploitation et au suivi de la plateforme. Les modules peuvent s'appuyer sur des \textbf{services d'intelligence artificielle} selon leurs besoins. Les outils d'\textbf{observabilité} permettent de détecter les anomalies et de superviser le fonctionnement de la plateforme, tandis que la chaîne \textbf{CI/CD} automatise la construction, les tests et le déploiement des applications.
+
+
 
 \section{Choix des outils et technologies}
 

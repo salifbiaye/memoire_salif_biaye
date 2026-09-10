@@ -142,13 +142,13 @@ Une amélioration possible consisterait à effectuer le calcul du score après l
 
 \begin{description}[itemsep=1pt,parsep=0pt]
 
-\item[Intégration des modules.] La plateforme réunit les fonctionnalités de relation client et de gestion d'investissement.
+\item[Intégration des modules :] La plateforme réunit les fonctionnalités de relation client et de gestion d'investissement.
 
-\item[Architecture modulaire.] Le découpage en microservices facilite l'évolution de la solution.
+\item[Architecture modulaire :] Le découpage en microservices facilite l'évolution de la solution.
 
-\item[Sécurité et traçabilité.] Les accès sont contrôlés selon les rôles et les opérations importantes sont enregistrées.
+\item[Sécurité et traçabilité :] Les accès sont contrôlés selon les rôles et les opérations importantes sont enregistrées.
 
-\item[Déploiement sur serveur.] La plateforme a été installée sur un VPS AlmaLinux \cite{almalinux_official} et validée dans un environnement de test.
+\item[Déploiement sur serveur :] La plateforme a été installée sur un VPS AlmaLinux \cite{almalinux_official} et validée dans un environnement de test.
 
 \end{description}
 
@@ -159,21 +159,21 @@ Une amélioration possible consisterait à effectuer le calcul du score après l
 \subsection{Points faibles et limites}
 
 \begin{description}[itemsep=1pt,parsep=0pt]
-    \item[Périmètre encore incomplet.] La plateforme couvre un périmètre large,
+    \item[Périmètre encore incomplet :] La plateforme couvre un périmètre large,
           mais toutes les fonctionnalités et toutes les connexions avec les
           autres modules bancaires ne sont pas encore finalisées.
-    \item[Données non officielles.] Les cotations BRVM \cite{brvm_actions}
+    \item[Données non officielles :] Les cotations BRVM \cite{brvm_actions}
           utilisées dans l'environnement de validation proviennent d'une source
           publique tierce \cite{brvm_data_public} mise à jour quotidiennement,
           et non directement du flux de marché officiel, dont l'intégration
           reste à prévoir pour une exploitation opérationnelle. De même,
           l'exécution des ordres est simulée, faute de connexion à un
           intermédiaire de marché réel.
-    \item[Intégration de l'IA.] La pertinence métier des scores de prospect et
+    \item[Intégration de l'IA :] La pertinence métier des scores de prospect et
           des indicateurs de risque de départ relève du module IA et devra être
           confirmée sur des données réelles ; côté intégration, le parcours
           consomme déjà ces scores et gère l'indisponibilité du service.
-    \item[Industrialisation du déploiement.] Le déploiement de validation repose sur Docker \cite{docker_docs} et Docker Compose \cite{docker_compose_docs} sur le VPS AlmaLinux \cite{almalinux_official}. Cette base reste à compléter par une supervision renforcée, des sauvegardes et une stratégie de reprise avant la production.
+    \item[Industrialisation du déploiement :] Le déploiement de validation repose sur Docker \cite{docker_docs} et Docker Compose \cite{docker_compose_docs} sur le VPS AlmaLinux \cite{almalinux_official}. Cette base reste à compléter par une supervision renforcée, des sauvegardes et une stratégie de reprise avant la production.
 \end{description}
 
 \subsection{Perspectives d'amélioration}
